@@ -22,6 +22,9 @@ export default function Nav() {
           padding: 0 32px;
           height: 68px;
           display: flex; align-items: center; justify-content: space-between;
+          background: rgba(17,17,16,0.82);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
           transition: background 0.3s, box-shadow 0.3s;
         }
         .nav.scrolled {

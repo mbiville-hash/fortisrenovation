@@ -83,7 +83,7 @@ export default function ProsA() {
         }
         .pros-desc {
           font-size: 14px;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.75);
           line-height: 1.75;
           max-width: 560px;
           margin-bottom: 20px;

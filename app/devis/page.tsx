@@ -4,7 +4,7 @@ import FormA from '@/components/FormA'
 export const metadata: Metadata = {
   title: 'Devis gratuit — Rénovation Rouen | Fortis Rénovation',
   description: 'Demandez votre devis gratuit pour rénovation salle de bain ou maintenance immobilière à Rouen. Réponse sous 48h.',
-  alternates: { canonical: 'https://fortis-renovation.fr/devis' },
+  alternates: { canonical: 'https://www.fortisrenovation.fr/devis' },
 }
 
 export default function DevisPage() {
@@ -18,7 +18,7 @@ export default function DevisPage() {
           <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.1, marginBottom: 16 }}>
             Décrivez-nous votre projet.
           </h1>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)' }}>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.75)' }}>
             On vous répond sous 48h, gratuitement et sans engagement.
           </p>
         </div>

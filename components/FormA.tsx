@@ -58,7 +58,7 @@ export default function FormA() {
         .form-row { display: flex; gap: 16px; }
         .form-group { flex: 1; margin-bottom: 20px; }
         .form-label {
-          display: block; font-size: 11px; font-weight: 700;
+          display: block; font-size: 12px; font-weight: 700;
           letter-spacing: 0.12em; text-transform: uppercase;
           color: var(--ink-soft); margin-bottom: 8px;
         }

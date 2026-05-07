@@ -55,7 +55,7 @@ export default function MaintenancePage() {
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Petits travaux, dégâts des eaux, entretien courant — on prend en charge toutes les demandes de votre parc. Un interlocuteur unique, zéro relance, rapport écrit à chaque intervention.
             </p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
               Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -78,7 +78,7 @@ export default function MaintenancePage() {
                 <div key={l} style={{ padding: '32px 32px', borderRight: '1px solid rgba(184,151,90,0.2)' }}>
                   <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, color: 'var(--gold)', lineHeight: 1, marginBottom: 6 }}>{v}</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'white', marginBottom: 4 }}>{l}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s}</div>
+                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s}</div>
                 </div>
               ))}
             </div>

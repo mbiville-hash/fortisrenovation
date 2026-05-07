@@ -103,7 +103,7 @@ export default function DegatDesEauxPage() {
                 <a href="tel:+33767491324" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 28, color: 'var(--gold)', display: 'block' }}>
                   07 67 49 13 24
                 </a>
-                <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   Lundi–Samedi 08h–19h
                 </p>
               </div>

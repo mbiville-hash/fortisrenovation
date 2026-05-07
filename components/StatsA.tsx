@@ -41,8 +41,8 @@ export default function StatsA() {
           letter-spacing: 0.04em;
         }
         .stat-sub {
-          font-size: 11px;
-          color: rgba(255,255,255,0.4);
+          font-size: 12px;
+          color: rgba(255,255,255,0.65);
           letter-spacing: 0.06em;
           text-transform: uppercase;
         }

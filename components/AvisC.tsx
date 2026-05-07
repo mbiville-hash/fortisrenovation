@@ -98,7 +98,9 @@ export default function AvisC() {
           opacity: 0.15;
           border: none; cursor: pointer;
           transition: opacity 0.2s, transform 0.2s;
-          padding: 0;
+          padding: 10px;
+          background-clip: content-box;
+          box-sizing: content-box;
         }
         .avis-dot.active { opacity: 1; background: var(--gold); transform: scale(1.2); }
         .avis-bottom {

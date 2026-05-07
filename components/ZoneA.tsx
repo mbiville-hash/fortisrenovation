@@ -34,7 +34,7 @@ export default function ZoneA() {
         }
         .zone-sub {
           font-size: 14px;
-          color: rgba(255,255,255,0.5);
+          color: rgba(255,255,255,0.7);
           line-height: 1.7;
           margin-bottom: 40px;
         }
@@ -44,9 +44,9 @@ export default function ZoneA() {
         .zone-city {
           font-size: 12px; font-weight: 600;
           letter-spacing: 0.08em;
-          color: rgba(255,255,255,0.7);
-          border: 1px solid rgba(255,255,255,0.15);
-          padding: 7px 14px;
+          color: rgba(255,255,255,0.8);
+          border: 1px solid rgba(255,255,255,0.2);
+          padding: 10px 16px;
           transition: border-color 0.2s, color 0.2s;
         }
         .zone-city:hover { border-color: var(--gold); color: var(--gold); }

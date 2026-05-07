@@ -57,7 +57,7 @@ export default function AProposPage() {
 
               {/* Placeholder photo dirigeant */}
               <div style={{ background: 'var(--ink)', aspectRatio: '4/5', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: 400 }}>
-                <span style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 13, letterSpacing: '0.15em', color: 'rgba(184,151,90,0.4)', textAlign: 'center', padding: 24 }}>
+                <span style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 13, letterSpacing: '0.15em', color: 'rgba(184,151,90,0.7)', textAlign: 'center', padding: 24 }}>
                   Photo<br />dirigeant
                 </span>
               </div>
@@ -90,7 +90,7 @@ export default function AProposPage() {
           <div className="container">
             <div style={{ color: 'var(--gold)', fontSize: 28, letterSpacing: 6, marginBottom: 12 }}>★★★★★</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 28, color: 'white', marginBottom: 8 }}>25 avis Google vérifiés</p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>Note 5/5 · Rouen & métropole normande</p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>Note 5/5 · Rouen & métropole normande</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
