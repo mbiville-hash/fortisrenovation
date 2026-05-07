@@ -50,7 +50,17 @@ export default function Nav() {
           transition: color 0.2s;
         }
         .nav-links a:hover { color: var(--gold); }
-        .nav-cta {
+        .nav-pro {
+          font-size: 12px !important;
+          font-weight: 700 !important;
+          letter-spacing: 0.1em !important;
+          color: var(--gold) !important;
+          border: 1px solid rgba(184,151,90,0.5);
+          padding: 8px 18px;
+          transition: background 0.2s, border-color 0.2s !important;
+        }
+        .nav-pro:hover { background: rgba(184,151,90,0.1) !important; border-color: var(--gold) !important; color: var(--gold) !important; }
+
           background: var(--gold); color: var(--white) !important;
           padding: 10px 22px; font-size: 12px !important;
         }
@@ -89,8 +99,7 @@ export default function Nav() {
         </Link>
 
         <ul className="nav-links">
-          <li><Link href="/#professionnels">Professionnels</Link></li>
-          <li><Link href="/#particuliers">Particuliers</Link></li>
+          <li><Link href="/professionnels" className="nav-pro">Offre pro</Link></li>
           <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
           <li><Link href="/#avis">Avis</Link></li>
           <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
@@ -104,8 +113,7 @@ export default function Nav() {
 
       {open && (
         <div className="nav-mobile">
-          <Link href="/#professionnels" onClick={() => setOpen(false)}>Professionnels</Link>
-          <Link href="/#particuliers" onClick={() => setOpen(false)}>Particuliers</Link>
+          <Link href="/professionnels" onClick={() => setOpen(false)}>Offre pro</Link>
           <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)}>Salle de bain</Link>
           <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
           <a href="tel:+33767491324">07 67 49 13 24</a>
