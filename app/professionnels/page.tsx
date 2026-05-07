@@ -1,23 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Maintenance immobilière Rouen — Syndics & Bailleurs | Fortis Rénovation',
   description: 'Contrats de maintenance immobilière à Rouen pour syndics, bailleurs et entreprises. Un interlocuteur unique, interventions 48h, rapport systématique.',
-  alternates: { canonical: 'https://fortis-renovation.fr/professionnels' },
-}
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Maintenance immobilière Rouen',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Fortis Rénovation',
-    telephone: '+33767491424',
+  alternates: { canonical: 'https://www.fortisrenovation.fr/professionnels' },
+  openGraph: {
+    title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
+    description: 'Contrats de maintenance immobilière à Rouen. Un interlocuteur unique, interventions 48h, rapport systématique.',
+    url: 'https://www.fortisrenovation.fr/professionnels',
   },
-  areaServed: { '@type': 'City', name: 'Rouen' },
-  description: 'Contrats de maintenance immobilière pour syndics, bailleurs et entreprises à Rouen.',
 }
 
 const faqs = [
@@ -42,12 +35,16 @@ const faqs = [
 export default function ProsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(
+        'Maintenance immobilière Rouen',
+        'Contrats de maintenance immobilière pour syndics, bailleurs et entreprises à Rouen.',
+        '/professionnels'
+      ))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+        { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
+        { name: 'Professionnels', url: 'https://www.fortisrenovation.fr/professionnels' },
+      ]))}} />
       <main style={{ paddingTop: 68 }}>
-        {/* Hero */}
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
           <div className="container">
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -57,14 +54,19 @@ export default function ProsPage() {
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.1, marginBottom: 24 }}>
               Maintenance immobilière<br />à Rouen — un seul<br />prestataire.
             </h1>
-            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 540, lineHeight: 1.75, marginBottom: 40 }}>
+            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 540, lineHeight: 1.75, marginBottom: 16 }}>
               Plomberie, électricité, menuiserie, peinture. Contrats annuels ou interventions ponctuelles — vous décidez. Un interlocuteur unique, des rapports clairs.
             </p>
-            <Link href="/devis" className="btn btn-gold">Demander un devis pro</Link>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
+              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+            </p>
+            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+              <Link href="/devis" className="btn btn-gold">Demander un devis pro</Link>
+              <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
+            </div>
           </div>
         </section>
 
-        {/* Services detail */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
           <div className="container">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32 }}>
@@ -83,7 +85,6 @@ export default function ProsPage() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>
           <div className="container" style={{ maxWidth: 760 }}>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 48 }}>Questions fréquentes</h2>
@@ -98,7 +99,6 @@ export default function ProsPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>
           <div className="container">
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16, color: 'white' }}>
@@ -107,7 +107,10 @@ export default function ProsPage() {
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', marginBottom: 40 }}>
               Devis gratuit sous 48h. Un rendez-vous, un interlocuteur.
             </p>
-            <Link href="/devis" className="btn btn-gold">Demander mon devis</Link>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/devis" className="btn btn-gold">Demander mon devis</Link>
+              <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
+            </div>
           </div>
         </section>
       </main>

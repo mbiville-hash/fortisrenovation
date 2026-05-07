@@ -17,15 +17,20 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fortis-renovation.fr'),
+  metadataBase: new URL('https://www.fortisrenovation.fr'),
   title: {
     default: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
     template: '%s | Fortis Rénovation',
   },
   description: 'Rénovation salle de bain et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h. Syndics, bailleurs, particuliers.',
+  robots: { index: true, follow: true },
   openGraph: {
     siteName: 'Fortis Rénovation',
     locale: 'fr_FR',
+    type: 'website',
+    title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
+    description: 'Rénovation salle de bain et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h. Syndics, bailleurs, particuliers.',
+    url: 'https://www.fortisrenovation.fr',
   },
 }
 

@@ -15,7 +15,7 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Fortis Rénovation',
-    telephone: '+33767491424',
+    telephone: '+33767491324',
   },
   areaServed: { '@type': 'City', name: 'Rouen' },
   description: 'Rénovation complète de salle de bain à Rouen avec plan 3D inclus.',
@@ -53,7 +53,7 @@ export default function SalleDeBainPage() {
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
-                <a href="tel:+33767491424" className="btn btn-outline-white">07 67 49 14 24</a>
+                <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
               </div>
             </div>
             <div style={{ position: 'relative', height: 380, borderRadius: 2, overflow: 'hidden' }}>

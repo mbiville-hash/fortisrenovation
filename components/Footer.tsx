@@ -83,18 +83,21 @@ export default function Footer() {
                 Entreprise de rénovation à Rouen. Maintenance immobilière et salle de bain clé en main depuis 2024.
               </p>
               <div className="footer-contact">
-                <a href="tel:+33767491424">07 67 49 14 24</a>
+                <a href="tel:+33767491324">07 67 49 13 24</a>
                 <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
+                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
+                  193 Rue du Renard<br />76000 Rouen<br />Lun–Sam 08h–19h
+                </span>
               </div>
             </div>
 
             <div>
               <p className="footer-col-title">Services</p>
               <ul className="footer-links">
-                <li><Link href="/professionnels">Maintenance pro</Link></li>
+                <li><Link href="/maintenance-immobiliere-rouen">Maintenance immobilière</Link></li>
                 <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
+                <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
                 <li><Link href="/devis">Devis gratuit</Link></li>
-                <li><Link href="/#avis">Avis clients</Link></li>
               </ul>
             </div>
 

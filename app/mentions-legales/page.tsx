@@ -20,7 +20,7 @@ export default function MentionsLegalesPage() {
               RCS Rouen<br />
               TVA intracommunautaire : FR47937628428<br />
               Rouen (76000), France<br />
-              Téléphone : 07 67 49 14 24<br />
+              Téléphone : 07 67 49 13 24<br />
               Email : mbiville@fortisrenovation.fr</p>
             </div>
 
