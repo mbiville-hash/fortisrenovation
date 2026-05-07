@@ -122,14 +122,14 @@ export default function HeroA() {
           <p className="hero-tag">Propriétaires · Locataires</p>
           <h1 className="hero-title">Votre salle de<br />bain repensée,<br />en 3D.</h1>
           <p className="hero-desc">
-            Du projet à la pose, en passant par le <strong>plan 3D offert</strong>. Résultat garanti, sans mauvaise surprise.
+            Du projet à la pose, en passant par le <strong>plan 3D inclus</strong>. Résultat garanti, sans mauvaise surprise.
           </p>
           <ul className="hero-features">
-            <li>Plan 3D inclus & offert</li>
+            <li>Plan 3D inclus</li>
             <li>Délais respectés, prix fixe</li>
             <li>Travaux clé en main</li>
           </ul>
-          <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir nos réalisations</Link>
+          <Link href="/devis" className="btn btn-outline-white">Demander un devis</Link>
         </div>
       </section>
     </>

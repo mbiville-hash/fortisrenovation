@@ -23,7 +23,7 @@ export default function PolitiqueConfidentialitePage() {
             </div>
             <div>
               <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, color: 'var(--ink)', marginBottom: 10 }}>Vos droits</h2>
-              <p>Vous pouvez à tout moment accéder, rectifier ou supprimer vos données en écrivant à contact@fortis-renovation.fr.</p>
+              <p>Vous pouvez à tout moment accéder, rectifier ou supprimer vos données en écrivant à mbiville@fortisrenovation.fr.</p>
             </div>
           </div>
         </div>

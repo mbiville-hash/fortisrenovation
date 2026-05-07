@@ -80,11 +80,11 @@ export default function Footer() {
             <div>
               <Link href="/" className="footer-logo">FORTIS<span>.</span></Link>
               <p className="footer-tagline">
-                Entreprise de rénovation à Rouen. Maintenance immobilière et salle de bain clé en main depuis 2019.
+                Entreprise de rénovation à Rouen. Maintenance immobilière et salle de bain clé en main depuis 2024.
               </p>
               <div className="footer-contact">
-                <a href="tel:+33600000000">06 00 00 00 00</a>
-                <a href="mailto:contact@fortis-renovation.fr">contact@fortis-renovation.fr</a>
+                <a href="tel:+33767491424">07 67 49 14 24</a>
+                <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
               </div>
             </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
                   <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
                     SIRET 937 628 428 00016<br />
                     RCS Rouen<br />
-                    TVA FR 12 937628428
+                    TVA FR47937628428
                   </span>
                 </li>
               </ul>

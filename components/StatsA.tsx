@@ -3,7 +3,7 @@ export default function StatsA() {
     { value: '★★★★★', label: 'Avis clients Google', sub: 'Note 5/5' },
     { value: '48h', label: 'Délai de réponse', sub: 'Devis garanti' },
     { value: '1', label: 'Interlocuteur unique', sub: 'Du début à la fin' },
-    { value: '3D', label: 'Plan offert', sub: 'Visualisez avant travaux' },
+    { value: '3D', label: 'Plan inclus', sub: 'Visualisez avant travaux' },
   ]
 
   return (

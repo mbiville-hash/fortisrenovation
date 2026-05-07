@@ -20,8 +20,8 @@ const jsonLd = {
   name: 'Fortis Rénovation',
   description: 'Rénovation salle de bain et maintenance immobilière à Rouen.',
   url: 'https://fortis-renovation.fr',
-  telephone: '+33600000000',
-  email: 'contact@fortis-renovation.fr',
+  telephone: '+33767491424',
+  email: 'mbiville@fortisrenovation.fr',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '',

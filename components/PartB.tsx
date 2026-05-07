@@ -121,7 +121,7 @@ export default function PartB() {
               <h2 className="part-title">Votre salle de bain<br />en 3D, avant<br />les travaux.</h2>
               <div className="part-badge">
                 <span className="part-badge-icon">◈</span>
-                <span className="part-badge-text">Plan 3D offert & inclus</span>
+                <span className="part-badge-text">Plan 3D inclus</span>
               </div>
               <ol className="part-steps">
                 {[
@@ -137,8 +137,7 @@ export default function PartB() {
                 ))}
               </ol>
               <div className="part-actions">
-                <Link href="/devis" className="btn btn-gold">Demander mon 3D gratuit</Link>
-                <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir les réalisations</Link>
+                <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
               </div>
             </div>
           </div>

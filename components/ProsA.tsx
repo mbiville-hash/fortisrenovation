@@ -10,7 +10,7 @@ const services = [
   {
     num: '02',
     title: "Interventions d'urgence",
-    desc: 'Fuite, panne, sinistre — on intervient sous 48h avec un compte rendu complet pour votre assureur.',
+    desc: 'Fuite, panne, sinistre — on intervient sous 48h avec un compte rendu complet.',
     tags: ['Réponse 48h', 'Compte rendu', 'Prise en charge assurance'],
   },
   {

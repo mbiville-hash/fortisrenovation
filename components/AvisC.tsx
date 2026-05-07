@@ -134,7 +134,7 @@ export default function AvisC() {
               ))}
             </div>
 
-            <p className="avis-bottom">Note 5/5 · 47 avis · Google Maps</p>
+            <p className="avis-bottom">Note 5/5 · 25 avis · Google Maps</p>
           </div>
         </div>
       </section>

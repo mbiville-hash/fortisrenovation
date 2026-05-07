@@ -90,7 +90,7 @@ export default function Nav() {
           <li><Link href="/#particuliers">Particuliers</Link></li>
           <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
           <li><Link href="/#avis">Avis</Link></li>
-          <li><a href="tel:+33600000000" className="nav-phone">06 00 00 00 00</a></li>
+          <li><a href="tel:+33767491424" className="nav-phone">07 67 49 14 24</a></li>
           <li><Link href="/devis" className="nav-cta btn">Devis gratuit</Link></li>
         </ul>
 
@@ -105,7 +105,7 @@ export default function Nav() {
           <Link href="/#particuliers" onClick={() => setOpen(false)}>Particuliers</Link>
           <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)}>Salle de bain</Link>
           <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
-          <a href="tel:+33600000000">06 00 00 00 00</a>
+          <a href="tel:+33767491424">07 67 49 14 24</a>
           <Link href="/devis" className="btn btn-gold" onClick={() => setOpen(false)}>Devis gratuit</Link>
         </div>
       )}

@@ -169,7 +169,7 @@ export default function FormA() {
 
                 <div className="form-tel-big">
                   <p className="form-tel-label">Ou appelez directement</p>
-                  <p className="form-tel-number"><a href="tel:+33600000000">06 00 00 00 00</a></p>
+                  <p className="form-tel-number"><a href="tel:+33767491424">07 67 49 14 24</a></p>
                 </div>
               </>
             )}

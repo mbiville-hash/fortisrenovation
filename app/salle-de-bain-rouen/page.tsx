@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Rénovation Salle de Bain Rouen — Plan 3D offert | Fortis Rénovation',
-  description: 'Rénovation complète de salle de bain à Rouen. Plan 3D offert, devis sous 48h, prix fixe. Particuliers et propriétaires. Travaux clé en main.',
+  title: 'Rénovation Salle de Bain Rouen — Plan 3D inclus | Fortis Rénovation',
+  description: 'Rénovation complète de salle de bain à Rouen. Plan 3D inclus, devis sous 48h, prix fixe. Particuliers et propriétaires. Travaux clé en main.',
   alternates: { canonical: 'https://fortis-renovation.fr/salle-de-bain-rouen' },
 }
 
@@ -15,13 +15,13 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Fortis Rénovation',
-    telephone: '+33600000000',
+    telephone: '+33767491424',
   },
   areaServed: { '@type': 'City', name: 'Rouen' },
-  description: 'Rénovation complète de salle de bain à Rouen avec plan 3D offert.',
+  description: 'Rénovation complète de salle de bain à Rouen avec plan 3D inclus.',
   offers: {
     '@type': 'Offer',
-    description: 'Plan 3D offert et inclus',
+    description: 'Plan 3D inclus',
     price: '0',
     priceCurrency: 'EUR',
   },
@@ -52,8 +52,8 @@ export default function SalleDeBainPage() {
                 Prix fixe · Délais respectés · Travaux garantis
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Link href="/devis" className="btn btn-gold">Demander mon 3D gratuit</Link>
-                <a href="tel:+33600000000" className="btn btn-outline-white">06 00 00 00 00</a>
+                <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
+                <a href="tel:+33767491424" className="btn btn-outline-white">07 67 49 14 24</a>
               </div>
             </div>
             <div style={{ position: 'relative', height: 380, borderRadius: 2, overflow: 'hidden' }}>
@@ -106,7 +106,7 @@ export default function SalleDeBainPage() {
                 </h2>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {[
-                    'Plan 3D de votre projet (offert)',
+                    'Plan 3D de votre projet (inclus)',
                     'Démolition et évacuation des gravats',
                     'Plomberie & installation sanitaire',
                     'Électricité et éclairage',
@@ -132,7 +132,7 @@ export default function SalleDeBainPage() {
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, marginBottom: 32 }}>
                   Pas de surcoût surprise. Pas de mauvaise découverte. Si un imprévu arrive, on vous en parle avant d'agir.
                 </p>
-                <Link href="/devis" className="btn btn-gold">Je veux mon 3D gratuit</Link>
+                <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function SalleDeBainPage() {
               Votre projet commence ici.
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', marginBottom: 40 }}>
-              Visite gratuite · Plan 3D offert · Devis sous 48h
+              Visite gratuite · Plan 3D inclus · Devis sous 48h
             </p>
             <Link href="/devis" className="btn btn-gold">Demander mon devis</Link>
           </div>

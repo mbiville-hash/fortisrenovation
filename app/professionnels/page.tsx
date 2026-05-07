@@ -14,7 +14,7 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Fortis Rénovation',
-    telephone: '+33600000000',
+    telephone: '+33767491424',
   },
   areaServed: { '@type': 'City', name: 'Rouen' },
   description: 'Contrats de maintenance immobilière pour syndics, bailleurs et entreprises à Rouen.',

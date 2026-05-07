@@ -18,10 +18,10 @@ export default function MentionsLegalesPage() {
               <p>Fortis Rénovation<br />
               SIRET : 937 628 428 00016<br />
               RCS Rouen<br />
-              TVA intracommunautaire : FR 12 937628428<br />
+              TVA intracommunautaire : FR47937628428<br />
               Rouen (76000), France<br />
-              Téléphone : 06 00 00 00 00<br />
-              Email : contact@fortis-renovation.fr</p>
+              Téléphone : 07 67 49 14 24<br />
+              Email : mbiville@fortisrenovation.fr</p>
             </div>
 
             <div>
@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
 
             <div>
               <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, color: 'var(--ink)', marginBottom: 12 }}>Données personnelles</h2>
-              <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre à vos demandes. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant contact@fortis-renovation.fr.</p>
+              <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre à vos demandes. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant mbiville@fortisrenovation.fr.</p>
             </div>
           </div>
         </div>
