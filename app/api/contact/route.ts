@@ -22,7 +22,6 @@ export async function POST(req: NextRequest) {
       'Urgence': urgence || 'Non précisé',
       'Message': message || '',
       'Date envoi': new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
-      'Statut': 'À traiter',
     }
 
     const res = await fetch(WEBHOOK_URL, {
