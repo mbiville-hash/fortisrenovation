@@ -14,14 +14,14 @@ export async function POST(req: NextRequest) {
     }
 
     const payload = {
-      'Prénom NOM': nom,
-      'Téléphone': tel,
-      'Email': email || '',
-      'Profil': profil || 'Non précisé',
-      'Type projet': type_projet || 'Non précisé',
-      'Urgence': urgence || 'Non précisé',
-      'Message': message || '',
-      'Date envoi': new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+      nom,
+      tel,
+      email: email || '',
+      profil: profil || 'Non précisé',
+      type_projet: type_projet || 'Non précisé',
+      urgence: urgence || 'Non précisé',
+      message: message || '',
+      date_envoi: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
     }
 
     const res = await fetch(WEBHOOK_URL, {
