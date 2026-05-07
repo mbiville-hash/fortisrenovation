@@ -93,12 +93,11 @@ export default function PartB() {
           <div className="part-inner">
             <div className="part-img">
               <Image
-                src="/salle-de-bain-3d.jpg"
-                alt="Plan 3D salle de bain — Fortis Rénovation"
+                src="/plan-salle-de-bain.png"
+                alt="Plan salle de bain — Fortis Rénovation"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                onError={() => {}}
               />
             </div>
 
