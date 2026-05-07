@@ -22,18 +22,7 @@ export default function PartB() {
           overflow: hidden;
           min-height: 400px;
         }
-        .part-img-placeholder {
-          position: absolute; inset: 0;
-          background: linear-gradient(135deg, #1e1e1c 0%, #2a2a28 50%, #1a1a18 100%);
-          display: flex; align-items: center; justify-content: center;
-        }
-        .part-img-placeholder span {
-          font-family: 'Bodoni Moda', serif;
-          font-size: 13px; letter-spacing: 0.15em;
-          color: rgba(184,151,90,0.4);
-          text-align: center;
-          padding: 24px;
-        }
+
         .part-copy {
           padding: 72px 64px;
           display: flex; flex-direction: column; justify-content: center;
@@ -111,9 +100,6 @@ export default function PartB() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 onError={() => {}}
               />
-              <div className="part-img-placeholder">
-                <span>Plan 3D<br />de votre future<br />salle de bain</span>
-              </div>
             </div>
 
             <div className="part-copy">
