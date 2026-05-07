@@ -1,39 +1,31 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Rénovation Salle de Bain Rouen — Plan 3D inclus | Fortis Rénovation',
   description: 'Rénovation complète de salle de bain à Rouen. Plan 3D inclus, devis sous 48h, prix fixe. Particuliers et propriétaires. Travaux clé en main.',
-  alternates: { canonical: 'https://fortis-renovation.fr/salle-de-bain-rouen' },
-}
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Rénovation salle de bain Rouen',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Fortis Rénovation',
-    telephone: '+33767491324',
-  },
-  areaServed: { '@type': 'City', name: 'Rouen' },
-  description: 'Rénovation complète de salle de bain à Rouen avec plan 3D inclus.',
-  offers: {
-    '@type': 'Offer',
-    description: 'Plan 3D inclus',
-    price: '0',
-    priceCurrency: 'EUR',
+  alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-rouen' },
+  openGraph: {
+    title: 'Rénovation Salle de Bain Rouen — Plan 3D inclus',
+    description: 'Rénovation complète de salle de bain à Rouen. Plan 3D inclus, devis sous 48h, prix fixe.',
+    url: 'https://www.fortisrenovation.fr/salle-de-bain-rouen',
   },
 }
 
 export default function SalleDeBainPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(
+        'Rénovation salle de bain Rouen',
+        'Rénovation complète de salle de bain à Rouen. Plan 3D inclus, devis sous 48h, prix fixe.',
+        '/salle-de-bain-rouen'
+      ))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+        { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
+        { name: 'Rénovation salle de bain Rouen', url: 'https://www.fortisrenovation.fr/salle-de-bain-rouen' },
+      ]))}} />
       <main style={{ paddingTop: 68 }}>
         {/* Hero */}
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
@@ -48,8 +40,11 @@ export default function SalleDeBainPage() {
               <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: 16 }}>
                 Du projet à la pose, on s'occupe de tout. Et on commence par vous offrir le <strong style={{ color: 'white' }}>plan 3D</strong> de votre future salle de bain.
               </p>
-              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 8 }}>
                 Prix fixe · Délais respectés · Travaux garantis
+              </p>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
+                Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:0767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
@@ -64,11 +59,6 @@ export default function SalleDeBainPage() {
                 style={{ objectFit: 'cover' }}
                 priority
               />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #1e1e1c, #2a2a28)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 14, letterSpacing: '0.15em', color: 'rgba(184,151,90,0.5)', textAlign: 'center' }}>
-                  Plan 3D<br />salle de bain
-                </span>
-              </div>
             </div>
           </div>
         </section>
