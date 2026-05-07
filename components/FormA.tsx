@@ -6,7 +6,15 @@ type Status = 'idle' | 'sending' | 'success' | 'error'
 
 export default function FormA() {
   const [status, setStatus] = useState<Status>('idle')
-  const [form, setForm] = useState({ type: '', nom: '', tel: '', besoin: '' })
+  const [form, setForm] = useState({
+    nom: '',
+    tel: '',
+    email: '',
+    profil: '',
+    type_projet: '',
+    urgence: '',
+    message: '',
+  })
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }))
@@ -62,6 +70,11 @@ export default function FormA() {
           letter-spacing: 0.12em; text-transform: uppercase;
           color: var(--ink-soft); margin-bottom: 8px;
         }
+        .form-label .optional {
+          font-weight: 400; text-transform: none;
+          letter-spacing: 0; font-size: 11px;
+          color: var(--ink-faint); margin-left: 6px;
+        }
         .form-input, .form-select, .form-textarea {
           width: 100%;
           padding: 13px 16px;
@@ -77,7 +90,7 @@ export default function FormA() {
         .form-input:focus, .form-select:focus, .form-textarea:focus {
           border-color: var(--gold);
         }
-        .form-textarea { resize: vertical; min-height: 100px; }
+        .form-textarea { resize: vertical; min-height: 120px; }
         .form-submit { width: 100%; padding: 16px; font-size: 13px; margin-top: 8px; }
         .form-tel-big {
           margin-top: 32px; padding-top: 28px;
@@ -130,20 +143,11 @@ export default function FormA() {
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 
                 <form onSubmit={submit}>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="type">Vous êtes</label>
-                    <select id="type" className="form-select" value={form.type} onChange={set('type')} required>
-                      <option value="">— Choisissez —</option>
-                      <option value="syndic">Syndic / Bailleur</option>
-                      <option value="particulier">Particulier</option>
-                      <option value="autre">Autre</option>
-                    </select>
-                  </div>
-
+                  {/* Identité */}
                   <div className="form-row">
                     <div className="form-group">
-                      <label className="form-label" htmlFor="nom">Nom</label>
-                      <input id="nom" type="text" className="form-input" placeholder="Votre nom" value={form.nom} onChange={set('nom')} required />
+                      <label className="form-label" htmlFor="nom">Prénom NOM</label>
+                      <input id="nom" type="text" className="form-input" placeholder="Jean Dupont" value={form.nom} onChange={set('nom')} required />
                     </div>
                     <div className="form-group">
                       <label className="form-label" htmlFor="tel">Téléphone</label>
@@ -152,8 +156,51 @@ export default function FormA() {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label" htmlFor="besoin">Votre besoin</label>
-                    <textarea id="besoin" className="form-textarea" placeholder="Décrivez votre projet en quelques mots…" value={form.besoin} onChange={set('besoin')} />
+                    <label className="form-label" htmlFor="email">
+                      Email <span className="optional">(facultatif)</span>
+                    </label>
+                    <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} />
+                  </div>
+
+                  {/* Qualification */}
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="profil">Vous êtes</label>
+                      <select id="profil" className="form-select" value={form.profil} onChange={set('profil')} required>
+                        <option value="">— Choisissez —</option>
+                        <option value="Syndic / Bailleur">Syndic / Bailleur</option>
+                        <option value="Particulier">Particulier</option>
+                        <option value="Autre">Autre</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="type_projet">Type de projet</label>
+                      <select id="type_projet" className="form-select" value={form.type_projet} onChange={set('type_projet')} required>
+                        <option value="">— Choisissez —</option>
+                        <option value="Maintenance immobilière">Maintenance immobilière</option>
+                        <option value="Rénovation salle de bain">Rénovation salle de bain</option>
+                        <option value="Dégât des eaux">Dégât des eaux</option>
+                        <option value="Autre">Autre</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="urgence">
+                      Urgence <span className="optional">(facultatif)</span>
+                    </label>
+                    <select id="urgence" className="form-select" value={form.urgence} onChange={set('urgence')}>
+                      <option value="">— Non précisé —</option>
+                      <option value="Oui">Oui — intervention urgente</option>
+                      <option value="Non">Non — planifiable</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="message">
+                      Votre message <span className="optional">(facultatif)</span>
+                    </label>
+                    <textarea id="message" className="form-textarea" placeholder="Décrivez votre projet en quelques mots…" value={form.message} onChange={set('message')} />
                   </div>
 
                   {status === 'error' && (

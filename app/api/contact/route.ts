@@ -7,19 +7,22 @@ const WEBHOOK_URL =
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { type, nom, tel, besoin } = body
+    const { nom, tel, email, profil, type_projet, urgence, message } = body
 
     if (!nom || !tel) {
       return NextResponse.json({ error: 'Champs manquants' }, { status: 400 })
     }
 
     const payload = {
-      type: type || 'Non précisé',
-      nom,
-      tel,
-      besoin: besoin || '',
-      source: 'fortis-renovation.fr',
-      date: new Date().toISOString(),
+      'Prénom NOM': nom,
+      'Téléphone': tel,
+      'Email': email || '',
+      'Profil': profil || 'Non précisé',
+      'Type projet': type_projet || 'Non précisé',
+      'Urgence': urgence || 'Non précisé',
+      'Message': message || '',
+      'Date envoi': new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+      'Statut': 'À traiter',
     }
 
     const res = await fetch(WEBHOOK_URL, {
