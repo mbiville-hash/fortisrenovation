@@ -67,7 +67,7 @@ h1, h2, h3, h4 {
 .btn-outline-white {
   background: transparent;
   color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(255,255,255,0.7);
 }
 .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 

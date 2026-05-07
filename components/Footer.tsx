@@ -28,7 +28,7 @@ export default function Footer() {
         .footer-logo span { color: var(--gold); }
         .footer-tagline {
           font-size: 13px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.7);
           line-height: 1.7;
           max-width: 260px;
           margin-bottom: 28px;
@@ -44,13 +44,13 @@ export default function Footer() {
         .footer-col-title {
           font-size: 10px; font-weight: 700;
           letter-spacing: 0.2em; text-transform: uppercase;
-          color: rgba(255,255,255,0.35);
+          color: rgba(255,255,255,0.55);
           margin-bottom: 20px;
         }
         .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-links a {
           font-size: 13px;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.7);
           transition: color 0.2s;
         }
         .footer-links a:hover { color: var(--gold); }
@@ -62,7 +62,7 @@ export default function Footer() {
         }
         .footer-legal {
           font-size: 11px;
-          color: rgba(255,255,255,0.25);
+          color: rgba(255,255,255,0.5);
           line-height: 1.6;
         }
         @media (max-width: 900px) {
@@ -85,7 +85,7 @@ export default function Footer() {
               <div className="footer-contact">
                 <a href="tel:+33767491324">07 67 49 13 24</a>
                 <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
-                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
+                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
                   193 Rue du Renard<br />76000 Rouen<br />Lun–Sam 08h–19h
                 </span>
               </div>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li><Link href="/mentions-legales">Mentions légales</Link></li>
                 <li><Link href="/politique-confidentialite">Confidentialité</Link></li>
                 <li>
-                  <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
+                  <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
                     SIRET 937 628 428 00016<br />
                     RCS Rouen<br />
                     TVA FR47937628428
