@@ -27,6 +27,7 @@ export default function FormA() {
   const [form, setForm] = useState(INITIAL_FORM)
   const [captchaToken, setCaptchaToken] = useState('')
   const [gotcha, setGotcha] = useState('')
+  const [turnstileKey, setTurnstileKey] = useState(0)
 
   useEffect(() => {
     window.onTurnstileVerify = setCaptchaToken
@@ -54,9 +55,16 @@ export default function FormA() {
       })
       if (res.ok) {
         setStatus('success')
-        setTimeout(() => { setStatus('idle'); setForm(INITIAL_FORM); setCaptchaToken('') }, 6000)
+        setTimeout(() => {
+          setStatus('idle')
+          setForm(INITIAL_FORM)
+          setCaptchaToken('')
+          setTurnstileKey(k => k + 1)
+        }, 6000)
       } else {
         setStatus('error')
+        setCaptchaToken('')
+        setTurnstileKey(k => k + 1)
       }
     } catch {
       setStatus('error')
@@ -265,6 +273,7 @@ export default function FormA() {
 
                   <div className="form-group">
                     <div
+                      key={turnstileKey}
                       className="cf-turnstile"
                       data-sitekey={TURNSTILE_SITE_KEY}
                       data-callback="onTurnstileVerify"
