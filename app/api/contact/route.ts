@@ -57,6 +57,9 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(payload),
     })
 
+    const makeBody = await res.text()
+    console.log('Make response:', res.status, makeBody)
+
     if (!res.ok) {
       console.error('Webhook error:', res.status, await res.text())
       return NextResponse.json({ error: 'Webhook failed' }, { status: 502 })
