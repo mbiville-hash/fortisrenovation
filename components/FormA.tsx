@@ -26,7 +26,6 @@ export default function FormA() {
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState(INITIAL_FORM)
   const [captchaToken, setCaptchaToken] = useState('')
-  const [gotcha, setGotcha] = useState('')
   const [turnstileKey, setTurnstileKey] = useState(0)
 
   useEffect(() => {
@@ -51,7 +50,7 @@ export default function FormA() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, _gotcha: gotcha, cf_token: captchaToken }),
+        body: JSON.stringify({ ...form, cf_token: captchaToken }),
       })
       if (res.ok) {
         setStatus('success')
@@ -199,18 +198,6 @@ export default function FormA() {
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 
                 <form onSubmit={submit}>
-                  {/* Honeypot — invisible pour les humains, rempli par les bots */}
-                  <div className="form-honeypot" aria-hidden="true">
-                    <input
-                      type="text"
-                      name="_gotcha"
-                      tabIndex={-1}
-                      autoComplete="off"
-                      value={gotcha}
-                      onChange={e => setGotcha(e.target.value)}
-                    />
-                  </div>
-
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label" htmlFor="nom">Prénom NOM</label>

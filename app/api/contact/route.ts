@@ -6,12 +6,7 @@ const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { nom, tel, email, profil, type_projet, urgence, message, _gotcha, cf_token } = body
-
-    // Honeypot — bots fill this, humans don't
-    if (_gotcha) {
-      return NextResponse.json({ ok: true })
-    }
+    const { nom, tel, email, profil, type_projet, urgence, message, cf_token } = body
 
     if (!nom || !tel || !email) {
       return NextResponse.json({ error: 'Champs manquants' }, { status: 400 })
