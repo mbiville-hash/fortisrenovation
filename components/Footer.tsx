@@ -96,6 +96,7 @@ export default function Footer() {
               <ul className="footer-links">
                 <li><Link href="/maintenance-immobiliere-rouen">Maintenance immobilière</Link></li>
                 <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
+                <li><Link href="/salle-de-bain-senior">Salle de bain senior</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
                 <li><Link href="/devis">Devis gratuit</Link></li>
               </ul>
