@@ -1,10 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 declare global {
   interface Window {
-    onTurnstileVerify: (token: string) => void
+    turnstile: {
+      render: (container: HTMLElement, options: {
+        sitekey: string
+        callback: (token: string) => void
+        theme?: string
+      }) => string
+      remove: (widgetId: string) => void
+    }
   }
 }
 
@@ -27,16 +34,45 @@ export default function FormA() {
   const [form, setForm] = useState(INITIAL_FORM)
   const [captchaToken, setCaptchaToken] = useState('')
   const [turnstileKey, setTurnstileKey] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const widgetIdRef = useRef<string | null>(null)
 
   useEffect(() => {
-    window.onTurnstileVerify = setCaptchaToken
-    if (!document.querySelector('script[src*="turnstile"]')) {
-      const script = document.createElement('script')
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
-      script.async = true
-      document.head.appendChild(script)
+    const renderWidget = () => {
+      if (!containerRef.current) return
+      if (widgetIdRef.current) {
+        try { window.turnstile.remove(widgetIdRef.current) } catch {}
+        widgetIdRef.current = null
+      }
+      widgetIdRef.current = window.turnstile.render(containerRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: setCaptchaToken,
+        theme: 'light',
+      })
     }
-  }, [])
+
+    if (window.turnstile) {
+      renderWidget()
+    } else {
+      const existing = document.querySelector<HTMLScriptElement>('script[src*="turnstile"]')
+      if (existing) {
+        existing.addEventListener('load', renderWidget, { once: true })
+      } else {
+        const script = document.createElement('script')
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+        script.async = true
+        script.onload = renderWidget
+        document.head.appendChild(script)
+      }
+    }
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        try { window.turnstile.remove(widgetIdRef.current) } catch {}
+        widgetIdRef.current = null
+      }
+    }
+  }, [turnstileKey])
 
   const set = (k: keyof typeof INITIAL_FORM) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -259,13 +295,7 @@ export default function FormA() {
                   </div>
 
                   <div className="form-group">
-                    <div
-                      key={turnstileKey}
-                      className="cf-turnstile"
-                      data-sitekey={TURNSTILE_SITE_KEY}
-                      data-callback="onTurnstileVerify"
-                      data-theme="light"
-                    />
+                    <div ref={containerRef} />
                   </div>
 
                   {status === 'error' && (
