@@ -65,7 +65,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Webhook failed' }, { status: 502 })
     }
 
-    return NextResponse.json({ ok: true })
+    return NextResponse.json({
+      ok: true,
+      _debug: {
+        makeStatus: res.status,
+        makeBody: makeBody.slice(0, 100),
+        urlTail: WEBHOOK_URL.slice(-20),
+      },
+    })
   } catch (err) {
     console.error('Contact route error:', err)
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
