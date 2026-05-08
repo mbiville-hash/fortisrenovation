@@ -86,6 +86,7 @@ export default function Nav() {
             padding: 24px 32px 32px;
             display: flex; flex-direction: column; gap: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            z-index: 999;
           }
           .nav-mobile a {
             font-size: 14px; font-weight: 600;
@@ -115,9 +116,10 @@ export default function Nav() {
 
       {open && (
         <div className="nav-mobile">
-          <Link href="/professionnels" onClick={() => setOpen(false)}>Offre pro</Link>
+          <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)}>Maintenance immobilière</Link>
+          <Link href="/degat-des-eaux-rouen" onClick={() => setOpen(false)}>Dégât des eaux</Link>
           <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)}>Salle de bain</Link>
-          <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
+          <Link href="/professionnels" onClick={() => setOpen(false)}>Offre pro</Link>
           <a href="tel:+33767491324">07 67 49 13 24</a>
           <Link href="/devis" className="btn btn-gold" onClick={() => setOpen(false)}>Devis gratuit</Link>
         </div>
