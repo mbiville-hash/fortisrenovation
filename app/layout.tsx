@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fortisrenovation.fr'),
   title: {
-    default: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
+    default: 'Fortis Rénovation',
     template: '%s | Fortis Rénovation',
   },
   description: 'Rénovation salle de bain et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h. Syndics, bailleurs, particuliers.',
