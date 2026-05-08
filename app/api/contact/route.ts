@@ -1,19 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { nom, tel, email, profil, type_projet, urgence, message, _gotcha } = body
+    const { nom, tel, email, _gotcha, cf_token } = body
 
-    // Honeypot anti-spam : les bots remplissent ce champ, les humains non
+    // Honeypot — bots fill this, humans don't
     if (_gotcha) {
       return NextResponse.json({ ok: true })
     }
 
-    if (!nom || !tel) {
+    if (!nom || !tel || !email) {
       return NextResponse.json({ error: 'Champs manquants' }, { status: 400 })
+    }
+
+    // Turnstile CAPTCHA validation
+    if (TURNSTILE_SECRET) {
+      if (!cf_token) {
+        return NextResponse.json({ error: 'Captcha manquant' }, { status: 400 })
+      }
+      const verif = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret: TURNSTILE_SECRET, response: cf_token }),
+      })
+      const verifData = await verif.json()
+      if (!verifData.success) {
+        return NextResponse.json({ error: 'Captcha invalide' }, { status: 400 })
+      }
     }
 
     if (!WEBHOOK_URL) {
@@ -24,11 +41,7 @@ export async function POST(req: NextRequest) {
     const payload = {
       nom,
       tel,
-      email: email || '',
-      profil: profil || 'Non précisé',
-      type_projet: type_projet || 'Non précisé',
-      urgence: urgence || 'Non précisé',
-      message: message || '',
+      email,
       date_envoi: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
     }
 

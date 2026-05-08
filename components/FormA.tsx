@@ -1,41 +1,51 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+declare global {
+  interface Window {
+    onTurnstileVerify: (token: string) => void
+  }
+}
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
-const INITIAL_FORM = {
-  nom: '',
-  tel: '',
-  email: '',
-  profil: '',
-  type_projet: '',
-  urgence: '',
-  message: '',
-}
+const INITIAL_FORM = { nom: '', tel: '', email: '' }
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
 
 export default function FormA() {
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState(INITIAL_FORM)
+  const [captchaToken, setCaptchaToken] = useState('')
+  const [gotcha, setGotcha] = useState('')
 
-  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-    setForm(f => ({ ...f, [k]: e.target.value }))
+  useEffect(() => {
+    window.onTurnstileVerify = setCaptchaToken
+    if (SITE_KEY && !document.querySelector('script[src*="turnstile"]')) {
+      const script = document.createElement('script')
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+      script.async = true
+      document.head.appendChild(script)
+    }
+  }, [])
+
+  const set = (k: keyof typeof INITIAL_FORM) =>
+    (e: React.ChangeEvent<HTMLInputElement>) =>
+      setForm(f => ({ ...f, [k]: e.target.value }))
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (SITE_KEY && !captchaToken) return
     setStatus('sending')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _gotcha: gotcha, cf_token: captchaToken }),
       })
       if (res.ok) {
         setStatus('success')
-        setTimeout(() => {
-          setStatus('idle')
-          setForm(INITIAL_FORM)
-        }, 6000)
+        setTimeout(() => { setStatus('idle'); setForm(INITIAL_FORM); setCaptchaToken('') }, 6000)
       } else {
         setStatus('error')
       }
@@ -80,12 +90,7 @@ export default function FormA() {
           letter-spacing: 0.12em; text-transform: uppercase;
           color: var(--ink-soft); margin-bottom: 8px;
         }
-        .form-label .optional {
-          font-weight: 400; text-transform: none;
-          letter-spacing: 0; font-size: 11px;
-          color: var(--ink-faint); margin-left: 6px;
-        }
-        .form-input, .form-select, .form-textarea {
+        .form-input {
           width: 100%;
           padding: 13px 16px;
           font-family: 'Montserrat', sans-serif;
@@ -95,12 +100,8 @@ export default function FormA() {
           border: 1.5px solid rgba(26,26,24,0.25);
           outline: none;
           transition: border-color 0.2s;
-          appearance: none;
         }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-          border-color: var(--gold);
-        }
-        .form-textarea { resize: vertical; min-height: 120px; }
+        .form-input:focus { border-color: var(--gold); }
         .form-submit { width: 100%; padding: 16px; font-size: 13px; margin-top: 8px; }
         .form-honeypot { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
         .form-tel-big {
@@ -116,22 +117,40 @@ export default function FormA() {
         .form-tel-number {
           font-family: 'Bodoni Moda', serif;
           font-size: 36px;
+          font-weight: 700;
           color: var(--ink);
           letter-spacing: 0.02em;
         }
         .form-tel-number a { color: inherit; }
         .form-tel-number a:hover { color: var(--gold); }
-        .form-success {
-          text-align: center; padding: 48px 0;
+
+        /* Rocket success animation */
+        @keyframes rocketLaunch {
+          0%   { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+          15%  { transform: translateY(4px) scale(1.05) rotate(-2deg); opacity: 1; }
+          100% { transform: translateY(-90px) scale(0.7) rotate(5deg); opacity: 0; }
         }
-        .form-success-icon {
-          font-size: 48px; color: var(--gold); margin-bottom: 16px;
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .form-success { text-align: center; padding: 48px 0; }
+        .form-success-rocket {
+          font-size: 56px;
+          display: inline-block;
+          animation: rocketLaunch 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+          margin-bottom: 16px;
         }
         .form-success h3 {
           font-family: 'Bodoni Moda', serif;
           font-size: 26px; margin-bottom: 12px;
+          animation: fadeInUp 0.5s ease 0.6s both;
         }
-        .form-success p { color: var(--ink-soft); font-size: 14px; }
+        .form-success p {
+          color: var(--ink-soft); font-size: 14px;
+          animation: fadeInUp 0.5s ease 0.8s both;
+        }
+
         @media (max-width: 640px) {
           .form-wrapper { padding: 40px 24px; }
           .form-row { flex-direction: column; }
@@ -143,7 +162,7 @@ export default function FormA() {
           <div className="form-wrapper">
             {status === 'success' ? (
               <div className="form-success">
-                <div className="form-success-icon">✓</div>
+                <div><span className="form-success-rocket">🚀</span></div>
                 <h3>Message reçu !</h3>
                 <p>On vous rappelle sous 48h. À très vite.</p>
               </div>
@@ -154,14 +173,15 @@ export default function FormA() {
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 
                 <form onSubmit={submit}>
-                  {/* Honeypot anti-spam — masqué visuellement */}
+                  {/* Honeypot — invisible pour les humains, rempli par les bots */}
                   <div className="form-honeypot" aria-hidden="true">
                     <input
                       type="text"
                       name="_gotcha"
                       tabIndex={-1}
                       autoComplete="off"
-                      onChange={set('_gotcha' as keyof typeof form as string)}
+                      value={gotcha}
+                      onChange={e => setGotcha(e.target.value)}
                     />
                   </div>
 
@@ -177,51 +197,20 @@ export default function FormA() {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label" htmlFor="email">
-                      Email <span className="optional">(facultatif)</span>
-                    </label>
-                    <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} autoComplete="email" />
+                    <label className="form-label" htmlFor="email">Email</label>
+                    <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} autoComplete="email" required />
                   </div>
 
-                  <div className="form-row">
+                  {SITE_KEY && (
                     <div className="form-group">
-                      <label className="form-label" htmlFor="profil">Vous êtes</label>
-                      <select id="profil" className="form-select" value={form.profil} onChange={set('profil')} required>
-                        <option value="">— Choisissez —</option>
-                        <option value="Syndic / Bailleur">Syndic / Bailleur</option>
-                        <option value="Particulier">Particulier</option>
-                        <option value="Autre">Autre</option>
-                      </select>
+                      <div
+                        className="cf-turnstile"
+                        data-sitekey={SITE_KEY}
+                        data-callback="onTurnstileVerify"
+                        data-theme="light"
+                      />
                     </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="type_projet">Type de projet</label>
-                      <select id="type_projet" className="form-select" value={form.type_projet} onChange={set('type_projet')} required>
-                        <option value="">— Choisissez —</option>
-                        <option value="Maintenance immobilière">Maintenance immobilière</option>
-                        <option value="Rénovation salle de bain">Rénovation salle de bain</option>
-                        <option value="Dégât des eaux">Dégât des eaux</option>
-                        <option value="Autre">Autre</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="urgence">
-                      Urgence <span className="optional">(facultatif)</span>
-                    </label>
-                    <select id="urgence" className="form-select" value={form.urgence} onChange={set('urgence')}>
-                      <option value="">— Non précisé —</option>
-                      <option value="Oui">Oui — intervention urgente</option>
-                      <option value="Non">Non — planifiable</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="message">
-                      Votre message <span className="optional">(facultatif)</span>
-                    </label>
-                    <textarea id="message" className="form-textarea" placeholder="Décrivez votre projet en quelques mots…" value={form.message} onChange={set('message')} />
-                  </div>
+                  )}
 
                   {status === 'error' && (
                     <p role="alert" aria-live="polite" style={{ color: '#c0392b', fontSize: 13, marginBottom: 12 }}>
@@ -229,7 +218,11 @@ export default function FormA() {
                     </p>
                   )}
 
-                  <button type="submit" className="btn btn-gold form-submit" disabled={status === 'sending'}>
+                  <button
+                    type="submit"
+                    className="btn btn-gold form-submit"
+                    disabled={status === 'sending' || (!!SITE_KEY && !captchaToken)}
+                  >
                     {status === 'sending' ? 'Envoi…' : 'Envoyer ma demande'}
                   </button>
                 </form>
