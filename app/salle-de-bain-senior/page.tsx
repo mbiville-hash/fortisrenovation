@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: 'Combien de temps durent les travaux ? Mon parent doit-il partir ?',
-    a: "Un chantier de salle de bain senior dure en moyenne 3 à 5 jours ouvrés. Nous planifions les interventions pour limiter au maximum la gêne : accès aux sanitaires maintenus le soir, chantier propre chaque fin de journée. Dans la grande majorité des cas, il n'est pas nécessaire de quitter le logement.",
+    a: "Un chantier de salle de bain senior dure en moyenne 3 à 10 jours selon l'ampleur des travaux. Nous planifions les interventions pour limiter au maximum la gêne : accès aux sanitaires maintenus le soir, chantier propre chaque fin de journée. Dans la grande majorité des cas, il n'est pas nécessaire de quitter le logement.",
   },
 ]
 
@@ -58,7 +58,7 @@ const amenagements = [
   },
   {
     title: "Barres d'appui & poignées",
-    desc: "Pose aux emplacements stratégiques (entrée douche, WC, lavabo) selon les recommandations ergonomiques. Fixation dans les murs porteurs.",
+    desc: "Pose aux emplacements stratégiques (entrée douche, WC, lavabo) selon les recommandations ergonomiques.",
   },
   {
     title: 'WC surélevé & accessoires PMR',
@@ -95,12 +95,11 @@ export default function SalleDeBainSeniorPage() {
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
               Une salle de bain adaptée.<br />
-              On s&apos;occupe de tout —<br />
-              y compris des aides.
+              On s&apos;occupe de tout.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', maxWidth: 520, lineHeight: 1.8, marginBottom: 12 }}>
-              Votre parent veut rester chez lui. Nous transformons sa salle de bain pour que ce soit possible, en toute sécurité — et nous vous guidons pour obtenir{' '}
-              <strong style={{ color: 'white' }}>MaPrimeAdapt&apos; jusqu&apos;à 70 % des travaux pris en charge</strong>.
+              Votre parent veut rester chez lui. Nous transformons sa salle de bain pour que ce soit possible, en toute sécurité. Des aides publiques comme MaPrimeAdapt&apos; peuvent financer jusqu&apos;à 70 % des travaux — les démarches se font directement sur{' '}
+              <strong style={{ color: 'white' }}>monprojetanah.fr</strong>, avec l&apos;accompagnement gratuit d&apos;un conseiller France Rénov&apos;.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 40 }}>
               Fortis Rénovation · 193 Rue du Renard · 76000 Rouen ·{' '}
@@ -141,7 +140,7 @@ export default function SalleDeBainSeniorPage() {
                 { chiffre: '70 %', label: "pris en charge par MaPrimeAdapt'" },
                 { chiffre: '22 000 €', label: 'de travaux subventionnables' },
                 { chiffre: '48h', label: 'pour recevoir votre devis' },
-                { chiffre: '3–5 j', label: 'de chantier en moyenne' },
+                { chiffre: '3–10 j', label: 'de chantier selon les travaux' },
               ].map(({ chiffre, label }) => (
                 <div key={label}>
                   <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 40, color: 'var(--gold)', marginBottom: 8 }}>{chiffre}</p>
