@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: 'Dégât des eaux Rouen — Intervention rapide',
     description: 'Intervention rapide sur dégât des eaux à Rouen. Recherche de fuite, remise en état, rapport photos sous 48h.',
     url: 'https://www.fortisrenovation.fr/degat-des-eaux-rouen',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 

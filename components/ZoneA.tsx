@@ -83,7 +83,7 @@ export default function ZoneA() {
 
             <div className="zone-map">
               {/* Schematic map of Rouen métropole */}
-              <svg className="zone-svg" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="zone-svg" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de la zone d'intervention Fortis Rénovation — Rouen et métropole normande (30 km)">
                 {/* Seine river */}
                 <path d="M20 200 Q80 180 140 200 Q200 220 260 195 Q320 170 380 190"
                   stroke="#b8975a" strokeWidth="3" strokeLinecap="round" opacity="0.4" fill="none"/>

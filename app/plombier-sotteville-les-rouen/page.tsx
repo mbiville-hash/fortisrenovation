@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: 'Plombier Sotteville-lès-Rouen — Fortis Rénovation',
     description: 'Maintenance immobilière et plomberie à Sotteville-lès-Rouen. Intervention rapide, rapport sous 48h.',
     url: 'https://www.fortisrenovation.fr/plombier-sotteville-les-rouen',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 
@@ -58,10 +61,10 @@ export default function PlombierSottevillePage() {
               Fortis Rénovation intervient à Sotteville-lès-Rouen pour tous vos travaux de plomberie, maintenance immobilière et dégâts des eaux. Un interlocuteur unique, des rapports écrits à chaque intervention.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:0767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a href="tel:0767491324" className="btn btn-gold">07 67 49 13 24</a>
+              <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>
               <Link href="/devis" className="btn btn-outline-white">Demander un devis</Link>
             </div>
           </div>
@@ -70,7 +73,7 @@ export default function PlombierSottevillePage() {
         {/* Promesses */}
         <section style={{ background: 'var(--ink)', padding: '0', borderTop: '1px solid rgba(184,151,90,0.3)', borderBottom: '1px solid rgba(184,151,90,0.3)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
               {[
                 { v: '48h', l: 'Délai de réponse', s: 'Garanti par écrit' },
                 { v: '100%', l: 'Rapports écrits', s: 'Photos incluses' },
@@ -139,9 +142,9 @@ export default function PlombierSottevillePage() {
           <div className="container" style={{ maxWidth: 720, textAlign: 'center' }}>
             <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 64, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 24 }}>"</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 24 }}>
-              Intervention rapide, travail soigné. Le rapport a été transmis à notre assureur dès le lendemain. Je recommande sans hésitation.
+              Équipe sérieuse et ponctuelle. Aucune mauvaise surprise sur le prix. Le chantier était propre chaque soir. Je recommande sans hésiter.
             </p>
-            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>[Prénom] — Propriétaire, Sotteville-lès-Rouen</p>
+            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>Yvette M. — Particulière, Rouen</p>
             <div style={{ color: 'var(--gold)', fontSize: 18, letterSpacing: 4, marginTop: 8 }}>★★★★★</div>
           </div>
         </section>
@@ -182,13 +185,13 @@ export default function PlombierSottevillePage() {
               Réponse garantie sous 48h — souvent le jour même.
             </p>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 40, color: 'var(--gold)', marginBottom: 8 }}>
-              <a href="tel:0767491324" style={{ color: 'inherit' }}>07 67 49 13 24</a>
+              <a href="tel:+33767491324" style={{ color: 'inherit' }}>07 67 49 13 24</a>
             </p>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 40 }}>
               Fortis Rénovation · 193 Rue du Renard · 76000 Rouen
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:0767491324" className="btn btn-gold">07 67 49 13 24</a>
+              <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>
               <Link href="/devis" className="btn btn-outline-white">Formulaire de contact</Link>
             </div>
           </div>

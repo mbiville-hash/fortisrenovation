@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
     description: 'Contrats de maintenance immobilière à Rouen. Un interlocuteur unique, interventions 48h, rapport systématique.',
     url: 'https://www.fortisrenovation.fr/professionnels',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 

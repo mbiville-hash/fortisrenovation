@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: 'À propos — Fortis Rénovation',
     description: 'Entreprise de rénovation et maintenance immobilière à Rouen. 25 avis ★★★★★.',
     url: 'https://www.fortisrenovation.fr/a-propos',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 
@@ -46,7 +49,7 @@ export default function AProposPage() {
               <div>
                 <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 24 }}>Notre approche</h2>
                 <p style={{ fontSize: 15, color: 'var(--ink-soft)', lineHeight: 1.8, marginBottom: 20 }}>
-                  Fortis Rénovation est une entreprise de rénovation et de maintenance immobilière basée à Rouen, créée en 2024. Nous intervenons pour les syndics, les bailleurs et les particuliers dans toute la métropole normande.
+                  Fortis Rénovation est une entreprise de rénovation et de maintenance immobilière basée à Rouen. Nous intervenons pour les syndics, les bailleurs et les particuliers dans toute la métropole normande.
                 </p>
                 <p style={{ fontSize: 15, color: 'var(--ink-soft)', lineHeight: 1.8, marginBottom: 20 }}>
                   Notre conviction : un chantier bien fait commence par une communication honnête. On vous montre le résultat en 3D avant de commencer, on fixe un prix ferme, et on respecte les délais annoncés.

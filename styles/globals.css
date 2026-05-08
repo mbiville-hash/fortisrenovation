@@ -50,6 +50,21 @@ h1, h2, h3, h4 {
   transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 .btn:hover { transform: translateY(-1px); }
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
 
 .btn-gold {
   background: var(--gold);

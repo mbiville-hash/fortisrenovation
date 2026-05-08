@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -60,7 +62,7 @@ export default function Nav() {
           transition: background 0.2s, border-color 0.2s !important;
         }
         .nav-pro:hover { background: rgba(184,151,90,0.1) !important; border-color: var(--gold) !important; color: var(--gold) !important; }
-
+        .nav-cta {
           background: var(--gold); color: var(--white) !important;
           padding: 10px 22px; font-size: 12px !important;
         }
@@ -99,11 +101,11 @@ export default function Nav() {
         </Link>
 
         <ul className="nav-links">
-          <li><Link href="/professionnels" className="nav-pro">Offre pro</Link></li>
-          <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
+          <li><Link href="/professionnels" className="nav-pro" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
+          <li><Link href="/salle-de-bain-rouen" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
           <li><Link href="/#avis">Avis</Link></li>
           <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
-          <li><Link href="/devis" className="nav-cta btn">Devis gratuit</Link></li>
+          <li><Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Devis gratuit</Link></li>
         </ul>
 
         <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu">

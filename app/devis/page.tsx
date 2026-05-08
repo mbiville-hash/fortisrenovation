@@ -4,7 +4,7 @@ import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Devis gratuit — Rénovation Rouen | Fortis Rénovation',
-  description: 'Demandez votre devis gratuit pour rénovation salle de bain ou maintenance immobilière à Rouen. Réponse sous 48h.',
+  description: 'Demandez votre devis gratuit pour rénovation salle de bain ou maintenance immobilière à Rouen. Réponse garantie sous 48h, sans engagement. Syndics, bailleurs, particuliers.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/devis' },
 }
 

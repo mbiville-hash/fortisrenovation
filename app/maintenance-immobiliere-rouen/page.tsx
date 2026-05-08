@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: 'Maintenance immobilière Rouen — Syndics & gestionnaires',
     description: 'Petits travaux, dégâts des eaux, entretien immeuble à Rouen. Réponse 48h, rapport écrit, un interlocuteur unique.',
     url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 
@@ -69,7 +72,7 @@ export default function MaintenancePage() {
         {/* Promesses */}
         <section style={{ background: 'var(--ink)', padding: '0', borderTop: '1px solid rgba(184,151,90,0.3)', borderBottom: '1px solid rgba(184,151,90,0.3)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
               {[
                 { v: '48h', l: 'Délai de réponse', s: 'Garanti par écrit' },
                 { v: '100%', l: 'Rapports écrits', s: 'Photos incluses' },
@@ -134,9 +137,9 @@ export default function MaintenancePage() {
           <div className="container" style={{ maxWidth: 720, textAlign: 'center' }}>
             <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 64, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 24 }}>"</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 24 }}>
-              Fortis Rénovation gère la maintenance de nos immeubles depuis plusieurs mois. Réactivité, rapports clairs, zéro relance — exactement ce qu'on cherchait.
+              Contrat de maintenance pour notre immeuble. Interlocuteur unique, rapports clairs, interventions rapides. Ça change de nos prestataires précédents.
             </p>
-            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>[Prénom] — [Cabinet de gestion], Rouen</p>
+            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>Jerry K. — Syndic, Rouen centre</p>
             <div style={{ color: 'var(--gold)', fontSize: 18, letterSpacing: 4, marginTop: 8 }}>★★★★★</div>
           </div>
         </section>

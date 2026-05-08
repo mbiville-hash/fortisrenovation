@@ -1,16 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const WEBHOOK_URL =
-  process.env.MAKE_WEBHOOK_URL ||
-  'https://hook.eu1.make.com/tt88vi9co5elnwmotjwuhv9wesmf54el'
+const WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { nom, tel, email, profil, type_projet, urgence, message } = body
+    const { nom, tel, email, profil, type_projet, urgence, message, _gotcha } = body
+
+    // Honeypot anti-spam : les bots remplissent ce champ, les humains non
+    if (_gotcha) {
+      return NextResponse.json({ ok: true })
+    }
 
     if (!nom || !tel) {
       return NextResponse.json({ error: 'Champs manquants' }, { status: 400 })
+    }
+
+    if (!WEBHOOK_URL) {
+      console.error('MAKE_WEBHOOK_URL env variable is not set')
+      return NextResponse.json({ error: 'Configuration error' }, { status: 500 })
     }
 
     const payload = {

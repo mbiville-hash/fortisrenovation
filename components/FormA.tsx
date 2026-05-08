@@ -4,17 +4,19 @@ import { useState } from 'react'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+const INITIAL_FORM = {
+  nom: '',
+  tel: '',
+  email: '',
+  profil: '',
+  type_projet: '',
+  urgence: '',
+  message: '',
+}
+
 export default function FormA() {
   const [status, setStatus] = useState<Status>('idle')
-  const [form, setForm] = useState({
-    nom: '',
-    tel: '',
-    email: '',
-    profil: '',
-    type_projet: '',
-    urgence: '',
-    message: '',
-  })
+  const [form, setForm] = useState(INITIAL_FORM)
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }))
@@ -28,7 +30,15 @@ export default function FormA() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      setStatus(res.ok ? 'success' : 'error')
+      if (res.ok) {
+        setStatus('success')
+        setTimeout(() => {
+          setStatus('idle')
+          setForm(INITIAL_FORM)
+        }, 6000)
+      } else {
+        setStatus('error')
+      }
     } catch {
       setStatus('error')
     }
@@ -82,7 +92,7 @@ export default function FormA() {
           font-size: 14px;
           color: var(--ink);
           background: var(--paper);
-          border: 1.5px solid rgba(26,26,24,0.15);
+          border: 1.5px solid rgba(26,26,24,0.25);
           outline: none;
           transition: border-color 0.2s;
           appearance: none;
@@ -92,6 +102,7 @@ export default function FormA() {
         }
         .form-textarea { resize: vertical; min-height: 120px; }
         .form-submit { width: 100%; padding: 16px; font-size: 13px; margin-top: 8px; }
+        .form-honeypot { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
         .form-tel-big {
           margin-top: 32px; padding-top: 28px;
           border-top: 1px solid rgba(26,26,24,0.1);
@@ -143,15 +154,25 @@ export default function FormA() {
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 
                 <form onSubmit={submit}>
-                  {/* Identité */}
+                  {/* Honeypot anti-spam — masqué visuellement */}
+                  <div className="form-honeypot" aria-hidden="true">
+                    <input
+                      type="text"
+                      name="_gotcha"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      onChange={set('_gotcha' as keyof typeof form as string)}
+                    />
+                  </div>
+
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label" htmlFor="nom">Prénom NOM</label>
-                      <input id="nom" type="text" className="form-input" placeholder="Jean Dupont" value={form.nom} onChange={set('nom')} required />
+                      <input id="nom" type="text" className="form-input" placeholder="Jean Dupont" value={form.nom} onChange={set('nom')} autoComplete="name" required />
                     </div>
                     <div className="form-group">
                       <label className="form-label" htmlFor="tel">Téléphone</label>
-                      <input id="tel" type="tel" className="form-input" placeholder="06 …" value={form.tel} onChange={set('tel')} required />
+                      <input id="tel" type="tel" className="form-input" placeholder="06 …" value={form.tel} onChange={set('tel')} autoComplete="tel" required />
                     </div>
                   </div>
 
@@ -159,10 +180,9 @@ export default function FormA() {
                     <label className="form-label" htmlFor="email">
                       Email <span className="optional">(facultatif)</span>
                     </label>
-                    <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} />
+                    <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} autoComplete="email" />
                   </div>
 
-                  {/* Qualification */}
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label" htmlFor="profil">Vous êtes</label>
@@ -204,7 +224,7 @@ export default function FormA() {
                   </div>
 
                   {status === 'error' && (
-                    <p style={{ color: '#c0392b', fontSize: 13, marginBottom: 12 }}>
+                    <p role="alert" aria-live="polite" style={{ color: '#c0392b', fontSize: 13, marginBottom: 12 }}>
                       Une erreur est survenue. Appelez-nous directement.
                     </p>
                   )}

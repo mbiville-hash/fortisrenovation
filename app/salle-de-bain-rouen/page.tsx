@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: 'Rénovation Salle de Bain Rouen — Plan 3D inclus',
     description: 'Rénovation complète de salle de bain à Rouen. Plan 3D inclus, devis sous 48h, prix fixe.',
     url: 'https://www.fortisrenovation.fr/salle-de-bain-rouen',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
   },
 }
 
@@ -44,7 +47,7 @@ export default function SalleDeBainPage() {
                 Prix fixe · Délais respectés · Travaux garantis
               </p>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
-                Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:0767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+                Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
