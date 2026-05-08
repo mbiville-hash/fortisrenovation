@@ -10,8 +10,17 @@ declare global {
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
-const INITIAL_FORM = { nom: '', tel: '', email: '' }
-const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+const INITIAL_FORM = {
+  nom: '',
+  tel: '',
+  email: '',
+  profil: '',
+  type_projet: '',
+  urgence: '',
+  message: '',
+}
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAADLVOzCSZcAAFn5C'
 
 export default function FormA() {
   const [status, setStatus] = useState<Status>('idle')
@@ -21,7 +30,7 @@ export default function FormA() {
 
   useEffect(() => {
     window.onTurnstileVerify = setCaptchaToken
-    if (SITE_KEY && !document.querySelector('script[src*="turnstile"]')) {
+    if (!document.querySelector('script[src*="turnstile"]')) {
       const script = document.createElement('script')
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
       script.async = true
@@ -30,12 +39,12 @@ export default function FormA() {
   }, [])
 
   const set = (k: keyof typeof INITIAL_FORM) =>
-    (e: React.ChangeEvent<HTMLInputElement>) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm(f => ({ ...f, [k]: e.target.value }))
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (SITE_KEY && !captchaToken) return
+    if (!captchaToken) return
     setStatus('sending')
     try {
       const res = await fetch('/api/contact', {
@@ -90,7 +99,12 @@ export default function FormA() {
           letter-spacing: 0.12em; text-transform: uppercase;
           color: var(--ink-soft); margin-bottom: 8px;
         }
-        .form-input {
+        .form-label .optional {
+          font-weight: 400; text-transform: none;
+          letter-spacing: 0; font-size: 11px;
+          color: var(--ink-faint); margin-left: 6px;
+        }
+        .form-input, .form-select, .form-textarea {
           width: 100%;
           padding: 13px 16px;
           font-family: 'Montserrat', sans-serif;
@@ -100,8 +114,12 @@ export default function FormA() {
           border: 1.5px solid rgba(26,26,24,0.25);
           outline: none;
           transition: border-color 0.2s;
+          appearance: none;
         }
-        .form-input:focus { border-color: var(--gold); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+          border-color: var(--gold);
+        }
+        .form-textarea { resize: vertical; min-height: 120px; }
         .form-submit { width: 100%; padding: 16px; font-size: 13px; margin-top: 8px; }
         .form-honeypot { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
         .form-tel-big {
@@ -201,16 +219,58 @@ export default function FormA() {
                     <input id="email" type="email" className="form-input" placeholder="jean@exemple.fr" value={form.email} onChange={set('email')} autoComplete="email" required />
                   </div>
 
-                  {SITE_KEY && (
+                  <div className="form-row">
                     <div className="form-group">
-                      <div
-                        className="cf-turnstile"
-                        data-sitekey={SITE_KEY}
-                        data-callback="onTurnstileVerify"
-                        data-theme="light"
-                      />
+                      <label className="form-label" htmlFor="profil">
+                        Vous êtes <span className="optional">(facultatif)</span>
+                      </label>
+                      <select id="profil" className="form-select" value={form.profil} onChange={set('profil')}>
+                        <option value="">— Choisissez —</option>
+                        <option value="Syndic / Bailleur">Syndic / Bailleur</option>
+                        <option value="Particulier">Particulier</option>
+                        <option value="Autre">Autre</option>
+                      </select>
                     </div>
-                  )}
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="type_projet">
+                        Type de projet <span className="optional">(facultatif)</span>
+                      </label>
+                      <select id="type_projet" className="form-select" value={form.type_projet} onChange={set('type_projet')}>
+                        <option value="">— Choisissez —</option>
+                        <option value="Maintenance immobilière">Maintenance immobilière</option>
+                        <option value="Rénovation salle de bain">Rénovation salle de bain</option>
+                        <option value="Dégât des eaux">Dégât des eaux</option>
+                        <option value="Autre">Autre</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="urgence">
+                      Urgence <span className="optional">(facultatif)</span>
+                    </label>
+                    <select id="urgence" className="form-select" value={form.urgence} onChange={set('urgence')}>
+                      <option value="">— Non précisé —</option>
+                      <option value="Oui">Oui — intervention urgente</option>
+                      <option value="Non">Non — planifiable</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="message">
+                      Votre message <span className="optional">(facultatif)</span>
+                    </label>
+                    <textarea id="message" className="form-textarea" placeholder="Décrivez votre projet en quelques mots…" value={form.message} onChange={set('message')} />
+                  </div>
+
+                  <div className="form-group">
+                    <div
+                      className="cf-turnstile"
+                      data-sitekey={TURNSTILE_SITE_KEY}
+                      data-callback="onTurnstileVerify"
+                      data-theme="light"
+                    />
+                  </div>
 
                   {status === 'error' && (
                     <p role="alert" aria-live="polite" style={{ color: '#c0392b', fontSize: 13, marginBottom: 12 }}>
@@ -221,7 +281,7 @@ export default function FormA() {
                   <button
                     type="submit"
                     className="btn btn-gold form-submit"
-                    disabled={status === 'sending' || (!!SITE_KEY && !captchaToken)}
+                    disabled={status === 'sending' || !captchaToken}
                   >
                     {status === 'sending' ? 'Envoi…' : 'Envoyer ma demande'}
                   </button>

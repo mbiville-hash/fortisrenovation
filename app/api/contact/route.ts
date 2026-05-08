@@ -6,7 +6,7 @@ const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { nom, tel, email, _gotcha, cf_token } = body
+    const { nom, tel, email, profil, type_projet, urgence, message, _gotcha, cf_token } = body
 
     // Honeypot — bots fill this, humans don't
     if (_gotcha) {
@@ -18,10 +18,10 @@ export async function POST(req: NextRequest) {
     }
 
     // Turnstile CAPTCHA validation
+    if (!cf_token) {
+      return NextResponse.json({ error: 'Captcha manquant' }, { status: 400 })
+    }
     if (TURNSTILE_SECRET) {
-      if (!cf_token) {
-        return NextResponse.json({ error: 'Captcha manquant' }, { status: 400 })
-      }
       const verif = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,6 +42,10 @@ export async function POST(req: NextRequest) {
       nom,
       tel,
       email,
+      profil: profil || 'Non précisé',
+      type_projet: type_projet || 'Non précisé',
+      urgence: urgence || 'Non précisé',
+      message: message || '',
       date_envoi: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
     }
 
