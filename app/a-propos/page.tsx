@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { BASE_SCHEMA, breadcrumbSchema } from '@/lib/schema'
 
@@ -55,11 +56,15 @@ export default function AProposPage() {
                 </p>
               </div>
 
-              {/* Placeholder photo dirigeant */}
-              <div style={{ background: 'var(--ink)', aspectRatio: '4/5', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: 400 }}>
-                <span style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 13, letterSpacing: '0.15em', color: 'rgba(184,151,90,0.7)', textAlign: 'center', padding: 24 }}>
-                  Photo<br />dirigeant
-                </span>
+              <div style={{ position: 'relative', aspectRatio: '4/5', maxWidth: 400, overflow: 'hidden' }}>
+                <Image
+                  src="/IMG_4452.jpg"
+                  alt="Dirigeant Fortis Rénovation — Rouen"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                />
               </div>
             </div>
           </div>

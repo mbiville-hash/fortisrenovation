@@ -32,6 +32,20 @@ export const metadata: Metadata = {
     title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
     description: 'Rénovation salle de bain et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h. Syndics, bailleurs, particuliers.',
     url: 'https://www.fortisrenovation.fr',
+    images: [
+      {
+        url: '/web-app-manifest-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
+    description: 'Rénovation salle de bain et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h.',
+    images: ['/web-app-manifest-512x512.png'],
   },
 }
 

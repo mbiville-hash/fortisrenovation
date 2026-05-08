@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
+import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Plombier Sotteville-lès-Rouen — Maintenance & dégât des eaux | Fortis Rénovation',
@@ -41,6 +41,7 @@ export default function PlombierSottevillePage() {
         { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
         { name: 'Plombier Sotteville-lès-Rouen', url: 'https://www.fortisrenovation.fr/plombier-sotteville-les-rouen' },
       ]))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
 
       <main style={{ paddingTop: 68 }}>
         {/* Hero */}

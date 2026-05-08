@@ -120,7 +120,7 @@ export default function HeroA() {
 
         <div className="hero-side" id="particuliers">
           <p className="hero-tag">Propriétaires · Locataires</p>
-          <h1 className="hero-title">Votre salle de<br />bain repensée,<br />en 3D.</h1>
+          <h2 className="hero-title">Votre salle de<br />bain repensée,<br />en 3D.</h2>
           <p className="hero-desc">
             Du projet à la pose, en passant par le <strong>plan 3D inclus</strong>. Résultat garanti, sans mauvaise surprise.
           </p>

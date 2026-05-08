@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
+import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Maintenance immobilière Rouen — Syndics & Bailleurs | Fortis Rénovation',
@@ -44,6 +44,7 @@ export default function ProsPage() {
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
         { name: 'Professionnels', url: 'https://www.fortisrenovation.fr/professionnels' },
       ]))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
       <main style={{ paddingTop: 68 }}>
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
           <div className="container">
