@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
       date_envoi: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
     }
 
+    console.log('Calling webhook URL:', WEBHOOK_URL)
     const res = await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
