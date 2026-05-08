@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
       })
       const verifData = await verif.json()
       if (!verifData.success) {
+        console.error('Turnstile rejected — error-codes:', JSON.stringify(verifData['error-codes']), '| hostname:', verifData.hostname)
         return NextResponse.json({ error: 'Captcha invalide' }, { status: 400 })
       }
     }

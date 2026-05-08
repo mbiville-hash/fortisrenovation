@@ -41,7 +41,7 @@ export default function SalleDeBainPage() {
                 Rénovation salle de bain à Rouen.
               </h1>
               <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: 16 }}>
-                Du projet à la pose, on s'occupe de tout. Et on commence par vous offrir le <strong style={{ color: 'white' }}>plan 3D</strong> de votre future salle de bain.
+                Du projet à la pose, on s'occupe de tout. Votre <strong style={{ color: 'white' }}>plan 3D</strong> est inclus dès le départ.
               </p>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 8 }}>
                 Prix fixe · Délais respectés · Travaux garantis
@@ -99,12 +99,11 @@ export default function SalleDeBainPage() {
                 </h2>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {[
-                    'Plan 3D de votre projet (inclus)',
+                    'Plan 3D de votre futur espace',
                     'Démolition et évacuation des gravats',
                     'Plomberie & installation sanitaire',
                     'Électricité et éclairage',
-                    'Carrelage sol & murs',
-                    'Faïence et joints',
+                    'Carrelage sol, murs et joints',
                     'Menuiserie et finitions',
                     'Nettoyage de fin de chantier',
                   ].map((item) => (
@@ -122,8 +121,8 @@ export default function SalleDeBainPage() {
                 <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 24, lineHeight: 1.5, marginBottom: 24, color: 'white' }}>
                   Le prix signé au devis est le prix que vous payez.
                 </p>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, marginBottom: 32 }}>
-                  Pas de surcoût surprise. Pas de mauvaise découverte. Si un imprévu arrive, on vous en parle avant d'agir.
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75, marginBottom: 32 }}>
+                  Aucun surcoût. Aucune décision sans votre accord.
                 </p>
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
               </div>
