@@ -96,6 +96,7 @@ export default function PartB() {
                 src="/plan-salle-de-bain.png"
                 alt="Plan salle de bain — Fortis Rénovation"
                 fill
+                priority
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
