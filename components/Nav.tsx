@@ -62,6 +62,17 @@ export default function Nav() {
           transition: background 0.2s, border-color 0.2s !important;
         }
         .nav-pro:hover { background: rgba(184,151,90,0.1) !important; border-color: var(--gold) !important; color: var(--gold) !important; }
+        .nav-access {
+          color: var(--white) !important;
+          border: 1px solid rgba(255,255,255,0.38);
+          padding: 8px 18px;
+          transition: background 0.2s, border-color 0.2s, color 0.2s !important;
+        }
+        .nav-access:hover {
+          background: rgba(184,151,90,0.12);
+          border-color: var(--gold);
+          color: var(--gold) !important;
+        }
         .nav-cta {
           background: var(--gold); color: var(--white) !important;
           padding: 10px 22px; font-size: 12px !important;
@@ -77,7 +88,7 @@ export default function Nav() {
           cursor: pointer; color: var(--white);
           font-size: 22px; line-height: 1;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 980px) {
           .nav-links { display: none; }
           .nav-hamburger { display: block; }
           .nav-mobile {
@@ -103,6 +114,7 @@ export default function Nav() {
 
         <ul className="nav-links">
           <li><Link href="/professionnels" className="nav-pro" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
+          <li><Link href="/espace-pro" className="nav-access" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
           <li><Link href="/salle-de-bain-rouen" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
           <li><Link href="/#avis">Avis</Link></li>
           <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
@@ -120,6 +132,7 @@ export default function Nav() {
           <Link href="/degat-des-eaux-rouen" onClick={() => setOpen(false)}>Dégât des eaux</Link>
           <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)}>Salle de bain</Link>
           <Link href="/professionnels" onClick={() => setOpen(false)}>Offre pro</Link>
+          <Link href="/espace-pro" onClick={() => setOpen(false)}>Accès pro</Link>
           <a href="tel:+33767491324">07 67 49 13 24</a>
           <Link href="/devis" className="btn btn-gold" onClick={() => setOpen(false)}>Devis gratuit</Link>
         </div>
