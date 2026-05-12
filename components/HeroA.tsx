@@ -129,7 +129,7 @@ export default function HeroA() {
             <li>Délais respectés, prix fixe</li>
             <li>Travaux clé en main</li>
           </ul>
-          <Link href="/devis" className="btn btn-outline-white">Demander un devis</Link>
+          <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir l'offre salle de bain</Link>
         </div>
       </section>
     </>
