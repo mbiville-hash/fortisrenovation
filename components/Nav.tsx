@@ -37,6 +37,11 @@ export default function Nav() {
           border-color: rgba(184,151,90,0.2);
           box-shadow: 0 12px 34px rgba(0,0,0,0.32);
         }
+        .nav-right {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+        }
         .nav-logo {
           font-family: 'Bodoni Moda', serif;
           font-size: 22px;
@@ -46,30 +51,6 @@ export default function Nav() {
           white-space: nowrap;
         }
         .nav-logo span { color: var(--gold); }
-        .nav-desktop {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 34px;
-          flex: 1;
-          min-width: 0;
-        }
-        .nav-links,
-        .nav-actions {
-          display: flex; gap: 28px; align-items: center;
-          list-style: none;
-        }
-        .nav-link {
-          font-size: 11px; font-weight: 600;
-          letter-spacing: 0.12em; text-transform: uppercase;
-          color: rgba(255,255,255,0.74);
-          transition: color 0.2s, opacity 0.2s;
-          white-space: nowrap;
-        }
-        .nav-link:hover,
-        .nav-link[aria-current="page"] {
-          color: var(--white);
-        }
         .nav-cta {
           display: inline-flex;
           align-items: center;
@@ -87,28 +68,83 @@ export default function Nav() {
         }
         .nav-cta:hover { background: var(--gold-light); }
         .nav-hamburger {
-          display: none;
-          background: none; border: none;
-          cursor: pointer; color: var(--white);
-          font-size: 22px; line-height: 1;
+          width: 44px;
+          height: 44px;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          background: transparent;
+          border: 1px solid rgba(255,255,255,0.16);
+          cursor: pointer;
+          color: var(--white);
+          transition: border-color 0.2s, background 0.2s;
         }
-        @media (max-width: 1080px) {
-          .nav-desktop { display: none; }
-          .nav-hamburger { display: block; }
-          .nav-mobile {
-            position: fixed; top: 72px; left: 0; right: 0;
-            background: var(--dark);
-            padding: 24px 32px 32px;
-            display: flex; flex-direction: column; gap: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            z-index: 999;
+        .nav-hamburger:hover {
+          border-color: rgba(184,151,90,0.55);
+          background: rgba(255,255,255,0.03);
+        }
+        .nav-hamburger span {
+          width: 17px;
+          height: 1px;
+          background: currentColor;
+          opacity: 0.86;
+          transition: transform 0.2s, opacity 0.2s;
+        }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+        .nav-panel {
+          position: fixed;
+          top: 72px;
+          right: 24px;
+          width: min(420px, calc(100vw - 48px));
+          background: rgba(17,17,16,0.98);
+          border: 1px solid rgba(184,151,90,0.22);
+          box-shadow: 0 28px 80px rgba(0,0,0,0.42);
+          padding: 28px;
+          z-index: 999;
+        }
+        .nav-panel-links {
+          display: grid;
+          gap: 2px;
+        }
+        .nav-panel-links a {
+          display: flex;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          color: rgba(255,255,255,0.84);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          transition: color 0.2s;
+        }
+        .nav-panel-links a:hover,
+        .nav-panel-links a[aria-current="page"] {
+          color: var(--gold);
+        }
+        .nav-panel-meta {
+          margin-top: 24px;
+          color: rgba(255,255,255,0.5);
+          font-size: 12px;
+          line-height: 1.7;
+        }
+        @media (max-width: 620px) {
+          .nav { padding: 0 18px; }
+          .nav-cta { display: none; }
+          .nav-panel {
+            top: 72px;
+            left: 0;
+            right: 0;
+            width: auto;
+            border-left: 0;
+            border-right: 0;
+            padding: 24px;
           }
-          .nav-mobile a {
-            font-size: 14px; font-weight: 600;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            color: rgba(255,255,255,0.85);
-          }
-          .nav-mobile .btn { align-self: flex-start; }
         }
       `}</style>
 
@@ -117,34 +153,32 @@ export default function Nav() {
           FORTIS<span>.</span>
         </Link>
 
-        <div className="nav-desktop">
-          <ul className="nav-links">
-            <li><Link href="/professionnels" className="nav-link" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
-            <li><Link href="/salle-de-bain-rouen" className="nav-link" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
-            <li><Link href="/#avis" className="nav-link">Avis</Link></li>
-            <li><Link href="/espace-pro" className="nav-link" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
-            <li><a href="tel:+33767491324" className="nav-link">07 67 49 13 24</a></li>
-          </ul>
-
-          <ul className="nav-actions">
-            <li><Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Devis gratuit</Link></li>
-          </ul>
+        <div className="nav-right">
+          <Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Étudier mon projet</Link>
+          <button className={`nav-hamburger${open ? ' open' : ''}`} onClick={() => setOpen(!open)} aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open}>
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
-
-        <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
-          {open ? '✕' : '☰'}
-        </button>
       </nav>
 
       {open && (
-        <div className="nav-mobile">
-          <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)}>Maintenance immobilière</Link>
-          <Link href="/degat-des-eaux-rouen" onClick={() => setOpen(false)}>Dégât des eaux</Link>
-          <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)}>Salle de bain</Link>
-          <Link href="/professionnels" onClick={() => setOpen(false)}>Offre pro</Link>
-          <Link href="/espace-pro" onClick={() => setOpen(false)}>Accès pro</Link>
-          <a href="tel:+33767491324">07 67 49 13 24</a>
-          <Link href="/devis" className="btn btn-gold" onClick={() => setOpen(false)}>Devis gratuit</Link>
+        <div className="nav-panel">
+          <div className="nav-panel-links">
+            <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link>
+            <Link href="/douche-italienne-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/douche-italienne-rouen' ? 'page' : undefined}>Douche italienne</Link>
+            <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
+            <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Clé en main</Link>
+            <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Professionnels</Link>
+            <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
+            <Link href="/espace-pro" onClick={() => setOpen(false)} aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link>
+            <Link href="/devis" onClick={() => setOpen(false)} aria-current={pathname === '/devis' ? 'page' : undefined}>Étudier mon projet</Link>
+          </div>
+          <div className="nav-panel-meta">
+            <a href="tel:+33767491324" onClick={() => setOpen(false)}>07 67 49 13 24</a><br />
+            Rouen & métropole normande
+          </div>
         </div>
       )}
     </>

@@ -101,7 +101,7 @@ export default function Footer() {
                 <li><Link href="/renovation-salle-de-bain-cle-en-main-rouen">Clé en main</Link></li>
                 <li><Link href="/salle-de-bain-senior">Salle de bain senior</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
-                <li><Link href="/devis">Devis gratuit</Link></li>
+                <li><Link href="/devis">Étudier mon projet</Link></li>
               </ul>
             </div>
 

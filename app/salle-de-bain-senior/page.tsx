@@ -4,11 +4,11 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: "Salle de bain senior Rouen — Adaptation & MaPrimeAdapt' | Fortis Rénovation",
-  description: "Adaptation salle de bain pour senior à Rouen. Douche à l'italienne, barres d'appui. MaPrimeAdapt' jusqu'à 70 % pris en charge. Devis gratuit. 07 67 49 13 24",
+  description: "Adaptation salle de bain pour senior à Rouen. Douche à l'italienne, barres d'appui. MaPrimeAdapt' jusqu'à 70 % pris en charge. Étude sous 48h.",
   alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-senior' },
   openGraph: {
     title: "Salle de bain senior Rouen — Adaptation & MaPrimeAdapt'",
-    description: "Adaptation salle de bain pour senior à Rouen. MaPrimeAdapt' jusqu'à 70 % pris en charge. Devis gratuit sous 48h.",
+    description: "Adaptation salle de bain pour senior à Rouen. MaPrimeAdapt' jusqu'à 70 % pris en charge. Étude sous 48h.",
     url: 'https://www.fortisrenovation.fr/salle-de-bain-senior',
     locale: 'fr_FR',
     type: 'website',
@@ -106,7 +106,7 @@ export default function SalleDeBainSeniorPage() {
               <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <Link href="/devis" className="btn btn-gold">Demander un devis gratuit</Link>
+              <Link href="/devis" className="btn btn-gold">Étudier le projet</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>
@@ -178,10 +178,10 @@ export default function SalleDeBainSeniorPage() {
               Parlons de votre projet.
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', maxWidth: 480, margin: '0 auto 40px', lineHeight: 1.7 }}>
-              Devis gratuit sous 48h. Un rendez-vous, un interlocuteur. On vérifie votre éligibilité à MaPrimeAdapt&apos; dès le premier appel.
+              Étude sous 48h. Un rendez-vous, un interlocuteur. On vérifie votre éligibilité à MaPrimeAdapt&apos; dès le premier appel.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/devis" className="btn btn-gold">Demander mon devis</Link>
+              <Link href="/devis" className="btn btn-gold">Étudier le projet</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>

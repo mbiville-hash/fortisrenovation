@@ -109,10 +109,10 @@ export default function ProsPage() {
               Parlons de votre parc.
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', marginBottom: 40 }}>
-              Devis gratuit sous 48h. Un rendez-vous, un interlocuteur.
+              Étude sous 48h. Un rendez-vous, un interlocuteur.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/devis" className="btn btn-gold">Demander mon devis</Link>
+              <Link href="/devis" className="btn btn-gold">Étudier mon projet</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>

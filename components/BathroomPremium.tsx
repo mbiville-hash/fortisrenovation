@@ -208,7 +208,7 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
               <h1>{title}</h1>
               <p>{intro}</p>
               <div className="bath-actions">
-                <Link href="/devis" className="btn btn-gold">Obtenir un devis salle de bain</Link>
+                <Link href="/devis" className="btn btn-gold">Étudier mon projet</Link>
                 <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir la méthode Fortis</Link>
               </div>
             </div>
