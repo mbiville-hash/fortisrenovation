@@ -21,66 +21,91 @@ export default function Nav() {
         .nav {
           position: fixed; top: 0; left: 0; right: 0;
           z-index: 1000;
-          padding: 0 32px;
-          height: 68px;
+          padding: 0 28px;
+          height: 72px;
           display: flex; align-items: center; justify-content: space-between;
-          background: rgba(17,17,16,0.82);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          transition: background 0.3s, box-shadow 0.3s;
+          gap: 28px;
+          background: rgba(17,17,16,0.94);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 0 10px 34px rgba(0,0,0,0.22);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
         .nav.scrolled {
           background: var(--dark);
-          box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+          border-color: rgba(184,151,90,0.2);
+          box-shadow: 0 12px 34px rgba(0,0,0,0.32);
         }
         .nav-logo {
           font-family: 'Bodoni Moda', serif;
-          font-size: 20px;
+          font-size: 22px;
           font-weight: 700;
           letter-spacing: 0.04em;
           color: var(--white);
+          white-space: nowrap;
         }
         .nav-logo span { color: var(--gold); }
+        .nav-desktop {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 30px;
+          flex: 1;
+          min-width: 0;
+        }
         .nav-links {
-          display: flex; gap: 32px; align-items: center;
+          display: flex; gap: 24px; align-items: center;
           list-style: none;
         }
         .nav-links a {
-          font-size: 12px; font-weight: 600;
+          font-size: 11px; font-weight: 600;
           letter-spacing: 0.1em; text-transform: uppercase;
-          color: rgba(255,255,255,0.85);
+          color: rgba(255,255,255,0.78);
           transition: color 0.2s;
+          white-space: nowrap;
         }
         .nav-links a:hover { color: var(--gold); }
+        .nav-actions {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          list-style: none;
+        }
         .nav-pro {
-          font-size: 12px !important;
+          color: var(--gold) !important;
+        }
+        .nav-pro:hover { color: var(--gold-light) !important; }
+        .nav-access {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 38px;
+          padding: 0 18px;
+          border: 1px solid rgba(184,151,90,0.55);
+          color: var(--gold) !important;
+          font-size: 11px !important;
           font-weight: 700 !important;
           letter-spacing: 0.1em !important;
-          color: var(--gold) !important;
-          border: 1px solid rgba(184,151,90,0.5);
-          padding: 8px 18px;
-          transition: background 0.2s, border-color 0.2s !important;
-        }
-        .nav-pro:hover { background: rgba(184,151,90,0.1) !important; border-color: var(--gold) !important; color: var(--gold) !important; }
-        .nav-access {
-          color: var(--white) !important;
-          border: 1px solid rgba(255,255,255,0.38);
-          padding: 8px 18px;
-          transition: background 0.2s, border-color 0.2s, color 0.2s !important;
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: background 0.2s, border-color 0.2s, color 0.2s;
         }
         .nav-access:hover {
-          background: rgba(184,151,90,0.12);
+          background: rgba(184,151,90,0.1);
           border-color: var(--gold);
-          color: var(--gold) !important;
+          color: var(--gold-light) !important;
         }
         .nav-cta {
           background: var(--gold); color: var(--white) !important;
-          padding: 10px 22px; font-size: 12px !important;
+          padding: 12px 22px; font-size: 11px !important;
+          white-space: nowrap;
         }
         .nav-phone {
-          font-size: 14px !important;
-          letter-spacing: 0.05em !important;
+          font-size: 13px !important;
+          letter-spacing: 0.04em !important;
           color: var(--white) !important;
+          white-space: nowrap;
         }
         .nav-hamburger {
           display: none;
@@ -88,11 +113,11 @@ export default function Nav() {
           cursor: pointer; color: var(--white);
           font-size: 22px; line-height: 1;
         }
-        @media (max-width: 980px) {
-          .nav-links { display: none; }
+        @media (max-width: 1080px) {
+          .nav-desktop { display: none; }
           .nav-hamburger { display: block; }
           .nav-mobile {
-            position: fixed; top: 68px; left: 0; right: 0;
+            position: fixed; top: 72px; left: 0; right: 0;
             background: var(--dark);
             padding: 24px 32px 32px;
             display: flex; flex-direction: column; gap: 20px;
@@ -112,14 +137,19 @@ export default function Nav() {
           FORTIS<span>.</span>
         </Link>
 
-        <ul className="nav-links">
-          <li><Link href="/professionnels" className="nav-pro" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
-          <li><Link href="/espace-pro" className="nav-access" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
-          <li><Link href="/salle-de-bain-rouen" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
-          <li><Link href="/#avis">Avis</Link></li>
-          <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
-          <li><Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Devis gratuit</Link></li>
-        </ul>
+        <div className="nav-desktop">
+          <ul className="nav-links">
+            <li><Link href="/professionnels" className="nav-pro" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
+            <li><Link href="/salle-de-bain-rouen" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
+            <li><Link href="/#avis">Avis</Link></li>
+          </ul>
+
+          <ul className="nav-actions">
+            <li><Link href="/espace-pro" className="nav-access" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
+            <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
+            <li><Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Devis gratuit</Link></li>
+          </ul>
+        </div>
 
         <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? '✕' : '☰'}

@@ -29,6 +29,12 @@ type PortalDocument = {
   name: string
   url: string
   updatedAt: string
+  category?: 'invoice' | 'quote' | 'report' | 'document'
+}
+
+type DocumentStatus = {
+  state: 'no_drive_folder' | 'empty_drive_folder' | 'copied' | 'drive_error'
+  message: string
 }
 
 type Affaire = {
@@ -43,6 +49,7 @@ type Affaire = {
   invoices: Invoice[]
   quotes: Quote[]
   documents: PortalDocument[]
+  documentStatus?: DocumentStatus
 }
 
 type Company = {
@@ -335,6 +342,13 @@ function CompanySection({ company }: { company: Company }) {
 }
 
 function AffaireCard({ affaire }: { affaire: Affaire }) {
+  const invoiceDocuments = affaire.documents.filter((doc) => doc.category === 'invoice')
+  const quoteDocuments = affaire.documents.filter((doc) => doc.category === 'quote')
+  const reportDocuments = affaire.documents.filter((doc) => doc.category === 'report' || !doc.category || doc.category === 'document')
+  const hasInvoices = Boolean(affaire.invoiceUrl || affaire.invoices.length || invoiceDocuments.length)
+  const hasQuotes = Boolean(affaire.quoteUrl || affaire.quotes.length || quoteDocuments.length)
+  const hasReports = Boolean(affaire.reportUrl || reportDocuments.length)
+
   return (
     <article className="affaire-card">
       <div className="affaire-head">
@@ -350,21 +364,27 @@ function AffaireCard({ affaire }: { affaire: Affaire }) {
         <DocumentPanel title="Factures">
           {affaire.invoiceUrl && <DocumentLink href={affaire.invoiceUrl} label="Facture liée à l’affaire" meta="Qonto" />}
           {affaire.invoices.map((invoice) => <InvoiceRow key={invoice.id || invoice.number} invoice={invoice} />)}
-          {!affaire.invoiceUrl && affaire.invoices.length === 0 && <Empty text="Aucune facture rattachée à cette affaire." />}
+          {invoiceDocuments.map((doc) => (
+            <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'Drive'} />
+          ))}
+          {!hasInvoices && <Empty text="Aucune facture disponible pour cette affaire pour le moment." />}
         </DocumentPanel>
 
         <DocumentPanel title="Devis">
           {affaire.quoteUrl && <DocumentLink href={affaire.quoteUrl} label="Devis lié à l’affaire" meta="Qonto" />}
           {affaire.quotes.map((quote) => <QuoteRow key={quote.id || quote.number} quote={quote} />)}
-          {!affaire.quoteUrl && affaire.quotes.length === 0 && <Empty text="Aucun devis rattaché à cette affaire." />}
+          {quoteDocuments.map((doc) => (
+            <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'Drive'} />
+          ))}
+          {!hasQuotes && <Empty text="Aucun devis disponible pour cette affaire pour le moment." />}
         </DocumentPanel>
 
         <DocumentPanel title="Bons d’intervention">
           {affaire.reportUrl && <DocumentLink href={affaire.reportUrl} label="Rapport d’intervention" meta="Drive" />}
-          {affaire.documents.map((doc) => (
-            <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'PDF'} />
+          {reportDocuments.map((doc) => (
+            <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'Drive'} />
           ))}
-          {!affaire.reportUrl && affaire.documents.length === 0 && <Empty text="Aucun bon disponible pour cette affaire." />}
+          {!hasReports && <Empty text="Aucun document disponible pour cette affaire pour le moment." />}
         </DocumentPanel>
       </div>
     </article>
@@ -421,8 +441,8 @@ function Empty({ text }: { text: string }) {
 }
 
 const styles = `
-.pro-space { padding-top: 68px; background: var(--paper); min-height: 100vh; }
-.pro-login { min-height: calc(100vh - 68px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .68fr); gap: 56px; align-items: center; max-width: 1180px; margin: 0 auto; padding: 56px 24px 72px; }
+.pro-space { padding-top: 72px; background: var(--paper); min-height: 100vh; }
+.pro-login { min-height: calc(100vh - 72px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .68fr); gap: 56px; align-items: center; max-width: 1180px; margin: 0 auto; padding: 56px 24px 72px; }
 .pro-hero { min-height: 620px; background: var(--dark); color: white; padding: 56px 52px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
 .pro-hero::after { content: ''; position: absolute; right: -90px; bottom: -130px; width: 360px; height: 360px; border: 1px solid rgba(184,151,90,.35); transform: rotate(32deg); }
 .eyebrow { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; }
