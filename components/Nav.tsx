@@ -21,10 +21,10 @@ export default function Nav() {
         .nav {
           position: fixed; top: 0; left: 0; right: 0;
           z-index: 1000;
-          padding: 0 28px;
+          padding: 0 34px;
           height: 72px;
           display: flex; align-items: center; justify-content: space-between;
-          gap: 28px;
+          gap: 34px;
           background: rgba(17,17,16,0.94);
           border-bottom: 1px solid rgba(255,255,255,0.08);
           box-shadow: 0 10px 34px rgba(0,0,0,0.22);
@@ -50,63 +50,42 @@ export default function Nav() {
           display: flex;
           align-items: center;
           justify-content: flex-end;
-          gap: 30px;
+          gap: 34px;
           flex: 1;
           min-width: 0;
         }
-        .nav-links {
-          display: flex; gap: 24px; align-items: center;
+        .nav-links,
+        .nav-actions {
+          display: flex; gap: 28px; align-items: center;
           list-style: none;
         }
-        .nav-links a {
+        .nav-link {
           font-size: 11px; font-weight: 600;
-          letter-spacing: 0.1em; text-transform: uppercase;
-          color: rgba(255,255,255,0.78);
-          transition: color 0.2s;
+          letter-spacing: 0.12em; text-transform: uppercase;
+          color: rgba(255,255,255,0.74);
+          transition: color 0.2s, opacity 0.2s;
           white-space: nowrap;
         }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-actions {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          list-style: none;
+        .nav-link:hover,
+        .nav-link[aria-current="page"] {
+          color: var(--white);
         }
-        .nav-pro {
-          color: var(--gold) !important;
-        }
-        .nav-pro:hover { color: var(--gold-light) !important; }
-        .nav-access {
+        .nav-cta {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-height: 38px;
-          padding: 0 18px;
-          border: 1px solid rgba(184,151,90,0.55);
-          color: var(--gold) !important;
+          min-height: 44px;
+          background: var(--gold);
+          color: var(--white) !important;
+          padding: 0 26px;
           font-size: 11px !important;
           font-weight: 700 !important;
-          letter-spacing: 0.1em !important;
+          letter-spacing: 0.12em !important;
           text-transform: uppercase;
           white-space: nowrap;
-          transition: background 0.2s, border-color 0.2s, color 0.2s;
+          transition: background 0.2s, transform 0.15s;
         }
-        .nav-access:hover {
-          background: rgba(184,151,90,0.1);
-          border-color: var(--gold);
-          color: var(--gold-light) !important;
-        }
-        .nav-cta {
-          background: var(--gold); color: var(--white) !important;
-          padding: 12px 22px; font-size: 11px !important;
-          white-space: nowrap;
-        }
-        .nav-phone {
-          font-size: 13px !important;
-          letter-spacing: 0.04em !important;
-          color: var(--white) !important;
-          white-space: nowrap;
-        }
+        .nav-cta:hover { background: var(--gold-light); }
         .nav-hamburger {
           display: none;
           background: none; border: none;
@@ -129,6 +108,7 @@ export default function Nav() {
             letter-spacing: 0.1em; text-transform: uppercase;
             color: rgba(255,255,255,0.85);
           }
+          .nav-mobile .btn { align-self: flex-start; }
         }
       `}</style>
 
@@ -139,14 +119,14 @@ export default function Nav() {
 
         <div className="nav-desktop">
           <ul className="nav-links">
-            <li><Link href="/professionnels" className="nav-pro" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
-            <li><Link href="/salle-de-bain-rouen" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
-            <li><Link href="/#avis">Avis</Link></li>
+            <li><Link href="/professionnels" className="nav-link" aria-current={pathname === '/professionnels' ? 'page' : undefined}>Offre pro</Link></li>
+            <li><Link href="/salle-de-bain-rouen" className="nav-link" aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link></li>
+            <li><Link href="/#avis" className="nav-link">Avis</Link></li>
+            <li><Link href="/espace-pro" className="nav-link" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
+            <li><a href="tel:+33767491324" className="nav-link">07 67 49 13 24</a></li>
           </ul>
 
           <ul className="nav-actions">
-            <li><Link href="/espace-pro" className="nav-access" aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link></li>
-            <li><a href="tel:+33767491324" className="nav-phone">07 67 49 13 24</a></li>
             <li><Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Devis gratuit</Link></li>
           </ul>
         </div>
