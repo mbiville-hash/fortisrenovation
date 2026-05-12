@@ -38,6 +38,13 @@ export async function POST(req: NextRequest) {
       data = JSON.parse(text)
     } catch {
       console.error('Invalid portal response:', text.slice(0, 300))
+      if (text.includes('Fonction de script introuvable') || text.includes('doPost')) {
+        return NextResponse.json(
+          { error: 'Apps Script doit être redéployé avec la fonction doPost.' },
+          { status: 502 }
+        )
+      }
+
       return NextResponse.json({ error: 'Réponse portail invalide' }, { status: 502 })
     }
 
