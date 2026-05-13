@@ -119,6 +119,7 @@ export default function EspaceProClient() {
   const [sessionToken, setSessionToken] = useState('')
   const [data, setData] = useState<PortalData | null>(null)
   const [loading, setLoading] = useState(false)
+  const [loadingText, setLoadingText] = useState('')
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
 
@@ -147,6 +148,7 @@ export default function EspaceProClient() {
 
   async function requestCode() {
     setLoading(true)
+    setLoadingText('Envoi du code sécurisé')
     setError('')
     setMessage('')
     try {
@@ -157,11 +159,13 @@ export default function EspaceProClient() {
       setError(err instanceof Error ? err.message : 'Impossible d’envoyer le code.')
     } finally {
       setLoading(false)
+      setLoadingText('')
     }
   }
 
   async function verifyCode() {
     setLoading(true)
+    setLoadingText('Vérification du code')
     setError('')
     setMessage('')
     try {
@@ -174,11 +178,13 @@ export default function EspaceProClient() {
       setError(err instanceof Error ? err.message : 'Code incorrect.')
     } finally {
       setLoading(false)
+      setLoadingText('')
     }
   }
 
   async function loadPortal(token: string) {
     setLoading(true)
+    setLoadingText('Synchronisation Notion, Qonto et Drive')
     setError('')
     try {
       const res = await callPortal<PortalData>({ action: 'getPortalData', sessionToken: token })
@@ -190,6 +196,7 @@ export default function EspaceProClient() {
       setError(err instanceof Error ? err.message : 'Session expirée.')
     } finally {
       setLoading(false)
+      setLoadingText('')
     }
   }
 
@@ -215,6 +222,7 @@ export default function EspaceProClient() {
     <>
       <style>{styles}</style>
       <main className="pro-space">
+        {loading && <LoadingOverlay text={loadingText || 'Chargement de l’espace pro'} />}
         {!sessionToken || !data ? (
           <section className="pro-login">
             <div className="pro-hero">
@@ -306,6 +314,17 @@ export default function EspaceProClient() {
   )
 }
 
+function LoadingOverlay({ text }: { text: string }) {
+  return (
+    <div className="loading-overlay" role="status" aria-live="polite" aria-label={text}>
+      <div className="loading-card">
+        <div className="loading-logo" aria-hidden="true">F<span>.</span></div>
+        <p>{text}</p>
+      </div>
+    </div>
+  )
+}
+
 function Metric({ value, label }: { value: number; label: string }) {
   return (
     <div className="metric">
@@ -362,7 +381,7 @@ function AffaireCard({ affaire }: { affaire: Affaire }) {
 
       <div className="doc-columns">
         <DocumentPanel title="Factures">
-          {affaire.invoiceUrl && <DocumentLink href={affaire.invoiceUrl} label="Facture liée à l’affaire" meta="Qonto" />}
+          {affaire.invoiceUrl && affaire.invoices.length === 0 && <DocumentLink href={affaire.invoiceUrl} label="Facture liée à l’affaire" meta="Qonto" />}
           {affaire.invoices.map((invoice) => <InvoiceRow key={invoice.id || invoice.number} invoice={invoice} />)}
           {invoiceDocuments.map((doc) => (
             <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'Drive'} />
@@ -371,7 +390,7 @@ function AffaireCard({ affaire }: { affaire: Affaire }) {
         </DocumentPanel>
 
         <DocumentPanel title="Devis">
-          {affaire.quoteUrl && <DocumentLink href={affaire.quoteUrl} label="Devis lié à l’affaire" meta="Qonto" />}
+          {affaire.quoteUrl && affaire.quotes.length === 0 && <DocumentLink href={affaire.quoteUrl} label="Devis lié à l’affaire" meta="Qonto" />}
           {affaire.quotes.map((quote) => <QuoteRow key={quote.id || quote.number} quote={quote} />)}
           {quoteDocuments.map((doc) => (
             <DocumentLink key={doc.id} href={doc.url} label={doc.name} meta={formatDate(doc.updatedAt) || 'Drive'} />
@@ -442,6 +461,13 @@ function Empty({ text }: { text: string }) {
 
 const styles = `
 .pro-space { padding-top: 72px; background: var(--paper); min-height: 100vh; }
+.loading-overlay { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; background: rgba(247,245,240,.78); backdrop-filter: blur(7px); padding: 24px; }
+.loading-card { min-width: min(320px, 100%); background: rgba(255,255,255,.94); border: 1px solid rgba(184,151,90,.36); box-shadow: 0 24px 70px rgba(17,17,16,.14); padding: 28px 26px 24px; display: grid; place-items: center; gap: 14px; text-align: center; }
+.loading-logo { width: 48px; height: 48px; display: grid; place-items: center; position: relative; border: 1px solid rgba(184,151,90,.45); color: var(--ink); font-family: 'Bodoni Moda', serif; font-size: 24px; font-weight: 700; line-height: 1; }
+.loading-logo span { color: var(--gold); }
+.loading-logo::after { content: ''; position: absolute; inset: -6px; border: 1px solid transparent; border-top-color: var(--gold); border-right-color: rgba(184,151,90,.45); animation: portal-spin .9s linear infinite; }
+.loading-card p { margin: 0; color: var(--ink-soft); font-size: 12px; font-weight: 700; letter-spacing: .12em; line-height: 1.45; text-transform: uppercase; }
+@keyframes portal-spin { to { transform: rotate(360deg); } }
 .pro-login { min-height: calc(100vh - 72px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .68fr); gap: 56px; align-items: center; max-width: 1180px; margin: 0 auto; padding: 56px 24px 72px; }
 .pro-hero { min-height: 620px; background: var(--dark); color: white; padding: 56px 52px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
 .pro-hero::after { content: ''; position: absolute; right: -90px; bottom: -130px; width: 360px; height: 360px; border: 1px solid rgba(184,151,90,.35); transform: rotate(32deg); }
