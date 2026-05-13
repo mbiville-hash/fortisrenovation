@@ -229,7 +229,7 @@ export default function FormA() {
               </div>
             ) : (
               <>
-                <p className="form-eyebrow">Devis gratuit</p>
+                <p className="form-eyebrow">Étude de projet</p>
                 <h2 className="form-title">Parlons de votre projet.</h2>
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 

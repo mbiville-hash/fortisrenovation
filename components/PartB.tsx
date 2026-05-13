@@ -124,6 +124,7 @@ export default function PartB() {
               </ol>
               <div className="part-actions">
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
+                <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir la méthode</Link>
               </div>
             </div>
           </div>
