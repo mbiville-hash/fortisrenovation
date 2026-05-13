@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Action invalide' }, { status: 400 })
     }
 
-    const res = await fetch(PORTAL_API_URL, {
+    let res = await fetch(PORTAL_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -29,7 +29,16 @@ export async function POST(req: NextRequest) {
         sessionToken: body.sessionToken || '',
       }),
       cache: 'no-store',
+      redirect: 'manual',
     })
+
+    const redirectUrl = res.headers.get('location')
+    if (res.status >= 300 && res.status < 400 && redirectUrl) {
+      res = await fetch(redirectUrl, {
+        method: 'GET',
+        cache: 'no-store',
+      })
+    }
 
     const text = await res.text()
     let data: unknown
