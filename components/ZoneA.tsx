@@ -1,8 +1,22 @@
+import Link from 'next/link'
+
 export default function ZoneA() {
-  const cities = [
-    'Rouen', 'Bois-Guillaume', 'Mont-Saint-Aignan', 'Déville-lès-Rouen',
-    'Sotteville-lès-Rouen', 'Le Grand-Quevilly', 'Le Petit-Quevilly',
-    'Saint-Étienne-du-Rouvray', 'Maromme', 'Oissel',
+  const cities: { name: string; href?: string }[] = [
+    { name: 'Rouen', href: '/maintenance-immobiliere-rouen' },
+    { name: 'Bois-Guillaume', href: '/plombier-bois-guillaume' },
+    { name: 'Mont-Saint-Aignan', href: '/plombier-mont-saint-aignan' },
+    { name: 'Bihorel', href: '/plombier-bihorel' },
+    { name: 'Isneauville', href: '/plombier-isneauville' },
+    { name: 'Bonsecours', href: '/plombier-bonsecours' },
+    { name: 'Le Mesnil-Esnard', href: '/plombier-le-mesnil-esnard' },
+    { name: 'Franqueville-Saint-Pierre', href: '/plombier-franqueville-saint-pierre' },
+    { name: 'Sotteville-lès-Rouen', href: '/plombier-sotteville-les-rouen' },
+    { name: 'Déville-lès-Rouen' },
+    { name: 'Le Grand-Quevilly' },
+    { name: 'Le Petit-Quevilly' },
+    { name: 'Saint-Étienne-du-Rouvray' },
+    { name: 'Maromme' },
+    { name: 'Oissel' },
   ]
 
   return (
@@ -47,6 +61,7 @@ export default function ZoneA() {
           color: rgba(255,255,255,0.8);
           border: 1px solid rgba(255,255,255,0.2);
           padding: 10px 16px;
+          text-decoration: none;
           transition: border-color 0.2s, color 0.2s;
         }
         .zone-city:hover { border-color: var(--gold); color: var(--gold); }
@@ -76,7 +91,9 @@ export default function ZoneA() {
               </p>
               <div className="zone-cities">
                 {cities.map((c) => (
-                  <span key={c} className="zone-city">{c}</span>
+                  c.href
+                    ? <Link key={c.name} href={c.href} className="zone-city">{c.name}</Link>
+                    : <span key={c.name} className="zone-city">{c.name}</span>
                 ))}
               </div>
             </div>

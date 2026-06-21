@@ -41,6 +41,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${BASE}/salle-de-bain-mont-saint-aignan`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE}/salle-de-bain-bois-guillaume`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE}/salle-de-bain-isneauville`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/maintenance-immobiliere-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -72,6 +90,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/plombier-mont-saint-aignan`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/plombier-bihorel`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/plombier-isneauville`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/plombier-bonsecours`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/plombier-le-mesnil-esnard`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/plombier-franqueville-saint-pierre`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

@@ -86,7 +86,7 @@ export default function Footer() {
                 <a href="tel:+33767491324">07 67 49 13 24</a>
                 <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
-                  193 Rue du Renard<br />76000 Rouen<br />Lun–Sam 08h–19h
+                  193 Rue du Renard<br />76000 Rouen<br />Astreinte dépannage 24h/24 · 7j/7
                 </span>
               </div>
             </div>
@@ -108,11 +108,12 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Zone</p>
               <ul className="footer-links">
-                <li><span>Rouen</span></li>
-                <li><span>Bois-Guillaume</span></li>
-                <li><span>Mont-Saint-Aignan</span></li>
-                <li><span>Sotteville</span></li>
-                <li><span>Grand-Quevilly</span></li>
+                <li><Link href="/maintenance-immobiliere-rouen">Rouen</Link></li>
+                <li><Link href="/plombier-bois-guillaume">Bois-Guillaume</Link></li>
+                <li><Link href="/plombier-mont-saint-aignan">Mont-Saint-Aignan</Link></li>
+                <li><Link href="/plombier-bihorel">Bihorel</Link></li>
+                <li><Link href="/plombier-isneauville">Isneauville</Link></li>
+                <li><Link href="/plombier-sotteville-les-rouen">Sotteville</Link></li>
               </ul>
             </div>
 
