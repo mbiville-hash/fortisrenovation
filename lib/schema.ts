@@ -2,6 +2,7 @@ const AREA_SERVED = [
   'Rouen', 'Sotteville-lès-Rouen', 'Mont-Saint-Aignan', 'Bois-Guillaume',
   'Petit-Quevilly', 'Grand-Quevilly', 'Déville-lès-Rouen', 'Maromme',
   'Saint-Étienne-du-Rouvray',
+  'Barentin', 'Eslettes', 'Pavilly', 'Montville', 'Malaunay',
 ].map(name => ({ '@type': 'City', name }))
 
 const OPENING_HOURS = [{
