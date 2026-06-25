@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import '../styles/globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -44,9 +45,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${bodoni.variable} ${montserrat.variable}`}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <Nav />
         {children}
         <Footer />
+        <ScrollReveal />
         <Analytics />
       </body>
     </html>

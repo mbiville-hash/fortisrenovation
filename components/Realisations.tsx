@@ -52,14 +52,14 @@ export default function Realisations() {
 
       <section className="realisations">
         <div className="container">
-          <div className="realisations-head">
+          <div className="realisations-head" data-reveal>
             <p className="realisations-eyebrow">Nos réalisations</p>
             <h2>Des chantiers livrés, pas des promesses.</h2>
             <p>Quelques salles de bain et rénovations menées par Fortis Rénovation à Rouen et sa métropole.</p>
           </div>
           <div className="realisations-grid">
-            {photos.map((p) => (
-              <figure key={p} className="realisation-tile">
+            {photos.map((p, i) => (
+              <figure key={p} className="realisation-tile" data-reveal style={{ transitionDelay: `${(i % 3) * 90}ms` }}>
                 <Image
                   src={`/realisations/${encodeURIComponent(p)}`}
                   alt={altFor(p)}

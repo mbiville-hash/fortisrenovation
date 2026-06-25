@@ -73,7 +73,7 @@ export default function ZoneA() {
       <section className="zone">
         <div className="container">
           <div className="zone-grid">
-            <div className="zone-copy">
+            <div className="zone-copy" data-reveal>
               <p className="zone-eyebrow">Zone d&apos;intervention</p>
               <h2 className="zone-title">Rouen &amp; la<br />métropole normande.</h2>
               <p className="zone-sub">
@@ -88,7 +88,7 @@ export default function ZoneA() {
               </div>
             </div>
 
-            <div className="zone-map">
+            <div className="zone-map" data-reveal style={{ transitionDelay: '120ms' }}>
               <svg className="zone-svg" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de la zone d'intervention Fortis Rénovation — Rouen et métropole normande (30 km)">
                 <path className="zone-river" d="M20 200 Q80 180 140 200 Q200 220 260 195 Q320 170 380 190" stroke="#b8975a" strokeWidth="3" strokeLinecap="round" opacity="0.45" fill="none"/>
                 <circle className="zone-halo" cx="200" cy="196" r="28" fill="#b8975a" opacity="0.16" stroke="#b8975a" strokeWidth="1.5"/>

@@ -32,7 +32,7 @@ export const BASE_SCHEMA = {
   areaServed: AREA_SERVED,
   openingHoursSpecification: OPENING_HOURS,
   priceRange: '€€',
-  sameAs: ['https://share.google/LOObXURVAQuOLcQnS'],
+  sameAs: ['https://share.google/mkY15MSbWQ41tC07S'],
   image: [
     'https://www.fortisrenovation.fr/salle-de-bain-3d.jpg',
     'https://www.fortisrenovation.fr/plan-salle-de-bain.png',

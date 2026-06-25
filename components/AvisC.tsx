@@ -114,7 +114,7 @@ export default function AvisC() {
 
       <section className="avis" id="avis">
         <div className="container">
-          <div className="avis-inner">
+          <div className="avis-inner" data-reveal>
             <p className="avis-eyebrow">Avis Google vérifiés</p>
             <div className="avis-stars">★★★★★</div>
 
