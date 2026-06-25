@@ -24,7 +24,7 @@ export default function BeforeAfter() {
         .ba2-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; }
         .ba2-title { font-family: 'Bodoni Moda', serif; font-size: clamp(26px, 3vw, 38px); color: var(--ink); margin-bottom: 12px; line-height: 1.15; }
         .ba2-sub { font-size: 15px; color: var(--ink-soft); line-height: 1.7; max-width: 540px; margin: 0 auto 36px; }
-        .ba2-frame { position: relative; width: 100%; max-width: 430px; margin: 0 auto; aspect-ratio: 3 / 4; border-radius: 3px; overflow: hidden; border: 1px solid rgba(26,26,24,.12); touch-action: none; cursor: ew-resize; user-select: none; box-shadow: 0 18px 50px rgba(0,0,0,.14); }
+        .ba2-frame { position: relative; width: 100%; max-width: 430px; margin: 0 auto; aspect-ratio: 4 / 5; border-radius: 3px; overflow: hidden; border: 1px solid rgba(26,26,24,.12); touch-action: none; cursor: ew-resize; user-select: none; box-shadow: 0 18px 50px rgba(0,0,0,.14); }
         .ba2-frame:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
         .ba2-layer { position: absolute; inset: 0; }
         .ba2-badge { position: absolute; top: 12px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; border-radius: 3px; z-index: 3; }
