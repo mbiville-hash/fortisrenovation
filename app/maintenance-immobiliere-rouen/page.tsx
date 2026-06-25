@@ -54,7 +54,7 @@ export default function MaintenancePage() {
               Syndics · Bailleurs · Gestionnaires · Rouen
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Maintenance immobilière<br />à Rouen.
+              Maintenance immobilière <br />à Rouen.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Petits travaux, dégâts des eaux, entretien courant — on prend en charge toutes les demandes de votre parc. Un interlocuteur unique, zéro relance, rapport écrit à chaque intervention.

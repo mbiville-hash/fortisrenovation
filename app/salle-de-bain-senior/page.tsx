@@ -94,7 +94,7 @@ export default function SalleDeBainSeniorPage() {
               Pour vos proches · Maintien à domicile · Rouen
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Une salle de bain adaptée.<br />
+              Une salle de bain adaptée. <br />
               On s&apos;occupe de tout.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', maxWidth: 520, lineHeight: 1.8, marginBottom: 12 }}>

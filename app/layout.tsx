@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
+import FloatingCTA from '@/components/FloatingCTA'
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
+        <FloatingCTA />
         <ScrollReveal />
         <Analytics />
       </body>

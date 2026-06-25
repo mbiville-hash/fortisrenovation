@@ -80,7 +80,7 @@ export default function ProsPage() {
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <p style={eyebrow}><Dash />Syndics · Bailleurs · Entreprises</p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Maintenance immobilière<br />à Rouen — un seul<br />prestataire.
+              Maintenance immobilière <br />à Rouen — un seul <br />prestataire.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.62)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Plomberie, électricité, menuiserie, peinture. Contrats annuels ou interventions ponctuelles — vous décidez. Un interlocuteur unique, des rapports clairs, une seule facture.

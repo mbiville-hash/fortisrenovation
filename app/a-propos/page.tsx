@@ -33,7 +33,7 @@ export default function AProposPage() {
               Fortis Rénovation · Rouen
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Une entreprise de rénovation<br />bâtie sur la confiance.
+              Une entreprise de rénovation <br />bâtie sur la confiance.
             </h1>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 40 }}>
               <span style={{ color: 'var(--gold)', fontSize: 20, letterSpacing: 4 }}>★★★★★</span>

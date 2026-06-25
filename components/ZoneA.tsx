@@ -75,7 +75,7 @@ export default function ZoneA() {
           <div className="zone-grid">
             <div className="zone-copy" data-reveal>
               <p className="zone-eyebrow">Zone d&apos;intervention</p>
-              <h2 className="zone-title">Rouen &amp; la<br />métropole normande.</h2>
+              <h2 className="zone-title">Rouen &amp; la <br />métropole normande.</h2>
               <p className="zone-sub">
                 Nous intervenons dans un rayon de 30 km autour de Rouen. Déplacement gratuit pour les devis.
               </p>

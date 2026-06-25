@@ -111,7 +111,7 @@ export default function PartB() {
 
             <div className="part-copy" data-reveal>
               <p className="part-eyebrow">Particuliers</p>
-              <h2 className="part-title">Votre salle de bain<br />en 3D, avant<br />les travaux.</h2>
+              <h2 className="part-title">Votre salle de bain <br />en 3D, avant <br />les travaux.</h2>
               <div className="part-badge">
                 <span className="part-badge-icon">◈</span>
                 <span className="part-badge-text">Plan 3D inclus</span>

@@ -176,7 +176,7 @@ export default function Nav() {
             <Link href="/devis" onClick={() => setOpen(false)} aria-current={pathname === '/devis' ? 'page' : undefined}>Étudier mon projet</Link>
           </div>
           <div className="nav-panel-meta">
-            <a href="tel:+33767491324" onClick={() => setOpen(false)}>07 67 49 13 24</a><br />
+            <a href="tel:+33767491324" onClick={() => setOpen(false)}>07 67 49 13 24</a> <br />
             Rouen & métropole normande
           </div>
         </div>

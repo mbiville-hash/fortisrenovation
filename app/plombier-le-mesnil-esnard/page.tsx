@@ -55,7 +55,7 @@ export default function PlombierLeMesnilEsnardPage() {
               Le Mesnil-Esnard · Plateau est de Rouen
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Plombier au Mesnil-Esnard —<br />intervention rapide.
+              Plombier au Mesnil-Esnard — <br />intervention rapide.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Fortis Rénovation intervient au Mesnil-Esnard et sur le plateau est pour tous vos travaux de plomberie, maintenance immobilière et dégâts des eaux. Un interlocuteur unique, des rapports écrits à chaque intervention.

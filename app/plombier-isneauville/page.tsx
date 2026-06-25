@@ -55,7 +55,7 @@ export default function PlombierIsneauvillePage() {
               Isneauville · Plateau nord de Rouen
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Plombier à Isneauville —<br />intervention rapide.
+              Plombier à Isneauville — <br />intervention rapide.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Fortis Rénovation intervient à Isneauville et sur le nord de la métropole pour tous vos travaux de plomberie, maintenance immobilière et dégâts des eaux. Un interlocuteur unique, des rapports écrits à chaque intervention.

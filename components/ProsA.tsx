@@ -116,7 +116,7 @@ export default function ProsA() {
           <div className="pros-header" data-reveal>
             <div>
               <p className="pros-eyebrow">Syndics · Bailleurs · Entreprises</p>
-              <h2 className="pros-heading">Ce qu'on fait<br />pour les pros.</h2>
+              <h2 className="pros-heading">Ce qu'on fait <br />pour les pros.</h2>
             </div>
             <Link href="/devis" className="btn btn-gold pros-cta-top">Demander un devis</Link>
           </div>

@@ -91,7 +91,7 @@ export default function Footer() {
                 <a href="tel:+33767491324">07 67 49 13 24</a>
                 <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
-                  193 Rue du Renard<br />76000 Rouen<br />Astreinte dépannage 24h/24 · 7j/7
+                  193 Rue du Renard <br />76000 Rouen <br />Astreinte dépannage 24h/24 · 7j/7
                 </span>
               </div>
             </div>
@@ -131,8 +131,8 @@ export default function Footer() {
                 <li><Link href="/politique-confidentialite">Confidentialité</Link></li>
                 <li>
                   <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
-                    SIRET 937 628 428 00016<br />
-                    RCS Rouen<br />
+                    SIRET 937 628 428 00016 <br />
+                    RCS Rouen <br />
                     TVA FR47937628428
                   </span>
                 </li>

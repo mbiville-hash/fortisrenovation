@@ -139,7 +139,7 @@ export default function HeroA() {
         </div>
         <div className="hero-side">
           <p className="hero-tag">Syndics · Bailleurs · Entreprises</p>
-          <h1 className="hero-title">Votre prestataire<br />technique<br />de confiance.</h1>
+          <h1 className="hero-title">Votre prestataire <br />technique <br />de confiance.</h1>
           <p className="hero-desc">
             Contrats de maintenance, <strong>interventions 48h</strong>, un seul interlocuteur pour toutes vos demandes.
           </p>
@@ -157,7 +157,7 @@ export default function HeroA() {
 
         <div className="hero-side" id="particuliers">
           <p className="hero-tag">Propriétaires · Locataires</p>
-          <h2 className="hero-title">Votre salle de<br />bain repensée,<br />en 3D.</h2>
+          <h2 className="hero-title">Votre salle de <br />bain repensée, <br />en 3D.</h2>
           <p className="hero-desc">
             Du projet à la pose, en passant par le <strong>plan 3D inclus</strong>. Résultat garanti, sans mauvaise surprise.
           </p>

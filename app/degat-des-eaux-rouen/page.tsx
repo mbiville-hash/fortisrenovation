@@ -38,7 +38,7 @@ export default function DegatDesEauxPage() {
               Urgence · Rouen & métropole
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Dégât des eaux à Rouen —<br />on intervient.
+              Dégât des eaux à Rouen — <br />on intervient.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 540, lineHeight: 1.75, marginBottom: 40 }}>
               Recherche de fuite, remise en état complète, rapport photos transmis sous 48h. On s'occupe de tout — du premier constat à la livraison finale.
