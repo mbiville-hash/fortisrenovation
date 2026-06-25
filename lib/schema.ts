@@ -25,6 +25,7 @@ export const BASE_SCHEMA = {
   name: 'Fortis Rénovation',
   description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h.',
   url: 'https://www.fortisrenovation.fr',
+  logo: 'https://www.fortisrenovation.fr/web-app-manifest-512x512.png',
   telephone: '+33767491324',
   email: 'mbiville@fortisrenovation.fr',
   address: ADDRESS,
