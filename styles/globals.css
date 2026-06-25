@@ -100,14 +100,20 @@ section { padding: 80px 0; }
 }
 
 /* ── Révélations au scroll ── */
-html.js [data-reveal]{opacity:0;transform:translateY(42px) scale(.97);transition:opacity .95s ease, transform 1.05s cubic-bezier(.16,.84,.3,1);}
-html.js [data-reveal].is-in{opacity:1;transform:none;}
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    [data-reveal]{opacity:0; animation-name:revealUp; animation-fill-mode:both; animation-timing-function:linear; animation-timeline:view(); animation-range:entry 0% entry 100%;}
+  }
+}
+@keyframes revealUp{from{opacity:0; transform:translateY(38px) scale(.985)} to{opacity:1; transform:none}}
+/* Filet : si is-in est posé (ancien JS), rester visible */
+[data-reveal].is-in{opacity:1; transform:none;}
 html.js .stats .stat-col{opacity:0;transform:translateY(34px) scale(.97);transition:background .2s, opacity .9s ease, transform 1s cubic-bezier(.16,.84,.3,1);}
 html.js .stats.in .stat-col{opacity:1;transform:none;}
 html.js .stats.in .stat-col:nth-child(2){transition-delay:.15s}
 html.js .stats.in .stat-col:nth-child(3){transition-delay:.3s}
 html.js .stats.in .stat-col:nth-child(4){transition-delay:.45s}
-@media (prefers-reduced-motion: reduce){html.js [data-reveal],html.js .stats .stat-col{opacity:1 !important;transform:none !important;transition:none !important;}}
+@media (prefers-reduced-motion: reduce){html.js .stats .stat-col{opacity:1 !important;transform:none !important;transition:none !important;}}
 
 /* ── Cercles concentriques réutilisables ── */
 .rings { position: absolute; width: 360px; height: 360px; pointer-events: none; z-index: 0; }
