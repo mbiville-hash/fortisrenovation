@@ -101,12 +101,13 @@ section { padding: 80px 0; }
 
 /* ── Révélations au scroll ── */
 @media (prefers-reduced-motion: no-preference){
-  @supports (animation-timeline: view()){
-    [data-reveal]{opacity:0; animation-name:revealUp; animation-fill-mode:both; animation-timing-function:linear; animation-timeline:view(); animation-range:entry 0% entry 100%;}
-  }
+  [data-reveal]{animation:revealUp .8s cubic-bezier(.16,.84,.3,1) both;}
+  [data-reveal]:nth-child(2){animation-delay:.08s}
+  [data-reveal]:nth-child(3){animation-delay:.16s}
+  [data-reveal]:nth-child(4){animation-delay:.24s}
+  [data-reveal]:nth-child(5){animation-delay:.32s}
 }
-@keyframes revealUp{from{opacity:0; transform:translateY(38px) scale(.985)} to{opacity:1; transform:none}}
-/* Filet : si is-in est posé (ancien JS), rester visible */
+@keyframes revealUp{from{opacity:0; transform:translateY(34px)} to{opacity:1; transform:none}}
 [data-reveal].is-in{opacity:1; transform:none;}
 html.js .stats .stat-col{opacity:0;transform:translateY(34px) scale(.97);transition:background .2s, opacity .9s ease, transform 1s cubic-bezier(.16,.84,.3,1);}
 html.js .stats.in .stat-col{opacity:1;transform:none;}
