@@ -32,20 +32,11 @@ export const metadata: Metadata = {
     title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
     description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h, chantier propre.',
     url: 'https://www.fortisrenovation.fr',
-    images: [
-      {
-        url: '/salle-de-bain-3d.jpg',
-        width: 1920,
-        height: 1080,
-        alt: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
     description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h.',
-    images: ['/salle-de-bain-3d.jpg'],
   },
 }
 
