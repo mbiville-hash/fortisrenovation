@@ -14,7 +14,7 @@ export default function PartB() {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const t = setInterval(() => setI((n) => (n + 1) % LAYOUTS.length), 3000)
+    const t = setInterval(() => setI((n) => (n + 1) % LAYOUTS.length), 1500)
     return () => clearInterval(t)
   }, [])
 
@@ -29,7 +29,7 @@ export default function PartB() {
         .part-planwrap { display: flex; align-items: center; justify-content: center; padding: 40px; }
         .part-plan { position: relative; width: 100%; max-width: 460px; background: #15140f; border: 1px solid rgba(184,151,90,0.4); border-radius: 4px; padding: 14px; }
         .part-plan svg { display: block; width: 100%; height: auto; }
-        .pc { transition: transform 0.9s cubic-bezier(.55,.15,.1,1); transform-box: fill-box; transform-origin: center; }
+        .pc { transition: transform 0.8s cubic-bezier(.55,.15,.1,1); transform-box: fill-box; transform-origin: center; }
         .pc rect, .pc path, .pc ellipse { fill: rgba(184,151,90,0.10); stroke: var(--gold); stroke-width: 1.4; }
         @media (prefers-reduced-motion: reduce) { .pc { transition: none; } }
 
