@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Rings from '@/components/Rings'
 
 const services = [
   {
@@ -28,7 +29,10 @@ export default function ProsA() {
         .pros {
           background: var(--dark);
           color: var(--white);
+          position: relative;
+          overflow: hidden;
         }
+        .pros .container { position: relative; z-index: 1; }
         .pros-header {
           display: flex; justify-content: space-between; align-items: flex-end;
           margin-bottom: 64px;
@@ -107,6 +111,7 @@ export default function ProsA() {
       `}</style>
 
       <section className="pros" id="professionnels">
+        <Rings className="rings--tr" />
         <div className="container">
           <div className="pros-header" data-reveal>
             <div>

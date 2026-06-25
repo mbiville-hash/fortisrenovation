@@ -108,3 +108,19 @@ html.js .stats.in .stat-col:nth-child(2){transition-delay:.15s}
 html.js .stats.in .stat-col:nth-child(3){transition-delay:.3s}
 html.js .stats.in .stat-col:nth-child(4){transition-delay:.45s}
 @media (prefers-reduced-motion: reduce){html.js [data-reveal],html.js .stats .stat-col{opacity:1 !important;transform:none !important;transition:none !important;}}
+
+/* ── Cercles concentriques réutilisables ── */
+.rings { position: absolute; width: 360px; height: 360px; pointer-events: none; z-index: 0; }
+.rings svg { width: 100%; height: 100%; display: block; }
+.rings circle { fill: none; stroke: var(--gold); }
+.rings-base { transform-box: fill-box; transform-origin: center; animation: ringBreathG 9s ease-in-out infinite; }
+.rings-base circle { stroke-width: 1; }
+.rings-ripple { stroke-width: 1.2; transform-box: fill-box; transform-origin: center; opacity: 0; animation: ringRippleG 6.6s linear infinite; }
+@keyframes ringBreathG { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes ringRippleG { 0% { transform: scale(.2); opacity: 0; } 10% { opacity: .26; } 100% { transform: scale(3.4); opacity: 0; } }
+.rings--tr { top: -110px; right: -110px; }
+.rings--br { bottom: -120px; right: -110px; }
+.rings--bl { bottom: -120px; left: -110px; }
+.rings--tl { top: -110px; left: -110px; }
+.rings--lg { width: 520px; height: 520px; }
+@media (prefers-reduced-motion: reduce) { .rings-base, .rings-ripple { animation: none; } .rings-ripple { display: none; } }

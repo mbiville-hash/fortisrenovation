@@ -59,7 +59,14 @@ export default function PartB() {
         }
         .part-badge-icon {
           font-size: 18px; color: var(--gold);
+          display: inline-block;
+          animation: diamondGlow 2.4s ease-in-out infinite;
         }
+        @keyframes diamondGlow {
+          0%, 100% { text-shadow: 0 0 0 rgba(184,151,90,0); transform: scale(1); }
+          50% { text-shadow: 0 0 16px rgba(184,151,90,0.95), 0 0 6px rgba(184,151,90,0.85); transform: scale(1.16); }
+        }
+        @media (prefers-reduced-motion: reduce) { .part-badge-icon { animation: none; } }
         .part-badge-text {
           font-size: 12px; font-weight: 600;
           letter-spacing: 0.08em; text-transform: uppercase;

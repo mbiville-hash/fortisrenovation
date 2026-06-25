@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Rings from '@/components/Rings'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,7 +11,10 @@ export default function Footer() {
           background: var(--dark);
           color: var(--white);
           padding: 72px 0 40px;
+          position: relative;
+          overflow: hidden;
         }
+        .footer .container { position: relative; z-index: 1; }
         .footer-grid {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -75,6 +79,7 @@ export default function Footer() {
       `}</style>
 
       <footer className="footer">
+        <Rings className="rings--br" />
         <div className="container">
           <div className="footer-grid">
             <div>
