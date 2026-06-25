@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Maintenance immobilière Rouen — Syndics & gestionnaires | Fortis Rénovation',
+  title: 'Maintenance immobilière Rouen — Syndics & gestionnaires',
   description: 'Maintenance immobilière à Rouen : petits travaux, dégâts des eaux, entretien immeuble. Réponse 48h, rapport écrit, un seul interlocuteur. Devis gratuit.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
   openGraph: {

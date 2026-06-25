@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Politique de confidentialité | Fortis Rénovation',
+  title: 'Politique de confidentialité',
   robots: 'noindex',
 }
 

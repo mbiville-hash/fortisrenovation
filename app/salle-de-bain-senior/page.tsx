@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: "Salle de bain senior Rouen — Adaptation & MaPrimeAdapt' | Fortis Rénovation",
+  title: "Salle de bain senior Rouen — Adaptation & MaPrimeAdapt'",
   description: "Adaptation salle de bain pour senior à Rouen. Douche à l'italienne, barres d'appui. MaPrimeAdapt' jusqu'à 70 % pris en charge. Étude sous 48h.",
   alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-senior' },
   openGraph: {

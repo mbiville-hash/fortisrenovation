@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Plombier Franqueville-Saint-Pierre — Maintenance & dégât des eaux | Fortis Rénovation',
+  title: 'Plombier Franqueville-Saint-Pierre — Maintenance & dégâts',
   description: 'Plombier à Franqueville-Saint-Pierre : maintenance immobilière, dégâts des eaux, petits travaux. Intervention rapide sur le plateau est, rapport sous 48h. Devis gratuit.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/plombier-franqueville-saint-pierre' },
   openGraph: {

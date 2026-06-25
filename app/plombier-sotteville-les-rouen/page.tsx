@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Plombier Sotteville-lès-Rouen — Maintenance & dégât des eaux | Fortis Rénovation',
+  title: 'Plombier Sotteville-lès-Rouen — Maintenance & dégât des eaux',
   description: 'Plombier à Sotteville-lès-Rouen : maintenance immobilière, dégâts des eaux, petits travaux. Intervention rapide, rapport sous 48h. Devis gratuit.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/plombier-sotteville-les-rouen' },
   openGraph: {

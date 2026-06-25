@@ -3,7 +3,7 @@ import FormA from '@/components/FormA'
 import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Étude de projet — Rénovation Rouen | Fortis Rénovation',
+  title: 'Étude de projet — Rénovation Rouen',
   description: 'Présentez votre projet de salle de bain ou maintenance immobilière à Rouen. Réponse claire sous 48h. Syndics, bailleurs, particuliers.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/devis' },
 }

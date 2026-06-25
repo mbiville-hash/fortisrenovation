@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Plombier Bihorel — Maintenance & dégât des eaux | Fortis Rénovation',
+  title: 'Plombier Bihorel — Maintenance & dégât des eaux',
   description: 'Plombier à Bihorel : maintenance immobilière, dégâts des eaux, petits travaux. Intervention rapide sur le plateau nord, rapport sous 48h. Devis gratuit.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/plombier-bihorel' },
   openGraph: {

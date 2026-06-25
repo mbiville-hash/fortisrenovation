@@ -3,7 +3,7 @@ import { BathroomSupportPage, type BathroomFaq } from '@/components/BathroomPrem
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Rénovation salle de bain Isneauville — Design clé en main & plan 3D | Fortis Rénovation',
+  title: 'Rénovation salle de bain Isneauville — plan 3D inclus',
   description: 'Rénovation de salle de bain clé en main à Isneauville : plan 3D inclus, devis détaillé sous 48h, chantier propre, finitions soignées. Fortis Rénovation.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-isneauville' },
   openGraph: {

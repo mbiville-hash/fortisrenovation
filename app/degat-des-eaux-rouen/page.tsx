@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Dégât des eaux Rouen — Intervention rapide & rapport 48h | Fortis Rénovation',
+  title: 'Dégât des eaux Rouen — Intervention rapide & rapport 48h',
   description: 'Dégât des eaux à Rouen ? Fortis Rénovation intervient rapidement : recherche de fuite, remise en état, rapport photos pour votre assureur sous 48h.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/degat-des-eaux-rouen' },
   openGraph: {
