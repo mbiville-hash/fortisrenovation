@@ -32,7 +32,7 @@ export default function DegatDesEauxPage() {
       <main style={{ paddingTop: 68 }}>
         {/* Hero urgence */}
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
               Urgence · Rouen & métropole
@@ -52,7 +52,7 @@ export default function DegatDesEauxPage() {
 
         {/* Étapes intervention */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16 }}>
               Notre intervention dégât des eaux
             </h2>
@@ -78,7 +78,7 @@ export default function DegatDesEauxPage() {
 
         {/* Rapport assureur */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
               <div>
                 <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, color: 'white', marginBottom: 20 }}>
@@ -116,7 +116,7 @@ export default function DegatDesEauxPage() {
 
         {/* CTA urgence */}
         <section style={{ background: 'var(--paper)', padding: '72px 0', textAlign: 'center' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16 }}>
               Dégât des eaux en cours ?
             </h2>

@@ -313,6 +313,7 @@ const bathroomStyles = `
 .bath-hero-copy h1 { font-size: clamp(42px, 5vw, 72px); line-height: .98; max-width: 780px; margin-bottom: 24px; }
 .bath-hero-copy p:not(.bath-eyebrow) { max-width: 560px; color: rgba(255,255,255,.68); font-size: 16px; line-height: 1.85; }
 .bath-eyebrow { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 18px; }
+.bath-section .bath-eyebrow { color: var(--gold-deep); }
 .bath-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
 .bath-actions-center { justify-content: center; }
 .bath-hero-media { position: relative; min-height: 540px; border: 1px solid rgba(184,151,90,.34); overflow: hidden; }

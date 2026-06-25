@@ -28,7 +28,7 @@ export default function AProposPage() {
 
       <main style={{ paddingTop: 68 }}>
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24 }}>
               Fortis Rénovation · Rouen
             </p>
@@ -44,7 +44,7 @@ export default function AProposPage() {
 
         {/* Histoire */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
               <div>
                 <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 24 }}>Notre approche</h2>
@@ -75,7 +75,7 @@ export default function AProposPage() {
 
         {/* Valeurs */}
         <section style={{ background: 'white', padding: '80px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, textAlign: 'center', marginBottom: 56 }}>Nos valeurs</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
               {[
@@ -95,7 +95,7 @@ export default function AProposPage() {
 
         {/* Avis badge */}
         <section style={{ background: 'var(--dark)', padding: '64px 0', textAlign: 'center' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <div style={{ color: 'var(--gold)', fontSize: 28, letterSpacing: 6, marginBottom: 12 }}>★★★★★</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 28, color: 'white', marginBottom: 8 }}>25 avis Google vérifiés</p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>Note 5/5 · Rouen & métropole normande</p>

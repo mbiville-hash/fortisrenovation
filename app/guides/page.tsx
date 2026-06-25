@@ -51,7 +51,7 @@ export default function GuidesIndexPage() {
         .guides-list { background: var(--paper); padding: 64px 0 80px; }
         .guide-card { display: block; border: 1px solid rgba(154,124,69,0.22); background: #fff; border-radius: 2px; padding: 30px 32px; transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .3s; max-width: 760px; }
         .guide-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-        .guide-card-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #9a7c45; margin-bottom: 12px; }
+        .guide-card-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
         .guide-card h2 { font-family: 'Bodoni Moda', serif; font-size: 24px; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
         .guide-card p { font-size: 15px; color: #4a463e; line-height: 1.65; margin-bottom: 14px; }
         .guide-card-meta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #8a857a; }

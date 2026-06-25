@@ -115,7 +115,7 @@ export default function AvisC() {
           opacity: 0.15;
           border: none; cursor: pointer;
           transition: opacity 0.2s, transform 0.2s;
-          padding: 10px;
+          padding: 14px;
           background-clip: content-box;
           box-sizing: content-box;
         }

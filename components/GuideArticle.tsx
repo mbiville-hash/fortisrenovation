@@ -49,12 +49,12 @@ export function GuideArticle({
         .guide-prose ol li { counter-increment: gstep; }
         .guide-prose ol li::before { content: counter(gstep); position: absolute; left: 0; top: 8px; font-family: 'Bodoni Moda', serif; color: var(--gold); font-size: 15px; font-weight: 600; }
         .guide-prose ul li::before { content: ''; position: absolute; left: 3px; top: 17px; width: 8px; height: 8px; border: 1.5px solid var(--gold); transform: rotate(45deg); }
-        .guide-prose a { color: #9a7c45; text-decoration: underline; text-underline-offset: 2px; }
+        .guide-prose a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 2px; }
         .guide-prose strong { color: var(--ink); font-weight: 600; }
         .guide-prose .guide-note { background: rgba(184,151,90,0.10); border: 1px solid rgba(184,151,90,0.3); padding: 20px 22px; margin: 26px 0; border-radius: 2px; }
         .guide-prose .guide-note p { margin: 0; font-size: 15px; }
         .guide-sources { margin-top: 56px; padding-top: 28px; border-top: 2px solid rgba(154,124,69,0.3); }
-        .guide-sources-title { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #9a7c45; margin-bottom: 14px; }
+        .guide-sources-title { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; }
         .guide-sources ul { list-style: none; padding: 0; margin: 0 0 16px; }
         .guide-sources li { padding: 6px 0; border: none; }
         .guide-sources a { color: #5b564d; text-decoration: underline; font-size: 14px; }

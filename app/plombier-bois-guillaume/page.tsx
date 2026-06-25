@@ -50,7 +50,7 @@ export default function PlombierBoisGuillaumePage() {
       <main style={{ paddingTop: 68 }}>
         {/* Hero */}
         <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
               Bois-Guillaume · Métropole normande
@@ -73,7 +73,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* Promesses */}
         <section style={{ background: 'var(--ink)', padding: '0', borderTop: '1px solid rgba(184,151,90,0.3)', borderBottom: '1px solid rgba(184,151,90,0.3)' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
               {[
                 { v: '48h', l: 'Délai de réponse', s: 'Garanti par écrit' },
@@ -93,7 +93,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* Services */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16 }}>
               Nos interventions à Bois-Guillaume
             </h2>
@@ -117,7 +117,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* Process */}
         <section style={{ background: 'white', padding: '80px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, textAlign: 'center', marginBottom: 56 }}>
               Comment ça marche ?
             </h2>
@@ -140,7 +140,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* Témoignage */}
         <section style={{ background: 'var(--paper)', padding: '72px 0' }}>
-          <div className="container" style={{ maxWidth: 720, textAlign: 'center' }}>
+          <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
             <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 64, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 24 }}>"</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 24 }}>
               Réactivité impressionnante — devis reçu le lendemain, travaux démarrés la semaine suivante. Résultat impeccable, et le rapport transmis dans la foulée.
@@ -152,7 +152,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>
-          <div className="container" style={{ maxWidth: 760 }}>
+          <div className="container" data-reveal style={{ maxWidth: 760 }}>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 48 }}>Questions fréquentes</h2>
             {faqs.map(({ q, a }) => (
               <div key={q} style={{ padding: '28px 0', borderBottom: '1px solid rgba(26,26,24,0.1)' }}>
@@ -165,7 +165,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* Zone & maillage */}
         <section style={{ background: 'var(--paper)', padding: '56px 0' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
               Fortis Rénovation intervient également à{' '}
               <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
@@ -185,7 +185,7 @@ export default function PlombierBoisGuillaumePage() {
 
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>
-          <div className="container">
+          <div className="container" data-reveal>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16, color: 'white' }}>
               Un besoin à Bois-Guillaume ?
             </h2>
