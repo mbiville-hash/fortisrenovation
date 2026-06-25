@@ -20,6 +20,16 @@ export default function HeroA() {
           background: var(--gold);
           opacity: 0.4;
         }
+        /* Cercles concentriques animés (motif inspiré) */
+        .hero-rings { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+        .hero-rings svg { width: 100%; height: 100%; display: block; }
+        .hero-rings circle { fill: none; stroke: var(--gold); }
+        .hero-rings-base { transform-box: fill-box; transform-origin: center; animation: ringsBreath 9s ease-in-out infinite; }
+        .hero-rings-base circle { stroke-width: 1.2; }
+        @keyframes ringsBreath { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .hero-ripple { stroke-width: 1.4; transform-box: fill-box; transform-origin: center; opacity: 0; animation: ringRipple 6.4s linear infinite; }
+        @keyframes ringRipple { 0% { transform: scale(.18); opacity: 0; } 9% { opacity: .3; } 100% { transform: scale(4); opacity: 0; } }
+        @media (prefers-reduced-motion: reduce) { .hero-rings-base, .hero-ripple { animation: none; } .hero-ripple { display: none; } }
         .hero-side {
           display: flex; flex-direction: column;
           justify-content: center; align-items: flex-start;
@@ -111,6 +121,22 @@ export default function HeroA() {
       `}</style>
 
       <section className="hero">
+        <div className="hero-rings" aria-hidden="true">
+          <svg viewBox="-960 -540 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <g className="hero-rings-base">
+              <circle r="150" strokeOpacity={0.18} />
+              <circle r="270" strokeOpacity={0.14} />
+              <circle r="400" strokeOpacity={0.1} />
+              <circle r="540" strokeOpacity={0.07} />
+              <circle r="700" strokeOpacity={0.05} />
+              <circle r="880" strokeOpacity={0.03} />
+            </g>
+            <circle className="hero-ripple" r="170" />
+            <circle className="hero-ripple" r="170" style={{ animationDelay: '1.6s' }} />
+            <circle className="hero-ripple" r="170" style={{ animationDelay: '3.2s' }} />
+            <circle className="hero-ripple" r="170" style={{ animationDelay: '4.8s' }} />
+          </svg>
+        </div>
         <div className="hero-side">
           <p className="hero-tag">Syndics · Bailleurs · Entreprises</p>
           <h1 className="hero-title">Votre prestataire<br />technique<br />de confiance.</h1>
