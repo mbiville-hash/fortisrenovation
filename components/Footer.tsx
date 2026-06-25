@@ -120,6 +120,7 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Informations</p>
               <ul className="footer-links">
+                <li><Link href="/guides">Guides &amp; conseils</Link></li>
                 <li><Link href="/a-propos">À propos</Link></li>
                 <li><Link href="/mentions-legales">Mentions légales</Link></li>
                 <li><Link href="/politique-confidentialite">Confidentialité</Link></li>

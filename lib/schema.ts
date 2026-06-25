@@ -91,3 +91,23 @@ export function faqSchema(faqs: { q: string; a: string }[]) {
     })),
   }
 }
+
+export function articleSchema(opts: { title: string; description: string; slug: string; datePublished: string; dateModified?: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: opts.title,
+    description: opts.description,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    author: { '@type': 'Organization', name: 'Fortis Rénovation', url: 'https://www.fortisrenovation.fr' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Fortis Rénovation',
+      logo: { '@type': 'ImageObject', url: 'https://www.fortisrenovation.fr/web-app-manifest-512x512.png' },
+    },
+    mainEntityOfPage: `https://www.fortisrenovation.fr${opts.slug}`,
+    image: 'https://www.fortisrenovation.fr/salle-de-bain-3d.jpg',
+    inLanguage: 'fr-FR',
+  }
+}
