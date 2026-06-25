@@ -29,6 +29,11 @@ export const BASE_SCHEMA = {
   telephone: '+33767491324',
   email: 'mbiville@fortisrenovation.fr',
   address: ADDRESS,
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 49.450895,
+    longitude: 1.0717932,
+  },
   areaServed: AREA_SERVED,
   openingHoursSpecification: OPENING_HOURS,
   priceRange: '€€',
