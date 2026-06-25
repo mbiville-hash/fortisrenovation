@@ -80,12 +80,16 @@ export function GuideArticle({
           <div className="container guide-prose">
             {children}
             <div className="guide-sources">
-              <p className="guide-sources-title">Sources officielles</p>
-              <ul>
-                {sources.map((s) => (
-                  <li key={s.url}><a href={s.url} target="_blank" rel="noopener nofollow">{s.label}</a></li>
-                ))}
-              </ul>
+              {sources.length > 0 && (
+                <>
+                  <p className="guide-sources-title">Sources</p>
+                  <ul>
+                    {sources.map((s) => (
+                      <li key={s.url}><a href={s.url} target="_blank" rel="noopener nofollow">{s.label}</a></li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <p className="guide-verified">{lastVerified}</p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 const reviews = [
   {
@@ -29,13 +29,27 @@ const reviews = [
   },
 ]
 
+const FADE_MS = 450
+
 export default function AvisC() {
   const [current, setCurrent] = useState(0)
+  const [visible, setVisible] = useState(true)
+  const currentRef = useRef(0)
+  currentRef.current = current
+
+  const go = useCallback((next: number) => {
+    if (next === currentRef.current) return
+    setVisible(false)
+    setTimeout(() => {
+      setCurrent(next)
+      setVisible(true)
+    }, FADE_MS)
+  }, [])
 
   useEffect(() => {
-    const t = setInterval(() => setCurrent(c => (c + 1) % reviews.length), 6000)
+    const t = setInterval(() => go((currentRef.current + 1) % reviews.length), 6000)
     return () => clearInterval(t)
-  }, [])
+  }, [go])
 
   const r = reviews[current]
 
@@ -58,6 +72,10 @@ export default function AvisC() {
           font-size: 22px; letter-spacing: 4px;
           margin-bottom: 48px;
         }
+        .avis-fade {
+          transition: opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease;
+          will-change: opacity, transform;
+        }
         .avis-quote {
           font-family: 'Bodoni Moda', serif;
           font-size: clamp(20px, 2.5vw, 28px);
@@ -67,7 +85,6 @@ export default function AvisC() {
           padding: 0 16px;
           min-height: 140px;
           display: flex; align-items: center; justify-content: center;
-          transition: opacity 0.4s;
         }
         .avis-quote::before {
           content: '"';
@@ -110,6 +127,9 @@ export default function AvisC() {
           font-size: 12px; color: var(--ink-faint);
           letter-spacing: 0.06em;
         }
+        @media (prefers-reduced-motion: reduce) {
+          .avis-fade { transition: opacity 0.2s ease; transform: none !important; }
+        }
       `}</style>
 
       <section className="avis" id="avis">
@@ -118,19 +138,27 @@ export default function AvisC() {
             <p className="avis-eyebrow">Avis Google vérifiés</p>
             <div className="avis-stars">★★★★★</div>
 
-            <blockquote className="avis-quote">
-              {r.text}
-            </blockquote>
+            <div
+              className="avis-fade"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(10px)',
+              }}
+            >
+              <blockquote className="avis-quote">
+                {r.text}
+              </blockquote>
 
-            <p className="avis-meta">{r.name}</p>
-            <p className="avis-role">{r.role} · {r.date}</p>
+              <p className="avis-meta">{r.name}</p>
+              <p className="avis-role">{r.role} · {r.date}</p>
+            </div>
 
             <div className="avis-dots">
               {reviews.map((_, i) => (
                 <button
                   key={i}
                   className={`avis-dot${i === current ? ' active' : ''}`}
-                  onClick={() => setCurrent(i)}
+                  onClick={() => go(i)}
                   aria-label={`Avis ${i + 1}`}
                 />
               ))}

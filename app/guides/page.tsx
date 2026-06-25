@@ -11,6 +11,27 @@ type ArticleCard = { slug: string; category: string; title: string; excerpt: str
 
 const ARTICLES: ArticleCard[] = [
   {
+    slug: '/guides/prix-renovation-salle-de-bain',
+    category: 'Prix & budget',
+    title: 'Combien coûte une rénovation de salle de bain à Rouen ?',
+    excerpt: 'Des fourchettes claires, les postes de dépense et ce qui fait vraiment varier le prix de votre projet.',
+    date: '25 juin 2026',
+  },
+  {
+    slug: '/guides/douche-italienne-etancheite',
+    category: 'Douche italienne',
+    title: 'Douche à l’italienne : réussir l’étanchéité',
+    excerpt: 'Le carrelage seul n’étanche pas. Ce qu’impose la norme (DTU 52.2) pour éviter le dégât des eaux.',
+    date: '25 juin 2026',
+  },
+  {
+    slug: '/guides/duree-renovation-salle-de-bain',
+    category: 'Méthode',
+    title: 'Combien de temps dure une rénovation de salle de bain ?',
+    excerpt: 'Les étapes jour par jour, les temps de séchage et ce qui rallonge (ou raccourcit) un chantier.',
+    date: '25 juin 2026',
+  },
+  {
     slug: '/guides/salle-de-bain-senior-maprimeadapt-rouen',
     category: 'Salle de bain senior',
     title: 'Salle de bain senior à Rouen : MaPrimeAdapt’ et les aides 2026',

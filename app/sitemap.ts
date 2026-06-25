@@ -191,6 +191,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE}/guides/prix-renovation-salle-de-bain`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/guides/douche-italienne-etancheite`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/guides/duree-renovation-salle-de-bain`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${BASE}/guides/salle-de-bain-senior-maprimeadapt-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
