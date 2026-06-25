@@ -13,6 +13,16 @@ function getPhotos(): string[] {
   }
 }
 
+function altFor(file: string): string {
+  const slug = file
+    .replace(/^\d+-/, '')
+    .replace(/\.[^.]+$/, '')
+    .replace(/-/g, ' ')
+    .trim()
+  const label = slug.charAt(0).toUpperCase() + slug.slice(1)
+  return `${label} — réalisation Fortis Rénovation à Rouen`
+}
+
 export default function Realisations() {
   const photos = getPhotos()
   if (photos.length === 0) return null
@@ -30,7 +40,7 @@ export default function Realisations() {
         .realisations-head p { color: var(--ink-soft); margin-top: 14px; font-size: 16px; }
         .realisations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
         .realisation-tile {
-          position: relative; aspect-ratio: 4 / 3; overflow: hidden;
+          position: relative; aspect-ratio: 1 / 1; overflow: hidden;
           border-radius: var(--radius); background: #e7e0d4;
         }
         .realisation-tile img { object-fit: cover; transition: transform 0.6s ease; }
@@ -48,11 +58,11 @@ export default function Realisations() {
             <p>Quelques salles de bain et rénovations menées par Fortis Rénovation à Rouen et sa métropole.</p>
           </div>
           <div className="realisations-grid">
-            {photos.map((p, i) => (
+            {photos.map((p) => (
               <figure key={p} className="realisation-tile">
                 <Image
                   src={`/realisations/${encodeURIComponent(p)}`}
-                  alt={`Réalisation Fortis Rénovation à Rouen — salle de bain ${i + 1}`}
+                  alt={altFor(p)}
                   fill
                   sizes="(max-width: 760px) 50vw, 33vw"
                 />
