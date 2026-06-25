@@ -2,41 +2,45 @@
 
 import { useEffect, useState } from 'react'
 
-type Stat = { value: string; label: string; sub: string }
+type Stat = { value: string; label: string; sub: string; to?: number; unit?: string }
 
 const STATS: Stat[] = [
   { value: '★★★★★', label: 'Avis clients Google', sub: 'Note 5/5' },
-  { value: '48h', label: 'Délai de réponse', sub: 'Devis garanti' },
+  { value: '48h', to: 48, unit: 'h', label: 'Délai de réponse', sub: 'Devis garanti' },
   { value: '1', label: 'Interlocuteur unique', sub: 'Du début à la fin' },
   { value: '3D', label: 'Plan inclus', sub: 'Visualisez avant travaux' },
 ]
 
-function StatValue({ value }: { value: string }) {
-  const match = value.match(/^(\d+)(\D*)$/)
-  const target = match ? parseInt(match[1], 10) : 0
-  const suffix = match ? match[2] : ''
-  // SSR / no-JS shows the final value; client animates from 0.
-  const [display, setDisplay] = useState<string>(match ? `${target}${suffix}` : value)
+function StatValue({ value, to, unit }: { value: string; to?: number; unit?: string }) {
+  const isCounter = typeof to === 'number'
+  const u = unit ?? ''
+  // SSR / no-JS shows the final value; the client animates from 0.
+  const [display, setDisplay] = useState<string>(isCounter ? `${to}${u}` : value)
 
   useEffect(() => {
-    if (!match) return
+    if (!isCounter) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     let raf = 0
     let start: number | null = null
-    setDisplay(`0${suffix}`)
+    setDisplay(`0${u}`)
+    // Safety net: guarantee the final value even if rAF is throttled (e.g. background tab).
+    const fallback = setTimeout(() => setDisplay(`${to}${u}`), 1500)
     const tick = (ts: number) => {
       if (start === null) start = ts
       const p = Math.min((ts - start) / 1200, 1)
       const eased = 1 - Math.pow(1 - p, 3)
-      setDisplay(`${Math.round(target * eased)}${suffix}`)
+      setDisplay(`${Math.round((to as number) * eased)}${u}`)
       if (p < 1) raf = requestAnimationFrame(tick)
+      else clearTimeout(fallback)
     }
     raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(fallback)
+    }
+  }, [isCounter, to, u])
 
-  return <>{match ? display : value}</>
+  return <>{display}</>
 }
 
 export default function StatsA() {
@@ -73,7 +77,7 @@ export default function StatsA() {
           <div className="stats-grid">
             {STATS.map((s, i) => (
               <div key={i} className="stat-col">
-                <div className="stat-value"><StatValue value={s.value} /></div>
+                <div className="stat-value"><StatValue value={s.value} to={s.to} unit={s.unit} /></div>
                 <div className="stat-label">{s.label}</div>
                 <div className="stat-sub">{s.sub}</div>
               </div>
