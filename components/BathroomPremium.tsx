@@ -54,7 +54,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
       <style>{bathroomStyles}</style>
       <main className="bath-page">
         <section className="bath-hero">
-          <div className="container bath-hero-grid">
+          <div className="container bath-hero-grid" data-reveal>
             <div className="bath-hero-copy">
               <p className="bath-eyebrow">Salle de bain design clé en main · Rouen</p>
               <h1>Rénovation de salle de bain à Rouen, du plan 3D à la livraison.</h1>
@@ -81,7 +81,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
         </section>
 
         <section className="bath-band bath-proof">
-          <div className="container bath-proof-grid">
+          <div className="container bath-proof-grid" data-reveal>
             {[
               ['48h', 'pour recevoir une première proposition claire'],
               ['3D', 'incluse pour visualiser avant de signer'],
@@ -97,7 +97,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
         </section>
 
         <section className="bath-section">
-          <div className="container bath-split">
+          <div className="container bath-split" data-reveal>
             <div>
               <p className="bath-eyebrow">Ce que vous recevez</p>
               <h2>Une méthode lisible, pensée pour éviter les surprises.</h2>
@@ -117,7 +117,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
         </section>
 
         <section className="bath-section bath-white">
-          <div className="container bath-materials">
+          <div className="container bath-materials" data-reveal>
             <div>
               <p className="bath-eyebrow">Finitions</p>
               <h2>Le premium se voit surtout dans les détails.</h2>
@@ -143,7 +143,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
         </section>
 
         <section className="bath-section">
-          <div className="container bath-split bath-budget">
+          <div className="container bath-split bath-budget" data-reveal>
             <div>
               <p className="bath-eyebrow">Budget indicatif</p>
               <h2>Un prix dépend de la pièce, pas d’une promesse générique.</h2>
@@ -205,7 +205,7 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
       <style>{bathroomStyles}</style>
       <main className="bath-page">
         <section className="bath-hero bath-hero-compact">
-          <div className="container bath-hero-grid">
+          <div className="container bath-hero-grid" data-reveal>
             <div className="bath-hero-copy">
               <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Salle de bain Rouen', href: '/salle-de-bain-rouen' }, { name: eyebrow.split('·').pop()?.trim() ?? 'Salle de bain' }]} />
               <p className="bath-eyebrow">{eyebrow}</p>
@@ -223,7 +223,7 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
         </section>
 
         <section className="bath-band bath-proof">
-          <div className="container bath-proof-grid">
+          <div className="container bath-proof-grid" data-reveal>
             {proof.map((item) => (
               <div className="bath-proof-item" key={item}>
                 <strong>•</strong>
@@ -234,7 +234,7 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
         </section>
 
         <section className="bath-section bath-white">
-          <div className="container bath-content-list">
+          <div className="container bath-content-list" data-reveal>
             {sections.map((section) => (
               <article key={section.title}>
                 <h2>{section.title}</h2>

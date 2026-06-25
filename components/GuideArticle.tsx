@@ -68,7 +68,7 @@ export function GuideArticle({
 
       <article>
         <header className="guide-hero">
-          <div className="container guide-hero-inner">
+          <div className="container guide-hero-inner" data-reveal>
             <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Guides', href: '/guides' }, { name: category }]} />
             <h1 className="guide-title">{title}</h1>
             <p className="guide-meta">Publié le {dateLabel} · {readingTime} de lecture</p>
@@ -77,7 +77,7 @@ export function GuideArticle({
         </header>
 
         <div className="guide-body">
-          <div className="container guide-prose">
+          <div className="container guide-prose" data-reveal>
             {children}
             <div className="guide-sources">
               {sources.length > 0 && (
