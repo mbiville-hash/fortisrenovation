@@ -7,6 +7,7 @@ import PartB from '@/components/PartB'
 import AvisC from '@/components/AvisC'
 import ZoneA from '@/components/ZoneA'
 import FormA from '@/components/FormA'
+import Realisations from '@/components/Realisations'
 import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function HomePage() {
         <ClientsStrip />
         <ProsA />
         <PartB />
+        <Realisations />
         <AvisC />
         <ZoneA />
         <FormA />
