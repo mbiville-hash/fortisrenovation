@@ -84,6 +84,17 @@ export default function HeroA() {
           font-family: 'Bodoni Moda', serif;
           color: var(--gold); font-size: 18px;
         }
+        /* Entrée animée du hero */
+        @keyframes heroIn { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
+        .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-side .btn { animation: heroIn 1s cubic-bezier(.16,.84,.3,1) both; }
+        .hero-tag { animation-delay: .15s; }
+        .hero-title { animation-delay: .32s; }
+        .hero-desc { animation-delay: .5s; }
+        .hero-features { animation-delay: .66s; }
+        .hero-side .btn { animation-delay: .82s; }
+        @keyframes divIn { from { opacity: 0; transform: translate(-50%,-50%) scale(.4); } to { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+        .hero-divider { animation: divIn .9s cubic-bezier(.16,.84,.3,1) .55s both; }
+        @media (prefers-reduced-motion: reduce) { .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-side .btn, .hero-divider { animation: none; } }
         @media (max-width: 768px) {
           .hero {
             grid-template-columns: 1fr;

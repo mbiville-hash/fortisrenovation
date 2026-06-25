@@ -22,7 +22,7 @@ function StatValue({ to, unit, fallbackText, run }: { to?: number; unit?: string
     if (!run) { setDisplay(`0${u}`); return }
     let raf = 0
     let start: number | null = null
-    const dur = 1400
+    const dur = 2000
     const fb = setTimeout(() => setDisplay(`${to}${u}`), dur + 400)
     const tick = (ts: number) => {
       if (start === null) start = ts

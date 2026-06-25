@@ -40,7 +40,7 @@ export default function ClientsStrip() {
       <div className="clients">
         <div className="container">
           <p className="clients-label">Ils nous font confiance</p>
-          <div className="clients-logos">
+          <div className="clients-logos" data-reveal>
             {clients.map((c) => (
               <span key={c} className="client-logo">{c}</span>
             ))}

@@ -56,12 +56,12 @@ export default function ZoneA() {
         /* ── Radar animations ── */
         .zone-river { stroke-dasharray: 10 7; animation: zoneFlow 5s linear infinite; }
         @keyframes zoneFlow { to { stroke-dashoffset: -200; } }
-        .zone-halo { transform-box: fill-box; transform-origin: center; animation: zoneHalo 3.4s ease-in-out infinite; }
-        @keyframes zoneHalo { 0%,100% { transform: scale(1); opacity:.16; } 50% { transform: scale(1.35); opacity:.04; } }
+        .zone-halo { transform-box: fill-box; transform-origin: center; animation: zoneHalo 3s ease-in-out infinite; }
+        @keyframes zoneHalo { 0%,100% { transform: scale(1); opacity:.18; } 50% { transform: scale(1.65); opacity:.03; } }
         .zone-ring { transform-box: fill-box; transform-origin: center; animation: zoneSpin 80s linear infinite; }
         @keyframes zoneSpin { to { transform: rotate(360deg); } }
         .zone-dot { transform-box: fill-box; transform-origin: center; animation: zoneTwinkle 3s ease-in-out infinite; }
-        @keyframes zoneTwinkle { 0%,100% { opacity:.35; } 50% { opacity:.95; } }
+        @keyframes zoneTwinkle { 0%,100% { opacity:.25; } 50% { opacity:1; } }
 
         @media (max-width: 900px) { .zone-grid { grid-template-columns: 1fr; gap: 48px; } .zone-map { order: -1; } }
         @media (prefers-reduced-motion: reduce) {

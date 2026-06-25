@@ -108,7 +108,7 @@ export default function ProsA() {
 
       <section className="pros" id="professionnels">
         <div className="container">
-          <div className="pros-header">
+          <div className="pros-header" data-reveal>
             <div>
               <p className="pros-eyebrow">Syndics · Bailleurs · Entreprises</p>
               <h2 className="pros-heading">Ce qu'on fait<br />pour les pros.</h2>
@@ -117,8 +117,8 @@ export default function ProsA() {
           </div>
 
           <div className="pros-list">
-            {services.map((s) => (
-              <div key={s.num} className="pros-item">
+            {services.map((s, i) => (
+              <div key={s.num} className="pros-item" data-reveal style={{ transitionDelay: `${i * 120}ms` }}>
                 <div className="pros-num">{s.num}</div>
                 <div className="pros-content">
                   <h3 className="pros-title">{s.title}</h3>
