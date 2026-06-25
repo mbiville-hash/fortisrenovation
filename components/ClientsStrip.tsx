@@ -1,5 +1,5 @@
 export default function ClientsStrip() {
-  const clients = ['Foncia', 'Citya', 'Oxia', 'Nexity', 'Century 21']
+  const clients = ['Foncia', 'Citya', 'Oxia', 'Nexity', 'Seine ADB']
 
   return (
     <>

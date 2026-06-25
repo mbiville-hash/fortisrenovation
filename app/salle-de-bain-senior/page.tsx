@@ -102,7 +102,7 @@ export default function SalleDeBainSeniorPage() {
               <strong style={{ color: 'white' }}>monprojetanah.fr</strong>, avec l&apos;accompagnement gratuit d&apos;un conseiller France Rénov&apos;.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen ·{' '}
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen ·{' '}
               <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>

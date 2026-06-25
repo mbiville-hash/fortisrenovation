@@ -62,7 +62,7 @@ export default function PlombierLeMesnilEsnardPage() {
               Fortis Rénovation intervient au Mesnil-Esnard et sur le plateau est pour tous vos travaux de plomberie, maintenance immobilière et dégâts des eaux. Un interlocuteur unique, des rapports écrits à chaque intervention.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>
@@ -147,7 +147,7 @@ export default function PlombierLeMesnilEsnardPage() {
           <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
             <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
-              Note 5/5 sur Google — 25 avis vérifiés.
+              Note 5/5 sur Google — 28 avis vérifiés.
             </p>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>
               Une intervention au Mesnil-Esnard ou sur le plateau est ? Demandez-nous les coordonnées de clients du secteur : on les communique volontiers.
@@ -200,7 +200,7 @@ export default function PlombierLeMesnilEsnardPage() {
               <a href="tel:+33767491324" style={{ color: 'inherit' }}>07 67 49 13 24</a>
             </p>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>

@@ -42,6 +42,24 @@ export default function DevisPage() {
           </div>
         </section>
         <FormA />
+        <section style={{ background: 'var(--paper)', padding: '64px 0' }}>
+          <div className="container" data-reveal style={{ maxWidth: 880 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold-deep)', marginBottom: 14 }}>Nous trouver</p>
+            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(22px,2.6vw,30px)', marginBottom: 8 }}>193C Rue du Renard, 76000 Rouen</h2>
+            <p style={{ fontSize: 14, color: 'var(--ink-soft)', marginBottom: 24 }}>Rouen & métropole normande · Astreinte dépannage 24h/24, 7j/7</p>
+            <div style={{ position: 'relative', borderRadius: 2, overflow: 'hidden', border: '0.5px solid rgba(26,26,24,0.15)' }}>
+              <iframe
+                src="https://www.google.com/maps?q=193C+Rue+du+Renard,+76000+Rouen&output=embed"
+                width="100%"
+                height="340"
+                style={{ border: 0, display: 'block' }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Fortis Rénovation — 193C Rue du Renard, 76000 Rouen"
+              />
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )

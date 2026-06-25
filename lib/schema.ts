@@ -14,7 +14,7 @@ const OPENING_HOURS = [{
 
 const ADDRESS = {
   '@type': 'PostalAddress',
-  streetAddress: '193 Rue du Renard',
+  streetAddress: '193C Rue du Renard',
   addressLocality: 'Rouen',
   postalCode: '76000',
   addressCountry: 'FR',

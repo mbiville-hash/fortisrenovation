@@ -12,7 +12,7 @@ import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-  description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h, chantier propre.',
+  description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h, chantier propre. Pros & particuliers, 5/5 sur Google.',
   alternates: { canonical: 'https://www.fortisrenovation.fr' },
   openGraph: {
     title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',

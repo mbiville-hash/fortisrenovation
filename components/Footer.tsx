@@ -91,7 +91,7 @@ export default function Footer() {
                 <a href="tel:+33767491324">07 67 49 13 24</a>
                 <a href="mailto:mbiville@fortisrenovation.fr">mbiville@fortisrenovation.fr</a>
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4, display: 'block', lineHeight: 1.6 }}>
-                  193 Rue du Renard <br />76000 Rouen <br />Astreinte dépannage 24h/24 · 7j/7
+                  193C Rue du Renard <br />76000 Rouen <br />Astreinte dépannage 24h/24 · 7j/7
                 </span>
               </div>
             </div>

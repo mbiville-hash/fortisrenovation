@@ -88,7 +88,7 @@ export default function ProsPage() {
               Plomberie, électricité, menuiserie, peinture. Contrats annuels ou interventions ponctuelles — vous décidez. Un interlocuteur unique, des rapports clairs, une seule facture.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <Link href="/devis" className="btn btn-gold">Demander un devis pro</Link>

@@ -127,7 +127,7 @@ export default function DegatDesEauxPage() {
               <a href="tel:+33767491324" style={{ color: 'inherit' }}>07 67 49 13 24</a>
             </p>
             <p style={{ fontSize: 12, color: 'var(--ink-faint)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen
             </p>
             <Link href="/devis" className="btn btn-outline">Formulaire de contact</Link>
           </div>

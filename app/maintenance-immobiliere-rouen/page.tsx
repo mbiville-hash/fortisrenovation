@@ -60,7 +60,7 @@ export default function MaintenancePage() {
               Petits travaux, dégâts des eaux, entretien courant — on prend en charge toutes les demandes de votre parc. Un interlocuteur unique, zéro relance, rapport écrit à chaque intervention.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
-              Fortis Rénovation · 193 Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>

@@ -111,7 +111,7 @@ export default function AProposPage() {
             </p>
             <div style={{ marginBottom: 32 }}>
               <span style={{ color: 'var(--gold)', fontSize: 16, letterSpacing: 4 }}>★★★★★</span>
-              <span style={{ fontSize: 13, letterSpacing: '0.04em', color: 'rgba(255,255,255,0.6)', marginLeft: 10 }}>25 avis Google vérifiés</span>
+              <span style={{ fontSize: 13, letterSpacing: '0.04em', color: 'rgba(255,255,255,0.6)', marginLeft: 10 }}>28 avis Google vérifiés</span>
             </div>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/devis" className="btn btn-gold">Parler de votre projet</Link>
