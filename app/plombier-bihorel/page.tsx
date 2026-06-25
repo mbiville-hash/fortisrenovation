@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import Realisations from '@/components/Realisations'
 
 export const metadata: Metadata = {
   title: 'Plombier Bihorel — Maintenance & dégât des eaux',
@@ -184,6 +185,8 @@ export default function PlombierBihorelPage() {
             </p>
           </div>
         </section>
+
+        <Realisations />
 
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>

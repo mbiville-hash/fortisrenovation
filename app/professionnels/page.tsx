@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Rings from '@/components/Rings'
+import Breadcrumb from '@/components/Breadcrumb'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -78,6 +79,7 @@ export default function ProsPage() {
         <section style={{ ...darkSection, padding: '100px 0 80px' }}>
           <Rings className="rings--tr" />
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Professionnels' }]} />
             <p style={eyebrow}><Dash />Syndics · Bailleurs · Entreprises</p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.1, marginBottom: 24 }}>
               Maintenance immobilière <br />à Rouen — un seul <br />prestataire.

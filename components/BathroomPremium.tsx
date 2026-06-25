@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Realisations from '@/components/Realisations'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export type BathroomFaq = {
   q: string
@@ -189,6 +191,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
           </div>
         </section>
 
+        <Realisations />
         <BathroomFaqSection faqs={faqs} />
         <BathroomFinalCta />
       </main>
@@ -204,6 +207,7 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
         <section className="bath-hero bath-hero-compact">
           <div className="container bath-hero-grid">
             <div className="bath-hero-copy">
+              <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Salle de bain Rouen', href: '/salle-de-bain-rouen' }, { name: eyebrow.split('·').pop()?.trim() ?? 'Salle de bain' }]} />
               <p className="bath-eyebrow">{eyebrow}</p>
               <h1>{title}</h1>
               <p>{intro}</p>

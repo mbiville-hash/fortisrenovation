@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Breadcrumb from '@/components/Breadcrumb'
 
 type Source = { label: string; url: string }
 
@@ -68,7 +69,7 @@ export function GuideArticle({
       <article>
         <header className="guide-hero">
           <div className="container guide-hero-inner">
-            <p className="guide-eyebrow"><Link href="/guides">Guides</Link> · {category}</p>
+            <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Guides', href: '/guides' }, { name: category }]} />
             <h1 className="guide-title">{title}</h1>
             <p className="guide-meta">Publié le {dateLabel} · {readingTime} de lecture</p>
             <p className="guide-lead">{lead}</p>
