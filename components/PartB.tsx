@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const LAYOUTS = [
-  { douche: [92, 96, 0], vasque: [254, 72, 0], wc: [96, 198, 0] },
-  { douche: [266, 100, 0], vasque: [92, 150, 90], wc: [264, 200, 0] },
-  { douche: [98, 172, 0], vasque: [196, 66, 0], wc: [296, 92, 90] },
+  { douche: [60, 60, 0], vasque: [250, 35, 0], wc: [80, 217, 180] },
+  { douche: [300, 60, 90], vasque: [35, 150, 90], wc: [317, 200, 90] },
+  { douche: [60, 200, 270], vasque: [180, 35, 0], wc: [317, 95, 90] },
 ] as const
 
 export default function PartB() {
@@ -29,10 +29,8 @@ export default function PartB() {
         .part-planwrap { display: flex; align-items: center; justify-content: center; padding: 40px; }
         .part-plan { position: relative; width: 100%; max-width: 460px; background: #15140f; border: 1px solid rgba(184,151,90,0.4); border-radius: 4px; padding: 14px; }
         .part-plan svg { display: block; width: 100%; height: auto; }
-        .pc { transition: transform 1.05s cubic-bezier(.55,.15,.1,1); transform-box: fill-box; transform-origin: center; }
+        .pc { transition: transform 0.9s cubic-bezier(.55,.15,.1,1); transform-box: fill-box; transform-origin: center; }
         .pc rect, .pc path, .pc ellipse { fill: rgba(184,151,90,0.10); stroke: var(--gold); stroke-width: 1.4; }
-        .pc text { fill: #e8dcc2; font-size: 8px; font-family: 'Bodoni Moda', serif; letter-spacing: .04em; }
-        .part-plan-cap { text-align: center; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(245,240,232,0.45); margin-top: 12px; }
         @media (prefers-reduced-motion: reduce) { .pc { transition: none; } }
 
         .part-copy { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; }
@@ -60,24 +58,23 @@ export default function PartB() {
                 <svg viewBox="0 0 360 260" role="img" aria-label="Plan de salle de bain : trois implantations possibles, les meubles se replacent automatiquement">
                   <circle cx="180" cy="130" r="122" fill="none" stroke="var(--gold)" strokeWidth="0.5" opacity="0.16" />
                   <rect x="18" y="18" width="324" height="224" fill="none" stroke="rgba(232,220,194,0.45)" strokeWidth="2" />
-                  <path d="M126 18 A40 40 0 0 0 166 18" fill="none" stroke="rgba(232,220,194,0.3)" strokeWidth="1.2" />
+                  <rect x="171" y="236" width="48" height="8" fill="#15140f" />
+                  <line x1="175" y1="240" x2="175" y2="197" stroke="rgba(232,220,194,0.55)" strokeWidth="1.7" />
+                  <path d="M175 197 A43 43 0 0 1 218 240" fill="none" stroke="rgba(232,220,194,0.3)" strokeWidth="1.1" />
                   <g className="pc" style={tf(L.douche)}>
-                    <rect x="-40" y="-40" width="80" height="80" />
-                    <path d="M-40 0 A40 40 0 0 1 0 -40" fill="none" />
-                    <text x="0" y="3" textAnchor="middle">Douche</text>
+                    <path d="M-40 -40 L40 -40 A80 80 0 0 1 -40 40 Z" />
+                    <circle cx="-26" cy="-26" r="3.4" />
                   </g>
                   <g className="pc" style={tf(L.vasque)}>
                     <rect x="-54" y="-15" width="108" height="30" />
-                    <ellipse cx="0" cy="0" rx="12" ry="7" />
-                    <text x="0" y="3" textAnchor="middle">Vasque</text>
+                    <ellipse cx="0" cy="0" rx="13" ry="8" />
+                    <circle cx="0" cy="-9" r="2.4" />
                   </g>
                   <g className="pc" style={tf(L.wc)}>
-                    <rect x="-16" y="-23" width="32" height="46" />
-                    <ellipse cx="0" cy="4" rx="10" ry="13" />
-                    <text x="0" y="-28" textAnchor="middle">WC</text>
+                    <rect x="-16" y="-23" width="32" height="11" />
+                    <ellipse cx="0" cy="8" rx="13" ry="14" />
                   </g>
                 </svg>
-                <p className="part-plan-cap">3 implantations · vos options en 3D</p>
               </div>
             </div>
 
