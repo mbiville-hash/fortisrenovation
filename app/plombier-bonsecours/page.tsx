@@ -177,6 +177,10 @@ export default function PlombierBonsecoursPage() {
               <Link href="/plombier-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Franqueville-Saint-Pierre</Link>{' '}
               et <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>.
             </p>
+            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', marginTop: 12 }}>
+              Vous rénovez votre salle de bain à Bonsecours ?{' '}
+              <Link href="/salle-de-bain-bonsecours" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Découvrez notre offre salle de bain clé en main</Link>.
+            </p>
           </div>
         </section>
 

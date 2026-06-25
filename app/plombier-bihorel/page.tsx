@@ -178,6 +178,10 @@ export default function PlombierBihorelPage() {
               <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>{' '}
               et <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>.
             </p>
+            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', marginTop: 12 }}>
+              Vous rénovez votre salle de bain à Bihorel ?{' '}
+              <Link href="/salle-de-bain-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Découvrez notre offre salle de bain clé en main</Link>.
+            </p>
           </div>
         </section>
 

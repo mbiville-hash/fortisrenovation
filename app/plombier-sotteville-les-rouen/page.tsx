@@ -173,6 +173,10 @@ export default function PlombierSottevillePage() {
               <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>{' '}
               et <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>.
             </p>
+            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', marginTop: 12 }}>
+              Vous rénovez votre salle de bain à Sotteville-lès-Rouen ?{' '}
+              <Link href="/salle-de-bain-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Découvrez notre offre salle de bain clé en main</Link>.
+            </p>
           </div>
         </section>
 

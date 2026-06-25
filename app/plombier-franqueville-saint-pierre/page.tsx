@@ -4,7 +4,7 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Plombier Franqueville-Saint-Pierre — Maintenance & dégâts',
-  description: 'Plombier à Franqueville-Saint-Pierre : maintenance immobilière, dégâts des eaux, petits travaux. Intervention rapide sur le plateau est, rapport sous 48h. Devis gratuit.',
+  description: 'Plombier à Franqueville-Saint-Pierre : maintenance, dégâts des eaux, petits travaux. Intervention rapide sur le plateau est, rapport sous 48h.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/plombier-franqueville-saint-pierre' },
   openGraph: {
     title: 'Plombier Franqueville-Saint-Pierre — Fortis Rénovation',
@@ -176,6 +176,10 @@ export default function PlombierFranquevilleSaintPierrePage() {
               <Link href="/plombier-le-mesnil-esnard" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Le Mesnil-Esnard</Link>,{' '}
               <Link href="/plombier-bonsecours" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bonsecours</Link>{' '}
               et <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>.
+            </p>
+            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', marginTop: 12 }}>
+              Vous rénovez votre salle de bain à Franqueville-Saint-Pierre ?{' '}
+              <Link href="/salle-de-bain-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Découvrez notre offre salle de bain clé en main</Link>.
             </p>
           </div>
         </section>
