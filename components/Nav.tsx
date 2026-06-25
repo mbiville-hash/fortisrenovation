@@ -168,12 +168,12 @@ export default function Nav() {
           <div className="nav-panel-links">
             <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link>
             <Link href="/douche-italienne-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/douche-italienne-rouen' ? 'page' : undefined}>Douche italienne</Link>
+            <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Rénovation clé en main</Link>
             <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
-            <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Clé en main</Link>
+            <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-immobiliere-rouen' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
             <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Professionnels</Link>
+            <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
             <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
-            <Link href="/espace-pro" onClick={() => setOpen(false)} aria-current={pathname === '/espace-pro' ? 'page' : undefined}>Accès pro</Link>
-            <Link href="/devis" onClick={() => setOpen(false)} aria-current={pathname === '/devis' ? 'page' : undefined}>Étudier mon projet</Link>
           </div>
           <div className="nav-panel-meta">
             <a href="tel:+33767491324" onClick={() => setOpen(false)}>07 67 49 13 24</a> <br />
