@@ -127,6 +127,12 @@ export default function Nav() {
         .nav-panel-links a[aria-current="page"] {
           color: var(--gold);
         }
+        .nav-group {
+          font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+          text-transform: uppercase; color: var(--gold);
+          padding: 18px 0 6px; opacity: 0.85;
+        }
+        .nav-group:first-child { padding-top: 4px; }
         .nav-panel-meta {
           margin-top: 24px;
           color: rgba(255,255,255,0.5);
@@ -166,12 +172,14 @@ export default function Nav() {
       {open && (
         <div className="nav-panel">
           <div className="nav-panel-links">
+            <span className="nav-group">Particuliers</span>
             <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link>
             <Link href="/douche-italienne-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/douche-italienne-rouen' ? 'page' : undefined}>Douche italienne</Link>
             <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Rénovation clé en main</Link>
             <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
-            <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-immobiliere-rouen' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
-            <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Professionnels</Link>
+            <span className="nav-group">Professionnels</span>
+            <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
+            <span className="nav-group">L&apos;entreprise</span>
             <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
             <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
           </div>

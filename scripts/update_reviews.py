@@ -25,6 +25,7 @@ REPO_ROOT = Path(__file__).parent.parent
 FILES_TO_UPDATE = [
     "components/AvisC.tsx",
     "components/StatsA.tsx",
+    "components/HeroA.tsx",
     "app/a-propos/page.tsx",
 ]
 # Toutes les pages plombier-*/page.tsx (incluant les futures pages)

@@ -205,6 +205,23 @@ export default function ProsPage() {
           </div>
         </section>
 
+        {/* Zone & maillage — communes desservies */}
+        <section style={{ background: 'var(--paper)', padding: '56px 0', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
+          <div className="container" data-reveal>
+            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
+              Maintenance et dépannage sur tout le plateau et la métropole :{' '}
+              <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>,{' '}
+              <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
+              <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>,{' '}
+              <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>,{' '}
+              <Link href="/plombier-bonsecours" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bonsecours</Link>,{' '}
+              <Link href="/plombier-le-mesnil-esnard" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Le Mesnil-Esnard</Link>,{' '}
+              <Link href="/plombier-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Franqueville-Saint-Pierre</Link>{' '}
+              et <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>.
+            </p>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{ ...darkSection, padding: '72px 0', textAlign: 'center' }}>
           <Rings className="rings--br" />

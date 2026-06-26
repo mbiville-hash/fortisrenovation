@@ -25,6 +25,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/maintenance-immobiliere-rouen',
+        destination: '/professionnels',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
