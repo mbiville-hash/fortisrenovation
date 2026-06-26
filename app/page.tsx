@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
+import Aiguillage from '@/components/Aiguillage'
 import HeroA from '@/components/HeroA'
 import StatsA from '@/components/StatsA'
-import ClientsStrip from '@/components/ClientsStrip'
-import ProsA from '@/components/ProsA'
 import PartB from '@/components/PartB'
 import AvisC from '@/components/AvisC'
 import ZoneA from '@/components/ZoneA'
@@ -29,10 +28,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BASE_SCHEMA) }}
       />
       <main>
+        <Aiguillage />
         <HeroA />
         <StatsA />
-        <ClientsStrip />
-        <ProsA />
         <PartB />
         <Realisations />
         <AvisC />
