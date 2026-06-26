@@ -2,15 +2,17 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Rings from '@/components/Rings'
 import Breadcrumb from '@/components/Breadcrumb'
+import ClientsStrip from '@/components/ClientsStrip'
+import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
-  description: 'Contrats de maintenance immobilière à Rouen pour syndics, bailleurs et entreprises. Un interlocuteur unique, interventions 48h, rapport systématique.',
+  description: 'Maintenance et dépannage immobilier à Rouen pour syndics, bailleurs et entreprises. Un interlocuteur unique, interventions sous 48h, devis clair, rapport systématique.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/professionnels' },
   openGraph: {
     title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
-    description: 'Contrats de maintenance immobilière à Rouen. Un interlocuteur unique, interventions 48h, rapport systématique.',
+    description: 'Maintenance et dépannage immobilier à Rouen. Un interlocuteur unique, interventions sous 48h, devis clair, rapport systématique.',
     url: 'https://www.fortisrenovation.fr/professionnels',
     locale: 'fr_FR',
     type: 'website',
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: 'Quels types de travaux couvrez-vous ?', a: 'Plomberie, électricité, menuiserie, peinture, carrelage, petits travaux de maçonnerie et dégâts des eaux. Tout ce dont un parc immobilier a besoin au quotidien.' },
   { q: 'Quel est votre délai d’intervention ?', a: 'Nous garantissons une réponse sous 48h pour les demandes standard. Pour les urgences (fuite, sinistre), nous faisons notre maximum pour intervenir le jour même, avec une astreinte 24h/24 et 7j/7.' },
-  { q: 'Comment fonctionne le contrat de maintenance ?', a: 'Un forfait annuel adapté à la taille de votre parc, avec un nombre d’interventions incluses et un tarif préférentiel sur les travaux supplémentaires. Rapport mensuel fourni.' },
+  { q: 'Travaillez-vous au forfait ou au devis ?', a: 'Le plus souvent au devis, intervention par intervention : un chiffrage clair, sans engagement. Pour un parc important, on peut mettre en place un suivi régulier sur-mesure si vous le souhaitez.' },
   { q: 'Une seule facture pour plusieurs corps de métier ?', a: 'Oui. Multi-corps d’état, un seul devis et une seule facture : vous n’avez qu’un interlocuteur à gérer, pas cinq.' },
   { q: 'Gérez-vous les dossiers d’assurance (dégât des eaux, sinistre) ?', a: 'Oui. Nous établissons des rapports détaillés et des devis adaptés à la prise en charge assurance, et nous intervenons en urgence pour limiter les dégâts.' },
   { q: 'Intervenez-vous dans toute la Seine-Maritime ?', a: 'Nous intervenons principalement dans un rayon de 30 km autour de Rouen (métropole normande). Contactez-nous pour les zones plus éloignées.' },
@@ -42,8 +44,8 @@ const audiences = [
 
 const method: [string, string, string][] = [
   ['01', 'Premier contact & visite', 'On fait le tour de votre parc et de vos besoins, gratuitement.'],
-  ['02', 'Contrat sur-mesure', 'Forfait annuel adapté, ou interventions à la demande. Vous décidez.'],
-  ['03', 'Interventions & urgences', 'Préventif programmé, et réponse sous 48h en cas d’urgence.'],
+  ['02', 'Devis clair', 'Un chiffrage précis avant toute intervention. Sans engagement.'],
+  ['03', 'Interventions & urgences', 'Travaux programmés, et réponse sous 48h en cas d’urgence.'],
   ['04', 'Rapport systématique', 'Compte-rendu écrit à chaque passage, photos à l’appui.'],
   ['05', 'Suivi & bilan', 'Un interlocuteur dédié, un bilan régulier, une facturation lisible.'],
 ]
@@ -67,7 +69,7 @@ const Dash = () => <span style={{ display: 'block', width: 32, height: 1, backgr
 export default function ProsPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Maintenance immobilière Rouen', 'Contrats de maintenance immobilière pour syndics, bailleurs et entreprises à Rouen.', '/professionnels')) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Maintenance immobilière Rouen', 'Maintenance et dépannage immobilier pour syndics, bailleurs et entreprises à Rouen. Interventions au devis, réponse sous 48h.', '/professionnels')) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
         { name: 'Professionnels', url: 'https://www.fortisrenovation.fr/professionnels' },
@@ -82,16 +84,16 @@ export default function ProsPage() {
             <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Professionnels' }]} />
             <p style={eyebrow}><Dash />Syndics · Bailleurs · Entreprises</p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Maintenance immobilière <br />à Rouen — un seul <br />prestataire.
+              Maintenance &amp; dépannage <br />immobilier à Rouen — <br />un seul prestataire.
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.62)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
-              Plomberie, électricité, menuiserie, peinture. Contrats annuels ou interventions ponctuelles — vous décidez. Un interlocuteur unique, des rapports clairs, une seule facture.
+              Plomberie, électricité, menuiserie, peinture. Au devis, à l’intervention ou en suivi régulier — vous décidez. Un interlocuteur unique, des rapports clairs, une seule facture.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
               Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <Link href="/devis" className="btn btn-gold">Demander un devis pro</Link>
+              <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>
@@ -110,6 +112,12 @@ export default function ProsPage() {
             </div>
           </div>
         </section>
+
+        {/* Réactivité — timeline animée */}
+        <ReactiviteTimeline />
+
+        {/* Ils nous font confiance */}
+        <ClientsStrip />
 
         {/* Pour qui */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
@@ -134,10 +142,10 @@ export default function ProsPage() {
             <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 44, color: 'var(--ink)' }}>Ce qu’on prend en charge.</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
               {[
-                { title: 'Contrat de maintenance annuel', desc: 'Forfait adapté à votre parc. Visites préventives, interventions incluses, rapport mensuel, tarif préférentiel.' },
-                { title: 'Interventions ponctuelles', desc: 'Besoin urgent ou travaux spécifiques ? On intervient à la demande avec devis rapide et rapport d’intervention.' },
+                { title: 'Dépannage & interventions', desc: 'Fuite, panne, sinistre ou travaux ponctuels : devis rapide, intervention sous 48h (souvent le jour même), rapport à l’appui.' },
                 { title: 'Rénovation entre locataires', desc: 'Remise en état complète entre deux locataires. Peinture, sol, salle de bain — appartement prêt à relouer.' },
                 { title: 'Mise aux normes', desc: 'Électricité, accessibilité, sécurité — on diagnostique et on met aux normes pour vous.' },
+                { title: 'Suivi régulier (sur demande)', desc: 'Pour un parc important, un suivi sur-mesure : visites programmées et interlocuteur dédié, sans engagement rigide.' },
               ].map(({ title, desc }, i) => (
                 <div key={title} data-reveal style={{ padding: 30, border: '1px solid rgba(26,26,24,0.1)', background: 'var(--paper)', transitionDelay: `${i * 70}ms` }}>
                   <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>{title}</h3>
@@ -202,9 +210,9 @@ export default function ProsPage() {
           <Rings className="rings--br" />
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16, color: 'white' }}>Parlons de votre parc.</h2>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.62)', marginBottom: 40 }}>Étude sous 48h. Un rendez-vous, un interlocuteur.</p>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.62)', marginBottom: 40 }}>Devis sous 48h. Un rendez-vous, un interlocuteur.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/devis" className="btn btn-gold">Étudier mon projet</Link>
+              <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>
