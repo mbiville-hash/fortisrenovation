@@ -4,6 +4,8 @@ import Rings from '@/components/Rings'
 import Breadcrumb from '@/components/Breadcrumb'
 import ClientsStrip from '@/components/ClientsStrip'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
+import BeneficesPro from '@/components/BeneficesPro'
+import MetiersPro from '@/components/MetiersPro'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -48,17 +50,6 @@ const method: [string, string, string][] = [
   ['03', 'Interventions & urgences', 'Travaux programmés, et réponse sous 48h en cas d’urgence.'],
   ['04', 'Rapport systématique', 'Compte-rendu écrit à chaque passage, photos à l’appui.'],
   ['05', 'Suivi & bilan', 'Un interlocuteur dédié, un bilan régulier, une facturation lisible.'],
-]
-
-const domains: [string, string][] = [
-  ['Plomberie', 'Fuites, sanitaires, réseaux, chauffe-eau.'],
-  ['Électricité', 'Dépannage, tableau, mise aux normes.'],
-  ['Menuiserie', 'Portes, fenêtres, serrures, agencement.'],
-  ['Peinture', 'Rafraîchissement, parties communes, logements.'],
-  ['Carrelage & sols', 'Pose, reprise, revêtements.'],
-  ['Maçonnerie', 'Petits travaux, reprises, scellements.'],
-  ['Dégât des eaux', 'Intervention rapide et rapport assurance.'],
-  ['Mise aux normes', 'Électricité, accessibilité, sécurité.'],
 ]
 
 const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'white', position: 'relative', overflow: 'hidden' }
@@ -119,6 +110,9 @@ export default function ProsPage() {
         {/* Ils nous font confiance */}
         <ClientsStrip />
 
+        {/* Bénéfices — comment on vous fait gagner du temps */}
+        <BeneficesPro />
+
         {/* Pour qui */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
           <div className="container">
@@ -129,27 +123,6 @@ export default function ProsPage() {
                 <div key={t} data-reveal style={{ padding: 30, background: 'white', border: '1px solid rgba(154,124,69,0.2)', transitionDelay: `${i * 70}ms` }}>
                   <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, marginBottom: 10, color: 'var(--ink)' }}>{t}</h3>
                   <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.7 }}>{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services */}
-        <section style={{ background: 'white', padding: '80px 0' }}>
-          <div className="container">
-            <p style={eyebrowGold}><Dash />Nos prestations</p>
-            <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 44, color: 'var(--ink)' }}>Ce qu’on prend en charge.</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
-              {[
-                { title: 'Dépannage & interventions', desc: 'Fuite, panne, sinistre ou travaux ponctuels : devis rapide, intervention sous 48h (souvent le jour même), rapport à l’appui.' },
-                { title: 'Rénovation entre locataires', desc: 'Remise en état complète entre deux locataires. Peinture, sol, salle de bain — appartement prêt à relouer.' },
-                { title: 'Mise aux normes', desc: 'Électricité, accessibilité, sécurité — on diagnostique et on met aux normes pour vous.' },
-                { title: 'Suivi régulier (sur demande)', desc: 'Pour un parc important, un suivi sur-mesure : visites programmées et interlocuteur dédié, sans engagement rigide.' },
-              ].map(({ title, desc }, i) => (
-                <div key={title} data-reveal style={{ padding: 30, border: '1px solid rgba(26,26,24,0.1)', background: 'var(--paper)', transitionDelay: `${i * 70}ms` }}>
-                  <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>{title}</h3>
-                  <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.7 }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -174,18 +147,29 @@ export default function ProsPage() {
           </div>
         </section>
 
-        {/* Domaines */}
-        <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
-          <div className="container">
-            <p style={eyebrowGold}><Dash />Domaines d’intervention</p>
-            <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 44, color: 'var(--ink)' }}>Tous les corps d’état, un seul numéro.</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 14 }}>
-              {domains.map(([t, d], i) => (
-                <div key={t} data-reveal style={{ padding: '22px 24px', background: 'white', borderTop: '2px solid var(--gold)', transitionDelay: `${i * 50}ms` }}>
-                  <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink)', marginBottom: 6 }}>{t}</div>
-                  <p style={{ fontSize: 13.5, color: 'var(--ink-soft)', lineHeight: 1.6 }}>{d}</p>
-                </div>
-              ))}
+        {/* Domaines — corps d'état en icônes */}
+        <MetiersPro />
+
+        {/* Zone d'intervention — pastilles */}
+        <section style={{ background: 'var(--paper)', padding: '64px 0', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
+          <style>{`
+            .zone-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 0 auto; }
+            .zone-chip { font-size: 13px; font-weight: 500; color: var(--ink); background: white; border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease; }
+            .zone-chip:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
+          `}</style>
+          <div className="container" data-reveal>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9a7c45', textAlign: 'center', marginBottom: 22 }}>
+              Zone d&apos;intervention · 30 km autour de Rouen
+            </p>
+            <div className="zone-chips">
+              <Link href="/plombier-mont-saint-aignan" className="zone-chip">Mont-Saint-Aignan</Link>
+              <Link href="/plombier-bois-guillaume" className="zone-chip">Bois-Guillaume</Link>
+              <Link href="/plombier-bihorel" className="zone-chip">Bihorel</Link>
+              <Link href="/plombier-isneauville" className="zone-chip">Isneauville</Link>
+              <Link href="/plombier-bonsecours" className="zone-chip">Bonsecours</Link>
+              <Link href="/plombier-le-mesnil-esnard" className="zone-chip">Le Mesnil-Esnard</Link>
+              <Link href="/plombier-franqueville-saint-pierre" className="zone-chip">Franqueville-Saint-Pierre</Link>
+              <Link href="/plombier-sotteville-les-rouen" className="zone-chip">Sotteville-lès-Rouen</Link>
             </div>
           </div>
         </section>
@@ -202,23 +186,6 @@ export default function ProsPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Zone & maillage — communes desservies */}
-        <section style={{ background: 'var(--paper)', padding: '56px 0', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
-          <div className="container" data-reveal>
-            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
-              Maintenance et dépannage sur tout le plateau et la métropole :{' '}
-              <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>,{' '}
-              <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
-              <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>,{' '}
-              <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>,{' '}
-              <Link href="/plombier-bonsecours" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bonsecours</Link>,{' '}
-              <Link href="/plombier-le-mesnil-esnard" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Le Mesnil-Esnard</Link>,{' '}
-              <Link href="/plombier-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Franqueville-Saint-Pierre</Link>{' '}
-              et <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>.
-            </p>
           </div>
         </section>
 
