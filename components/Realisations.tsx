@@ -1,32 +1,14 @@
-import fs from 'fs'
-import path from 'path'
 import Image from 'next/image'
 
-function getPhotos(): string[] {
-  try {
-    return fs
-      .readdirSync(path.join(process.cwd(), 'public', 'realisations'))
-      .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
-      .sort()
-  } catch {
-    return []
-  }
-}
-
-function altFor(file: string): string {
-  const slug = file
-    .replace(/^\d+-/, '')
-    .replace(/\.[^.]+$/, '')
-    .replace(/-/g, ' ')
-    .trim()
-  const label = slug.charAt(0).toUpperCase() + slug.slice(1)
-  return `${label} — réalisation Fortis Rénovation à Rouen`
-}
+const PHOTOS: { file: string; alt: string }[] = [
+  { file: '03-salle-de-bain-robinetterie-doree.jpg', alt: 'Salle de bain avec robinetterie dorée — réalisation Fortis Rénovation à Rouen' },
+  { file: 'dressing-sur-mesure-rouen.jpg', alt: 'Dressing sur-mesure vert sauge — réalisation Fortis Rénovation à Rouen' },
+  { file: '01-salle-de-bain-meuble-led.jpg', alt: 'Salle de bain avec meuble et miroir LED — réalisation Fortis Rénovation à Rouen' },
+  { file: 'renovation-salle-de-bain-douche-rouen.jpg', alt: 'Rénovation de salle de bain avec douche — réalisation Fortis Rénovation à Rouen' },
+  { file: '02-wc-carrelage-vert.jpg', alt: 'WC rénové avec carrelage — réalisation Fortis Rénovation à Rouen' },
+]
 
 export default function Realisations() {
-  const photos = getPhotos()
-  if (photos.length === 0) return null
-
   return (
     <>
       <style>{`
@@ -58,11 +40,11 @@ export default function Realisations() {
             <p>Quelques salles de bain et rénovations menées par Fortis Rénovation à Rouen et sa métropole.</p>
           </div>
           <div className="realisations-grid">
-            {photos.map((p, i) => (
-              <figure key={p} className="realisation-tile" data-reveal style={{ transitionDelay: `${(i % 3) * 90}ms` }}>
+            {PHOTOS.map((p, i) => (
+              <figure key={p.file} className="realisation-tile" data-reveal style={{ transitionDelay: `${(i % 3) * 90}ms` }}>
                 <Image
-                  src={`/realisations/${encodeURIComponent(p)}`}
-                  alt={altFor(p)}
+                  src={`/realisations/${encodeURIComponent(p.file)}`}
+                  alt={p.alt}
                   fill
                   sizes="(max-width: 760px) 50vw, 33vw"
                 />
