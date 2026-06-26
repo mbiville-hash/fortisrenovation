@@ -4,8 +4,8 @@ const G = { fill: 'none', stroke: 'var(--gold)', strokeWidth: 2.4, strokeLinecap
 
 const items: { t: string; d: string; svg: ReactNode }[] = [
   {
-    t: 'Un seul interlocuteur',
-    d: "Vous appelez une personne, pas cinq artisans. On coordonne tous les corps d'état — vous, vous oubliez.",
+    t: 'Un interlocuteur unique',
+    d: 'Vous déléguez l’exécution, vous gardez la main : nous coordonnons tous les corps d’état pendant que vous restez sur votre cœur de métier, la gestion.',
     svg: (
       <svg viewBox="0 0 64 56" aria-hidden="true"><g {...G}>
         <circle cx="10" cy="12" r="3" /><circle cx="10" cy="28" r="3" /><circle cx="10" cy="44" r="3" />
@@ -15,8 +15,8 @@ const items: { t: string; d: string; svg: ReactNode }[] = [
     ),
   },
   {
-    t: 'Remis en location, sans temps mort',
-    d: 'Remise en état express entre deux locataires : peinture, sol, salle de bain. Le bien repart vite.',
+    t: 'Vacance locative maîtrisée',
+    d: 'Entre deux baux, nous remettons le lot en état rapidement — sols, peinture, sanitaires. Le bien repart à la location sans vacance inutile.',
     svg: (
       <svg viewBox="0 0 64 56" aria-hidden="true"><g {...G}>
         <circle cx="18" cy="28" r="9" /><circle cx="18" cy="28" r="3.4" />
@@ -25,8 +25,8 @@ const items: { t: string; d: string; svg: ReactNode }[] = [
     ),
   },
   {
-    t: 'Une facture, un rapport',
-    d: 'Un devis, une facture, un compte-rendu écrit à chaque passage. Comptabilité et copropriété tranquilles.',
+    t: 'Une traçabilité prête pour l’AG',
+    d: 'Devis, facture et rapport photo à chaque passage : nous vous remettons des pièces justificatives nettes pour vos assemblées générales et la reddition de charges.',
     svg: (
       <svg viewBox="0 0 64 56" aria-hidden="true"><g {...G}>
         <path d="M20 8 h16 l9 9 v31 h-25 z" /><path d="M36 8 v9 h9" />
@@ -35,8 +35,8 @@ const items: { t: string; d: string; svg: ReactNode }[] = [
     ),
   },
   {
-    t: 'Zéro relance',
-    d: 'On rappelle, on planifie, on rend compte. Réponse sous 48h, astreinte 24/7 — plus rien à courir après.',
+    t: 'Vos obligations tenues',
+    d: 'Nous rappelons, planifions et rendons compte. Réponse sous 48h, astreinte 24/7 — vos engagements envers les locataires tenus, sans courir après les artisans.',
     svg: (
       <svg viewBox="0 0 64 56" aria-hidden="true"><g {...G}>
         <rect x="16" y="9" width="20" height="40" rx="3" /><line x1="22" y1="43" x2="30" y2="43" />
@@ -63,7 +63,7 @@ export default function BeneficesPro() {
       <div className="container">
         <p className="bp-eye">Pourquoi Fortis</p>
         <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 44, color: 'var(--ink)' }}>
-          Comment on vous fait gagner du temps.
+          Ce que vous y gagnez.
         </h2>
         <div className="bp-grid">
           {items.map(({ t, d, svg }, i) => (

@@ -71,8 +71,8 @@ export default function ReactiviteTimeline() {
                 </g>
               </svg>
             </div>
-            <p className="rtl-t">On intervient</p>
-            <p className="rtl-s">Sous 48h, souvent le jour même</p>
+            <p className="rtl-t">Nous intervenons</p>
+            <p className="rtl-s">Sous 48h, urgence en quelques heures</p>
           </div>
 
           <div className="rtl-step">
