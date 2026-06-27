@@ -127,6 +127,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
                 Elle dépend des alignements, de l’éclairage, de l’étanchéité, des joints,
                 de la ventilation et de la cohérence entre chaque choix.
               </p>
+              <p className="bath-brands">Selon votre projet et votre budget, nous posons les grandes marques — <strong>Geberit, Grohe, Villeroy &amp; Boch, Hansgrohe</strong>.</p>
             </div>
             <div className="bath-material-grid">
               {[
@@ -353,6 +354,8 @@ const bathroomStyles = `
 .bath-materials { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1fr); gap: 72px; align-items: center; }
 .bath-materials h2 { font-size: clamp(32px, 4vw, 46px); margin-bottom: 18px; }
 .bath-materials p { color: var(--ink-soft); line-height: 1.85; }
+.bath-brands { margin-top: 18px; font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.bath-brands strong { color: var(--ink); font-weight: 600; }
 .bath-material-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .bath-material-grid div { border: 1px solid rgba(26,26,24,.1); padding: 18px; color: var(--ink-soft); font-size: 13px; line-height: 1.6; background: var(--paper); }
 .bath-price-list { background: var(--dark); color: white; padding: 28px; }

@@ -125,6 +125,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE}/maintenance-copropriete-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/degat-des-eaux-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

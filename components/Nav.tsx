@@ -179,6 +179,7 @@ export default function Nav() {
             <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
             <span className="nav-group">Professionnels</span>
             <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
+            <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
             <span className="nav-group">L&apos;entreprise</span>
             <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
             <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
