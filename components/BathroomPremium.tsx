@@ -118,8 +118,8 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
             </div>
             <div className="bath-hero-media">
               <Image
-                src="/salle-de-bain-3d.jpg"
-                alt="Salle de bain design en 3D pour une rénovation à Rouen"
+                src="/salle-de-bain-rouen-hero.jpg"
+                alt="Rénovation de salle de bain à Rouen : marbre, douche à l’italienne et meuble suspendu"
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 48vw"

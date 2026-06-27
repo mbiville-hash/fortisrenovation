@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://www.fortisrenovation.fr/salle-de-bain-rouen',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/salle-de-bain-3d.jpg', width: 1200, height: 900, alt: 'Rénovation salle de bain design à Rouen' }],
+    images: [{ url: '/salle-de-bain-rouen-hero.jpg', width: 1600, height: 1200, alt: 'Rénovation de salle de bain en marbre à Rouen' }],
   },
 }
 
@@ -49,9 +49,9 @@ export default function SalleDeBainPage() {
       ]))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectSchema(
-        'https://www.fortisrenovation.fr/salle-de-bain-3d.jpg',
-        'Salle de bain design en 3D',
-        'Visualisation 3D d’un projet de rénovation de salle de bain à Rouen'
+        'https://www.fortisrenovation.fr/salle-de-bain-rouen-hero.jpg',
+        'Salle de bain en marbre rénovée à Rouen',
+        'Rénovation de salle de bain à Rouen : marbre, douche à l’italienne et meuble suspendu'
       ))}} />
       <BathroomPillar faqs={faqs} />
     </>
