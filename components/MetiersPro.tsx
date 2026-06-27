@@ -8,7 +8,11 @@ const tilePos = [[16, 16], [27, 16], [38, 16], [16, 27], [27, 27], [38, 27], [16
 const metiers: { t: string; d: string; svg: ReactNode }[] = [
   {
     t: 'Plomberie', d: 'Fuites, sanitaires, réseaux, chauffe-eau.',
-    svg: <svg viewBox="0 0 64 64" aria-hidden="true"><path {...G} className="mp-fx mp-drop" d="M32 12 C32 12 19 29 19 40 a13 13 0 0 0 26 0 C45 29 32 12 32 12 Z" /></svg>,
+    svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}>
+      <line x1="12" y1="40" x2="52" y2="40" />
+      <rect x="26" y="33" width="12" height="14" rx="1.5" />
+      <g className="mp-valve"><line x1="32" y1="40" x2="32" y2="21" /><circle cx="32" cy="19" r="2.6" /></g>
+    </g></svg>,
   },
   {
     t: 'Électricité', d: 'Dépannage, tableau, mise aux normes.',
@@ -20,7 +24,7 @@ const metiers: { t: string; d: string; svg: ReactNode }[] = [
   },
   {
     t: 'Peinture', d: 'Rafraîchissement, parties communes, logements.',
-    svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G} className="mp-fx mp-roll"><rect x="16" y="14" width="30" height="11" rx="2" /><path d="M31 25 v6 h-6 v16" /></g></svg>,
+    svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G} className="mp-brush"><path d="M46 16 L31 31" /><path d="M27 27 l10 10" /><path d="M24 30 l10 10 l-3 4 q-6 3 -11 -2 q-5 -5 -2 -11 z" /></g></svg>,
   },
   {
     t: 'Carrelage & sols', d: 'Pose, reprise, revêtements.',
@@ -53,25 +57,25 @@ export default function MetiersPro() {
         .mp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
         .mp-card { background: white; border-top: 2px solid var(--gold); padding: 26px 18px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .mp-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(26,26,24,0.09); }
-        .mp-card svg { width: 44px; height: 44px; display: block; margin: 0 auto 12px; overflow: hidden; }
+        .mp-card svg { width: 44px; height: 44px; display: block; margin: 0 auto 12px; overflow: visible; }
         .mp-l { font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; }
         .mp-d { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
         .mp-fx { transform-box: fill-box; transform-origin: center; }
-        .mp-drop { animation: mpDrop 2s ease-in-out infinite; }
-        .mp-roll { animation: mpRoll 0.85s ease-in-out infinite; }
+        .mp-valve { transform-box: fill-box; transform-origin: 50% 100%; animation: mpValve 3s ease-in-out infinite; }
+        .mp-brush { transform-box: fill-box; transform-origin: center; animation: mpBrush 1.5s ease-in-out infinite; }
         .mp-glass { animation: mpGlass 2s ease-in-out infinite; }
         .mp-rays { opacity: 0.15; animation: mpRays 2s ease-in-out infinite; }
         .mp-tile { fill: rgba(184,151,90,0); animation: mpTile 2.6s ease-in-out infinite; }
         .mp-rip { animation: mpRip 2.2s ease-in-out infinite; }
         .mp-check { animation: mpCheck 1s ease-in-out infinite; }
-        @keyframes mpDrop { 0% { transform: translateY(-11px); opacity: 0; } 16% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(13px); opacity: 0; } }
-        @keyframes mpRoll { 0%, 100% { transform: translateY(7px); } 50% { transform: translateY(-7px); } }
+        @keyframes mpValve { 0%, 15% { transform: rotate(0deg); } 50%, 65% { transform: rotate(-90deg); } 100% { transform: rotate(0deg); } }
+        @keyframes mpBrush { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
         @keyframes mpGlass { 0%, 100% { fill: rgba(184,151,90,0); } 50% { fill: rgba(184,151,90,0.3); } }
         @keyframes mpRays { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
         @keyframes mpTile { 0%, 100% { fill: rgba(184,151,90,0); } 14% { fill: rgba(184,151,90,0.6); } 42% { fill: rgba(184,151,90,0); } }
         @keyframes mpRip { 0%, 100% { opacity: 0.25; transform: scaleX(0.82); } 50% { opacity: 1; transform: scaleX(1.06); } }
         @keyframes mpCheck { 0%, 100% { opacity: 1; } 50% { opacity: 0.12; } }
-        @media (prefers-reduced-motion: reduce) { .mp-drop, .mp-roll, .mp-glass, .mp-rays, .mp-tile, .mp-rip, .mp-check { animation: none; } .mp-rays { opacity: 0.7; } .mp-tile { fill: rgba(184,151,90,0.25); } }
+        @media (prefers-reduced-motion: reduce) { .mp-valve, .mp-brush, .mp-glass, .mp-rays, .mp-tile, .mp-rip, .mp-check { animation: none; } .mp-rays { opacity: 0.7; } .mp-tile { fill: rgba(184,151,90,0.25); } }
       `}</style>
       <div className="container">
         <p className="mp-eye">Domaines d&apos;intervention</p>
