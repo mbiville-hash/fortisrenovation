@@ -5,27 +5,35 @@ export default function Aiguillage() {
     <>
       <style>{`
         .aig { margin-top: 72px; background: #15140f; border-bottom: 1px solid rgba(184,151,90,0.22); }
-        .aig-inner { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 12px 20px; flex-wrap: wrap; }
-        .aig-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-        .aig-opts { display: flex; gap: 10px; }
-        .aig-opt { display: inline-flex; align-items: baseline; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; padding: 8px 16px; border: 1px solid rgba(184,151,90,0.4); border-radius: 2px; white-space: nowrap; transition: background 0.2s, border-color 0.2s, color 0.2s; }
-        .aig-opt small { font-weight: 500; opacity: 0.7; letter-spacing: 0; }
-        .aig-active { background: var(--gold); color: #fff; border-color: var(--gold); }
-        .aig-active small { opacity: 0.85; }
-        .aig-link { color: rgba(255,255,255,0.82); }
-        .aig-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,151,90,0.07); }
-        @media (max-width: 600px) {
-          .aig-inner { gap: 9px; padding: 11px 12px; }
-          .aig-label { width: 100%; text-align: center; }
-          .aig-opt { font-size: 11.5px; padding: 7px 12px; }
+        .aig-split { display: flex; }
+        .aig-half {
+          flex: 1; display: flex; align-items: center; justify-content: center; gap: 12px;
+          padding: 18px 18px; color: #fff; transition: background 0.15s ease;
+        }
+        .aig-half:first-child { border-right: 1px solid rgba(184,151,90,0.3); }
+        .aig-half:hover { background: rgba(184,151,90,0.08); }
+        .aig-half svg { width: 28px; height: 28px; flex-shrink: 0; }
+        .aig-half svg g { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .aig-lab { font-size: 15px; font-weight: 700; letter-spacing: 0.01em; }
+        .aig-arr { color: var(--gold); font-size: 17px; line-height: 1; }
+        @media (max-width: 560px) {
+          .aig-half { padding: 14px 10px; gap: 8px; }
+          .aig-lab { font-size: 13.5px; }
+          .aig-half svg { width: 23px; height: 23px; }
         }
       `}</style>
       <div className="aig">
-        <div className="aig-inner">
-          <span className="aig-label">Vous êtes ?</span>
-          <div className="aig-opts">
-            <span className="aig-opt aig-active">Particulier <small>salle de bain</small></span>
-            <Link href="/professionnels" className="aig-opt aig-link">Syndic &amp; pro <small>maintenance</small> →</Link>
+        <div className="container">
+          <div className="aig-split">
+            <Link href="/salle-de-bain-rouen" className="aig-half">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><g><path d="M7 19 L20 8 L33 19" /><path d="M11 17 V32 H29 V17" /><rect x="17" y="24" width="6" height="8" /></g></svg>
+              <span className="aig-lab">Particulier</span>
+            </Link>
+            <Link href="/professionnels" className="aig-half">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><g><rect x="11" y="7" width="18" height="26" /><rect x="15" y="12" width="4" height="4" /><rect x="21" y="12" width="4" height="4" /><rect x="15" y="19" width="4" height="4" /><rect x="21" y="19" width="4" height="4" /><rect x="18" y="26" width="4" height="7" /></g></svg>
+              <span className="aig-lab">Syndic &amp; pro</span>
+              <span className="aig-arr" aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </div>
