@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function ZoneA() {
   const cities: { name: string; href?: string }[] = [
-    { name: 'Rouen', href: '/maintenance-immobiliere-rouen' },
+    { name: 'Rouen', href: '/professionnels' },
     { name: 'Bois-Guillaume', href: '/plombier-bois-guillaume' },
     { name: 'Mont-Saint-Aignan', href: '/plombier-mont-saint-aignan' },
     { name: 'Bihorel', href: '/plombier-bihorel' },

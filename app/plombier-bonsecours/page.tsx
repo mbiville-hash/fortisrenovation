@@ -42,7 +42,7 @@ export default function PlombierBonsecoursPage() {
       ))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
-        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
+        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/professionnels' },
         { name: 'Plombier Bonsecours', url: 'https://www.fortisrenovation.fr/plombier-bonsecours' },
       ]))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
@@ -173,7 +173,7 @@ export default function PlombierBonsecoursPage() {
           <div className="container" data-reveal>
             <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
               Fortis Rénovation intervient également à{' '}
-              <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
+              <Link href="/professionnels" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
               <Link href="/plombier-le-mesnil-esnard" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Le Mesnil-Esnard</Link>,{' '}
               <Link href="/plombier-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Franqueville-Saint-Pierre</Link>{' '}
               et <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>.

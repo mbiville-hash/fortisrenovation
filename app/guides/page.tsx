@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Guides & conseils — salle de bain & rénovation à Rouen',
-  description: 'Nos guides pratiques sur la rénovation de salle de bain à Rouen : aides MaPrimeAdapt’, prix, douche senior. Des infos claires, vérifiées sur les sources officielles.',
+  description: 'Nos guides pratiques sur la rénovation de salle de bain à Rouen : aides MaPrimeAdapt’, prix, durée, douche senior. Infos claires ; aides et normes vérifiées sur les sources officielles.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/guides' },
 }
 

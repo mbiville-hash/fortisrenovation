@@ -42,7 +42,7 @@ export default function PlombierSottevillePage() {
       ))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
-        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
+        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/professionnels' },
         { name: 'Plombier Sotteville-lès-Rouen', url: 'https://www.fortisrenovation.fr/plombier-sotteville-les-rouen' },
       ]))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
@@ -138,15 +138,17 @@ export default function PlombierSottevillePage() {
           </div>
         </section>
 
-        {/* Témoignage */}
+        {/* Preuve sociale — note Google réelle (PAS de faux témoignage) */}
+        {/* TODO Marc-Antoine : remplace ce bloc par un VRAI avis d'un client de Sotteville-lès-Rouen quand tu en as un. */}
         <section style={{ background: 'var(--paper)', padding: '72px 0' }}>
           <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
-            <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 64, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 24 }}>"</div>
-            <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 24 }}>
-              Équipe sérieuse et ponctuelle. Aucune mauvaise surprise sur le prix. Le chantier était propre chaque soir. Je recommande sans hésiter.
+            <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
+            <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
+              Note 5/5 sur Google — 28 avis vérifiés.
             </p>
-            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>Yvette M. — Particulière, Rouen</p>
-            <div style={{ color: 'var(--gold)', fontSize: 18, letterSpacing: 4, marginTop: 8 }}>★★★★★</div>
+            <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>
+              Une intervention à Sotteville-lès-Rouen ou dans la métropole ? Demandez-nous les coordonnées de clients du secteur : on les communique volontiers.
+            </p>
           </div>
         </section>
 
@@ -168,7 +170,7 @@ export default function PlombierSottevillePage() {
           <div className="container" data-reveal>
             <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
               Fortis Rénovation intervient également à{' '}
-              <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
+              <Link href="/professionnels" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
               <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>,{' '}
               <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
               <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>{' '}

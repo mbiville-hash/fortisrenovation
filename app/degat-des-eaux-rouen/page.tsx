@@ -107,7 +107,7 @@ export default function DegatDesEauxPage() {
                   07 67 49 13 24
                 </a>
                 <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Lundi–Samedi 08h–19h
+                  Astreinte dépannage 24h/24 · 7j/7
                 </p>
               </div>
             </div>

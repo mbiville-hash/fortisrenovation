@@ -99,7 +99,7 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Services</p>
               <ul className="footer-links">
-                <li><Link href="/maintenance-immobiliere-rouen">Maintenance immobilière</Link></li>
+                <li><Link href="/professionnels">Maintenance immobilière</Link></li>
                 <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
                 <li><Link href="/douche-italienne-rouen">Douche italienne</Link></li>
                 <li><Link href="/prix-renovation-salle-de-bain-rouen">Prix salle de bain</Link></li>
@@ -113,7 +113,7 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Zone</p>
               <ul className="footer-links">
-                <li><Link href="/maintenance-immobiliere-rouen">Rouen</Link></li>
+                <li><Link href="/professionnels">Rouen</Link></li>
                 <li><Link href="/plombier-bois-guillaume">Bois-Guillaume</Link></li>
                 <li><Link href="/plombier-mont-saint-aignan">Mont-Saint-Aignan</Link></li>
                 <li><Link href="/plombier-bihorel">Bihorel</Link></li>

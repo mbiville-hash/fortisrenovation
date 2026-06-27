@@ -132,15 +132,17 @@ export default function MaintenancePage() {
           </div>
         </section>
 
-        {/* Témoignage placeholder */}
+        {/* Preuve sociale — note Google réelle (PAS de faux témoignage) */}
+        {/* TODO Marc-Antoine : remplace ce bloc par un VRAI avis d'un syndic ou gestionnaire client quand tu en as un. */}
         <section style={{ background: 'var(--paper)', padding: '72px 0' }}>
           <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
-            <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 64, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 24 }}>"</div>
-            <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 24 }}>
-              Contrat de maintenance pour notre immeuble. Interlocuteur unique, rapports clairs, interventions rapides. Ça change de nos prestataires précédents.
+            <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
+            <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
+              Note 5/5 sur Google — 28 avis vérifiés.
             </p>
-            <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)', letterSpacing: '0.06em' }}>Jerry K. — Syndic, Rouen centre</p>
-            <div style={{ color: 'var(--gold)', fontSize: 18, letterSpacing: 4, marginTop: 8 }}>★★★★★</div>
+            <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>
+              Vous gérez un parc à Rouen ou dans la métropole ? Demandez-nous les coordonnées de syndics et bailleurs clients : on les communique volontiers.
+            </p>
           </div>
         </section>
 
