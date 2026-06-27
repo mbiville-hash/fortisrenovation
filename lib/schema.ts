@@ -38,6 +38,13 @@ export const BASE_SCHEMA = {
   areaServed: AREA_SERVED,
   openingHoursSpecification: OPENING_HOURS,
   priceRange: '€€',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '28',
+    bestRating: '5',
+    worstRating: '1',
+  },
   sameAs: ['https://share.google/mkY15MSbWQ41tC07S'],
   image: [
     'https://www.fortisrenovation.fr/salle-de-bain-3d.jpg',

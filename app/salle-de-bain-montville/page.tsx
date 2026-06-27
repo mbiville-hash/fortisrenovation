@@ -45,6 +45,12 @@ export default function SalleDeBainMontvillePage() {
           { title: 'Une méthode lisible, pensée pour éviter les surprises', text: 'Visite et mesures, plan 3D pour valider l’ambiance et les volumes, devis détaillé poste par poste, puis un chantier propre avec points réguliers et nettoyage en fin de journée. Vous savez ce que vous payez et quand c’est livré.' },
           { title: 'Budget d’une salle de bain à Montville', text: 'Un rafraîchissement ciblé démarre souvent autour de 3 500 à 7 500 €, une rénovation complète entre 8 000 et 15 000 €, et davantage pour une salle de bain design avec finitions haut de gamme. Le prix exact dépend de la pièce, des réseaux et de la gamme choisie — il est chiffré après visite.' },
         ]}
+        nearbyCommunes={[
+          { href: '/salle-de-bain-malaunay', name: 'Malaunay' },
+          { href: '/salle-de-bain-eslettes', name: 'Eslettes' },
+          { href: '/salle-de-bain-barentin', name: 'Barentin' },
+          { href: '/salle-de-bain-pavilly', name: 'Pavilly' },
+        ]}
         faqs={faqs}
       />
     </>

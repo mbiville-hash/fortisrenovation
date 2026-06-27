@@ -75,6 +75,11 @@ export default function SalleDeBainSottevilleLesRouenPage() {
             text: 'Un rafraîchissement ciblé démarre souvent autour de 3 500 à 7 500 €, une rénovation complète entre 8 000 et 15 000 €, et davantage pour une salle de bain design avec finitions haut de gamme. Le prix exact dépend de la pièce, des réseaux et de la gamme choisie — il est chiffré après visite.',
           },
         ]}
+        nearbyCommunes={[
+          { href: '/salle-de-bain-bonsecours', name: 'Bonsecours' },
+          { href: '/salle-de-bain-bihorel', name: 'Bihorel' },
+          { href: '/salle-de-bain-mont-saint-aignan', name: 'Mont-Saint-Aignan' },
+        ]}
         faqs={faqs}
       />
     </>

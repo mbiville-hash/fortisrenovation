@@ -75,6 +75,11 @@ export default function SalleDeBainBonsecoursPage() {
             text: 'Un rafraîchissement ciblé démarre souvent autour de 3 500 à 7 500 €, une rénovation complète entre 8 000 et 15 000 €, et davantage pour une salle de bain design avec finitions haut de gamme. Le prix exact dépend de la pièce, des réseaux et de la gamme choisie — il est chiffré après visite.',
           },
         ]}
+        nearbyCommunes={[
+          { href: '/salle-de-bain-le-mesnil-esnard', name: 'Le Mesnil-Esnard' },
+          { href: '/salle-de-bain-franqueville-saint-pierre', name: 'Franqueville-Saint-Pierre' },
+          { href: '/salle-de-bain-bihorel', name: 'Bihorel' },
+        ]}
         faqs={faqs}
       />
     </>

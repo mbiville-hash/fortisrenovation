@@ -20,6 +20,7 @@ export type BathroomSupportPageProps = {
     text: string
   }>
   faqs: BathroomFaq[]
+  nearbyCommunes?: { href: string; name: string }[]
 }
 
 const supportLinks = [
@@ -199,7 +200,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
   )
 }
 
-export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt, proof, sections, faqs }: BathroomSupportPageProps) {
+export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt, proof, sections, faqs, nearbyCommunes }: BathroomSupportPageProps) {
   return (
     <>
       <style>{bathroomStyles}</style>
@@ -261,6 +262,22 @@ export function BathroomSupportPage({ eyebrow, title, intro, heroImage, heroAlt,
             </div>
           </div>
         </section>
+
+        {nearbyCommunes && nearbyCommunes.length > 0 && (
+          <section className="bath-section bath-white">
+            <div className="container">
+              <div className="bath-section-head">
+                <p className="bath-eyebrow">À proximité</p>
+                <h2>Rénovation de salle de bain près de chez vous.</h2>
+              </div>
+              <div className="bath-communes">
+                {nearbyCommunes.map((c) => (
+                  <Link key={c.href} href={c.href} className="bath-commune-chip">{c.name}</Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <BathroomFaqSection faqs={faqs} />
         <BathroomFinalCta />
@@ -356,6 +373,9 @@ const bathroomStyles = `
 .bath-faq article { padding: 24px 0; border-bottom: 1px solid rgba(26,26,24,.1); }
 .bath-final { background: var(--dark); color: white; padding: 86px 0; text-align: center; }
 .bath-final h2 { max-width: 760px; margin: 0 auto; color: white; }
+.bath-communes { display: flex; flex-wrap: wrap; gap: 10px; }
+.bath-commune-chip { display: inline-block; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--paper); border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; transition: transform .18s ease, border-color .18s ease, color .18s ease; }
+.bath-commune-chip:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
 @media (max-width: 980px) {
   .bath-hero-grid, .bath-split, .bath-materials, .bath-faq, .bath-content-list article { grid-template-columns: 1fr; gap: 32px; }
   .bath-hero { padding: 58px 0 0; }
