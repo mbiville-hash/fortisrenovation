@@ -61,7 +61,7 @@ export default function PlombierIsneauvillePage() {
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
               Fortis Rénovation intervient à Isneauville et sur le nord de la métropole pour tous vos travaux de plomberie, maintenance immobilière et dégâts des eaux. Un interlocuteur unique, des rapports écrits à chaque intervention.
             </p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 40 }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', marginBottom: 40 }}>
               Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -84,7 +84,7 @@ export default function PlombierIsneauvillePage() {
                 <div key={l} style={{ padding: '32px 32px', borderRight: '1px solid rgba(184,151,90,0.2)' }}>
                   <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, color: 'var(--gold)', lineHeight: 1, marginBottom: 6 }}>{v}</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'white', marginBottom: 4 }}>{l}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s}</div>
+                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.62)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s}</div>
                 </div>
               ))}
             </div>

@@ -66,7 +66,7 @@ export default function Footer() {
         }
         .footer-legal {
           font-size: 11px;
-          color: rgba(255,255,255,0.5);
+          color: rgba(255,255,255,0.62);
           line-height: 1.6;
         }
         @media (max-width: 900px) {
@@ -130,7 +130,7 @@ export default function Footer() {
                 <li><Link href="/mentions-legales">Mentions légales</Link></li>
                 <li><Link href="/politique-confidentialite">Confidentialité</Link></li>
                 <li>
-                  <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
+                  <span style={{ color: 'rgba(255,255,255,0.62)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
                     SIRET 937 628 428 00016 <br />
                     RCS Rouen <br />
                     TVA FR47937628428

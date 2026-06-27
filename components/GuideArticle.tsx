@@ -36,7 +36,7 @@ export function GuideArticle({
         .guide-eyebrow a { color: var(--gold); }
         .guide-eyebrow a:hover { opacity: .8; }
         .guide-title { font-family: 'Bodoni Moda', serif; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.12; color: var(--white); margin-bottom: 18px; }
-        .guide-meta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 26px; }
+        .guide-meta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.62); margin-bottom: 26px; }
         .guide-lead { font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.82); }
         .guide-body { background: var(--paper); padding: 72px 0; }
         .guide-prose { max-width: 760px; }

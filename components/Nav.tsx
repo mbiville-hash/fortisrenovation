@@ -57,7 +57,7 @@ export default function Nav() {
           justify-content: center;
           min-height: 44px;
           background: var(--gold);
-          color: var(--white) !important;
+          color: var(--dark) !important;
           padding: 0 26px;
           font-size: 11px !important;
           font-weight: 700 !important;
@@ -135,7 +135,7 @@ export default function Nav() {
         .nav-group:first-child { padding-top: 4px; }
         .nav-panel-meta {
           margin-top: 24px;
-          color: rgba(255,255,255,0.5);
+          color: rgba(255,255,255,0.62);
           font-size: 12px;
           line-height: 1.7;
         }

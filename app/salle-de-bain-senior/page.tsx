@@ -101,7 +101,7 @@ export default function SalleDeBainSeniorPage() {
               Votre parent veut rester chez lui. Nous transformons sa salle de bain pour que ce soit possible, en toute sécurité. Des aides publiques comme MaPrimeAdapt&apos; peuvent financer jusqu&apos;à 70 % des travaux — les démarches se font directement sur{' '}
               <strong style={{ color: 'white' }}>monprojetanah.fr</strong>, avec l&apos;accompagnement gratuit d&apos;un conseiller France Rénov&apos;.
             </p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 40 }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', marginBottom: 40 }}>
               Fortis Rénovation · 193C Rue du Renard · 76000 Rouen ·{' '}
               <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
             </p>

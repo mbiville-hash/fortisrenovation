@@ -174,7 +174,7 @@ export default function ProsPage() {
               <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
               <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginTop: 30 }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', marginTop: 30 }}>
               Fortis Rénovation · 193C Rue du Renard, 76000 Rouen
             </p>
           </div>
