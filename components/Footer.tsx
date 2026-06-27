@@ -106,6 +106,7 @@ export default function Footer() {
                 <li><Link href="/renovation-salle-de-bain-cle-en-main-rouen">Clé en main</Link></li>
                 <li><Link href="/salle-de-bain-senior">Salle de bain senior</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
+                <li><Link href="/plombier-rouen">Plomberie &amp; dépannage</Link></li>
                 <li><Link href="/devis">Étudier mon projet</Link></li>
               </ul>
             </div>
@@ -113,7 +114,7 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Zone</p>
               <ul className="footer-links">
-                <li><Link href="/professionnels">Rouen</Link></li>
+                <li><Link href="/plombier-rouen">Rouen</Link></li>
                 <li><Link href="/plombier-bois-guillaume">Bois-Guillaume</Link></li>
                 <li><Link href="/plombier-mont-saint-aignan">Mont-Saint-Aignan</Link></li>
                 <li><Link href="/plombier-bihorel">Bihorel</Link></li>

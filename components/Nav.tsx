@@ -180,6 +180,7 @@ export default function Nav() {
             <span className="nav-group">Professionnels</span>
             <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
             <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
+            <Link href="/plombier-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/plombier-rouen' ? 'page' : undefined}>Plombier &amp; dépannage</Link>
             <span className="nav-group">L&apos;entreprise</span>
             <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
             <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
