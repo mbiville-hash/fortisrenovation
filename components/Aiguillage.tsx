@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function Aiguillage() {
@@ -41,6 +43,7 @@ export default function Aiguillage() {
           display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px;
           padding: 30px 50px; color: #fff; min-width: 190px;
           transition: background 0.18s ease;
+          cursor: pointer;
         }
         .aig-half:hover { background: rgba(184,151,90,0.09); }
         .aig-half svg { width: 34px; height: 34px; }
@@ -56,10 +59,11 @@ export default function Aiguillage() {
         @media (prefers-reduced-motion: reduce) { .aig-eye, .aig-box { animation: none; } }
 
         @media (max-width: 560px) {
-          .aig { padding: calc(72px + 34px) 0 42px; }
+          .aig { padding: calc(72px + 20px) 0 28px; }
+          .aig-eye { margin-bottom: 16px; }
           .aig-box { display: flex; width: 100%; }
-          .aig-half { flex: 1; min-width: 0; padding: 22px 14px; gap: 11px; }
-          .aig-half svg { width: 29px; height: 29px; }
+          .aig-half { flex: 1; min-width: 0; padding: 17px 12px; gap: 9px; }
+          .aig-half svg { width: 27px; height: 27px; }
           .aig-lab { font-size: 14px; }
         }
       `}</style>
@@ -79,10 +83,10 @@ export default function Aiguillage() {
           <div className="aig-inner">
             <p className="aig-eye">Vous êtes ?</p>
             <div className="aig-box">
-              <Link href="/salle-de-bain-rouen" className="aig-half">
+              <a href="#decouvrir" className="aig-half" onClick={(e) => { e.preventDefault(); document.getElementById('decouvrir')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}>
                 <svg viewBox="0 0 40 40" aria-hidden="true"><g><path d="M7 19 L20 8 L33 19" /><path d="M11 17 V32 H29 V17" /><rect x="17" y="24" width="6" height="8" /></g></svg>
                 <span className="aig-lab">Particulier</span>
-              </Link>
+              </a>
               <span className="aig-div" aria-hidden="true" />
               <Link href="/professionnels" className="aig-half">
                 <svg viewBox="0 0 40 40" aria-hidden="true"><g><rect x="11" y="7" width="18" height="26" /><rect x="15" y="12" width="4" height="4" /><rect x="21" y="12" width="4" height="4" /><rect x="15" y="19" width="4" height="4" /><rect x="21" y="19" width="4" height="4" /><rect x="18" y="26" width="4" height="7" /></g></svg>

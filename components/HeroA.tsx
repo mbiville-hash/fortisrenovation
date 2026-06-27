@@ -4,7 +4,7 @@ export default function HeroA() {
   return (
     <>
       <style>{`
-        .hero { background: var(--dark); position: relative; overflow: hidden; }
+        .hero { background: var(--dark); position: relative; overflow: hidden; scroll-margin-top: 72px; }
         .hero-rings { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
         .hero-rings svg { width: 100%; height: 100%; display: block; }
         .hero-rings circle { fill: none; stroke: var(--gold); }
@@ -52,7 +52,7 @@ export default function HeroA() {
         }
       `}</style>
 
-      <section className="hero">
+      <section className="hero" id="decouvrir">
         <div className="hero-rings" aria-hidden="true">
           <svg viewBox="-960 -540 1920 1080" preserveAspectRatio="xMidYMid slice">
             <g className="hero-rings-base">
