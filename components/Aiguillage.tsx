@@ -26,7 +26,7 @@ export default function Aiguillage() {
         .aig-eye {
           font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
           color: var(--gold); margin-bottom: 22px;
-          display: inline-flex; align-items: center; gap: 12px;
+          display: flex; justify-content: center; align-items: center; gap: 12px;
         }
         .aig-eye::before, .aig-eye::after { content: ''; width: 28px; height: 1px; background: rgba(184,151,90,0.55); }
 
