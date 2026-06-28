@@ -128,7 +128,7 @@ export default function Footer() {
               <ul className="footer-links">
                 <li><Link href="/guides">Guides &amp; conseils</Link></li>
                 <li><Link href="/a-propos">À propos</Link></li>
-                <li><Link href="/mentions-legales">Mentions légales</Link></li>
+                <li><Link href="/mentions-legales">Mentions légales</Link></li><li><Link href="/cgv">CGV</Link></li>
                 <li><Link href="/politique-confidentialite">Confidentialité</Link></li>
                 <li>
                   <span style={{ color: 'rgba(255,255,255,0.62)', fontSize: 11, lineHeight: 1.6, display: 'block' }}>
