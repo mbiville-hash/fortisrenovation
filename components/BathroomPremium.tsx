@@ -114,7 +114,7 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
                 <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
                 <a href="tel:+33767491324" className="btn btn-outline-white">Parler de mon projet</a>
               </div>
-              <div className="bath-hero-trust"><span className="bath-stars">★★★★★</span>5/5 · 28 avis Google vérifiés</div>
+              <div className="bath-hero-trust"><span className="bath-stars">★★★★★</span>5/5 · 29 avis Google vérifiés</div>
             </div>
             <div className="bath-hero-media">
               <Image

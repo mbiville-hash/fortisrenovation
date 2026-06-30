@@ -85,7 +85,7 @@ export default function HeroA() {
               <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
               <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir l'offre salle de bain</Link>
             </div>
-            <p className="hero-trust"><span className="stars">★★★★★</span>5/5 · 28 avis Google vérifiés</p>
+            <p className="hero-trust"><span className="stars">★★★★★</span>5/5 · 29 avis Google vérifiés</p>
           </div>
         </div>
       </section>

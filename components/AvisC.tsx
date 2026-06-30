@@ -32,7 +32,7 @@ export default function AvisC() {
             <p className="avis-eyebrow">Avis Google vérifiés</p>
             <div className="avis-stars">★★★★★</div>
             <p className="avis-score">Note 5/5 sur Google</p>
-            <p className="avis-count">28 avis vérifiés par nos clients à Rouen et sa métropole</p>
+            <p className="avis-count">29 avis vérifiés par nos clients à Rouen et sa métropole</p>
             <a
               className="avis-cta"
               href="https://www.google.com/maps/search/?api=1&query=Fortis%20R%C3%A9novation%20Rouen"

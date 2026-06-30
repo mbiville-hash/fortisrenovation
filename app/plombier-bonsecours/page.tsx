@@ -147,7 +147,7 @@ export default function PlombierBonsecoursPage() {
           <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
             <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
-              Note 5/5 sur Google — 28 avis vérifiés.
+              Note 5/5 sur Google — 29 avis vérifiés.
             </p>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>
               Une intervention à Bonsecours ou sur le plateau est ? Demandez-nous les coordonnées de clients du secteur : on les communique volontiers.

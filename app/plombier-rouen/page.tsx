@@ -46,7 +46,7 @@ const promesses: [string, string, string][] = [
   ['24/7', 'Astreinte dépannage', '7j/7, jours fériés inclus'],
   ['Quelques heures', 'Sur une urgence', 'Fuite, dégât des eaux'],
   ['Devis gratuit', 'Clair et détaillé', 'Déplacement offert'],
-  ['5/5', 'Sur Google', '28 avis vérifiés'],
+  ['5/5', 'Sur Google', '29 avis vérifiés'],
 ]
 
 const process: [string, string, string][] = [
