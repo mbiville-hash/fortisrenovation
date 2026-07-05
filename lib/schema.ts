@@ -41,7 +41,7 @@ export const BASE_SCHEMA = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
-    reviewCount: '29',
+    reviewCount: '30',
     bestRating: '5',
     worstRating: '1',
   },
