@@ -41,6 +41,11 @@ const nextConfig = {
         destination: '/professionnels',
         permanent: true,
       },
+      {
+        source: '/demander-un-devis',
+        destination: '/devis',
+        permanent: true,
+      },
     ]
   },
 }
