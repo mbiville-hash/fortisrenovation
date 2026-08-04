@@ -205,3 +205,122 @@ export const hrefCommune = (nom: string): string | null => {
   const c = COMMUNES.find((x) => x.nom === nom)
   return c ? `/maintenance-immobiliere-${c.slug}` : null
 }
+
+/* ============================================================
+   PARC PAR COMMUNE — angle plomberie
+   Les pages /plombier-[commune] couvrent les plateaux nord et est,
+   là où les pages maintenance couvrent la rive gauche. L'angle diffère :
+   ce qui compte en plomberie, c'est l'époque des réseaux et la part de
+   maisons individuelles (réseaux propres) face au collectif (colonnes
+   montantes communes, donc sinistres qui touchent plusieurs lots).
+   Chiffres INSEE 2023, relevés le 4 août 2026.
+   ============================================================ */
+
+export type CommunePlomberie = {
+  slug: string
+  nom: string
+  a: string
+  codeInsee: string
+  logements: number
+  locatairesPct: number
+  maisonsPct: number
+  vacantsPct: number
+  periodes: Periode[]
+  /** Ce que ce parc implique pour les réseaux d'eau. */
+  reseaux: string
+  /** Deux ou trois constats de terrain propres à ce parc. */
+  constats: string[]
+}
+
+export const PARC_PLOMBERIE: CommunePlomberie[] = [
+  {
+    slug: 'bois-guillaume', nom: 'Bois-Guillaume', a: 'à Bois-Guillaume', codeInsee: '76108',
+    logements: 7002, locatairesPct: 33.3, maisonsPct: 55.1, vacantsPct: 5.0,
+    periodes: P(5.5, 6.1, 19.9, 31.3, 22.1, 15.0),
+    reseaux: 'Plus de deux logements sur trois datent d’après 1970 : les alimentations y sont en cuivre ou en PER, les évacuations en PVC. Le plomb est rare, et les pathologies relèvent davantage de l’usure des équipements que des canalisations elles-mêmes.',
+    constats: [
+      'Chauffe-eau et ballons posés à la construction du parc 1971-1990, aujourd’hui en fin de vie : c’est le premier motif d’appel sur ce secteur.',
+      'Une majorité de maisons, donc des réseaux propres à chaque logement — une fuite reste circonscrite, mais les réseaux enterrés de jardin sont plus difficiles à localiser.',
+      'Les 44 % d’appartements sont surtout de petites copropriétés récentes, où la coordination avec le syndic reste simple.',
+    ],
+  },
+  {
+    slug: 'mont-saint-aignan', nom: 'Mont-Saint-Aignan', a: 'à Mont-Saint-Aignan', codeInsee: '76451',
+    logements: 11421, locatairesPct: 49.8, maisonsPct: 29.4, vacantsPct: 6.5,
+    periodes: P(6.3, 5.4, 27.9, 32.1, 14.2, 14.2),
+    reseaux: 'Deux tiers d’appartements et un logement sur deux loué : c’est le profil d’une commune universitaire. Les collectifs des années 1960 à 1980 fonctionnent avec des colonnes montantes communes — une fuite en pied de colonne touche plusieurs lots à la fois.',
+    constats: [
+      'Beaucoup de studios et de petits logements à forte rotation : sanitaires compacts, robinetterie très sollicitée, joints à reprendre plus souvent qu’ailleurs.',
+      'Les remises en état se concentrent sur juillet et août, entre deux années universitaires — un calendrier qu’il vaut mieux anticiper.',
+      'Sur les immeubles d’avant 1980, les dégâts des eaux se propagent verticalement : l’intervention doit être rapide pour limiter le nombre de lots touchés.',
+    ],
+  },
+  {
+    slug: 'bihorel', nom: 'Bihorel', a: 'à Bihorel', codeInsee: '76095',
+    logements: 4447, locatairesPct: 44.6, maisonsPct: 42.4, vacantsPct: 7.5,
+    periodes: P(9.2, 7.9, 37.3, 33.1, 4.8, 7.6),
+    reseaux: 'Sept logements sur dix ont été construits entre 1946 et 1990, et 9,2 % du parc est antérieur à 1919. C’est le secteur du plateau nord où les réseaux sont les plus anciens : acier galvanisé qui se perce aux coudes, évacuations fonte qui se fissurent aux emboîtements.',
+    constats: [
+      'Sur le bâti d’avant 1949, des alimentations en plomb subsistent parfois : leur remplacement se traite lors d’une reprise de salle d’eau plutôt qu’en urgence.',
+      'Les colonnes montantes des collectifs d’après-guerre arrivent en fin de vie ; une reprise se prépare avec le syndic, elle ne s’improvise pas sur une fuite.',
+      'Avec 7,5 % de vacance et 27 % de logement social, les remises en état entre deux baux sont fréquentes sur ce secteur.',
+    ],
+  },
+  {
+    slug: 'isneauville', nom: 'Isneauville', a: 'à Isneauville', codeInsee: '76377',
+    logements: 1600, locatairesPct: 24.1, maisonsPct: 82.3, vacantsPct: 4.5,
+    periodes: P(6.1, 2.5, 4.9, 32.7, 12.8, 41.0),
+    reseaux: 'Le parc le plus récent de notre zone : 41 % des logements datent d’après 2006, et plus de huit sur dix sont des maisons. Les réseaux sont en PER ou en multicouche, les évacuations en PVC — très peu de pathologies liées à la vétusté.',
+    constats: [
+      'Les demandes portent surtout sur l’aménagement : ajout d’un point d’eau, extension, salle d’eau supplémentaire, raccordement d’équipements.',
+      'Sur les maisons des années 1971-1990, ce sont les chauffe-eau et la robinetterie d’origine qui arrivent en fin de course.',
+      'Peu de locatif (24 % de locataires) : la demande vient majoritairement de propriétaires occupants.',
+    ],
+  },
+  {
+    slug: 'bonsecours', nom: 'Bonsecours', a: 'à Bonsecours', codeInsee: '76103',
+    logements: 3401, locatairesPct: 37.2, maisonsPct: 48.5, vacantsPct: 4.5,
+    periodes: P(4.4, 3.9, 24.5, 44.9, 15.0, 7.2),
+    reseaux: 'Près de la moitié du parc a été bâtie entre 1971 et 1990 : alimentations cuivre, évacuations PVC. Les canalisations tiennent, mais les équipements posés à la construction arrivent tous à échéance en même temps.',
+    constats: [
+      'Chauffe-eau, groupes de sécurité et robinetterie d’origine : sur un parc aussi homogène, les pannes arrivent groupées.',
+      'Un équilibre entre maisons et appartements, donc deux logiques d’intervention selon qu’on traite un réseau privatif ou une colonne commune.',
+      'Le relief du plateau est génère des pressions variables selon l’altitude du logement — un point à vérifier avant de conclure à un défaut d’équipement.',
+    ],
+  },
+  {
+    slug: 'le-mesnil-esnard', nom: 'Le Mesnil-Esnard', a: 'au Mesnil-Esnard', codeInsee: '76429',
+    logements: 4064, locatairesPct: 40.8, maisonsPct: 62.3, vacantsPct: 4.3,
+    periodes: P(4.4, 3.1, 11.8, 35.2, 15.8, 29.7),
+    reseaux: 'Un parc en deux vagues : 35 % construit entre 1971 et 1990, et près de 30 % après 2006. Les réseaux vont du cuivre au multicouche selon l’âge du logement — le diagnostic commence donc par identifier la génération du bâti.',
+    constats: [
+      'Sur la vague 1971-1990, les équipements sanitaires d’origine sont à remplacer ; sur la vague récente, les demandes sont surtout des ajouts et des reprises de finition.',
+      'Une majorité de maisons : réseaux privatifs, fuites circonscrites, mais canalisations enterrées à localiser.',
+      'Seulement 11,8 % du parc date de 1946-1970 : très peu d’acier galvanisé et de fonte, contrairement à Bihorel ou Sotteville.',
+    ],
+  },
+  {
+    slug: 'franqueville-saint-pierre', nom: 'Franqueville-Saint-Pierre', a: 'à Franqueville-Saint-Pierre', codeInsee: '76475',
+    logements: 2777, locatairesPct: 28.1, maisonsPct: 83.0, vacantsPct: 4.6,
+    periodes: P(4.4, 2.2, 13.2, 35.2, 20.7, 24.2),
+    reseaux: 'Commune très pavillonnaire — 83 % de maisons — et récente : 45 % du parc date d’après 1991. Réseaux cuivre, PER et multicouche, évacuations PVC, avec très peu de matériaux anciens.',
+    constats: [
+      'Les interventions concernent surtout des maisons individuelles : réseau propre au logement, compteur individuel, pas de colonne commune à coordonner.',
+      'Sur les pavillons des années 1970-1980, chauffe-eau et robinetterie sont le poste récurrent.',
+      'Faible part de locatif (28 %) : peu de remises en état entre deux baux, davantage d’entretien et d’amélioration.',
+    ],
+  },
+  {
+    slug: 'sotteville-les-rouen', nom: 'Sotteville-lès-Rouen', a: 'à Sotteville-lès-Rouen', codeInsee: '76681',
+    logements: 15193, locatairesPct: 49.4, maisonsPct: 49.3, vacantsPct: 6.1,
+    periodes: P(4.4, 7.1, 39.5, 22.9, 8.5, 7.6),
+    reseaux: 'Près de quatre logements sur dix datent de la reconstruction d’après-guerre, la proportion la plus forte de notre zone. Sur ce millésime non repris, les alimentations en acier galvanisé se percent aux coudes et les évacuations en fonte se fissurent aux emboîtements.',
+    constats: [
+      'Une fuite en pied de colonne dans un immeuble d’après-guerre touche souvent plusieurs lots : la rapidité d’intervention limite l’ampleur du sinistre.',
+      'Un logement sur deux est loué : les remises en état entre deux baux sont un motif d’appel constant.',
+      'Parc réparti à parts égales entre maisons et appartements — les deux logiques d’intervention coexistent dans la même commune.',
+    ],
+  },
+]
+
+export const getParcPlomberie = (slug: string) => PARC_PLOMBERIE.find((c) => c.slug === slug)

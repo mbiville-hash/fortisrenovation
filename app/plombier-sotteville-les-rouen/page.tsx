@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import Realisations from '@/components/Realisations'
 import { OG_IMAGE } from '@/lib/seo'
+import ParcPlomberie from '@/components/ParcPlomberie'
+import { getParcPlomberie } from '@/lib/communes'
+
+const PARC = getParcPlomberie('sotteville-les-rouen')!
 
 export const metadata: Metadata = {
   title: 'Plombier Sotteville-lès-Rouen — Maintenance & dégât des eaux',
@@ -152,6 +156,8 @@ export default function PlombierSottevillePage() {
             </p>
           </div>
         </section>
+
+        <ParcPlomberie c={PARC} />
 
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>
