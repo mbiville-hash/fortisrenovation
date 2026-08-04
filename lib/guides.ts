@@ -33,6 +33,16 @@ export const GUIDES: Guide[] = [
     public: 'pro',
   },
   {
+    slug: '/guides/charges-recuperables-locataire',
+    categorie: 'Charges locatives',
+    titre: 'Charges récupérables : ce que vous pouvez refacturer',
+    extrait:
+      'La liste du décret du 26 août 1987 est limitative : ce qui n’y figure pas ne se récupère pas. Un outil poste par poste, et les trois erreurs qui reviennent le plus.',
+    court: 'Entretien oui, remplacement non — et l’outil pour trancher.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/grille-de-vetuste-location',
     categorie: 'Vétusté',
     titre: 'Grille de vétusté : comment la lire et l’appliquer',

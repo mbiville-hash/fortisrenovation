@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
+import SimulateurRetenue from '@/components/SimulateurRetenue'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
 
@@ -92,6 +93,14 @@ export default function GuideVetustePage() {
             grille a ses propres durées et coefficients. Reportez-vous à celle qui est annexée à votre bail.
           </p>
         </div>
+
+        <h2>Faites le calcul sur votre cas</h2>
+        <p>
+          Reprenez les paramètres de la grille annexée à votre bail&nbsp;: le résultat se met à jour
+          à mesure que vous les changez.
+        </p>
+
+        <SimulateurRetenue />
 
         <h2>Le point que presque tout le monde rate</h2>
         <p>
