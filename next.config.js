@@ -36,9 +36,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // L'offre pro vit sur /maintenance-immobiliere-rouen (le mot-clé que
+      // cherchent les gestionnaires). /professionnels, l'ancienne URL, y renvoie.
+      // Ne jamais rétablir la redirection inverse : les deux ensemble = boucle.
       {
-        source: '/maintenance-immobiliere-rouen',
-        destination: '/professionnels',
+        source: '/professionnels',
+        destination: '/maintenance-immobiliere-rouen',
         permanent: true,
       },
       {

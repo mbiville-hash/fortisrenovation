@@ -12,7 +12,7 @@ const offres = [
     n: '02',
     t: 'Intervention ponctuelle',
     d: 'Un WC à remplacer, une fuite sous un évier, une pièce à repeindre avant une visite. Sans contrat et sans volume minimum : une intervention, un devis, une facture.',
-    href: '/professionnels',
+    href: '/maintenance-immobiliere-rouen',
     cta: 'Ce que nous prenons',
   },
   {
@@ -79,7 +79,7 @@ export default function ProLocatif() {
           </div>
 
           <div className="prol-foot" data-reveal>
-            <Link href="/professionnels" className="btn btn-outline">Découvrir l&apos;offre professionnels</Link>
+            <Link href="/maintenance-immobiliere-rouen" className="btn btn-outline">Découvrir l&apos;offre maintenance</Link>
             <p className="prol-note">
               Une urgence sur un lot&nbsp;? Astreinte 24h/24 · 7j/7, intervention en quelques heures.
             </p>

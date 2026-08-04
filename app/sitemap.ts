@@ -119,7 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${BASE}/professionnels`,
+      url: `${BASE}/maintenance-immobiliere-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,

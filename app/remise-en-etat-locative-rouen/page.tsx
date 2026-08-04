@@ -47,7 +47,7 @@ export default function RemiseEnEtatLocativePage() {
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
-              { name: 'Professionnels', url: 'https://www.fortisrenovation.fr/professionnels' },
+              { name: 'Maintenance immobilière', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
               { name: 'Remise en état locative', url: URL },
             ])
           ),
@@ -108,7 +108,7 @@ export default function RemiseEnEtatLocativePage() {
               <Breadcrumb
                 items={[
                   { name: 'Accueil', href: '/' },
-                  { name: 'Professionnels', href: '/professionnels' },
+                  { name: 'Maintenance immobilière', href: '/maintenance-immobiliere-rouen' },
                   { name: 'Remise en état locative' },
                 ]}
               />

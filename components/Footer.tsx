@@ -99,7 +99,7 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Services</p>
               <ul className="footer-links">
-                <li><Link href="/professionnels">Maintenance immobilière</Link></li>
+                <li><Link href="/maintenance-immobiliere-rouen">Maintenance immobilière</Link></li>
                 <li><Link href="/remise-en-etat-locative-rouen">Remise en état locative</Link></li>
                 <li><Link href="/maintenance-copropriete-rouen">Maintenance copropriété</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>

@@ -182,7 +182,7 @@ export default function PlombierRouenPage() {
               ))}
             </div>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
-              Un <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link> à gérer ? Vous rénovez votre <Link href="/salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>salle de bain</Link> ? Vous êtes syndic ou gestionnaire : découvrez notre <Link href="/professionnels" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link> et la <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.
+              Un <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link> à gérer ? Vous rénovez votre <Link href="/salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>salle de bain</Link> ? Vous êtes syndic ou gestionnaire : découvrez notre <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link> et la <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.
             </p>
           </div>
         </section>

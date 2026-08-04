@@ -178,7 +178,7 @@ export default function Nav() {
             <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Rénovation clé en main</Link>
             <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
             <span className="nav-group">Professionnels</span>
-            <Link href="/professionnels" onClick={() => setOpen(false)} aria-current={pathname === '/professionnels' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
+            <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-immobiliere-rouen' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
             <Link href="/remise-en-etat-locative-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/remise-en-etat-locative-rouen' ? 'page' : undefined}>Remise en état locative</Link>
             <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
             <Link href="/plombier-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/plombier-rouen' ? 'page' : undefined}>Plombier &amp; dépannage</Link>
