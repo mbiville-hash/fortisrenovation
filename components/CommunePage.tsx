@@ -2,7 +2,9 @@ import Link from 'next/link'
 import Rings from '@/components/Rings'
 import Breadcrumb from '@/components/Breadcrumb'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
-import { type Commune, SOURCE_INSEE } from '@/lib/communes'
+import GuidesLies from '@/components/GuidesLies'
+import { type Commune, SOURCE_INSEE, hrefCommune } from '@/lib/communes'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 const BASE = 'https://www.fortisrenovation.fr'
@@ -101,7 +103,10 @@ export default function CommunePage({ c }: { c: Commune }) {
         .cp-faq-q p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
 
         .cp-voisines { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-        .cp-voisine { font-size: 13px; font-weight: 500; color: var(--ink); background: #fff; border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; }
+        .cp-voisine { display: inline-block; font-size: 13px; font-weight: 500; color: var(--ink); background: #fff; border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; transition: transform .2s ease, border-color .2s ease, color .2s ease; }
+        a.cp-voisine:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
+        a.cp-voisine:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .cp-voisine--inerte { color: var(--ink-soft); border-color: rgba(184,151,90,0.28); }
 
         .cp-cta { background: var(--dark); color: #fff; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
         .cp-cta .container { position: relative; z-index: 1; }
@@ -247,10 +252,22 @@ export default function CommunePage({ c }: { c: Commune }) {
               et notre guide <Link href="/guides/qui-paie-quoi-bailleur-locataire" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>qui paie quoi entre bailleur et locataire</Link>.
             </p>
             <div className="cp-voisines">
-              {c.voisines.map((v) => <span key={v} className="cp-voisine">{v}</span>)}
+              {c.voisines.map((v) => {
+                const href = hrefCommune(v)
+                return href
+                  ? <Link key={v} href={href} className="cp-voisine">{v}</Link>
+                  : <span key={v} className="cp-voisine cp-voisine--inerte">{v}</span>
+              })}
             </div>
           </div>
         </section>
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Les questions qui reviennent en gestion locative"
+          intro="Trois guides pour trancher vite : la répartition des réparations, la vétusté, et le coût réel d’un logement vide."
+          fond="blanc"
+        />
 
         {/* CTA */}
         <section className="cp-cta">

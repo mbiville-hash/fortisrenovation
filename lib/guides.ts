@@ -1,0 +1,106 @@
+/**
+ * Source unique des guides du site.
+ *
+ * Sert à la fois à l'index /guides et aux blocs « guides liés » posés sur les
+ * pages pro, métier et commune. Un seul endroit à modifier quand un guide
+ * change de titre — les ancres de liens internes restent cohérentes partout,
+ * ce qui compte autant pour le référencement que pour le lecteur.
+ */
+
+export type Public = 'pro' | 'particulier'
+
+export type Guide = {
+  slug: string
+  categorie: string
+  titre: string
+  /** Résumé long, pour l'index. */
+  extrait: string
+  /** Accroche courte, pour les blocs « à lire aussi ». */
+  court: string
+  date: string
+  public: Public
+}
+
+export const GUIDES: Guide[] = [
+  {
+    slug: '/guides/qui-paie-quoi-bailleur-locataire',
+    categorie: 'Réparations locatives',
+    titre: 'Qui paie quoi entre bailleur et locataire ?',
+    extrait:
+      'La règle, les quatre exceptions qui protègent le locataire, et un outil pour trancher pièce par pièce : cliquez sur la pièce, puis sur ce qui est cassé.',
+    court: 'Un outil pièce par pièce pour trancher, sources officielles à l’appui.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
+    slug: '/guides/grille-de-vetuste-location',
+    categorie: 'Vétusté',
+    titre: 'Grille de vétusté : comment la lire et l’appliquer',
+    extrait:
+      'Durée de vie théorique, abattement annuel, part résiduelle. Un exemple chiffré, et le piège du décret de 2016 que presque tout le monde rate.',
+    court: 'Déduire l’usure du temps au lieu de la négocier, avec un exemple chiffré.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
+    slug: '/guides/cout-vacance-locative',
+    categorie: 'Vacance locative',
+    titre: 'Ce que coûte vraiment un logement vide',
+    extrait:
+      'Le calcul à la journée, les vrais postes de délai entre deux locataires, et quatre leviers pour relouer plus tôt. Simulateur inclus.',
+    court: 'Le calcul à la journée, et les leviers pour relouer plus tôt.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
+    slug: '/guides/prix-renovation-salle-de-bain',
+    categorie: 'Prix & budget',
+    titre: 'Combien coûte une rénovation de salle de bain à Rouen ?',
+    extrait:
+      'Des fourchettes claires, les postes de dépense et ce qui fait vraiment varier le prix de votre projet.',
+    court: 'Fourchettes, postes de dépense et ce qui fait varier le prix.',
+    date: '25 juin 2026',
+    public: 'particulier',
+  },
+  {
+    slug: '/guides/douche-italienne-etancheite',
+    categorie: 'Douche italienne',
+    titre: 'Douche à l’italienne : réussir l’étanchéité',
+    extrait:
+      'Le carrelage seul n’étanche pas. Ce qu’impose la norme (DTU 52.2) pour éviter le dégât des eaux.',
+    court: 'Pourquoi le carrelage seul n’étanche pas, et ce qu’impose le DTU 52.2.',
+    date: '25 juin 2026',
+    public: 'particulier',
+  },
+  {
+    slug: '/guides/duree-renovation-salle-de-bain',
+    categorie: 'Méthode',
+    titre: 'Combien de temps dure une rénovation de salle de bain ?',
+    extrait:
+      'Les étapes jour par jour, les temps de séchage et ce qui rallonge (ou raccourcit) un chantier.',
+    court: 'Les étapes jour par jour et les temps de séchage incompressibles.',
+    date: '25 juin 2026',
+    public: 'particulier',
+  },
+  {
+    slug: '/guides/salle-de-bain-senior-maprimeadapt-rouen',
+    categorie: 'Salle de bain senior',
+    titre: 'Salle de bain senior à Rouen : MaPrimeAdapt’ et les aides 2026',
+    extrait:
+      'Qui peut bénéficier de MaPrimeAdapt’, combien (50 ou 70 %, plafond 22 000 € HT), quels travaux et quelles démarches. Vérifié sur les sources officielles.',
+    court: 'Conditions, montants et démarches de MaPrimeAdapt’.',
+    date: '25 juin 2026',
+    public: 'particulier',
+  },
+]
+
+export const guidesPro = GUIDES.filter((g) => g.public === 'pro')
+export const guidesParticulier = GUIDES.filter((g) => g.public === 'particulier')
+
+/** Récupère des guides par slug, dans l'ordre demandé, en ignorant les slugs inconnus. */
+export const getGuides = (...slugs: string[]): Guide[] =>
+  slugs.map((s) => GUIDES.find((g) => g.slug === s)).filter((g): g is Guide => Boolean(g))
+
+/** Les guides pro, en excluant la page courante si elle en fait partie. */
+export const guidesProSauf = (slugCourant?: string): Guide[] =>
+  guidesPro.filter((g) => g.slug !== slugCourant)

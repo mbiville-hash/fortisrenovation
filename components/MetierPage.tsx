@@ -2,6 +2,9 @@ import Link from 'next/link'
 import Rings from '@/components/Rings'
 import AvisC from '@/components/AvisC'
 import Realisations from '@/components/Realisations'
+import GuidesLies from '@/components/GuidesLies'
+import { hrefCommune } from '@/lib/communes'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 /**
@@ -36,6 +39,13 @@ const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'wh
 const eyebrowStyle: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
+const stylesCommunes = `
+  .mp-commune { display: inline-block; font-size: 13px; font-weight: 500; color: var(--ink); background: #fff; border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; transition: transform .2s ease, border-color .2s ease, color .2s ease; }
+  a.mp-commune:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
+  a.mp-commune:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .mp-commune--inerte { color: var(--ink-soft); border-color: rgba(184,151,90,0.28); }
+`
+
 const BASE = 'https://www.fortisrenovation.fr'
 
 export default function MetierPage(p: MetierPageProps) {
@@ -48,6 +58,8 @@ export default function MetierPage(p: MetierPageProps) {
         { name: p.nom, url: `${BASE}${p.slug}` },
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(p.faqs)) }} />
+
+      <style>{stylesCommunes}</style>
 
       <main style={{ paddingTop: 68 }}>
         {/* Hero */}
@@ -143,9 +155,14 @@ export default function MetierPage(p: MetierPageProps) {
               Zone d&apos;intervention · 30 km autour de Rouen
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginBottom: 28 }}>
-              {p.communes.map((c) => (
-                <span key={c} style={{ fontSize: 13, fontWeight: 500, color: 'var(--ink)', background: 'white', border: '1px solid rgba(184,151,90,0.45)', borderRadius: 40, padding: '9px 18px' }}>{c}</span>
-              ))}
+              {p.communes.map((c) => {
+                const href = hrefCommune(c)
+                // Une commune qui a sa page maintenance devient un lien ; les autres
+                // restent en texte simple plutôt que de pointer dans le vide.
+                return href
+                  ? <Link key={c} href={href} className="mp-commune">{c}</Link>
+                  : <span key={c} className="mp-commune mp-commune--inerte">{c}</span>
+              })}
             </div>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
               {p.maillage}
@@ -154,6 +171,13 @@ export default function MetierPage(p: MetierPageProps) {
         </section>
 
         <Realisations />
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Ce qui revient au bailleur, ce qui revient au locataire, et ce que coûte le temps perdu entre deux baux."
+          fond="blanc"
+        />
 
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '80px 0', color: 'white', textAlign: 'center' }}>

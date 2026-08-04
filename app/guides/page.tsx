@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { type Guide, guidesPro, guidesParticulier } from '@/lib/guides'
 
 export const metadata: Metadata = {
   title: 'Guides & conseils — gestion locative & rénovation à Rouen',
@@ -7,64 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.fortisrenovation.fr/guides' },
 }
 
-type ArticleCard = { slug: string; category: string; title: string; excerpt: string; date: string }
-
-const POUR_LES_PROS: ArticleCard[] = [
-  {
-    slug: '/guides/qui-paie-quoi-bailleur-locataire',
-    category: 'Réparations locatives',
-    title: 'Qui paie quoi entre bailleur et locataire ?',
-    excerpt: 'La règle, les quatre exceptions qui protègent le locataire, et un outil pour trancher pièce par pièce : cliquez sur la pièce, puis sur ce qui est cassé.',
-    date: '4 août 2026',
-  },
-  {
-    slug: '/guides/grille-de-vetuste-location',
-    category: 'Vétusté',
-    title: 'Grille de vétusté : comment la lire et l’appliquer',
-    excerpt: 'Durée de vie théorique, abattement annuel, part résiduelle. Un exemple chiffré, et le piège du décret de 2016 que presque tout le monde rate.',
-    date: '4 août 2026',
-  },
-  {
-    slug: '/guides/cout-vacance-locative',
-    category: 'Vacance locative',
-    title: 'Ce que coûte vraiment un logement vide',
-    excerpt: 'Le calcul à la journée, les vrais postes de délai entre deux locataires, et quatre leviers pour relouer plus tôt. Simulateur inclus.',
-    date: '4 août 2026',
-  },
-]
-
-const POUR_LES_PARTICULIERS: ArticleCard[] = [
-  {
-    slug: '/guides/prix-renovation-salle-de-bain',
-    category: 'Prix & budget',
-    title: 'Combien coûte une rénovation de salle de bain à Rouen ?',
-    excerpt: 'Des fourchettes claires, les postes de dépense et ce qui fait vraiment varier le prix de votre projet.',
-    date: '25 juin 2026',
-  },
-  {
-    slug: '/guides/douche-italienne-etancheite',
-    category: 'Douche italienne',
-    title: 'Douche à l’italienne : réussir l’étanchéité',
-    excerpt: 'Le carrelage seul n’étanche pas. Ce qu’impose la norme (DTU 52.2) pour éviter le dégât des eaux.',
-    date: '25 juin 2026',
-  },
-  {
-    slug: '/guides/duree-renovation-salle-de-bain',
-    category: 'Méthode',
-    title: 'Combien de temps dure une rénovation de salle de bain ?',
-    excerpt: 'Les étapes jour par jour, les temps de séchage et ce qui rallonge (ou raccourcit) un chantier.',
-    date: '25 juin 2026',
-  },
-  {
-    slug: '/guides/salle-de-bain-senior-maprimeadapt-rouen',
-    category: 'Salle de bain senior',
-    title: 'Salle de bain senior à Rouen : MaPrimeAdapt’ et les aides 2026',
-    excerpt: 'Qui peut bénéficier de MaPrimeAdapt’, combien (50 ou 70 %, plafond 22 000 € HT), quels travaux et quelles démarches. Vérifié sur les sources officielles.',
-    date: '25 juin 2026',
-  },
-]
-
-function Groupe({ titre, sous, articles }: { titre: string; sous: string; articles: ArticleCard[] }) {
+function Groupe({ titre, sous, articles }: { titre: string; sous: string; articles: Guide[] }) {
   return (
     <div className="guides-group">
       <h2 className="guides-group-t">{titre}</h2>
@@ -72,9 +16,9 @@ function Groupe({ titre, sous, articles }: { titre: string; sous: string; articl
       <div className="guides-cards">
         {articles.map((a) => (
           <Link key={a.slug} href={a.slug} className="guide-card" data-reveal>
-            <p className="guide-card-cat">{a.category}</p>
-            <h3>{a.title}</h3>
-            <p>{a.excerpt}</p>
+            <p className="guide-card-cat">{a.categorie}</p>
+            <h3>{a.titre}</h3>
+            <p>{a.extrait}</p>
             <p className="guide-card-meta">{a.date} &nbsp;·&nbsp; <span className="arrow">Lire le guide →</span></p>
           </Link>
         ))}
@@ -122,12 +66,12 @@ export default function GuidesIndexPage() {
           <Groupe
             titre="Bailleurs, gestionnaires & syndics"
             sous="Ce qui revient au bailleur, ce qui revient au locataire, et ce que coûte le temps perdu entre deux baux."
-            articles={POUR_LES_PROS}
+            articles={guidesPro}
           />
           <Groupe
             titre="Particuliers · salle de bain"
             sous="Prix, durée, étanchéité et aides à l’adaptation : de quoi préparer votre projet avant de nous appeler."
-            articles={POUR_LES_PARTICULIERS}
+            articles={guidesParticulier}
           />
         </div>
       </section>

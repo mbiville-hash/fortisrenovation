@@ -8,6 +8,8 @@ import BeneficesPro from '@/components/BeneficesPro'
 import MethodePro from '@/components/MethodePro'
 import MetiersPro from '@/components/MetiersPro'
 import ParcLocatifTable from '@/components/ParcLocatifTable'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -152,6 +154,13 @@ export default function MaintenanceImmobilierePage() {
             </div>
           </div>
         </section>
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Les questions qui reviennent en gestion locative"
+          intro="Répartition des réparations, vétusté, coût d'un logement vide : trois guides pour décider vite."
+          fond="blanc"
+        />
 
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>

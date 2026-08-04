@@ -11,6 +11,8 @@ import ChiffresLocatif from '@/components/ChiffresLocatif'
 import RapportPhotoLocatif from '@/components/RapportPhotoLocatif'
 import DerouleLocatif from '@/components/DerouleLocatif'
 import AvantApresLocatif from '@/components/AvantApresLocatif'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 
 const TITRE = 'Remise en état de logements locatifs à Rouen'
@@ -175,6 +177,12 @@ export default function RemiseEnEtatLocativePage() {
             </div>
           </div>
         </section>
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Avant de chiffrer, savoir qui paie quoi"
+          intro="Nos guides sur la répartition des réparations, la vétusté et le coût de la vacance — sources officielles à l'appui."
+        />
 
         {/* Appel final */}
         <section className="rel-final">

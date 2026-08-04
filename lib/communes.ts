@@ -194,3 +194,14 @@ export const SOURCE_INSEE = {
 }
 
 export const getCommune = (slug: string) => COMMUNES.find((c) => c.slug === slug)
+
+/**
+ * Href de la page maintenance d'une commune, à partir de son nom affiché.
+ * Renvoie null quand aucune page n'existe : l'appelant affiche alors du texte
+ * simple plutôt qu'un lien mort.
+ */
+export const hrefCommune = (nom: string): string | null => {
+  if (nom === ROUEN.nom) return ROUEN.href
+  const c = COMMUNES.find((x) => x.nom === nom)
+  return c ? `/maintenance-immobiliere-${c.slug}` : null
+}

@@ -8,6 +8,8 @@ import AvisC from '@/components/AvisC'
 import ZoneA from '@/components/ZoneA'
 import FormA from '@/components/FormA'
 import Realisations from '@/components/Realisations'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -36,6 +38,11 @@ export default function HomePage() {
         <ClientsStrip />
         <Realisations />
         <AvisC />
+        <GuidesLies
+          guides={guidesPro}
+          titre="Ce qu’il faut savoir avant d’engager des travaux"
+          intro="Nos guides pour bailleurs, gestionnaires et syndics — références légales vérifiées et outils pour trancher."
+        />
         <ZoneA />
         <FormA />
       </main>
