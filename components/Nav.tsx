@@ -182,6 +182,9 @@ export default function Nav() {
             <Link href="/remise-en-etat-locative-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/remise-en-etat-locative-rouen' ? 'page' : undefined}>Remise en état locative</Link>
             <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
             <Link href="/plombier-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/plombier-rouen' ? 'page' : undefined}>Plombier &amp; dépannage</Link>
+            <Link href="/electricien-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/electricien-rouen' ? 'page' : undefined}>Électricien</Link>
+            <Link href="/peintre-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/peintre-rouen' ? 'page' : undefined}>Peintre &amp; enduits</Link>
+            <Link href="/pose-de-sol-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/pose-de-sol-rouen' ? 'page' : undefined}>Pose de sols</Link>
             <span className="nav-group">L&apos;entreprise</span>
             <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
             <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>

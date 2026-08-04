@@ -104,6 +104,9 @@ export default function Footer() {
                 <li><Link href="/maintenance-copropriete-rouen">Maintenance copropriété</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
                 <li><Link href="/plombier-rouen">Plomberie &amp; dépannage</Link></li>
+                <li><Link href="/electricien-rouen">Électricité</Link></li>
+                <li><Link href="/peintre-rouen">Peinture &amp; enduits</Link></li>
+                <li><Link href="/pose-de-sol-rouen">Pose de sols</Link></li>
                 <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
                 <li><Link href="/douche-italienne-rouen">Douche italienne</Link></li>
                 <li><Link href="/prix-renovation-salle-de-bain-rouen">Prix salle de bain</Link></li>

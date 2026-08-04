@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 
 const G = { fill: 'none', stroke: 'var(--gold)', strokeWidth: 2.4, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
 
 const tileDelays = [0, 0.13, 0.26, 0.13, 0.26, 0.39, 0.26, 0.39, 0.52]
 const tilePos = [[16, 16], [27, 16], [38, 16], [16, 27], [27, 27], [38, 27], [16, 38], [27, 38], [38, 38]]
 
-const metiers: { t: string; d: string; svg: ReactNode }[] = [
+const metiers: { t: string; d: string; href?: string; svg: ReactNode }[] = [
   {
-    t: 'Plomberie', d: 'Fuites, sanitaires, réseaux, chauffe-eau.',
+    t: 'Plomberie', d: 'Fuites, sanitaires, réseaux, chauffe-eau.', href: '/plombier-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}>
       <line x1="12" y1="40" x2="52" y2="40" />
       <rect x="26" y="33" width="12" height="14" rx="1.5" />
@@ -15,7 +16,7 @@ const metiers: { t: string; d: string; svg: ReactNode }[] = [
     </g></svg>,
   },
   {
-    t: 'Électricité', d: 'Dépannage, tableau, mise aux normes.',
+    t: 'Électricité', d: 'Dépannage, tableau, mise aux normes.', href: '/electricien-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}>
       <circle className="mp-glass" cx="32" cy="27" r="12" />
       <path d="M26 41 h12" /><path d="M27.5 45 h9" /><path d="M29.5 49 h5" /><path d="M28 27 q4 5 8 0" />
@@ -23,11 +24,11 @@ const metiers: { t: string; d: string; svg: ReactNode }[] = [
     </g></svg>,
   },
   {
-    t: 'Peinture', d: 'Rafraîchissement, parties communes, logements.',
+    t: 'Peinture', d: 'Rafraîchissement, parties communes, logements.', href: '/peintre-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G} className="mp-brush"><path d="M46 16 L31 31" /><path d="M27 27 l10 10" /><path d="M24 30 l10 10 l-3 4 q-6 3 -11 -2 q-5 -5 -2 -11 z" /></g></svg>,
   },
   {
-    t: 'Carrelage & sols', d: 'Pose, reprise, revêtements.',
+    t: 'Carrelage & sols', d: 'Pose, reprise, revêtements.', href: '/pose-de-sol-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}>
       {tilePos.map(([x, y], i) => (
         <rect key={i} className="mp-tile" x={x} y={y} width="9" height="9" rx="1" style={{ animationDelay: `${tileDelays[i]}s` }} />
@@ -35,7 +36,7 @@ const metiers: { t: string; d: string; svg: ReactNode }[] = [
     </g></svg>,
   },
   {
-    t: 'Dégât des eaux', d: 'Intervention rapide et rapport assurance.',
+    t: 'Dégât des eaux', d: 'Intervention rapide et rapport assurance.', href: '/degat-des-eaux-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}>
       <path d="M32 13 C32 13 24 24 24 30 a8 8 0 0 0 16 0 C40 24 32 13 32 13 Z" />
       <path className="mp-fx mp-rip" d="M16 45 q16 -9 32 0" />
@@ -43,7 +44,7 @@ const metiers: { t: string; d: string; svg: ReactNode }[] = [
     </g></svg>,
   },
   {
-    t: 'Mise aux normes', d: 'Électricité, accessibilité, sécurité.',
+    t: 'Mise aux normes', d: 'Électricité, accessibilité, sécurité.', href: '/electricien-rouen',
     svg: <svg viewBox="0 0 64 64" aria-hidden="true"><g {...G}><path d="M32 13 l15 6 v9 c0 11 -7 17 -15 21 c-8 -4 -15 -10 -15 -21 v-9 z" /><path className="mp-check" d="M25 31 l5 5 l9 -10" /></g></svg>,
   },
 ]
@@ -55,8 +56,9 @@ export default function MetiersPro() {
         .mp-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #9a7c45; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .mp-eye::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
         .mp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
-        .mp-card { background: white; border-top: 2px solid var(--gold); padding: 26px 18px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .mp-card { display: block; background: white; border-top: 2px solid var(--gold); padding: 26px 18px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .mp-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(26,26,24,0.09); }
+        a.mp-card:hover .mp-l { color: var(--gold-deep); }
         .mp-card svg { width: 44px; height: 44px; display: block; margin: 0 auto 12px; overflow: visible; }
         .mp-l { font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; }
         .mp-d { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
@@ -83,13 +85,21 @@ export default function MetiersPro() {
           Tous les corps d&apos;état, un seul numéro.
         </h2>
         <div className="mp-grid">
-          {metiers.map(({ t, d, svg }, i) => (
-            <div key={t} className="mp-card" data-reveal style={{ transitionDelay: `${(i % 4) * 60}ms` }}>
-              {svg}
-              <div className="mp-l">{t}</div>
-              <p className="mp-d">{d}</p>
-            </div>
-          ))}
+          {metiers.map(({ t, d, href, svg }, i) => {
+            const contenu = (
+              <>
+                {svg}
+                <div className="mp-l">{t}</div>
+                <p className="mp-d">{d}</p>
+              </>
+            )
+            const style = { transitionDelay: `${(i % 4) * 60}ms` }
+            return href ? (
+              <Link key={t} href={href} className="mp-card" data-reveal style={style}>{contenu}</Link>
+            ) : (
+              <div key={t} className="mp-card" data-reveal style={style}>{contenu}</div>
+            )
+          })}
         </div>
       </div>
     </section>
