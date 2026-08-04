@@ -57,6 +57,7 @@ export default function RechercheDeFuiteRouenPage() {
         { q: 'Comment savoir si j’ai une fuite invisible ?', a: 'Le test le plus simple : fermez tous les robinets et tous les appareils, puis relevez le compteur. S’il continue de tourner au bout d’une heure, il y a une fuite sur le réseau. Une facture d’eau qui augmente sans raison, un point du sol anormalement chaud ou une odeur d’humidité persistante sont les autres signes qui doivent alerter.' },
         { q: 'Faut-il casser pour trouver une fuite ?', a: 'Pas systématiquement, et c’est justement l’enjeu. Nous procédons par élimination pour réduire la zone au maximum avant d’ouvrir. Sur les cas difficiles — canalisation noyée dans une dalle, réseau enterré — une détection spécialisée peut être nécessaire : nous vous le disons franchement plutôt que d’ouvrir au jugé.' },
         { q: 'La recherche de fuite est-elle prise en charge par l’assurance ?', a: 'Souvent oui, dans le cadre d’un dégât des eaux, selon votre contrat et la nature du sinistre. C’est votre assureur qui tranche, pas nous. Ce que nous garantissons, c’est de vous fournir un rapport photo daté et détaillé qui constitue une pièce recevable pour votre déclaration.' },
+        { q: 'Ma facture d’eau a explosé à cause de la fuite, puis-je être remboursé ?', a: 'Souvent oui. L’article L2224-12-4 du code général des collectivités territoriales prévoit que vous n’êtes pas tenu de payer la part de consommation excédant le double de votre consommation habituelle, à condition de transmettre à votre service d’eau une attestation de plomberie mentionnant la localisation de la fuite et la date de la réparation, dans le mois suivant son courrier. Nous établissons cette attestation après réparation. Le détail du dispositif est dans notre guide sur la loi Warsmann.' },
         { q: 'Intervenez-vous en urgence ?', a: 'Oui, astreinte 24h/24 et 7j/7. Sur une fuite active, nous intervenons en quelques heures. Le premier geste reste de couper l’arrivée d’eau — nous vous guidons au téléphone si vous ne savez pas où se trouve la vanne.' },
         { q: 'Qui paie, le bailleur ou le locataire ?', a: 'Cela dépend de l’origine. Un joint de robinet qui suinte relève de l’entretien courant, donc du locataire. Une canalisation qui se perce relève du bailleur. Notre guide sur la répartition des réparations détaille les cas les plus fréquents, pièce par pièce.' },
         { q: 'Quels secteurs couvrez-vous autour de Rouen ?', a: 'Rouen et la métropole, dans un rayon d’environ 30 km : Bois-Guillaume, Mont-Saint-Aignan, Bihorel, Isneauville, Bonsecours, Le Mesnil-Esnard, Franqueville-Saint-Pierre, Sotteville-lès-Rouen, Déville-lès-Rouen, Maromme, les Quevilly, Saint-Étienne-du-Rouvray et Oissel.' },
@@ -64,7 +65,9 @@ export default function RechercheDeFuiteRouenPage() {
       communes={COMMUNES}
       maillage={
         <>
-          Une fuite fait rarement des dégâts seule&nbsp;: voyez notre page{' '}
+          Votre facture d’eau a explosé&nbsp;? Elle peut être plafonnée&nbsp;: voyez notre guide sur la{' '}
+          <Link href="/guides/facture-eau-fuite-loi-warsmann" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>loi Warsmann</Link>.
+          Une fuite fait rarement des dégâts seule&nbsp;: voyez aussi notre page{' '}
           <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link>,
           l’ensemble de notre{' '}
           <Link href="/plombier-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>offre plomberie</Link>, et le{' '}
