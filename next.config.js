@@ -44,6 +44,39 @@ const nextConfig = {
         destination: '/maintenance-immobiliere-rouen',
         permanent: true,
       },
+      // Pages commune supprimees (aucun client sur ces secteurs) : on redirige
+      // vers la page pilier plutot que de renvoyer des 404, pour lui transmettre
+      // l'anciennete acquise par ces URLs.
+      {
+        source: '/salle-de-bain-barentin',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-eslettes',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-malaunay',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-montville',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-pavilly',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-sotteville-les-rouen',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
       {
         source: '/demander-un-devis',
         destination: '/devis',
