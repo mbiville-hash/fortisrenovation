@@ -167,6 +167,12 @@ export default function RemiseEnEtatLocativePage() {
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(28px, 3vw, 44px)', color: 'var(--ink)', maxWidth: '20ch', marginBottom: 'clamp(36px, 5vw, 56px)' }}>
               À qui nous nous adressons.
             </h2>
+            <p style={{ fontSize: 15.5, lineHeight: 1.8, color: 'var(--ink-soft)', maxWidth: '62ch', marginBottom: 'clamp(28px, 4vw, 40px)' }}>
+              À Rouen, six secteurs imposent l&apos;accord de la Ville avant toute nouvelle mise en
+              location&nbsp;: voyez notre guide sur le{' '}
+              <Link href="/guides/permis-de-louer-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>permis de louer</Link>{' '}
+              pour savoir si vos lots sont concernés.
+            </p>
             <div className="rel-profils-grid">
               {profils.map(({ t, d }) => (
                 <div key={t} className="rel-profil" data-reveal>

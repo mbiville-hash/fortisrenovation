@@ -43,6 +43,16 @@ export const GUIDES: Guide[] = [
     public: 'pro',
   },
   {
+    slug: '/guides/permis-de-louer-rouen',
+    categorie: 'Permis de louer',
+    titre: 'Permis de louer à Rouen : secteurs, dossier et délais',
+    extrait:
+      'Six secteurs de Rouen imposent l’accord de la Ville avant toute nouvelle mise en location. Un outil pour savoir si vous êtes concerné, le contenu du dossier, le délai de 30 jours et les sanctions.',
+    court: 'Six secteurs concernés — et l’amende monte à 5 000 €.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/facture-eau-fuite-loi-warsmann',
     categorie: 'Facture d’eau',
     titre: 'Fuite d’eau : faire plafonner sa facture (loi Warsmann)',
