@@ -122,7 +122,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/professionnels`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+    {
+      url: `${BASE}/remise-en-etat-locative-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${BASE}/maintenance-copropriete-rouen`,

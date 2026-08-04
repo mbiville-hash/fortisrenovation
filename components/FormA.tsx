@@ -268,9 +268,11 @@ export default function FormA() {
                       </label>
                       <select id="type_projet" className="form-select" value={form.type_projet} onChange={set('type_projet')}>
                         <option value="">— Choisissez —</option>
+                        <option value="Remise en état locative">Remise en état locative</option>
+                        <option value="Intervention ponctuelle">Intervention ponctuelle</option>
                         <option value="Maintenance immobilière">Maintenance immobilière</option>
-                        <option value="Rénovation salle de bain">Rénovation salle de bain</option>
                         <option value="Dégât des eaux">Dégât des eaux</option>
+                        <option value="Rénovation salle de bain">Rénovation salle de bain</option>
                         <option value="Autre">Autre</option>
                       </select>
                     </div>

@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Aiguillage from '@/components/Aiguillage'
 import HeroA from '@/components/HeroA'
 import StatsA from '@/components/StatsA'
+import ProLocatif from '@/components/ProLocatif'
+import ReactiviteTimeline from '@/components/ReactiviteTimeline'
+import ClientsStrip from '@/components/ClientsStrip'
 import PartB from '@/components/PartB'
 import AvisC from '@/components/AvisC'
 import ZoneA from '@/components/ZoneA'
@@ -10,12 +13,12 @@ import Realisations from '@/components/Realisations'
 import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-  description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis sous 48h, chantier propre. Pros & particuliers, 5/5 sur Google.',
+  title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
+  description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen pour bailleurs, gestionnaires et syndics. Devis sous 48h, rapport photo, interlocuteur unique. 5/5 sur Google.',
   alternates: { canonical: 'https://www.fortisrenovation.fr' },
   openGraph: {
-    title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-    description: 'Salle de bain design clé en main, plan 3D inclus et maintenance immobilière à Rouen.',
+    title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
+    description: 'Remise en état de logements locatifs, dépannages et maintenance immobilière à Rouen. Devis sous 48h, rapport photo, un seul interlocuteur.',
     url: 'https://www.fortisrenovation.fr',
   },
 }
@@ -31,9 +34,13 @@ export default function HomePage() {
         <Aiguillage />
         <HeroA />
         <StatsA />
-        <PartB />
+        <ProLocatif />
+        <ReactiviteTimeline />
+        <ClientsStrip />
         <Realisations />
         <AvisC />
+        {/* Salle de bain : conservé en un seul bloc « Particuliers », plus bas dans la page. */}
+        <PartB />
         <ZoneA />
         <FormA />
       </main>

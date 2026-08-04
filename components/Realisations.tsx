@@ -4,11 +4,13 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 const PHOTOS: { file: string; alt: string }[] = [
-  { file: '03-salle-de-bain-robinetterie-doree.jpg', alt: 'Salle de bain avec robinetterie dorée — réalisation Fortis Rénovation à Rouen' },
-  { file: 'dressing-sur-mesure-rouen.jpg', alt: 'Dressing sur-mesure vert sauge — réalisation Fortis Rénovation à Rouen' },
-  { file: '01-salle-de-bain-meuble-led.jpg', alt: 'Salle de bain avec meuble et miroir LED — réalisation Fortis Rénovation à Rouen' },
-  { file: 'renovation-salle-de-bain-douche-rouen.jpg', alt: 'Rénovation de salle de bain avec douche — réalisation Fortis Rénovation à Rouen' },
+  { file: 'salle-eau-renovee-rouen.jpg', alt: 'Salle d’eau remise en état dans un logement locatif à Rouen — réalisation Fortis Rénovation' },
+  { file: 'wc-remis-en-etat-rouen.jpg', alt: 'WC remis en état entre deux locataires à Rouen — réalisation Fortis Rénovation' },
+  { file: 'renovation-salle-de-bain-douche-rouen.jpg', alt: 'Salle d’eau avec douche rénovée à Rouen — réalisation Fortis Rénovation' },
+  { file: 'meuble-cellier-sur-mesure-rouen.jpg', alt: 'Cellier aménagé sur-mesure au-dessus du lave-linge à Rouen — réalisation Fortis Rénovation' },
   { file: '02-wc-carrelage-vert.jpg', alt: 'WC rénové avec carrelage — réalisation Fortis Rénovation à Rouen' },
+  { file: 'dressing-sur-mesure-rouen.jpg', alt: 'Dressing sur-mesure vert sauge — réalisation Fortis Rénovation à Rouen' },
+  { file: '03-salle-de-bain-robinetterie-doree.jpg', alt: 'Salle de bain avec robinetterie dorée — réalisation Fortis Rénovation à Rouen' },
 ]
 
 export default function Realisations() {
@@ -104,7 +106,7 @@ export default function Realisations() {
           <div className="realisations-head" data-reveal>
             <p className="realisations-eyebrow">Nos réalisations</p>
             <h2>Des chantiers livrés, pas des promesses.</h2>
-            <p>Quelques salles de bain et rénovations menées par Fortis Rénovation à Rouen et sa métropole.</p>
+            <p>Quelques remises en état, dépannages et rénovations menés par Fortis Rénovation à Rouen et sa métropole.</p>
           </div>
 
           <div
