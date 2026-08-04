@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/grille-de-vetuste-location'
 const TITRE = 'Grille de vétusté : comment la lire et l’appliquer'
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'article',
+    images: OG_IMAGE,
   },
 }
 

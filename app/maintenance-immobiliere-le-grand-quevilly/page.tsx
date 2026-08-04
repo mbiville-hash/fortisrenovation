@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import CommunePage from '@/components/CommunePage'
 import { getCommune } from '@/lib/communes'
+import { OG_IMAGE } from '@/lib/seo'
 
 const c = getCommune('le-grand-quevilly')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 

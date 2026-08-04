@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/duree-renovation-salle-de-bain'
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
   title: 'Durée d’une rénovation de salle de bain — combien de temps ?',
   description: 'Combien de temps dure une rénovation de salle de bain ? Étapes jour par jour, temps de séchage et ce qui rallonge un chantier. Repères pour bien planifier.',
   alternates: { canonical: `https://www.fortisrenovation.fr${SLUG}` },
-  openGraph: { title: 'Combien de temps dure une rénovation de salle de bain ?', description: 'Étapes, séchage et planning d’un chantier de salle de bain.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article' },
+  openGraph: { title: 'Combien de temps dure une rénovation de salle de bain ?', description: 'Étapes, séchage et planning d’un chantier de salle de bain.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article',
+    images: OG_IMAGE,
+  },
 }
 
 export default function GuideDureePage() {

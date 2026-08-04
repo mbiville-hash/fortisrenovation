@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: "Salle de bain senior Rouen — Adaptation & MaPrimeAdapt'",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     url: 'https://www.fortisrenovation.fr/salle-de-bain-senior',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 

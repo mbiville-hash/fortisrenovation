@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import SimulateurVacance from '@/components/SimulateurVacance'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/cout-vacance-locative'
 const TITRE = 'Vacance locative : ce que coûte vraiment un logement vide'
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'article',
+    images: OG_IMAGE,
   },
 }
 

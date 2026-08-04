@@ -4,6 +4,7 @@ import Rings from '@/components/Rings'
 import AvisC from '@/components/AvisC'
 import Realisations from '@/components/Realisations'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/plombier-rouen'
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 

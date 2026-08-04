@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/prix-renovation-salle-de-bain'
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
   title: 'Prix d’une rénovation de salle de bain à Rouen — guide',
   description: 'Combien coûte une rénovation de salle de bain à Rouen ? Fourchettes, postes de dépense et ce qui fait varier le prix. Repères clairs pour préparer votre budget.',
   alternates: { canonical: `https://www.fortisrenovation.fr${SLUG}` },
-  openGraph: { title: 'Prix d’une rénovation de salle de bain à Rouen', description: 'Fourchettes, postes de dépense et facteurs de prix.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article' },
+  openGraph: { title: 'Prix d’une rénovation de salle de bain à Rouen', description: 'Fourchettes, postes de dépense et facteurs de prix.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article',
+    images: OG_IMAGE,
+  },
 }
 
 export default function GuidePrixPage() {

@@ -11,6 +11,7 @@ import ParcLocatifTable from '@/components/ParcLocatifTable'
 import GuidesLies from '@/components/GuidesLies'
 import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen',
     locale: 'fr_FR',
     type: 'website',
+    images: OG_IMAGE,
   },
 }
 

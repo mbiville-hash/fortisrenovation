@@ -6,6 +6,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
+import { OG_IMAGE } from '@/lib/seo'
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
     title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
     description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen. Devis sous 48h, rapport photo, interlocuteur unique. Salle de bain clé en main pour les particuliers.',
     url: 'https://www.fortisrenovation.fr',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import Realisations from '@/components/Realisations'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Plombier Mont-Saint-Aignan — Maintenance & dégât des eaux',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://www.fortisrenovation.fr/plombier-mont-saint-aignan',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 

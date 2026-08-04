@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import QuiPaieQuoi from '@/components/QuiPaieQuoi'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/qui-paie-quoi-bailleur-locataire'
 const TITRE = 'Qui paie quoi entre bailleur et locataire ?'
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'article',
+    images: OG_IMAGE,
   },
 }
 

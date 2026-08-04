@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MetierPage, { COMMUNES } from '@/components/MetierPage'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/electricien-rouen'
 const TITRE = 'Électricien à Rouen — dépannage & mise aux normes'
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 

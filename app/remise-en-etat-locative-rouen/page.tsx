@@ -14,6 +14,7 @@ import AvantApresLocatif from '@/components/AvantApresLocatif'
 import GuidesLies from '@/components/GuidesLies'
 import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const TITRE = 'Remise en état de logements locatifs à Rouen'
 const DESC =
@@ -24,7 +25,9 @@ export const metadata: Metadata = {
   title: TITRE,
   description: DESC,
   alternates: { canonical: URL },
-  openGraph: { title: TITRE, description: DESC, url: URL, locale: 'fr_FR', type: 'website' },
+  openGraph: { title: TITRE, description: DESC, url: URL, locale: 'fr_FR', type: 'website',
+    images: OG_IMAGE,
+  },
 }
 
 const profils = [

@@ -6,6 +6,7 @@ import ClientsStrip from '@/components/ClientsStrip'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import MethodePro from '@/components/MethodePro'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/maintenance-copropriete-rouen'
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'website',
+    images: OG_IMAGE,
   },
 }
 

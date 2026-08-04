@@ -11,6 +11,7 @@ import Realisations from '@/components/Realisations'
 import GuidesLies from '@/components/GuidesLies'
 import { guidesPro } from '@/lib/guides'
 import { BASE_SCHEMA } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
     description: 'Remise en état de logements locatifs, dépannages et maintenance immobilière à Rouen. Devis sous 48h, rapport photo, un seul interlocuteur.',
     url: 'https://www.fortisrenovation.fr',
+    images: OG_IMAGE,
   },
 }
 

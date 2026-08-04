@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GuideArticle } from '@/components/GuideArticle'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/guides/douche-italienne-etancheite'
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
   title: 'Douche à l’italienne : étanchéité, pente & antidérapant',
   description: 'Réussir une douche à l’italienne sans dégât des eaux : pourquoi le carrelage ne suffit pas, ce qu’impose le DTU 52.2 (étanchéité, pente 2–3 %, antidérapant).',
   alternates: { canonical: `https://www.fortisrenovation.fr${SLUG}` },
-  openGraph: { title: 'Douche à l’italienne : réussir l’étanchéité', description: 'Étanchéité sous carrelage, pente, antidérapant — les règles à respecter.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article' },
+  openGraph: { title: 'Douche à l’italienne : réussir l’étanchéité', description: 'Étanchéité sous carrelage, pente, antidérapant — les règles à respecter.', url: `https://www.fortisrenovation.fr${SLUG}`, locale: 'fr_FR', type: 'article',
+    images: OG_IMAGE,
+  },
 }
 
 export default function GuideDoucheItaliennePage() {
