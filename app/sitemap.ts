@@ -221,6 +221,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE}/guides/qui-paie-quoi-bailleur-locataire`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE}/guides/grille-de-vetuste-location`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/guides/cout-vacance-locative`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
       url: `${BASE}/guides/prix-renovation-salle-de-bain`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
