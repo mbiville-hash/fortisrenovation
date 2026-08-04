@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import Aiguillage from '@/components/Aiguillage'
 import HeroA from '@/components/HeroA'
 import StatsA from '@/components/StatsA'
 import ProLocatif from '@/components/ProLocatif'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import ClientsStrip from '@/components/ClientsStrip'
-import PartB from '@/components/PartB'
 import AvisC from '@/components/AvisC'
 import ZoneA from '@/components/ZoneA'
 import FormA from '@/components/FormA'
@@ -31,7 +29,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BASE_SCHEMA) }}
       />
       <main>
-        <Aiguillage />
         <HeroA />
         <StatsA />
         <ProLocatif />
@@ -39,8 +36,6 @@ export default function HomePage() {
         <ClientsStrip />
         <Realisations />
         <AvisC />
-        {/* Salle de bain : conservé en un seul bloc « Particuliers », plus bas dans la page. */}
-        <PartB />
         <ZoneA />
         <FormA />
       </main>
