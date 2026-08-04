@@ -7,7 +7,7 @@ const c = getCommune('maromme')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
 const TITRE = 'Maintenance immobilière Maromme'
 const DESC =
-  'Maintenance immobilière et remise en état locative à Maromme : 6 116 logements, 61,6 % de locataires. Plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
+  'Maintenance immobilière et remise en état locative à Maromme : plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
 
 export const metadata: Metadata = {
   title: TITRE,

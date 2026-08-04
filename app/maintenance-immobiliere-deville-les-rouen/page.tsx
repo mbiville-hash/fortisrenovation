@@ -7,7 +7,7 @@ const c = getCommune('deville-les-rouen')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
 const TITRE = 'Maintenance immobilière Déville-lès-Rouen'
 const DESC =
-  'Maintenance immobilière et remise en état locative à Déville-lès-Rouen : 6 141 logements, 62,4 % de locataires. Plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
+  'Maintenance immobilière et remise en état locative à Déville-lès-Rouen : plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
 
 export const metadata: Metadata = {
   title: TITRE,

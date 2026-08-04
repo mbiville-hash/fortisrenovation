@@ -7,7 +7,7 @@ const c = getCommune('le-grand-quevilly')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
 const TITRE = 'Maintenance immobilière Le Grand-Quevilly'
 const DESC =
-  'Maintenance immobilière et remise en état locative au Grand-Quevilly : 13 470 logements, 75,1 % de locataires. Plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
+  'Maintenance immobilière et remise en état locative au Grand-Quevilly : plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
 
 export const metadata: Metadata = {
   title: TITRE,

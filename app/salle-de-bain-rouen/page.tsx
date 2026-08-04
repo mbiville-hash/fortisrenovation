@@ -3,7 +3,7 @@ import { BathroomPillar, type BathroomFaq } from '@/components/BathroomPremium'
 import { serviceSchema, breadcrumbSchema, faqSchema, imageObjectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Rénovation salle de bain Rouen — Design clé en main & plan 3D',
+  title: 'Rénovation salle de bain Rouen — plan 3D inclus',
   description: 'Salle de bain design clé en main à Rouen : plan 3D inclus, devis détaillé, chantier propre, finitions soignées. Fortis Rénovation.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-rouen' },
   openGraph: {

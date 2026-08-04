@@ -5,7 +5,7 @@ import { BASE_SCHEMA, breadcrumbSchema } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'À propos — Fortis Rénovation, entreprise de rénovation à Rouen',
+  title: 'À propos — entreprise de rénovation à Rouen',
   description: "L'histoire de Fortis Rénovation à Rouen : née du constat qu'on trouve d'excellents techniciens, mais peu de partenaires fiables. Rigueur, sécurité, parole tenue.",
   alternates: { canonical: 'https://www.fortisrenovation.fr/a-propos' },
   openGraph: {
