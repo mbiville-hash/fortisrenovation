@@ -5,7 +5,7 @@ import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Dégât des eaux Rouen — intervention 24/7 & rapport assurance',
-  description: 'Dégât des eaux à Rouen ? Astreinte 24h/24 : recherche de fuite, mise hors d’eau, remise en état et rapport photos pour votre assureur. Devis gratuit, intervention en quelques heures.',
+  description: 'Dégât des eaux à Rouen : recherche de fuite, mise hors d’eau, remise en état et rapport photos pour votre assureur. Astreinte 24h/24, intervention en quelques heures.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/degat-des-eaux-rouen' },
   openGraph: {
     title: 'Dégât des eaux Rouen — Intervention rapide',

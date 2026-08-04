@@ -11,8 +11,8 @@ import { OG_IMAGE } from '@/lib/seo'
 const SLUG = '/maintenance-copropriete-rouen'
 
 export const metadata: Metadata = {
-  title: 'Maintenance de copropriété à Rouen — syndics & conseils syndicaux',
-  description: 'Entretien et dépannage des parties communes en copropriété à Rouen : maintenance corrective et préventive, un interlocuteur unique, devis clair et comptes-rendus pour vos assemblées générales.',
+  title: 'Maintenance de copropriété à Rouen — syndics',
+  description: 'Entretien et dépannage des parties communes en copropriété à Rouen : un interlocuteur unique, devis clair et comptes-rendus pour vos assemblées générales.',
   alternates: { canonical: `https://www.fortisrenovation.fr${SLUG}` },
   openGraph: {
     title: 'Maintenance de copropriété à Rouen — syndics & conseils syndicaux',

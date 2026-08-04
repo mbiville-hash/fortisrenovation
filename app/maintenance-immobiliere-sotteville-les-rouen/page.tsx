@@ -7,7 +7,7 @@ const c = getCommune('sotteville-les-rouen')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
 const TITRE = 'Maintenance immobilière Sotteville-lès-Rouen'
 const DESC =
-  'Maintenance immobilière et remise en état locative à Sotteville-lès-Rouen : 15 193 logements, 49,4 % de locataires. Plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
+  'Maintenance immobilière et remise en état locative à Sotteville-lès-Rouen : plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
 
 export const metadata: Metadata = {
   title: TITRE,

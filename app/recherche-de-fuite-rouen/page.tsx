@@ -6,7 +6,7 @@ import { OG_IMAGE } from '@/lib/seo'
 const SLUG = '/recherche-de-fuite-rouen'
 const TITRE = 'Recherche de fuite à Rouen — localiser avant de casser'
 const DESC =
-  'Recherche de fuite à Rouen : facture d’eau anormale, tache d’humidité, compteur qui tourne. Nous localisons l’origine avant d’ouvrir, puis nous réparons. Astreinte 24h/24, devis gratuit.'
+  'Recherche de fuite à Rouen : facture anormale, tache d’humidité, compteur qui tourne. Nous localisons l’origine avant d’ouvrir. Astreinte 24h/24, devis gratuit.'
 
 export const metadata: Metadata = {
   title: TITRE,

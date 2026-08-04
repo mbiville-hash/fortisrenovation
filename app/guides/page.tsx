@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { type Guide, guidesPro, guidesParticulier } from '@/lib/guides'
+import { type Guide, GUIDES, guidesPro, guidesParticulier } from '@/lib/guides'
+import { breadcrumbSchema } from '@/lib/schema'
+
+const BASE = 'https://www.fortisrenovation.fr'
 
 export const metadata: Metadata = {
   title: 'Guides & conseils — gestion locative & rénovation à Rouen',
-  description: 'Guides pratiques pour bailleurs, gestionnaires et syndics : qui paie quoi, grille de vétusté, coût de la vacance locative. Et nos guides salle de bain. Sources officielles vérifiées.',
+  description: 'Guides pour bailleurs, gestionnaires et syndics : qui paie quoi, grille de vétusté, coût de la vacance locative. Sources officielles vérifiées.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/guides' },
 }
 
@@ -30,6 +33,29 @@ function Groupe({ titre, sous, articles }: { titre: string; sous: string; articl
 export default function GuidesIndexPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+        { name: 'Accueil', url: BASE },
+        { name: 'Guides & conseils', url: `${BASE}/guides` },
+      ])) }} />
+      {/* Liste des guides : aide Google à comprendre que cette page est un index. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Guides & conseils — Fortis Rénovation',
+        description: 'Guides pour bailleurs, gestionnaires et syndics, et pour les particuliers qui préparent un projet.',
+        url: `${BASE}/guides`,
+        inLanguage: 'fr-FR',
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: GUIDES.map((g, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: g.titre,
+            url: `${BASE}${g.slug}`,
+          })),
+        },
+      }) }} />
+
       <style>{`
         .guides-hero { background: var(--dark); color: var(--white); padding: 96px 0 56px; }
         .guides-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }

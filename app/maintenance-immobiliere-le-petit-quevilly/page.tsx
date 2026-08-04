@@ -7,7 +7,7 @@ const c = getCommune('le-petit-quevilly')!
 const SLUG = `/maintenance-immobiliere-${c.slug}`
 const TITRE = 'Maintenance immobilière Le Petit-Quevilly'
 const DESC =
-  'Maintenance immobilière et remise en état locative au Petit-Quevilly : 11 727 logements, 60,1 % de locataires. Plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
+  'Maintenance immobilière et remise en état locative au Petit-Quevilly : plomberie, électricité, peinture et sols. Devis sous 48h, rapport photo.'
 
 export const metadata: Metadata = {
   title: TITRE,

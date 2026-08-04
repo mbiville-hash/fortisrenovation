@@ -3,7 +3,7 @@ import { BathroomSupportPage, type BathroomFaq } from '@/components/BathroomPrem
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Rénovation salle de bain Franqueville-Saint-Pierre — plan 3D inclus',
+  title: 'Salle de bain Franqueville-Saint-Pierre — plan 3D inclus',
   description: 'Rénovation de salle de bain clé en main à Franqueville-Saint-Pierre : plan 3D inclus, devis sous 48h, chantier propre. Fortis Rénovation.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/salle-de-bain-franqueville-saint-pierre' },
   openGraph: {

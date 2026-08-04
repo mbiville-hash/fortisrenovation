@@ -18,7 +18,7 @@ import { OG_IMAGE } from '@/lib/seo'
 
 const TITRE = 'Remise en état de logements locatifs à Rouen'
 const DESC =
-  'Remise en état de logement locatif entre deux locataires à Rouen : peinture, sols, sanitaires, petite plomberie et électricité courante. Chiffrage sous 48h, rapport photo, un seul interlocuteur.'
+  'Remise en état de logement locatif à Rouen : peinture, sols, sanitaires, plomberie et électricité. Chiffrage sous 48h, rapport photo, un seul interlocuteur.'
 const URL = 'https://www.fortisrenovation.fr/remise-en-etat-locative-rouen'
 
 export const metadata: Metadata = {
