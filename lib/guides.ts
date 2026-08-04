@@ -43,6 +43,16 @@ export const GUIDES: Guide[] = [
     public: 'pro',
   },
   {
+    slug: '/guides/etat-des-lieux-de-sortie',
+    categorie: 'État des lieux',
+    titre: 'État des lieux de sortie : le réussir sans litige',
+    extrait:
+      'Ce qu’impose l’article 3-2 de la loi de 1989, la méthode pièce par pièce, et comment transformer un constat en devis défendable face au locataire.',
+    court: 'Le cadre légal, la méthode, et les trois erreurs qui coûtent le plus.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/cout-vacance-locative',
     categorie: 'Vacance locative',
     titre: 'Ce que coûte vraiment un logement vide',

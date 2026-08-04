@@ -167,6 +167,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE}/recherche-de-fuite-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE}/debouchage-canalisation-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/plombier-bois-guillaume`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -228,6 +240,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/guides/grille-de-vetuste-location`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/guides/etat-des-lieux-de-sortie`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.75,

@@ -35,11 +35,11 @@ const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpac
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 const services: [string, string, string?][] = [
-  ['Recherche & réparation de fuite', 'Détection de l’origine, réparation durable et remise en état. Nous traitons la cause, pas seulement le symptôme.'],
+  ['Recherche & réparation de fuite', 'Détection de l’origine, réparation durable et remise en état. Nous traitons la cause, pas seulement le symptôme.', '/recherche-de-fuite-rouen'],
   ['Dégât des eaux', 'Mise hors d’eau, séchage, remise en état et rapport photos sous 48h pour votre assurance.', '/degat-des-eaux-rouen'],
   ['Robinetterie & sanitaires', 'Remplacement de robinet, mitigeur, WC, lavabo, évier — pose propre et parfaitement étanche.'],
   ['Chauffe-eau & ballon', 'Dépannage et remplacement de chauffe-eau et ballon d’eau chaude, électrique ou thermodynamique.'],
-  ['Évacuations & canalisations', 'Débouchage, reprise d’évacuation, raccordements PVC et fonte, sans casse inutile.'],
+  ['Évacuations & canalisations', 'Débouchage, reprise d’évacuation, raccordements PVC et fonte, sans casse inutile.', '/debouchage-canalisation-rouen'],
   ['Rénovation de salle de bain', 'Au-delà du dépannage, nous refaisons votre salle de bain clé en main — plan 3D inclus.', '/salle-de-bain-rouen'],
 ]
 

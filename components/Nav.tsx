@@ -182,6 +182,8 @@ export default function Nav() {
             <Link href="/remise-en-etat-locative-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/remise-en-etat-locative-rouen' ? 'page' : undefined}>Remise en état locative</Link>
             <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
             <Link href="/plombier-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/plombier-rouen' ? 'page' : undefined}>Plombier &amp; dépannage</Link>
+            <Link href="/recherche-de-fuite-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/recherche-de-fuite-rouen' ? 'page' : undefined}>Recherche de fuite</Link>
+            <Link href="/debouchage-canalisation-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/debouchage-canalisation-rouen' ? 'page' : undefined}>Débouchage canalisation</Link>
             <Link href="/electricien-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/electricien-rouen' ? 'page' : undefined}>Électricien</Link>
             <Link href="/peintre-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/peintre-rouen' ? 'page' : undefined}>Peintre &amp; enduits</Link>
             <Link href="/pose-de-sol-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/pose-de-sol-rouen' ? 'page' : undefined}>Pose de sols</Link>
