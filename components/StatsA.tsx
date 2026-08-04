@@ -6,9 +6,9 @@ type Stat = { value: string; label: string; sub: string; to?: number; unit?: str
 
 const STATS: Stat[] = [
   { value: '★★★★★', label: 'Avis clients Google', sub: 'Note 5/5' },
-  { value: '48h', to: 48, unit: 'h', label: 'Délai de réponse', sub: 'Devis garanti' },
-  { value: '1', to: 1, unit: '', label: 'Interlocuteur unique', sub: 'Du début à la fin' },
-  { value: '3D', label: 'Plan inclus', sub: 'Visualisez avant travaux' },
+  { value: '48h', to: 48, unit: 'h', label: 'Devis reçu', sub: 'Réponse garantie' },
+  { value: '1', to: 1, unit: '', label: 'Interlocuteur unique', sub: 'Du constat aux clés' },
+  { value: '24/7', label: 'Astreinte urgence', sub: 'Intervention en quelques heures' },
 ]
 
 function StatValue({ to, unit, fallbackText, run }: { to?: number; unit?: string; fallbackText: string; run: boolean }) {

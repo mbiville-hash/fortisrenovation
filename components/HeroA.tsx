@@ -39,12 +39,16 @@ export default function HeroA() {
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
         .hero-trust { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.02em; }
         .hero-trust .stars { color: var(--gold); letter-spacing: 3px; margin-right: 8px; }
+        .hero-alt { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 14px; }
+        .hero-alt a { color: var(--gold); border-bottom: 1px solid rgba(184,151,90,0.4); padding-bottom: 1px; }
+        .hero-alt a:hover { border-color: var(--gold); }
 
         @keyframes heroIn { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
-        .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-actions, .hero-trust { animation: heroIn 1s cubic-bezier(.16,.84,.3,1) both; }
+        .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-actions, .hero-trust, .hero-alt { animation: heroIn 1s cubic-bezier(.16,.84,.3,1) both; }
         .hero-tag { animation-delay: .12s; } .hero-title { animation-delay: .26s; } .hero-desc { animation-delay: .42s; }
         .hero-features { animation-delay: .56s; } .hero-actions { animation-delay: .7s; } .hero-trust { animation-delay: .82s; }
-        @media (prefers-reduced-motion: reduce) { .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-actions, .hero-trust { animation: none; } }
+        .hero-alt { animation-delay: .92s; }
+        @media (prefers-reduced-motion: reduce) { .hero-tag, .hero-title, .hero-desc, .hero-features, .hero-actions, .hero-trust, .hero-alt { animation: none; } }
 
         @media (max-width: 768px) {
           .hero-inner { min-height: auto; padding: 64px 0 72px; }
@@ -71,21 +75,24 @@ export default function HeroA() {
         </div>
         <div className="container">
           <div className="hero-inner">
-            <p className="hero-tag">Salle de bain · Rouen &amp; métropole</p>
-            <h1 className="hero-title">Votre salle de bain,<br />repensée en 3D.</h1>
+            <p className="hero-tag">Syndics · Bailleurs · Gestionnaires — Rouen &amp; métropole</p>
+            <h1 className="hero-title">Maintenance immobilière<br />et remise en état locative.</h1>
             <p className="hero-desc">
-              Du projet à la pose, <strong>plan 3D inclus</strong>. Prix fixe, délais tenus, chantier propre — résultat garanti, sans mauvaise surprise.
+              Nous remettons vos logements en état entre deux locataires et nous traitons vos dépannages du quotidien. <strong>Devis sous 48h</strong>, rapport photo à chaque passage, une seule facture.
             </p>
             <ul className="hero-features">
-              <li>Plan 3D inclus</li>
-              <li>Prix fixe, délais tenus</li>
-              <li>Travaux clé en main</li>
+              <li>Devis sous 48h</li>
+              <li>Interlocuteur unique</li>
+              <li>Astreinte 24h/24 · 7j/7</li>
             </ul>
             <div className="hero-actions">
-              <Link href="/devis" className="btn btn-gold">Demander mon plan 3D</Link>
-              <Link href="/salle-de-bain-rouen" className="btn btn-outline-white">Voir l'offre salle de bain</Link>
+              <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
+              <Link href="/remise-en-etat-locative-rouen" className="btn btn-outline-white">Remise en état locative</Link>
             </div>
             <p className="hero-trust"><span className="stars">★★★★★</span>5/5 · 30 avis Google vérifiés</p>
+            <p className="hero-alt">
+              Vous rénovez chez vous&nbsp;? <Link href="/salle-de-bain-rouen">Voir l&apos;offre salle de bain →</Link>
+            </p>
           </div>
         </div>
       </section>

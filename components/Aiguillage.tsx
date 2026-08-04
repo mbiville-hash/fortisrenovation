@@ -50,6 +50,7 @@ export default function Aiguillage() {
         .aig-half svg g { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
         .aig-div { width: 1px; background: rgba(184,151,90,0.3); flex-shrink: 0; }
         .aig-lab { font-size: 16px; font-weight: 700; letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: 8px; }
+        .aig-sub { font-size: 11.5px; line-height: 1.45; color: rgba(255,255,255,0.55); max-width: 22ch; margin-top: -4px; }
         .aig-arr { color: var(--gold); font-size: 17px; line-height: 1; }
 
         @keyframes aigIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
@@ -65,6 +66,7 @@ export default function Aiguillage() {
           .aig-half { flex: 1; min-width: 0; padding: 17px 12px; gap: 9px; }
           .aig-half svg { width: 27px; height: 27px; }
           .aig-lab { font-size: 14px; }
+          .aig-sub { font-size: 10.5px; max-width: none; }
         }
       `}</style>
 
@@ -84,13 +86,15 @@ export default function Aiguillage() {
             <p className="aig-eye">Vous êtes ?</p>
             <div className="aig-box">
               <a href="#decouvrir" className="aig-half" onClick={(e) => { e.preventDefault(); document.getElementById('decouvrir')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}>
-                <svg viewBox="0 0 40 40" aria-hidden="true"><g><path d="M7 19 L20 8 L33 19" /><path d="M11 17 V32 H29 V17" /><rect x="17" y="24" width="6" height="8" /></g></svg>
-                <span className="aig-lab">Particulier</span>
+                <svg viewBox="0 0 40 40" aria-hidden="true"><g><rect x="11" y="7" width="18" height="26" /><rect x="15" y="12" width="4" height="4" /><rect x="21" y="12" width="4" height="4" /><rect x="15" y="19" width="4" height="4" /><rect x="21" y="19" width="4" height="4" /><rect x="18" y="26" width="4" height="7" /></g></svg>
+                <span className="aig-lab">Syndic, bailleur &amp; pro</span>
+                <span className="aig-sub">Remise en état locative, interventions ponctuelles</span>
               </a>
               <span className="aig-div" aria-hidden="true" />
-              <Link href="/professionnels" className="aig-half">
-                <svg viewBox="0 0 40 40" aria-hidden="true"><g><rect x="11" y="7" width="18" height="26" /><rect x="15" y="12" width="4" height="4" /><rect x="21" y="12" width="4" height="4" /><rect x="15" y="19" width="4" height="4" /><rect x="21" y="19" width="4" height="4" /><rect x="18" y="26" width="4" height="7" /></g></svg>
-                <span className="aig-lab">Syndic &amp; pro <span className="aig-arr" aria-hidden="true">→</span></span>
+              <Link href="/salle-de-bain-rouen" className="aig-half">
+                <svg viewBox="0 0 40 40" aria-hidden="true"><g><path d="M7 19 L20 8 L33 19" /><path d="M11 17 V32 H29 V17" /><rect x="17" y="24" width="6" height="8" /></g></svg>
+                <span className="aig-lab">Particulier <span className="aig-arr" aria-hidden="true">→</span></span>
+                <span className="aig-sub">Salle de bain, plomberie, dépannage</span>
               </Link>
             </div>
           </div>

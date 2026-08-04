@@ -24,7 +24,7 @@ export const BASE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
   name: 'Fortis Rénovation',
-  description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h.',
+  description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen : peinture, sols, sanitaires, plomberie et électricité courante. Devis sous 48h, rapport photo, interlocuteur unique. Salle de bain clé en main pour les particuliers.',
   url: 'https://www.fortisrenovation.fr',
   logo: 'https://www.fortisrenovation.fr/web-app-manifest-512x512.png',
   telephone: '+33767491324',

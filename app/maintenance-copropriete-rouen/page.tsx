@@ -6,6 +6,7 @@ import ClientsStrip from '@/components/ClientsStrip'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import MethodePro from '@/components/MethodePro'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/maintenance-copropriete-rouen'
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     url: `https://www.fortisrenovation.fr${SLUG}`,
     locale: 'fr_FR',
     type: 'website',
+    images: OG_IMAGE,
   },
 }
 
@@ -61,7 +63,7 @@ export default function MaintenanceCoproprietePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Maintenance de copropriété Rouen', 'Entretien et dépannage des parties communes en copropriété à Rouen : maintenance corrective et préventive, un interlocuteur unique, comptes-rendus pour les AG.', SLUG)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
-        { name: 'Professionnels', url: 'https://www.fortisrenovation.fr/professionnels' },
+        { name: 'Maintenance immobilière', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
         { name: 'Maintenance de copropriété Rouen', url: `https://www.fortisrenovation.fr${SLUG}` },
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
@@ -71,7 +73,7 @@ export default function MaintenanceCoproprietePage() {
         <section style={{ ...darkSection, padding: '100px 0 80px' }}>
           <Rings className="rings--tr" />
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Professionnels', href: '/professionnels' }, { name: 'Maintenance de copropriété' }]} />
+            <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Maintenance immobilière', href: '/maintenance-immobiliere-rouen' }, { name: 'Maintenance de copropriété' }]} />
             <p style={eyebrow}><Dash />Syndics · Conseils syndicaux · Gestionnaires</p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
               Maintenance de copropriété <br />à Rouen.
@@ -80,7 +82,7 @@ export default function MaintenanceCoproprietePage() {
               Entretien et dépannage des parties communes, maintenance corrective et préventive — avec un seul interlocuteur, des devis clairs et des comptes-rendus exploitables en assemblée générale.
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
-              Une offre dédiée copropriété, au sein de notre <Link href="/professionnels" style={{ color: 'var(--gold)' }}>offre pro complète</Link>.
+              Une offre dédiée copropriété, au sein de notre <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--gold)' }}>offre pro complète</Link>.
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <Link href="/devis" className="btn btn-gold">Demander un devis</Link>

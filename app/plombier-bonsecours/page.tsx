@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import Realisations from '@/components/Realisations'
+import { OG_IMAGE } from '@/lib/seo'
+import ParcPlomberie from '@/components/ParcPlomberie'
+import { getParcPlomberie } from '@/lib/communes'
+
+const PARC = getParcPlomberie('bonsecours')!
 
 export const metadata: Metadata = {
   title: 'Plombier Bonsecours — Maintenance & dégât des eaux',
@@ -13,7 +18,7 @@ export const metadata: Metadata = {
     url: 'https://www.fortisrenovation.fr/plombier-bonsecours',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 
@@ -42,7 +47,7 @@ export default function PlombierBonsecoursPage() {
       ))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
-        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/professionnels' },
+        { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
         { name: 'Plombier Bonsecours', url: 'https://www.fortisrenovation.fr/plombier-bonsecours' },
       ]))}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
@@ -154,6 +159,8 @@ export default function PlombierBonsecoursPage() {
             </p>
           </div>
         </section>
+
+        <ParcPlomberie c={PARC} />
 
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>

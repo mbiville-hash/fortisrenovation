@@ -6,6 +6,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
+import { OG_IMAGE } from '@/lib/seo'
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -25,20 +26,21 @@ export const metadata: Metadata = {
     default: 'Fortis Rénovation',
     template: '%s | Fortis Rénovation',
   },
-  description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h, chantier propre.',
+  description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen. Devis sous 48h, rapport photo, interlocuteur unique. Salle de bain clé en main pour les particuliers.',
   robots: { index: true, follow: true },
   openGraph: {
     siteName: 'Fortis Rénovation',
     locale: 'fr_FR',
     type: 'website',
-    title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-    description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h, chantier propre.',
+    title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
+    description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen. Devis sous 48h, rapport photo, interlocuteur unique. Salle de bain clé en main pour les particuliers.',
     url: 'https://www.fortisrenovation.fr',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fortis Rénovation — Maintenance immobilière & salle de bain à Rouen',
-    description: 'Salle de bain design clé en main et maintenance immobilière à Rouen. Plan 3D inclus, devis clair sous 48h.',
+    title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
+    description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen. Devis sous 48h, rapport photo, interlocuteur unique.',
   },
 }
 

@@ -85,7 +85,7 @@ export default function Footer() {
             <div>
               <Link href="/" className="footer-logo">FORTIS<span>.</span></Link>
               <p className="footer-tagline">
-                Entreprise de rénovation à Rouen. Maintenance immobilière et salle de bain clé en main depuis 2024.
+                Maintenance immobilière et remise en état locative à Rouen. Bailleurs, gestionnaires et syndics, depuis 2024.
               </p>
               <div className="footer-contact">
                 <a href="tel:+33767491324">07 67 49 13 24</a>
@@ -99,14 +99,21 @@ export default function Footer() {
             <div>
               <p className="footer-col-title">Services</p>
               <ul className="footer-links">
-                <li><Link href="/professionnels">Maintenance immobilière</Link></li>
+                <li><Link href="/maintenance-immobiliere-rouen">Maintenance immobilière</Link></li>
+                <li><Link href="/remise-en-etat-locative-rouen">Remise en état locative</Link></li>
+                <li><Link href="/maintenance-copropriete-rouen">Maintenance copropriété</Link></li>
+                <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
+                <li><Link href="/plombier-rouen">Plomberie &amp; dépannage</Link></li>
+                <li><Link href="/recherche-de-fuite-rouen">Recherche de fuite</Link></li>
+                <li><Link href="/debouchage-canalisation-rouen">Débouchage</Link></li>
+                <li><Link href="/electricien-rouen">Électricité</Link></li>
+                <li><Link href="/peintre-rouen">Peinture &amp; enduits</Link></li>
+                <li><Link href="/pose-de-sol-rouen">Pose de sols</Link></li>
                 <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
                 <li><Link href="/douche-italienne-rouen">Douche italienne</Link></li>
                 <li><Link href="/prix-renovation-salle-de-bain-rouen">Prix salle de bain</Link></li>
                 <li><Link href="/renovation-salle-de-bain-cle-en-main-rouen">Clé en main</Link></li>
                 <li><Link href="/salle-de-bain-senior">Salle de bain senior</Link></li>
-                <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
-                <li><Link href="/plombier-rouen">Plomberie &amp; dépannage</Link></li>
                 <li><Link href="/devis">Étudier mon projet</Link></li>
               </ul>
             </div>

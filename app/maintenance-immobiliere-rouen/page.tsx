@@ -1,194 +1,197 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Rings from '@/components/Rings'
+import Breadcrumb from '@/components/Breadcrumb'
+import ClientsStrip from '@/components/ClientsStrip'
+import ReactiviteTimeline from '@/components/ReactiviteTimeline'
+import BeneficesPro from '@/components/BeneficesPro'
+import MethodePro from '@/components/MethodePro'
+import MetiersPro from '@/components/MetiersPro'
+import ParcLocatifTable from '@/components/ParcLocatifTable'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Maintenance immobilière Rouen — Syndics & gestionnaires',
-  description: 'Maintenance immobilière à Rouen : petits travaux, dégâts des eaux, entretien immeuble. Réponse 48h, rapport écrit, un seul interlocuteur. Devis gratuit.',
+  title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
+  description: 'Maintenance et dépannage immobilier à Rouen pour syndics, bailleurs et entreprises. Un interlocuteur unique, interventions sous 48h, devis clair, rapport systématique.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
   openGraph: {
-    title: 'Maintenance immobilière Rouen — Syndics & gestionnaires',
-    description: 'Petits travaux, dégâts des eaux, entretien immeuble à Rouen. Réponse 48h, rapport écrit, un interlocuteur unique.',
+    title: 'Maintenance immobilière Rouen — Syndics & Bailleurs',
+    description: 'Maintenance et dépannage immobilier à Rouen. Un interlocuteur unique, interventions sous 48h, devis clair, rapport systématique.',
     url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/web-app-manifest-512x512.png', width: 512, height: 512, alt: 'Fortis Rénovation' }],
+    images: OG_IMAGE,
   },
 }
 
 const faqs = [
-  {
-    q: 'Pouvez-vous intervenir en urgence sur un dégât des eaux ?',
-    a: "Oui. Nous traitons les demandes urgentes en priorité. Contactez-nous directement au 07 67 49 13 24 et nous organisons l'intervention le plus rapidement possible.",
-  },
-  {
-    q: 'Fournissez-vous des rapports après chaque intervention ?',
-    a: 'Systématiquement. Chaque intervention donne lieu à un rapport écrit détaillé (photos, nature des travaux, matériaux) transmis sous 24h, utilisable pour votre assureur ou vos copropriétaires.',
-  },
-  {
-    q: 'Travaillez-vous avec des syndics et des bailleurs privés ?',
-    a: 'Oui, nos deux profils principaux. Syndics de copropriété, bailleurs institutionnels ou particuliers propriétaires de plusieurs biens — nous adaptons le suivi à chaque organisation.',
-  },
+  { q: 'Quels types de travaux couvrez-vous ?', a: 'Plomberie, électricité, peinture, carrelage et sols, dégâts des eaux et mise aux normes. Tout ce dont un parc immobilier a besoin au quotidien.' },
+  { q: 'Quel est votre délai d’intervention ?', a: 'Nous garantissons une réponse sous 48h pour les demandes courantes. Pour les urgences (fuite, sinistre), nous intervenons en quelques heures, avec une astreinte 24h/24 et 7j/7.' },
+  { q: 'Travaillez-vous au forfait ou au devis ?', a: 'Le plus souvent au devis, intervention par intervention : un chiffrage clair, sans engagement. Pour un parc important, nous pouvons mettre en place un suivi régulier sur-mesure si vous le souhaitez.' },
+  { q: 'Une seule facture pour plusieurs corps de métier ?', a: 'Oui. Multi-corps d’état, un seul devis et une seule facture : vous n’avez qu’un interlocuteur à gérer, pas cinq.' },
+  { q: 'Gérez-vous les dossiers d’assurance (dégât des eaux, sinistre) ?', a: 'Oui. Nous établissons des rapports détaillés et des devis adaptés à la prise en charge assurance, et nous intervenons en urgence pour limiter les dégâts.' },
+  { q: 'Intervenez-vous dans toute la Seine-Maritime ?', a: 'Nous intervenons principalement dans un rayon de 30 km autour de Rouen (métropole normande). Contactez-nous pour les zones plus éloignées.' },
 ]
 
-export default function MaintenancePage() {
+const reassurance = [
+  ['Interlocuteur unique', 'Du diagnostic à la facture'],
+  ['Réponse sous 48h', 'Sur les demandes courantes'],
+  ['Rapport écrit', 'À chaque intervention'],
+  ['Astreinte 24/7', 'Urgence en quelques heures'],
+]
+
+const audiences = [
+  { t: 'Syndics de copropriété', d: 'Entretien des parties communes, dépannages, mise aux normes — avec des comptes-rendus clairs pour vos assemblées générales.' },
+  { t: 'Bailleurs privés', d: 'Remise en état entre locataires, petits travaux, dépannages. Votre bien reste louable et entretenu sans y penser.' },
+  { t: 'Gestionnaires & administrateurs', d: 'Un point de contact unique pour tout un portefeuille, des interventions tracées et facturées proprement.' },
+  { t: 'Entreprises & locaux pro', d: 'Maintenance de vos locaux : plomberie, électricité, second œuvre — sans interrompre votre activité.' },
+]
+
+const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'white', position: 'relative', overflow: 'hidden' }
+const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }
+const eyebrowGold: React.CSSProperties = { ...eyebrow, color: '#9a7c45' }
+const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
+
+export default function MaintenanceImmobilierePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(
-        'Maintenance immobilière Rouen',
-        'Maintenance immobilière à Rouen : petits travaux, dégâts des eaux, entretien immeuble. Réponse 48h, rapport écrit, un seul interlocuteur.',
-        '/maintenance-immobiliere-rouen'
-      ))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Maintenance immobilière Rouen', 'Maintenance et dépannage immobilier pour syndics, bailleurs et entreprises à Rouen. Interventions au devis, réponse sous 48h.', '/maintenance-immobiliere-rouen')) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: 'Accueil', url: 'https://www.fortisrenovation.fr' },
         { name: 'Maintenance immobilière Rouen', url: 'https://www.fortisrenovation.fr/maintenance-immobiliere-rouen' },
-      ]))}} />
+      ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
 
       <main style={{ paddingTop: 68 }}>
         {/* Hero */}
-        <section style={{ background: 'var(--dark)', padding: '100px 0 80px', color: 'white' }}>
-          <div className="container" data-reveal>
-            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
-              Syndics · Bailleurs · Gestionnaires · Rouen
-            </p>
-            <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.1, marginBottom: 24 }}>
-              Maintenance immobilière <br />à Rouen.
+        <section style={{ ...darkSection, padding: '100px 0 80px' }}>
+          <Rings className="rings--tr" />
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Maintenance immobilière' }]} />
+            <p style={eyebrow}><Dash />Syndics · Bailleurs · Entreprises</p>
+            <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.1, marginBottom: 24 }}>
+              Maintenance immobilière <br />à Rouen — <br />un seul prestataire.
             </h1>
-            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', maxWidth: 560, lineHeight: 1.75, marginBottom: 16 }}>
-              Petits travaux, dégâts des eaux, entretien courant — on prend en charge toutes les demandes de votre parc. Un interlocuteur unique, zéro relance, rapport écrit à chaque intervention.
-            </p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 40 }}>
-              Fortis Rénovation · 193C Rue du Renard · 76000 Rouen · <a href="tel:+33767491324" style={{ color: 'var(--gold)' }}>07 67 49 13 24</a>
+            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.62)', maxWidth: 560, lineHeight: 1.75, marginBottom: 40 }}>
+              Plomberie, électricité, peinture, carrelage. Au devis, à l’intervention ou en suivi régulier — vous décidez. Un interlocuteur unique, des rapports clairs, une seule facture.
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>
-              <Link href="/devis" className="btn btn-outline-white">Demander un devis</Link>
+              <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
+              <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
           </div>
         </section>
 
-        {/* Promesses */}
-        <section style={{ background: 'var(--ink)', padding: '0', borderTop: '1px solid rgba(184,151,90,0.3)', borderBottom: '1px solid rgba(184,151,90,0.3)' }}>
-          <div className="container" data-reveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-              {[
-                { v: '48h', l: 'Délai de réponse', s: 'Garanti par écrit' },
-                { v: '100%', l: 'Rapports écrits', s: 'Photos incluses' },
-                { v: '0', l: 'Relance nécessaire', s: 'On vous rappelle' },
-                { v: '1', l: 'Interlocuteur', s: 'Du début à la fin' },
-              ].map(({ v, l, s }) => (
-                <div key={l} style={{ padding: '32px 32px', borderRight: '1px solid rgba(184,151,90,0.2)' }}>
-                  <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, color: 'var(--gold)', lineHeight: 1, marginBottom: 6 }}>{v}</div>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: 'white', marginBottom: 4 }}>{l}</div>
-                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s}</div>
+        {/* Réassurance */}
+        <section style={{ background: 'var(--paper)', borderBottom: '1px solid rgba(26,26,24,0.08)' }}>
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+              {reassurance.map(([t, d], i) => (
+                <div key={t} data-reveal style={{ padding: '36px 28px', borderLeft: i === 0 ? 'none' : '1px solid rgba(26,26,24,0.08)' }}>
+                  <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, color: 'var(--ink)', marginBottom: 6 }}>{t}</div>
+                  <div style={{ fontSize: 12.5, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--ink-faint)' }}>{d}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services */}
+        {/* Réactivité — timeline animée */}
+        <ReactiviteTimeline />
+
+        {/* Ils nous font confiance */}
+        <ClientsStrip />
+
+        {/* Bénéfices — ce que vous y gagnez */}
+        <BeneficesPro />
+
+        {/* Pour qui */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
-          <div className="container" data-reveal>
-            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16 }}>Nos prestations de maintenance</h2>
-            <p style={{ fontSize: 15, color: 'var(--ink-soft)', maxWidth: 600, lineHeight: 1.75, marginBottom: 48 }}>
-              Nous intervenons sur tous les corps de métier du bâtiment dans un rayon de 30 km autour de Rouen — Sotteville, Mont-Saint-Aignan, Bois-Guillaume, Grand-Quevilly et toute la métropole normande.
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-              {[
-                { title: 'Petits travaux courants', desc: 'Plomberie, électricité courante, menuiserie, peinture, serrurerie — toutes les demandes du quotidien traitées rapidement.' },
-                { title: 'Dégâts des eaux', desc: 'Intervention rapide, recherche de fuite, remise en état complète. Rapport photos transmis sous 24h pour votre assureur.' },
-                { title: 'Maintenance préventive', desc: 'Visites régulières programmées, détection des problèmes avant qu\'ils deviennent urgents, carnet de suivi immeuble.' },
-              ].map(({ title, desc }) => (
-                <div key={title} style={{ padding: 36, background: 'white', border: '1px solid rgba(26,26,24,0.1)' }}>
-                  <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, marginBottom: 12, color: 'var(--ink)' }}>{title}</h3>
-                  <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>{desc}</p>
+          <div className="container">
+            <p style={eyebrowGold}><Dash />Pour qui</p>
+            <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 44, color: 'var(--ink)' }}>Pensé pour les gestionnaires de parc.</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
+              {audiences.map(({ t, d }, i) => (
+                <div key={t} data-reveal style={{ padding: 30, background: 'white', border: '1px solid rgba(154,124,69,0.2)', transitionDelay: `${i * 70}ms` }}>
+                  <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, marginBottom: 10, color: 'var(--ink)' }}>{t}</h3>
+                  <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.7 }}>{d}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Process */}
-        <section style={{ background: 'white', padding: '80px 0' }}>
+        {/* Méthode */}
+        <MethodePro />
+
+        {/* Domaines — corps d'état en icônes */}
+        <MetiersPro />
+
+        {/* Comparatif du parc locatif — données INSEE, maillage vers les pages commune */}
+        <ParcLocatifTable />
+
+        {/* Zone d'intervention — pastilles */}
+        <section style={{ background: 'var(--paper)', padding: '64px 0', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
+          <style>{`
+            .zone-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 0 auto; }
+            .zone-chip { font-size: 13px; font-weight: 500; color: var(--ink); background: white; border: 1px solid rgba(184,151,90,0.45); border-radius: 40px; padding: 9px 18px; transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease; }
+            .zone-chip:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
+          `}</style>
           <div className="container" data-reveal>
-            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, textAlign: 'center', marginBottom: 56 }}>Comment ça marche ?</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 0 }}>
-              {[
-                ['1', 'Vous nous contactez', 'Par téléphone ou formulaire. On vous répond dans les 48h, souvent le jour même.'],
-                ['2', 'On évalue et on chiffre', 'Visite ou devis à distance selon la nature du problème. Tarif clair, sans surprise.'],
-                ['3', 'Intervention planifiée', 'On intervient au moment qui vous convient. Pas de rendez-vous manqué.'],
-                ['4', 'Rapport transmis', 'Photos, nature des travaux, coût — tout est consigné et envoyé sous 24h.'],
-              ].map(([n, t, d]) => (
-                <div key={n as string} style={{ padding: '40px 32px', borderRight: '1px solid rgba(26,26,24,0.08)', textAlign: 'center' }}>
-                  <div style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 48, color: 'var(--gold)', opacity: 0.3, lineHeight: 1, marginBottom: 16 }}>{n}</div>
-                  <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 18, marginBottom: 10 }}>{t}</h3>
-                  <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.7 }}>{d}</p>
-                </div>
-              ))}
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9a7c45', textAlign: 'center', marginBottom: 22 }}>
+              Zone d&apos;intervention · 30 km autour de Rouen
+            </p>
+            <div className="zone-chips">
+              <Link href="/plombier-mont-saint-aignan" className="zone-chip">Mont-Saint-Aignan</Link>
+              <Link href="/plombier-bois-guillaume" className="zone-chip">Bois-Guillaume</Link>
+              <Link href="/plombier-bihorel" className="zone-chip">Bihorel</Link>
+              <Link href="/plombier-isneauville" className="zone-chip">Isneauville</Link>
+              <Link href="/plombier-bonsecours" className="zone-chip">Bonsecours</Link>
+              <Link href="/plombier-le-mesnil-esnard" className="zone-chip">Le Mesnil-Esnard</Link>
+              <Link href="/plombier-franqueville-saint-pierre" className="zone-chip">Franqueville-Saint-Pierre</Link>
+              <Link href="/plombier-sotteville-les-rouen" className="zone-chip">Sotteville-lès-Rouen</Link>
             </div>
           </div>
         </section>
 
-        {/* Preuve sociale — note Google réelle (PAS de faux témoignage) */}
-        {/* TODO Marc-Antoine : remplace ce bloc par un VRAI avis d'un syndic ou gestionnaire client quand tu en as un. */}
-        <section style={{ background: 'var(--paper)', padding: '72px 0' }}>
-          <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
-            <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
-            <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
-              Note 5/5 sur Google — 30 avis vérifiés.
-            </p>
-            <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>
-              Vous gérez un parc à Rouen ou dans la métropole ? Demandez-nous les coordonnées de syndics et bailleurs clients : on les communique volontiers.
-            </p>
-          </div>
-        </section>
+        <GuidesLies
+          guides={guidesPro}
+          titre="Les questions qui reviennent en gestion locative"
+          intro="Répartition des réparations, vétusté, coût d'un logement vide : trois guides pour décider vite."
+          fond="blanc"
+        />
 
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>
-          <div className="container" data-reveal style={{ maxWidth: 760 }}>
-            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 48 }}>Questions fréquentes</h2>
-            {faqs.map(({ q, a }) => (
-              <div key={q} style={{ padding: '28px 0', borderBottom: '1px solid rgba(26,26,24,0.1)' }}>
-                <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 18, marginBottom: 10 }}>{q}</h3>
-                <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>{a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Zone & maillage — communes desservies */}
-        <section style={{ background: 'var(--paper)', padding: '56px 0' }}>
-          <div className="container" data-reveal>
-            <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center' }}>
-              Maintenance et plomberie sur tout le plateau et la métropole :{' '}
-              <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>,{' '}
-              <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
-              <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>,{' '}
-              <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>,{' '}
-              <Link href="/plombier-bonsecours" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bonsecours</Link>,{' '}
-              <Link href="/plombier-le-mesnil-esnard" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Le Mesnil-Esnard</Link>,{' '}
-              <Link href="/plombier-franqueville-saint-pierre" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Franqueville-Saint-Pierre</Link>{' '}
-              et <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>.
-            </p>
+          <div className="container" style={{ maxWidth: 760 }}>
+            <h2 data-reveal style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, marginBottom: 40, color: 'var(--ink)' }}>Questions fréquentes</h2>
+            <div>
+              {faqs.map(({ q, a }) => (
+                <div key={q} data-reveal style={{ padding: '26px 0', borderBottom: '1px solid rgba(26,26,24,0.1)' }}>
+                  <h3 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 18, marginBottom: 10, color: 'var(--ink)' }}>{q}</h3>
+                  <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.75 }}>{a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>
-          <div className="container" data-reveal>
-            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16, color: 'white' }}>
-              Un besoin sur votre parc ?
-            </h2>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', marginBottom: 40 }}>
-              Réponse garantie sous 48h — souvent le jour même.
-            </p>
+        <section style={{ ...darkSection, padding: '72px 0', textAlign: 'center' }}>
+          <Rings className="rings--br" />
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 36, marginBottom: 16, color: 'white' }}>Parlons de votre parc.</h2>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.62)', marginBottom: 40 }}>Devis sous 48h. Un rendez-vous, un interlocuteur.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+33767491324" className="btn btn-gold">07 67 49 13 24</a>
-              <Link href="/devis" className="btn btn-outline-white">Formulaire de contact</Link>
+              <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
+              <a href="tel:+33767491324" className="btn btn-outline-white">07 67 49 13 24</a>
             </div>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', marginTop: 30 }}>
+              Fortis Rénovation · 193C Rue du Renard, 76000 Rouen
+            </p>
           </div>
         </section>
       </main>
