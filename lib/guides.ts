@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/augmentation-de-loyer-rouen',
+    categorie: 'Loyers',
+    titre: 'Augmenter le loyer à Rouen : les trois moments possibles',
+    extrait:
+      'Rouen n’est pas en zone tendue : à la relocation, le loyer y est librement fixable. Révision annuelle, réévaluation au renouvellement, relocation — et l’étiquette énergétique qui bloque tout. Simulateur inclus.',
+    court: 'À Rouen le loyer de relocation est libre — sauf en F ou G.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/qui-paie-quoi-bailleur-locataire',
     categorie: 'Réparations locatives',
     titre: 'Qui paie quoi entre bailleur et locataire ?',

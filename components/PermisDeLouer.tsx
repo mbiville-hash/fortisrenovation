@@ -74,8 +74,11 @@ export default function PermisDeLouer() {
     <>
       <style>{`
         .pdl { background: #fff; border: 1px solid rgba(184,151,90,0.35); border-radius: 2px; padding: 28px; margin: 32px 0; }
-        .pdl-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
-        .pdl-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
+        /* Règles visant un <p> préfixées par .pdl : dans un guide, « .guide-prose p »
+           (spécificité 0,1,1) écraserait sinon ces classes simples (0,1,0), ramenant
+           tous les textes de l'outil à 16px. */
+        .pdl .pdl-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+        .pdl .pdl-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
         .pdl-q { margin-bottom: 22px; }
         .pdl-lab { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 11px; }
         .pdl-sel { width: 100%; padding: 12px 14px; font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--ink); background: var(--paper); border: 1px solid rgba(26,26,24,0.18); border-radius: 2px; }
@@ -87,15 +90,15 @@ export default function PermisDeLouer() {
         .pdl-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
         .pdl-rep { border-top: 1px solid rgba(26,26,24,0.1); padding-top: 22px; margin-top: 4px; }
         .pdl-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 40px; border: 1px solid; margin-bottom: 16px; }
-        .pdl-exp { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin: 0; }
+        .pdl .pdl-exp { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin: 0; }
         .pdl-dossier { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(26,26,24,0.1); }
-        .pdl-dossier-t { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; }
+        .pdl .pdl-dossier-t { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; }
         /* Surcharge des puces de .guide-prose (losange doré + filet) */
         .pdl-liste { list-style: none; margin: 0; padding: 0; }
         .pdl-liste li { display: flex; gap: 12px; padding: 7px 0; border-top: 0; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
         .pdl-liste li::before { display: none; }
         .pdl-puce { color: var(--gold); font-size: 11px; line-height: 1.9; flex: none; }
-        .pdl-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .pdl .pdl-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
         .pdl-note a { color: #8a857a; text-decoration: underline; }
       `}</style>
 

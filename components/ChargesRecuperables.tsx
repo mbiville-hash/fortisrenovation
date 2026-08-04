@@ -77,14 +77,17 @@ export default function ChargesRecuperables() {
     <>
       <style>{`
         .chr { background: #fff; border: 1px solid rgba(184,151,90,0.35); border-radius: 2px; padding: 28px; margin: 32px 0; }
-        .chr-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
-        .chr-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 20px; }
+        /* Règles visant un <p> préfixées par .chr : dans un guide, « .guide-prose p »
+           (spécificité 0,1,1) écraserait sinon ces classes simples (0,1,0), ramenant
+           tous les textes de l'outil à 16px. */
+        .chr .chr-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+        .chr .chr-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 20px; }
         .chr-cats { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
         .chr-cat { font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 14px; border-radius: 40px; border: 1px solid rgba(184,151,90,0.45); background: transparent; color: var(--ink-soft); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
         .chr-cat:hover { border-color: var(--gold); color: var(--gold-deep); }
         .chr-cat[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
         .chr-cat:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-        .chr-nb { font-size: 12.5px; color: #8a857a; margin: 14px 0 4px; }
+        .chr .chr-nb { font-size: 12.5px; color: #8a857a; margin: 14px 0 4px; }
         /* Surcharge des puces de .guide-prose */
         .chr-liste { list-style: none; margin: 0; padding: 0; max-height: 520px; overflow-y: auto; }
         .chr-liste li { display: block; padding: 15px 0; border-top: 1px solid rgba(26,26,24,0.1); }
@@ -92,8 +95,8 @@ export default function ChargesRecuperables() {
         .chr-row { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
         .chr-l { font-size: 15px; font-weight: 600; color: var(--ink); }
         .chr-badge { flex: none; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 11px; border-radius: 40px; border: 1px solid; }
-        .chr-d { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin: 7px 0 0; }
-        .chr-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .chr .chr-d { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin: 7px 0 0; }
+        .chr .chr-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="chr" data-nosnippet>

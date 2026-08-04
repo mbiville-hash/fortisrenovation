@@ -125,6 +125,12 @@ export default function GuideVacanceLocativePage() {
           <Link href="/guides/grille-de-vetuste-location">grille de vétusté</Link>.
         </p>
         <p>
+          L’autre face de l’équation, c’est le loyer lui-même&nbsp;: la relocation est le seul moment
+          où il se fixe librement à Rouen, la commune n’étant pas classée en zone tendue. Notre guide
+          sur l’<Link href="/guides/augmentation-de-loyer-rouen">augmentation de loyer à Rouen</Link>{' '}
+          détaille ce que permet chaque moment du bail, et ce que rapporte une hausse.
+        </p>
+        <p>
           Notre méthode de remise en état entre deux locataires est détaillée sur la page{' '}
           <Link href="/remise-en-etat-locative-rouen">remise en état locative à Rouen</Link>.
         </p>

@@ -161,6 +161,11 @@ export default function GuidePermisDeLouerPage() {
           notre méthode de{' '}
           <Link href="/remise-en-etat-locative-rouen">remise en état locative</Link>.
         </p>
+        <p>
+          C’est aussi le moment où le loyer se fixe&nbsp;: Rouen n’étant pas classée en zone tendue,
+          la relocation est la seule occasion de le repositionner librement. Voyez notre guide sur
+          l’<Link href="/guides/augmentation-de-loyer-rouen">augmentation de loyer à Rouen</Link>.
+        </p>
 
         <h2>Et ailleurs dans la métropole&nbsp;?</h2>
         <p>

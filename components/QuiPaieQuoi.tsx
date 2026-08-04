@@ -114,9 +114,12 @@ export default function QuiPaieQuoi() {
     <>
       <style>{`
         .qpq { background: #fff; border: 1px solid rgba(184,151,90,0.35); border-radius: 2px; padding: 28px; margin: 32px 0; }
-        .qpq-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
-        .qpq-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 22px; }
-        .qpq-etape { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
+        /* Règles visant un <p> préfixées par .qpq : dans un guide, « .guide-prose p »
+           (spécificité 0,1,1) écraserait sinon ces classes simples (0,1,0), ramenant
+           tous les textes de l'outil à 16px. */
+        .qpq .qpq-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+        .qpq .qpq-s { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 22px; }
+        .qpq .qpq-etape { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
 
         .qpq-pieces { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
         .qpq-piece { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 22px 12px; background: var(--paper); border: 1px solid rgba(184,151,90,0.3); border-radius: 2px; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: transform .25s cubic-bezier(.16,1,.3,1), border-color .25s, background .25s; }
@@ -136,14 +139,14 @@ export default function QuiPaieQuoi() {
         .qpq-item:hover { color: var(--gold-deep); }
         .qpq-item:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
         .qpq-fleche { color: var(--gold); flex: none; }
-        .qpq-sous { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8a857a; margin: 26px 0 4px; }
+        .qpq .qpq-sous { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8a857a; margin: 26px 0 4px; }
 
         .qpq-rep { border: 1px solid rgba(184,151,90,0.4); border-radius: 2px; padding: 24px; background: var(--paper); }
-        .qpq-rep-l { font-family: 'Bodoni Moda', serif; font-size: 21px; color: var(--ink); margin-bottom: 14px; }
+        .qpq .qpq-rep-l { font-family: 'Bodoni Moda', serif; font-size: 21px; color: var(--ink); margin-bottom: 14px; }
         .qpq-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 40px; border: 1px solid; margin-bottom: 16px; }
-        .qpq-rep-d { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin: 0; }
+        .qpq .qpq-rep-d { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin: 0; }
 
-        .qpq-note { font-size: 12.5px; line-height: 1.6; color: #8a857a; margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .qpq .qpq-note { font-size: 12.5px; line-height: 1.6; color: #8a857a; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="qpq" data-nosnippet>
