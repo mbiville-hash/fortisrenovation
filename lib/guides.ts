@@ -43,6 +43,16 @@ export const GUIDES: Guide[] = [
     public: 'pro',
   },
   {
+    slug: '/guides/facture-eau-fuite-loi-warsmann',
+    categorie: 'Facture d’eau',
+    titre: 'Fuite d’eau : faire plafonner sa facture (loi Warsmann)',
+    extrait:
+      'Au-delà du double de votre consommation habituelle, vous pouvez ne rien devoir. Les conditions, les exclusions, le délai d’un mois — et un simulateur pour chiffrer ce que ça représente.',
+    court: 'Ce que vous pouvez ne pas payer, et comment l’obtenir.',
+    date: '4 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/etat-des-lieux-de-sortie',
     categorie: 'État des lieux',
     titre: 'État des lieux de sortie : le réussir sans litige',

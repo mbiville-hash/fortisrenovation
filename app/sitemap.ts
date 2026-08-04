@@ -245,6 +245,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${BASE}/guides/facture-eau-fuite-loi-warsmann`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
       url: `${BASE}/guides/etat-des-lieux-de-sortie`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
