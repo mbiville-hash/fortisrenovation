@@ -7,6 +7,7 @@ import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import BeneficesPro from '@/components/BeneficesPro'
 import MethodePro from '@/components/MethodePro'
 import MetiersPro from '@/components/MetiersPro'
+import ParcLocatifTable from '@/components/ParcLocatifTable'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -124,6 +125,9 @@ export default function MaintenanceImmobilierePage() {
 
         {/* Domaines — corps d'état en icônes */}
         <MetiersPro />
+
+        {/* Comparatif du parc locatif — données INSEE, maillage vers les pages commune */}
+        <ParcLocatifTable />
 
         {/* Zone d'intervention — pastilles */}
         <section style={{ background: 'var(--paper)', padding: '64px 0', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
