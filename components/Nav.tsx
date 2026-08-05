@@ -4,9 +4,54 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
+type Lien = { href: string; label: string }
+type Groupe = { id: string; titre: string; liens: Lien[] }
+
+/**
+ * Le menu comptait seize liens affichés d'un coup, dont dix pour le seul groupe
+ * « Professionnels ». Les groupes sont désormais repliés et un seul s'ouvre à la
+ * fois : le panneau tient en quatre lignes, sans qu'aucune page ne disparaisse.
+ */
+const GROUPES: Groupe[] = [
+  {
+    id: 'particuliers',
+    titre: 'Particuliers',
+    liens: [
+      { href: '/salle-de-bain-rouen', label: 'Salle de bain' },
+      { href: '/douche-italienne-rouen', label: 'Douche italienne' },
+      { href: '/renovation-salle-de-bain-cle-en-main-rouen', label: 'Rénovation clé en main' },
+      { href: '/prix-renovation-salle-de-bain-rouen', label: 'Prix salle de bain' },
+    ],
+  },
+  {
+    id: 'professionnels',
+    titre: 'Professionnels',
+    liens: [
+      { href: '/maintenance-immobiliere-rouen', label: 'Maintenance & dépannage' },
+      { href: '/remise-en-etat-locative-rouen', label: 'Remise en état locative' },
+      { href: '/maintenance-copropriete-rouen', label: 'Maintenance copropriété' },
+      { href: '/plombier-rouen', label: 'Plombier & dépannage' },
+      { href: '/recherche-de-fuite-rouen', label: 'Recherche de fuite' },
+      { href: '/debouchage-canalisation-rouen', label: 'Débouchage canalisation' },
+      { href: '/electricien-rouen', label: 'Électricien' },
+      { href: '/peintre-rouen', label: 'Peintre & enduits' },
+      { href: '/pose-de-sol-rouen', label: 'Pose de sols' },
+    ],
+  },
+  {
+    id: 'entreprise',
+    titre: 'L’entreprise',
+    liens: [
+      { href: '/a-propos', label: 'À propos' },
+      { href: '/#avis', label: 'Avis' },
+    ],
+  },
+]
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [groupeOuvert, setGroupeOuvert] = useState<string | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -14,6 +59,14 @@ export default function Nav() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // À l'ouverture, déplier le groupe de la page courante pour que le visiteur
+  // se situe. Aucun groupe ouvert si la page n'appartient à aucun d'eux.
+  useEffect(() => {
+    if (!open) return
+    const g = GROUPES.find((x) => x.liens.some((l) => l.href === pathname))
+    setGroupeOuvert(g ? g.id : null)
+  }, [open, pathname])
 
   return (
     <>
@@ -127,12 +180,41 @@ export default function Nav() {
         .nav-panel-links a[aria-current="page"] {
           color: var(--gold);
         }
-        .nav-group {
-          font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+        /* En-tête de groupe : un vrai bouton, pour être atteignable au clavier. */
+        .nav-acc-btn {
+          display: flex; align-items: center; justify-content: space-between;
+          width: 100%; gap: 18px;
+          padding: 17px 0; min-height: 44px;
+          background: none; border: 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+          font-family: 'Montserrat', sans-serif;
+          font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
           text-transform: uppercase; color: var(--gold);
-          padding: 18px 0 6px; opacity: 0.85;
+          cursor: pointer; text-align: left;
+          transition: color 0.2s;
         }
-        .nav-group:first-child { padding-top: 4px; }
+        .nav-acc-btn:hover { color: var(--gold-light); }
+        .nav-acc-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .nav-acc-chev {
+          flex: none; font-size: 15px; line-height: 1;
+          transition: transform 0.25s cubic-bezier(.16,1,.3,1);
+        }
+        .nav-acc-btn[aria-expanded="true"] .nav-acc-chev { transform: rotate(90deg); }
+        .nav-acc-panel { display: grid; gap: 2px; padding-left: 14px; }
+        .nav-acc-panel a { font-size: 12.5px; letter-spacing: 0.1em; }
+        @media (prefers-reduced-motion: no-preference) {
+          .nav-acc-panel { animation: navOpen .28s cubic-bezier(.16,1,.3,1) both; }
+        }
+        @keyframes navOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+        /* Entrée simple : un seul lien, un accordéon n'aurait pas de sens. */
+        .nav-direct {
+          display: flex; align-items: center; justify-content: space-between; gap: 18px;
+          padding: 17px 0; min-height: 44px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+          text-transform: uppercase; color: var(--gold);
+          transition: color 0.2s;
+        }
+        .nav-direct:hover, .nav-direct[aria-current="page"] { color: var(--gold-light); }
         .nav-panel-meta {
           margin-top: 24px;
           color: rgba(255,255,255,0.62);
@@ -172,24 +254,46 @@ export default function Nav() {
       {open && (
         <div className="nav-panel">
           <div className="nav-panel-links">
-            <span className="nav-group">Particuliers</span>
-            <Link href="/salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/salle-de-bain-rouen' ? 'page' : undefined}>Salle de bain</Link>
-            <Link href="/douche-italienne-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/douche-italienne-rouen' ? 'page' : undefined}>Douche italienne</Link>
-            <Link href="/renovation-salle-de-bain-cle-en-main-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/renovation-salle-de-bain-cle-en-main-rouen' ? 'page' : undefined}>Rénovation clé en main</Link>
-            <Link href="/prix-renovation-salle-de-bain-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/prix-renovation-salle-de-bain-rouen' ? 'page' : undefined}>Prix salle de bain</Link>
-            <span className="nav-group">Professionnels</span>
-            <Link href="/maintenance-immobiliere-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-immobiliere-rouen' ? 'page' : undefined}>Maintenance &amp; dépannage</Link>
-            <Link href="/remise-en-etat-locative-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/remise-en-etat-locative-rouen' ? 'page' : undefined}>Remise en état locative</Link>
-            <Link href="/maintenance-copropriete-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/maintenance-copropriete-rouen' ? 'page' : undefined}>Maintenance copropriété</Link>
-            <Link href="/plombier-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/plombier-rouen' ? 'page' : undefined}>Plombier &amp; dépannage</Link>
-            <Link href="/recherche-de-fuite-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/recherche-de-fuite-rouen' ? 'page' : undefined}>Recherche de fuite</Link>
-            <Link href="/debouchage-canalisation-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/debouchage-canalisation-rouen' ? 'page' : undefined}>Débouchage canalisation</Link>
-            <Link href="/electricien-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/electricien-rouen' ? 'page' : undefined}>Électricien</Link>
-            <Link href="/peintre-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/peintre-rouen' ? 'page' : undefined}>Peintre &amp; enduits</Link>
-            <Link href="/pose-de-sol-rouen" onClick={() => setOpen(false)} aria-current={pathname === '/pose-de-sol-rouen' ? 'page' : undefined}>Pose de sols</Link>
-            <span className="nav-group">L&apos;entreprise</span>
-            <Link href="/a-propos" onClick={() => setOpen(false)} aria-current={pathname === '/a-propos' ? 'page' : undefined}>À propos</Link>
-            <Link href="/#avis" onClick={() => setOpen(false)}>Avis</Link>
+            {GROUPES.map((g) => {
+              const ouvert = groupeOuvert === g.id
+              return (
+                <div key={g.id}>
+                  <button
+                    type="button"
+                    className="nav-acc-btn"
+                    aria-expanded={ouvert}
+                    aria-controls={`nav-grp-${g.id}`}
+                    onClick={() => setGroupeOuvert(ouvert ? null : g.id)}
+                  >
+                    {g.titre}
+                    <span className="nav-acc-chev" aria-hidden="true">›</span>
+                  </button>
+                  {ouvert && (
+                    <div className="nav-acc-panel" id={`nav-grp-${g.id}`}>
+                      {g.liens.map((l) => (
+                        <Link
+                          key={l.href}
+                          href={l.href}
+                          onClick={() => setOpen(false)}
+                          aria-current={pathname === l.href ? 'page' : undefined}
+                        >
+                          {l.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+            <Link
+              href="/guides"
+              className="nav-direct"
+              onClick={() => setOpen(false)}
+              aria-current={pathname === '/guides' ? 'page' : undefined}
+            >
+              Guides &amp; outils
+              <span className="nav-acc-chev" aria-hidden="true">›</span>
+            </Link>
           </div>
           <div className="nav-panel-meta">
             <a href="tel:+33767491324" onClick={() => setOpen(false)}>07 67 49 13 24</a> <br />
