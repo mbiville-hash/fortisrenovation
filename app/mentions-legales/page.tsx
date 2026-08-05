@@ -15,7 +15,7 @@ export default function MentionsLegalesPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 32, fontSize: 14, lineHeight: 1.8, color: 'var(--ink-soft)' }}>
             <div>
               <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 20, color: 'var(--ink)', marginBottom: 12 }}>Éditeur du site</h2>
-              <p>Fortis Rénovation — société par actions simplifiée (SAS) <br />
+              <p>Fortis Rénovation — société par actions simplifiée (SAS) au capital de 2 000 € <br />
               SIRET du siège : 937 628 428 00016 <br />
               RCS Rouen 937 628 428 <br />
               TVA intracommunautaire : FR47937628428 <br />
