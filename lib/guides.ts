@@ -9,6 +9,13 @@
 
 export type Public = 'pro' | 'particulier'
 
+/**
+ * Outil interactif inclus dans le guide : un nom court et ce qu'il permet de
+ * faire. Sert à les rendre visibles depuis l'index — chaque guide pro en a un,
+ * et rien ne le laissait deviner.
+ */
+export type Outil = { nom: string; fait: string }
+
 export type Guide = {
   slug: string
   categorie: string
@@ -19,6 +26,8 @@ export type Guide = {
   court: string
   date: string
   public: Public
+  /** Absent sur les guides qui n'embarquent pas d'outil. */
+  outil?: Outil
 }
 
 export const GUIDES: Guide[] = [
@@ -31,6 +40,10 @@ export const GUIDES: Guide[] = [
     court: 'Le repérage incombe à celui qui commande les travaux.',
     date: '5 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Faut-il un repérage amiante ?',
+      fait: 'Trois questions : date du permis, nature des travaux, rapport déjà obtenu.',
+    },
   },
   {
     slug: '/guides/diagnostic-electrique-location',
@@ -41,6 +54,10 @@ export const GUIDES: Guide[] = [
     court: 'Le rapport n’oblige à rien. La décence, si.',
     date: '5 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Lire un diagnostic électrique',
+      fait: 'Cochez les anomalies : l’outil sépare ce qui bloque de ce qui attend.',
+    },
   },
   {
     slug: '/guides/logement-decent-est-il-louable',
@@ -51,6 +68,10 @@ export const GUIDES: Guide[] = [
     court: 'Un seul critère manquant, et le lot n’est plus louable.',
     date: '5 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Votre bien est-il louable ?',
+      fait: 'Douze critères et la classe énergétique, pour savoir si vous pouvez louer.',
+    },
   },
   {
     slug: '/guides/humidite-identifier-la-cause',
@@ -61,6 +82,10 @@ export const GUIDES: Guide[] = [
     court: 'Trouver la cause avant de repeindre — sinon on repeint deux fois.',
     date: '5 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'D’où vient cette humidité ?',
+      fait: 'Où, quand, à quoi ça ressemble — et la cause la plus probable.',
+    },
   },
   {
     slug: '/guides/degat-des-eaux-qui-paie',
@@ -71,6 +96,10 @@ export const GUIDES: Guide[] = [
     court: 'Qui pilote, qui paie — et l’erreur qui coûte le plus cher.',
     date: '5 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Qui déclare, qui paie ?',
+      fait: 'Origine de la fuite et occupation du logement donnent la marche à suivre.',
+    },
   },
   {
     slug: '/guides/augmentation-de-loyer-rouen',
@@ -81,6 +110,10 @@ export const GUIDES: Guide[] = [
     court: 'À Rouen le loyer de relocation est libre — sauf en F ou G.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Ce que rapporte une hausse',
+      fait: 'Des curseurs pour chiffrer le gain et l’amortissement des travaux.',
+    },
   },
   {
     slug: '/guides/qui-paie-quoi-bailleur-locataire',
@@ -91,6 +124,10 @@ export const GUIDES: Guide[] = [
     court: 'Un outil pièce par pièce pour trancher, sources officielles à l’appui.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Qui paie quoi ?',
+      fait: 'Cliquez sur la pièce puis sur ce qui est cassé pour trancher.',
+    },
   },
   {
     slug: '/guides/charges-recuperables-locataire',
@@ -101,6 +138,10 @@ export const GUIDES: Guide[] = [
     court: 'Entretien oui, remplacement non — et l’outil pour trancher.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Récupérable ou pas ?',
+      fait: 'Trente et un postes filtrables par catégorie, selon la liste du décret.',
+    },
   },
   {
     slug: '/guides/grille-de-vetuste-location',
@@ -111,6 +152,10 @@ export const GUIDES: Guide[] = [
     court: 'Déduire l’usure du temps au lieu de la négocier, avec un exemple chiffré.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Combien pouvez-vous retenir ?',
+      fait: 'La part imputable au locataire, une fois la vétusté déduite.',
+    },
   },
   {
     slug: '/guides/permis-de-louer-rouen',
@@ -121,6 +166,10 @@ export const GUIDES: Guide[] = [
     court: 'Six secteurs concernés — et l’amende monte à 5 000 €.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Êtes-vous soumis au permis ?',
+      fait: 'Secteur, âge du bâtiment, nouvelle location : trois questions.',
+    },
   },
   {
     slug: '/guides/facture-eau-fuite-loi-warsmann',
@@ -131,6 +180,10 @@ export const GUIDES: Guide[] = [
     court: 'Ce que vous pouvez ne pas payer, et comment l’obtenir.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Votre facture peut-elle baisser ?',
+      fait: 'Le plafond légal et l’économie possible après une fuite.',
+    },
   },
   {
     slug: '/guides/etat-des-lieux-de-sortie',
@@ -151,6 +204,10 @@ export const GUIDES: Guide[] = [
     court: 'Le calcul à la journée, et les leviers pour relouer plus tôt.',
     date: '4 août 2026',
     public: 'pro',
+    outil: {
+      nom: 'Ce que coûte un logement vide',
+      fait: 'Deux curseurs pour chiffrer la vacance à la journée.',
+    },
   },
   {
     slug: '/guides/prix-renovation-salle-de-bain',
