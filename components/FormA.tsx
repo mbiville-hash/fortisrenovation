@@ -36,8 +36,50 @@ export default function FormA() {
   const [turnstileKey, setTurnstileKey] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const widgetIdRef = useRef<string | null>(null)
+  const [armed, setArmed] = useState(false)
+
+  /**
+   * Le script Turnstile pèse 26 Kio de code tiers. Sur la page d'accueil, le
+   * formulaire est tout en bas : le charger au montage faisait payer ce poids
+   * à tous les visiteurs, y compris ceux qui ne descendent jamais jusque-là.
+   *
+   * On l'arme donc à l'approche du formulaire — 600 px avant qu'il n'entre à
+   * l'écran, largement de quoi être prêt quand l'utilisateur y arrive — ou dès
+   * le premier clic dans un champ pour ceux qui y accèdent au clavier.
+   */
+  useEffect(() => {
+    if (armed) return
+    const arm = () => setArmed(true)
+
+    const el = containerRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      arm()
+      return
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) arm()
+      },
+      { rootMargin: '600px 0px' }
+    )
+    io.observe(el)
+
+    // Filet de sécurité : sans lui, un observateur qui ne se déclencherait pas
+    // laisserait le bouton d'envoi désactivé pour toujours, le captcha n'étant
+    // jamais chargé. Le moindre geste de l'utilisateur arme donc aussi.
+    const evts = ['pointerdown', 'keydown', 'scroll', 'touchstart'] as const
+    evts.forEach((t) => window.addEventListener(t, arm, { once: true, passive: true }))
+
+    return () => {
+      io.disconnect()
+      evts.forEach((t) => window.removeEventListener(t, arm))
+    }
+  }, [armed])
 
   useEffect(() => {
+    if (!armed) return
+
     const renderWidget = () => {
       if (!containerRef.current) return
       if (widgetIdRef.current) {
@@ -72,7 +114,7 @@ export default function FormA() {
         widgetIdRef.current = null
       }
     }
-  }, [turnstileKey])
+  }, [turnstileKey, armed])
 
   const set = (k: keyof typeof INITIAL_FORM) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -234,7 +276,9 @@ export default function FormA() {
                 <h2 className="form-title">Parlons de votre projet.</h2>
                 <p className="form-sub">Réponse garantie sous 48h.</p>
 
-                <form onSubmit={submit}>
+                {/* Filet : un utilisateur qui arrive au clavier arme le captcha
+                    des le premier champ, sans attendre l'observateur. */}
+                <form onSubmit={submit} onFocusCapture={() => setArmed(true)}>
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label" htmlFor="nom">Prénom NOM</label>
