@@ -181,6 +181,13 @@ export default function GuideDegatDesEauxPage() {
 
         <h2>Pour aller plus loin</h2>
         <p>
+          Si vous n’êtes pas certain qu’il s’agisse bien d’une fuite — une tache peut aussi venir
+          d’une infiltration, d’une remontée capillaire ou d’une simple condensation — notre guide
+          pour{' '}
+          <Link href="/guides/humidite-identifier-la-cause">identifier la cause d’une humidité</Link>{' '}
+          propose un outil d’orientation en trois questions.
+        </p>
+        <p>
           Si la fuite a fait exploser la facture d’eau, elle peut être plafonnée&nbsp;: voyez notre
           guide sur la{' '}
           <Link href="/guides/facture-eau-fuite-loi-warsmann">loi Warsmann</Link>, qui exige une

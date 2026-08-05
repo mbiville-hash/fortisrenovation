@@ -81,8 +81,10 @@ export default function ZoneA() {
               </p>
               <div className="zone-cities">
                 {cities.map((c) => (
+                  // aria-label explicite : plusieurs liens du site portent le meme
+                  // libelle de commune vers des destinations differentes.
                   c.href
-                    ? <Link key={c.name} href={c.href} className="zone-city">{c.name}</Link>
+                    ? <Link key={c.name} href={c.href} className="zone-city" aria-label={`Maintenance immobilière à ${c.name}`}>{c.name}</Link>
                     : <span key={c.name} className="zone-city">{c.name}</span>
                 ))}
               </div>

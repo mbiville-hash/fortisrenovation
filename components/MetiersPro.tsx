@@ -53,7 +53,7 @@ export default function MetiersPro() {
   return (
     <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
       <style>{`
-        .mp-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #9a7c45; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .mp-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .mp-eye::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
         .mp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
         .mp-card { display: block; background: white; border-top: 2px solid var(--gold); padding: 26px 18px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }

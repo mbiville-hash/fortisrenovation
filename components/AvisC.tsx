@@ -9,7 +9,7 @@ export default function AvisC() {
           letter-spacing: 0.2em; text-transform: uppercase;
           color: var(--ink-faint); margin-bottom: 18px;
         }
-        .avis-stars { color: var(--gold); font-size: 26px; letter-spacing: 5px; margin-bottom: 14px; }
+        .avis-stars { color: var(--gold-deep); font-size: 26px; letter-spacing: 5px; margin-bottom: 14px; }
         .avis-score {
           font-family: 'Bodoni Moda', serif;
           font-size: clamp(28px, 3.4vw, 40px);

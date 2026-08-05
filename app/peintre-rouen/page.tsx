@@ -70,6 +70,8 @@ export default function PeintreRouenPage() {
           <Link href="/electricien-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>électricité</Link> et la{' '}
           <Link href="/plombier-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>plomberie</Link> — réunies dans notre{' '}
           <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link>.
+          {' '}Et si la peinture cloque ou noircit à répétition, commencez par{' '}
+          <Link href="/guides/humidite-identifier-la-cause" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>identifier la cause de l’humidité</Link>&nbsp;: repeindre par-dessus ne tient pas une saison.
         </>
       }
       ctaTitre="Un logement à remettre en peinture ?"

@@ -58,7 +58,7 @@ export default function CompteurLocatif() {
         .cpl-title { font-family: 'Bodoni Moda', serif; font-size: clamp(30px, 3.8vw, 48px); color: var(--ink); max-width: 18ch; margin-bottom: 24px; }
         .cpl-p { font-size: 17px; line-height: 1.75; color: var(--ink); max-width: 46ch; }
         .cpl-wrap { position: relative; display: inline-block; }
-        .cpl-val { display: block; font-family: 'Bodoni Moda', serif; font-size: clamp(108px, 19vw, 224px); line-height: 0.92; letter-spacing: -0.02em; color: rgba(128,101,50,0.62); white-space: nowrap; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+        .cpl-val { display: block; font-family: 'Bodoni Moda', serif; font-size: clamp(108px, 19vw, 224px); line-height: 0.92; letter-spacing: -0.02em; color: rgba(128,101,50,0.86); white-space: nowrap; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
         .cpl-strike { position: absolute; left: -3%; right: -3%; top: 50%; height: 3px; background: var(--ink); transform-origin: left; }
         .cpl-rail { display: block; position: relative; height: 2px; background: rgba(26,26,24,0.12); margin-top: 14px; }
         .cpl-bar { position: absolute; inset: 0; background: var(--gold); transform-origin: left; }

@@ -116,7 +116,7 @@ export default function SalleDeBainSeniorPage() {
         {/* AMÉNAGEMENTS */}
         <section style={{ background: 'var(--paper)', padding: '80px 0' }}>
           <div className="container" data-reveal>
-            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 16 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold-deep)', marginBottom: 16 }}>
               Ce que nous réalisons
             </p>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(28px, 3vw, 40px)', marginBottom: 48, color: 'var(--ink)' }}>
@@ -155,7 +155,7 @@ export default function SalleDeBainSeniorPage() {
         {/* FAQ */}
         <section style={{ background: 'white', padding: '80px 0' }}>
           <div className="container" data-reveal style={{ maxWidth: 760 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 16 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold-deep)', marginBottom: 16 }}>
               Vos questions
             </p>
             <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(28px, 3vw, 38px)', marginBottom: 48, color: 'var(--ink)' }}>

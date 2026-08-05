@@ -82,6 +82,13 @@ const nextConfig = {
         destination: '/devis',
         permanent: true,
       },
+      // Page d'une version antérieure du site : supprimée mais toujours indexée
+      // par Google, elle renvoyait un 404. Constaté le 5 août 2026.
+      {
+        source: '/nos-prestations',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
     ]
   },
 }

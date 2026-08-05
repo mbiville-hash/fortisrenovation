@@ -38,6 +38,7 @@ export default function HeroA() {
         .hero-features li::before { content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
         .hero-trust { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.02em; }
+        /* Fond sombre : --gold atteint 6,8:1, --gold-deep seulement 3,4:1. Ne pas assombrir ici. */
         .hero-trust .stars { color: var(--gold); letter-spacing: 3px; margin-right: 8px; }
         .hero-alt { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 14px; }
         .hero-alt a { color: var(--gold); border-bottom: 1px solid rgba(184,151,90,0.4); padding-bottom: 1px; }

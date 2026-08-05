@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import Realisations from '@/components/Realisations'
 import { OG_IMAGE } from '@/lib/seo'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import ParcPlomberie from '@/components/ParcPlomberie'
 import { getParcPlomberie } from '@/lib/communes'
 
@@ -150,7 +152,7 @@ export default function PlombierBihorelPage() {
         {/* TODO Marc-Antoine : remplace ce bloc par un VRAI avis d'un client de Bihorel quand tu en as un. */}
         <section style={{ background: 'var(--paper)', padding: '72px 0' }}>
           <div className="container" data-reveal style={{ maxWidth: 720, textAlign: 'center' }}>
-            <div style={{ color: 'var(--gold)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
+            <div style={{ color: 'var(--gold-deep)', fontSize: 22, letterSpacing: 6, marginBottom: 16 }}>★★★★★</div>
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 22, lineHeight: 1.6, color: 'var(--ink)', marginBottom: 16 }}>
               Note 5/5 sur Google — 30 avis vérifiés.
             </p>
@@ -195,6 +197,13 @@ export default function PlombierBihorelPage() {
 
         <Realisations />
 
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Qui paie la réparation, qui déclare le sinistre, ce qui se retient sur le dépôt de garantie : nos guides tranchent, sources officielles à l’appui."
+          fond="blanc"
+        />
+
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>
           <div className="container" data-reveal>
@@ -207,7 +216,7 @@ export default function PlombierBihorelPage() {
             <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 40, color: 'var(--gold)', marginBottom: 8 }}>
               <a href="tel:+33767491324" style={{ color: 'inherit' }}>07 67 49 13 24</a>
             </p>
-            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 40 }}>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 40 }}>
               Fortis Rénovation · 193C Rue du Renard · 76000 Rouen
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>

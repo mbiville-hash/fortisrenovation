@@ -52,7 +52,7 @@ const audiences = [
 
 const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'white', position: 'relative', overflow: 'hidden' }
 const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }
-const eyebrowGold: React.CSSProperties = { ...eyebrow, color: '#9a7c45' }
+const eyebrowGold: React.CSSProperties = { ...eyebrow, color: 'var(--gold-deep)' }
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 export default function MaintenanceImmobilierePage() {
@@ -141,7 +141,7 @@ export default function MaintenanceImmobilierePage() {
             .zone-chip:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-deep); }
           `}</style>
           <div className="container" data-reveal>
-            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9a7c45', textAlign: 'center', marginBottom: 22 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-deep)', textAlign: 'center', marginBottom: 22 }}>
               Zone d&apos;intervention · 30 km autour de Rouen
             </p>
             <div className="zone-chips">

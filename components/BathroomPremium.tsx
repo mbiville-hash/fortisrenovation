@@ -441,7 +441,7 @@ const bathroomStyles = `
 .bath-card { display: block; background: white; border: 1px solid rgba(26,26,24,.12); padding: 24px; min-height: 210px; transition: border-color .2s, transform .2s; }
 .bath-white .bath-card { background: var(--paper); }
 .bath-card:hover { border-color: rgba(184,151,90,.65); transform: translateY(-2px); }
-.bath-card span { display: inline-block; margin-top: 18px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.bath-card span { display: inline-block; margin-top: 18px; color: var(--gold-deep); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .bath-content-list { display: grid; gap: 0; max-width: 920px; }
 .bath-content-list article { display: grid; grid-template-columns: minmax(240px, .48fr) minmax(0, 1fr); gap: 44px; padding: 34px 0; border-bottom: 1px solid rgba(26,26,24,.1); }
 .bath-content-list article:first-child { padding-top: 0; }

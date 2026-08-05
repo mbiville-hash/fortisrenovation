@@ -87,13 +87,21 @@ export default function Realisations() {
         .car-prev { left: 4px; }
         .car-next { right: 4px; }
 
-        .car-dots { display: flex; justify-content: center; gap: 9px; margin-top: 26px; }
+        /* La zone cliquable fait 24 px, la pastille visible reste a 8 px et est
+           dessinee en ::before. Auparavant le bouton lui-meme mesurait 8x8, tres
+           en dessous du minimum tactile recommande. */
+        .car-dots { display: flex; justify-content: center; gap: 0; margin-top: 18px; }
         .car-dots button {
-          width: 8px; height: 8px; border-radius: 50%; padding: 0; cursor: pointer;
-          background: rgba(26,26,24,0.18); border: 0; transition: background 0.25s, transform 0.25s;
+          width: 24px; height: 24px; padding: 0; cursor: pointer;
+          background: none; border: 0; display: grid; place-items: center;
         }
-        .car-dots button:hover { background: rgba(26,26,24,0.4); }
-        .car-dots button.on { background: var(--gold); transform: scale(1.35); }
+        .car-dots button::before {
+          content: ''; width: 8px; height: 8px; border-radius: 50%;
+          background: rgba(26,26,24,0.28); transition: background 0.25s, transform 0.25s;
+        }
+        .car-dots button:hover::before { background: rgba(26,26,24,0.5); }
+        .car-dots button.on::before { background: var(--gold-deep); transform: scale(1.35); }
+        .car-dots button:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; border-radius: 50%; }
 
         @media (max-width: 760px) {
           .carousel { --card: clamp(220px, 70vw, 340px); }

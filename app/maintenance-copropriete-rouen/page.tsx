@@ -6,6 +6,8 @@ import ClientsStrip from '@/components/ClientsStrip'
 import ReactiviteTimeline from '@/components/ReactiviteTimeline'
 import MethodePro from '@/components/MethodePro'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { OG_IMAGE } from '@/lib/seo'
 
 const SLUG = '/maintenance-copropriete-rouen'
@@ -54,7 +56,7 @@ const prestations: [string, string][] = [
 
 const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'white', position: 'relative', overflow: 'hidden' }
 const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }
-const eyebrowGold: React.CSSProperties = { ...eyebrow, color: '#9a7c45' }
+const eyebrowGold: React.CSSProperties = { ...eyebrow, color: 'var(--gold-deep)' }
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 export default function MaintenanceCoproprietePage() {
@@ -188,6 +190,13 @@ export default function MaintenanceCoproprietePage() {
             </p>
           </div>
         </section>
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Charges récupérables, réparations locatives, dégât des eaux en parties communes : nos guides tranchent poste par poste, sources officielles à l’appui."
+          fond="blanc"
+        />
 
         {/* CTA */}
         <section style={{ ...darkSection, padding: '72px 0', textAlign: 'center' }}>
