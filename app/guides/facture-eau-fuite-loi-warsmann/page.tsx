@@ -127,8 +127,16 @@ export default function GuideLoiWarsmannPage() {
         <h2>Que faire, dans l’ordre</h2>
         <ol>
           <li>
-            <strong>Coupez l’arrivée d’eau</strong> et vérifiez le compteur : s’il tourne encore
-            alors que tout est fermé, la fuite est sur votre réseau.
+            <strong>Confirmez qu’il y a bien une fuite.</strong> Fermez tous les robinets et
+            arrêtez les appareils qui consomment de l’eau — lave-linge, lave-vaisselle. Relevez
+            l’index du compteur, décimales comprises, puis attendez une demi-heure sans y toucher.
+            Si l’index a bougé, l’eau part quelque part.
+          </li>
+          <li>
+            <strong>Situez-la, au moins grossièrement.</strong> Fermez le robinet d’arrêt placé
+            juste après le compteur. S’il continue de tourner, la fuite se trouve entre le compteur
+            et ce robinet — le plus souvent une canalisation enterrée. S’il s’arrête, elle est à
+            l’intérieur du logement.
           </li>
           <li>
             <strong>Conservez le courrier</strong> du service d’eau. C’est lui qui déclenche le
