@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import Realisations from '@/components/Realisations'
 import { OG_IMAGE } from '@/lib/seo'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import ParcPlomberie from '@/components/ParcPlomberie'
 import { getParcPlomberie } from '@/lib/communes'
 
@@ -193,6 +195,13 @@ export default function PlombierLeMesnilEsnardPage() {
         </section>
 
         <Realisations />
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Qui paie la réparation, qui déclare le sinistre, ce qui se retient sur le dépôt de garantie : nos guides tranchent, sources officielles à l’appui."
+          fond="blanc"
+        />
 
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white', textAlign: 'center' }}>

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 
 export const metadata: Metadata = {
   title: 'Dégât des eaux Rouen — intervention 24/7 & rapport assurance',
@@ -114,6 +116,13 @@ export default function DegatDesEauxPage() {
             </div>
           </div>
         </section>
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Un sinistre soulève rarement une seule question. Qui déclare, qui paie la réparation, ce qui se retient sur le dépôt de garantie : nos guides tranchent, sources officielles à l’appui."
+          fond="blanc"
+        />
 
         {/* CTA urgence */}
         <section style={{ background: 'var(--paper)', padding: '72px 0', textAlign: 'center' }}>

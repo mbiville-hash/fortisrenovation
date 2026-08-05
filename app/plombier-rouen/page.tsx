@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Rings from '@/components/Rings'
 import AvisC from '@/components/AvisC'
 import Realisations from '@/components/Realisations'
+import GuidesLies from '@/components/GuidesLies'
+import { guidesPro } from '@/lib/guides'
 import { serviceSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
 
@@ -192,6 +194,13 @@ export default function PlombierRouenPage() {
         </section>
 
         <Realisations />
+
+        <GuidesLies
+          guides={guidesPro}
+          titre="Pour aller plus loin, côté gestion locative"
+          intro="Une fuite pose rarement une seule question. Qui paie la réparation, qui déclare le sinistre, ce que vous pouvez retenir sur le dépôt de garantie : nos guides tranchent, sources officielles à l’appui."
+          fond="blanc"
+        />
 
         {/* CTA */}
         <section style={{ background: 'var(--dark)', padding: '80px 0', color: 'white', textAlign: 'center' }}>

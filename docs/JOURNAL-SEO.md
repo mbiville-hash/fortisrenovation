@@ -28,6 +28,24 @@ Pour que le dépôt reste lisible, chaque nouveau contenu suit les mêmes règle
 
 ## Itérations
 
+### 5 août 2026 — Blocs « à lire aussi » sur onze pages qui n'en avaient aucun
+
+- **Produit** : le bloc de guides ajouté à `/plombier-rouen`, aux huit pages
+  plombier de commune, à `/degat-des-eaux-rouen` et à
+  `/maintenance-copropriete-rouen`. Onze pages qui ne renvoyaient vers aucun
+  guide en renvoient désormais vers les neuf.
+- **Constat de départ** : vingt-deux pages du site n'avaient aucun bloc de
+  guides. Les onze traitées ici sont celles qui s'adressent aux professionnels.
+- **Volontairement écarté** : les onze pages salle de bain. Elles s'adressent aux
+  particuliers, et y pousser des guides de gestion locative n'aurait servi ni le
+  lecteur ni le référencement.
+- **Vérifié** : les onze pages affichent bien les neuf cartes, chacune pointant
+  vers un guide, et le bloc se place avant l'appel à l'action final.
+- **Branche** : `feat/bloc-guides-plombier-rouen` (contient aussi le guide
+  humidité, pour garder ce journal continu et éviter un conflit de fusion).
+- **Reste à faire** : points 3 à 5 de la liste — logement décent, diagnostic
+  électrique, amiante sur les sols.
+
 ### 5 août 2026 — Guide « Humidité : condensation, remontée ou infiltration ? »
 
 - **Produit** : le guide `/guides/humidite-identifier-la-cause` et son outil
