@@ -83,8 +83,8 @@ export default function CommunePage({ c }: { c: Commune }) {
         .cp-barre.est-max .cp-barre-jauge { background: var(--gold); }
         .cp-barre.est-max .cp-barre-l { color: var(--ink); font-weight: 600; }
         .cp-barre-v { font-size: 12.5px; color: var(--ink-soft); text-align: right; font-variant-numeric: tabular-nums; }
-        .cp-src { font-size: 12px; color: #8a857a; font-style: italic; margin-top: 20px; }
-        .cp-src a { color: #8a857a; text-decoration: underline; }
+        .cp-src { font-size: 12px; color: var(--ink-faint); font-style: italic; margin-top: 20px; }
+        .cp-src a { color: var(--ink-faint); text-decoration: underline; }
 
         .cp-patho { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; margin-top: 40px; }
         .cp-patho-c { background: #fff; border: 1px solid rgba(26,26,24,0.1); border-top: 2px solid var(--gold); padding: 28px 26px; }

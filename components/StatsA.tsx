@@ -58,7 +58,9 @@ export default function StatsA() {
     <>
       <style>{`
         .stats { background: var(--dark); padding: 0; border-top: 1px solid rgba(184,151,90,0.3); border-bottom: 1px solid rgba(184,151,90,0.3); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        /* minmax(0, 1fr) et non 1fr : sinon la largeur minimale du contenu
+           empeche la colonne de retrecir et la grille deborde en mobile. */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
         .stat-col { padding: 40px 40px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid rgba(184,151,90,0.2); transition: background 0.2s; }
         .stat-col:last-child { border-right: none; }
         .stat-col:hover { background: rgba(184,151,90,0.05); }
@@ -66,10 +68,15 @@ export default function StatsA() {
         .stat-label { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; }
         .stat-sub { font-size: 12px; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; text-transform: uppercase; }
         @media (max-width: 768px) {
-          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .stat-col { padding: 28px 24px; border-right: 1px solid rgba(184,151,90,0.2); border-bottom: 1px solid rgba(184,151,90,0.2); }
           .stat-col:nth-child(2n) { border-right: none; }
           .stat-col:nth-child(3), .stat-col:nth-child(4) { border-bottom: none; }
+        }
+        @media (max-width: 420px) {
+          .stat-col { padding: 22px 16px; }
+          .stat-value { font-size: 30px; }
+          .stat-sub { letter-spacing: 0.03em; }
         }
       `}</style>
 

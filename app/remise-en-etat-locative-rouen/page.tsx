@@ -66,6 +66,8 @@ export default function RemiseEnEtatLocativePage() {
         .rel-hero-media { flex: 1 1 360px; min-width: 0; position: relative; }
         /* Le fil d'Ariane global est pensé pour les héros sombres : on le repasse en clair ici. */
         .rel-hero .breadcrumb span[aria-current] { color: var(--ink-faint); }
+        /* Hero clair : --gold n'y fait que 2,4:1. Assombri pour ce seul contexte. */
+        .rel-hero .breadcrumb a, .rel-hero .stars { color: var(--gold-deep); }
         .rel-hero .breadcrumb-sep { color: rgba(26,26,24,0.3); }
         .rel-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
         .rel-eye::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }

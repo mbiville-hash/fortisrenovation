@@ -98,8 +98,8 @@ export default function PermisDeLouer() {
         .pdl-liste li { display: flex; gap: 12px; padding: 7px 0; border-top: 0; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
         .pdl-liste li::before { display: none; }
         .pdl-puce { color: var(--gold); font-size: 11px; line-height: 1.9; flex: none; }
-        .pdl .pdl-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
-        .pdl-note a { color: #8a857a; text-decoration: underline; }
+        .pdl .pdl-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .pdl-note a { color: var(--ink-faint); text-decoration: underline; }
       `}</style>
 
       <div className="pdl" data-nosnippet>

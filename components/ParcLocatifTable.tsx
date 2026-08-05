@@ -83,8 +83,8 @@ export default function ParcLocatifTable() {
         .plt-table td:first-child { color: var(--ink); font-weight: 600; }
         .plt-table td:first-child a { color: var(--ink); }
         .plt-table td:first-child a:hover { color: var(--gold-deep); text-decoration: underline; }
-        .plt-src { font-size: 12px; color: #8a857a; font-style: italic; margin-top: 16px; }
-        .plt-src a { color: #8a857a; text-decoration: underline; }
+        .plt-src { font-size: 12px; color: var(--ink-faint); font-style: italic; margin-top: 16px; }
+        .plt-src a { color: var(--ink-faint); text-decoration: underline; }
         .plt-lecture { margin-top: 26px; font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); max-width: 680px; }
         .plt-lecture strong { color: var(--ink); }
       `}</style>

@@ -153,8 +153,8 @@ export default function DiagnosticHumidite() {
         .dh-puce { color: var(--gold); font-size: 11px; line-height: 1.9; flex: none; }
         .dh-doute { background: rgba(184,151,90,0.10); border: 1px solid rgba(184,151,90,0.3); border-radius: 2px; padding: 16px 18px; margin-bottom: 20px; }
         .dh .dh-doute-p { font-size: 13.5px; line-height: 1.7; color: var(--ink); margin: 0; }
-        .dh .dh-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
-        .dh .dh-note a { color: #8a857a; text-decoration: underline; }
+        .dh .dh-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .dh .dh-note a { color: var(--ink-faint); text-decoration: underline; }
       `}</style>
 
       <div className="dh" data-nosnippet>

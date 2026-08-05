@@ -40,8 +40,8 @@ export default function ParcPlomberie({ c }: { c: CommunePlomberie }) {
         .pp-constats li { display: flex; gap: 13px; font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 16px; }
         .pp-dia { color: var(--gold); font-size: 12px; line-height: 2; flex: none; }
 
-        .pp-src { font-size: 12px; color: #8a857a; font-style: italic; margin-top: 24px; }
-        .pp-src a { color: #8a857a; text-decoration: underline; }
+        .pp-src { font-size: 12px; color: var(--ink-faint); font-style: italic; margin-top: 24px; }
+        .pp-src a { color: var(--ink-faint); text-decoration: underline; }
         .pp-suite { font-size: 14.5px; line-height: 1.8; color: var(--ink-soft); margin-top: 20px; }
         .pp-suite a { color: var(--ink); text-decoration: underline; }
       `}</style>

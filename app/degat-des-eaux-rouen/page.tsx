@@ -82,7 +82,7 @@ export default function DegatDesEauxPage() {
         {/* Rapport assureur */}
         <section style={{ background: 'var(--dark)', padding: '72px 0', color: 'white' }}>
           <div className="container" data-reveal>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(28px, 6vw, 80px)', alignItems: 'center' }}>
               <div>
                 <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 32, color: 'white', marginBottom: 20 }}>
                   Rapport complet sous 48h

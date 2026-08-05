@@ -109,7 +109,7 @@ export default function AmianteAvantTravaux() {
         .am-num { flex: none; font-family: 'Bodoni Moda', serif; font-size: 15px; font-weight: 600; color: var(--gold); line-height: 1.5; }
         .am-rappel { background: rgba(184,151,90,0.10); border: 1px solid rgba(184,151,90,0.3); border-radius: 2px; padding: 16px 18px; margin-top: 22px; }
         .am .am-rappel-p { font-size: 13.5px; line-height: 1.7; color: var(--ink); margin: 0; }
-        .am .am-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .am .am-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="am" data-nosnippet>

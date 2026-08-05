@@ -71,8 +71,8 @@ export default function GuidesIndexPage() {
         .guide-card-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
         .guide-card h3 { font-family: 'Bodoni Moda', serif; font-size: 24px; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
         .guide-card p { font-size: 15px; color: #4a463e; line-height: 1.65; margin-bottom: 14px; }
-        .guide-card-meta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #8a857a; }
-        .guide-card-meta .arrow { color: var(--gold); font-weight: 700; }
+        .guide-card-meta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
+        .guide-card-meta .arrow { color: var(--gold-deep); font-weight: 700; }
       `}</style>
 
       <section className="guides-hero">

@@ -50,7 +50,7 @@ export default function BeneficesPro() {
   return (
     <section style={{ background: 'white', padding: '80px 0' }}>
       <style>{`
-        .bp-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #9a7c45; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .bp-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .bp-eye::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
         .bp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 18px; }
         .bp-card { background: var(--paper); border: 1px solid rgba(26,26,24,0.1); padding: 28px; }

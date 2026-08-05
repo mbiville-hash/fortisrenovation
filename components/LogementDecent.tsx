@@ -66,7 +66,7 @@ const DPE_VERDICT: Record<Dpe, { bloquant: boolean; texte: string }> = {
 const PERIM: Record<Perimetre, { texte: string; couleur: string }> = {
   oui: { texte: 'Nous le faisons', couleur: 'var(--gold-deep)' },
   partiel: { texte: 'En partie', couleur: 'var(--ink-soft)' },
-  non: { texte: 'Hors de notre périmètre', couleur: '#8a857a' },
+  non: { texte: 'Hors de notre périmètre', couleur: 'var(--ink-faint)' },
 }
 
 const CATS = Array.from(new Set(CRITERES.map((c) => c.cat)))
@@ -123,8 +123,8 @@ export default function LogementDecent() {
         .ld .ld-quoi { font-size: 14px; font-weight: 600; color: var(--ink); margin: 0; }
         .ld-tag { flex: none; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
         .ld .ld-action { font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); margin: 6px 0 0; }
-        .ld .ld-art { font-size: 11.5px; color: #8a857a; margin: 4px 0 0; }
-        .ld .ld-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .ld .ld-art { font-size: 11.5px; color: var(--ink-faint); margin: 4px 0 0; }
+        .ld .ld-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="ld" data-nosnippet>

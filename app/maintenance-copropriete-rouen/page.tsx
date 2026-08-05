@@ -56,7 +56,7 @@ const prestations: [string, string][] = [
 
 const darkSection: React.CSSProperties = { background: 'var(--dark)', color: 'white', position: 'relative', overflow: 'hidden' }
 const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }
-const eyebrowGold: React.CSSProperties = { ...eyebrow, color: '#9a7c45' }
+const eyebrowGold: React.CSSProperties = { ...eyebrow, color: 'var(--gold-deep)' }
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 export default function MaintenanceCoproprietePage() {

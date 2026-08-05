@@ -130,7 +130,7 @@ export default function DiagnosticElectrique() {
         .elec .elec-d { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
         .elec .elec-a { font-size: 13.5px; line-height: 1.65; color: var(--ink); margin: 8px 0 0; }
         .elec .elec-a strong { color: var(--gold-deep); }
-        .elec .elec-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .elec .elec-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="elec" data-nosnippet>

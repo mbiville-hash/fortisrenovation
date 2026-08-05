@@ -117,8 +117,8 @@ export default function DegatDesEaux() {
         .dde .dde-v { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin: 0; }
         .dde-alerte { background: rgba(184,151,90,0.10); border: 1px solid rgba(184,151,90,0.3); border-radius: 2px; padding: 18px 20px; margin-top: 22px; }
         .dde .dde-alerte-p { font-size: 14px; line-height: 1.7; color: var(--ink); margin: 0; }
-        .dde .dde-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
-        .dde .dde-note a { color: #8a857a; text-decoration: underline; }
+        .dde .dde-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .dde .dde-note a { color: var(--ink-faint); text-decoration: underline; }
       `}</style>
 
       <div className="dde" data-nosnippet>

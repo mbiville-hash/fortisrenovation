@@ -39,7 +39,7 @@ export default function RapportPhotoLocatif() {
         .rpl-frame { aspect-ratio: 4 / 3; border: 1px solid rgba(184,151,90,0.5); background: rgba(184,151,90,0.12); position: relative; }
         .rpl-frame::before { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(184,151,90,0.35); }
         .rpl-frame span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(128,101,50,0.6); font-size: 12px; }
-        .rpl-time { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; color: rgba(26,26,24,0.58); margin-top: 7px; }
+        .rpl-time { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: rgba(26,26,24,0.75); margin-top: 7px; }
         .rpl-bars { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
         .rpl-bar { display: block; height: 5px; background: rgba(26,26,24,0.13); position: relative; overflow: hidden; transform-origin: left; }
         .rpl-bar::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(184,151,90,0.4), transparent); background-size: 42% 100%; background-repeat: no-repeat; }

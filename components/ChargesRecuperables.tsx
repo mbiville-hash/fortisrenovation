@@ -87,7 +87,7 @@ export default function ChargesRecuperables() {
         .chr-cat:hover { border-color: var(--gold); color: var(--gold-deep); }
         .chr-cat[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
         .chr-cat:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-        .chr .chr-nb { font-size: 12.5px; color: #8a857a; margin: 14px 0 4px; }
+        .chr .chr-nb { font-size: 12.5px; color: var(--ink-faint); margin: 14px 0 4px; }
         /* Surcharge des puces de .guide-prose */
         .chr-liste { list-style: none; margin: 0; padding: 0; max-height: 520px; overflow-y: auto; }
         .chr-liste li { display: block; padding: 15px 0; border-top: 1px solid rgba(26,26,24,0.1); }
@@ -96,7 +96,7 @@ export default function ChargesRecuperables() {
         .chr-l { font-size: 15px; font-weight: 600; color: var(--ink); }
         .chr-badge { flex: none; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 11px; border-radius: 40px; border: 1px solid; }
         .chr .chr-d { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin: 7px 0 0; }
-        .chr .chr-note { font-size: 12.5px; line-height: 1.65; color: #8a857a; margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
+        .chr .chr-note { font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(26,26,24,0.1); }
       `}</style>
 
       <div className="chr" data-nosnippet>
