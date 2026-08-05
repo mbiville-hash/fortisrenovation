@@ -28,6 +28,25 @@ Pour que le dépôt reste lisible, chaque nouveau contenu suit les mêmes règle
 
 ## Itérations
 
+### 5 août 2026 — Guide « Logement décent : votre bien est-il louable ? »
+
+- **Produit** : le guide `/guides/logement-decent-est-il-louable` et sa checklist
+  de douze critères plus la classe énergétique. On coche uniquement ce qui ne va
+  pas, et l'outil dit si le lot est louable, quels travaux chaque manquement
+  impose, et lesquels relèvent ou non de nos métiers.
+- **Vérifié** : les articles 2, 3 et 4 du décret du 30 janvier 2002, lus un par
+  un sur Légifrance — sécurité et étanchéité, les sept équipements obligatoires,
+  et la surface minimale de 9 m² sous 2,20 m ou 20 m³. Le calendrier de la
+  décence énergétique et les recours du locataire ont été vérifiés sur
+  service-public.gouv.fr.
+- **Point d'honnêteté** : le chauffage, la classe énergétique et la surface sont
+  signalés dans l'outil comme hors de notre périmètre. Ils représentent trois des
+  douze critères : mieux vaut le dire que de laisser croire qu'on traite tout.
+- **Réserve** : troisième guide daté du 5 août. L'espacement de deux jours
+  demandé supposerait de postdater, ce que je me refuse à faire.
+- **Branche** : `feat/guide-logement-decent`
+- **Reste à faire** : points 4 et 5 — diagnostic électrique, amiante sur les sols.
+
 ### 5 août 2026 — Blocs « à lire aussi » sur onze pages qui n'en avaient aucun
 
 - **Produit** : le bloc de guides ajouté à `/plombier-rouen`, aux huit pages

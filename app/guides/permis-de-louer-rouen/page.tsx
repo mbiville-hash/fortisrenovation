@@ -166,6 +166,12 @@ export default function GuidePermisDeLouerPage() {
           la relocation est la seule occasion de le repositionner librement. Voyez notre guide sur
           l’<Link href="/guides/augmentation-de-loyer-rouen">augmentation de loyer à Rouen</Link>.
         </p>
+        <p>
+          Les diagnostics exigés ici révèlent souvent des manquements à la décence, qui s’imposent
+          eux partout, secteur ou pas. Notre guide{' '}
+          <Link href="/guides/logement-decent-est-il-louable">votre bien est-il louable&nbsp;?</Link>{' '}
+          liste les critères et ce que chacun impose comme travaux.
+        </p>
 
         <h2>Et ailleurs dans la métropole&nbsp;?</h2>
         <p>

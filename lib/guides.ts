@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/logement-decent-est-il-louable',
+    categorie: 'Décence',
+    titre: 'Logement décent : votre bien est-il louable ?',
+    extrait:
+      'Sécurité, équipements, surface, énergie : les critères du décret de 2002 en une checklist. Un seul manquement suffit à bloquer la location, et le juge peut suspendre le loyer.',
+    court: 'Un seul critère manquant, et le lot n’est plus louable.',
+    date: '5 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/humidite-identifier-la-cause',
     categorie: 'Humidité',
     titre: 'Humidité : condensation, remontée ou infiltration ?',
