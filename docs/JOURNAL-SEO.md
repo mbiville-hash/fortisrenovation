@@ -28,6 +28,27 @@ Pour que le dépôt reste lisible, chaque nouveau contenu suit les mêmes règle
 
 ## Itérations
 
+### 5 août 2026 — Guide « Amiante avant travaux : l'obligation est la vôtre »
+
+- **Produit** : le guide `/guides/amiante-avant-travaux-sols` et un outil à trois
+  questions — date du permis, nature des travaux, repérage déjà réalisé ou non —
+  qui donne cinq réponses possibles, du hors-champ à l'obligation ferme.
+- **Angle vérifié** : l'article R4412-97 du code du travail, lu sur Légifrance,
+  met la recherche d'amiante à la charge du **donneur d'ordre**, pas de
+  l'entreprise qui exécute. C'est le point que les gestionnaires découvrent
+  généralement trop tard.
+- **Également vérifié** : l'arrêté du 16 juillet 2019 (opérateur certifié avec
+  mention amiante, prélèvements si l'information est insuffisante, rapport à
+  communiquer aux entreprises intervenantes) et, sur service-public, le fait que
+  le dossier amiante immobilier **ne dispense pas** du repérage avant travaux —
+  deux régimes distincts, deux codes différents.
+- **Périmètre annoncé** : nous ne réalisons ni les repérages ni les travaux de
+  retrait. Le guide le dit deux fois, dont une dans l'outil.
+- **Branche** : `feat/guide-amiante-sols`
+- **Liste terminée.** Les cinq points sont faits. Avant d'aller plus loin, il
+  faut fusionner et relire : les cinq guides portent la même date et rien n'a
+  encore été vu en production.
+
 ### 5 août 2026 — Guide « Diagnostic électrique : ce qui oblige vraiment »
 
 - **Produit** : le guide `/guides/diagnostic-electrique-location` et un outil qui

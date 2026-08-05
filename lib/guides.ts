@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/amiante-avant-travaux-sols',
+    categorie: 'Amiante',
+    titre: 'Amiante avant travaux : l’obligation est la vôtre',
+    extrait:
+      'Déposer un sol collé sur un bâti d’avant 1997 impose un repérage, et il incombe au donneur d’ordre — pas à l’entreprise. Ce que ça change, et pourquoi le dossier amiante n’en dispense pas.',
+    court: 'Le repérage incombe à celui qui commande les travaux.',
+    date: '5 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/diagnostic-electrique-location',
     categorie: 'Électricité',
     titre: 'Diagnostic électrique : ce qui oblige vraiment',
