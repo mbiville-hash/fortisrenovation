@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Breadcrumb from '@/components/Breadcrumb'
+import Rings from '@/components/Rings'
 
 type Source = { label: string; url: string }
 
@@ -30,7 +31,10 @@ export function GuideArticle({
   return (
     <>
       <style>{`
-        .guide-hero { background: var(--dark); color: var(--white); padding: 96px 0 64px; }
+        /* position + overflow : le motif de cercles est pose en absolu et doit
+           etre rogne par le hero, sinon il cree un debordement horizontal. */
+        .guide-hero { background: var(--dark); color: var(--white); padding: 96px 0 64px; position: relative; overflow: hidden; }
+        .guide-hero .container { position: relative; z-index: 1; }
         .guide-hero-inner { max-width: 760px; }
         .guide-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
         .guide-eyebrow a { color: var(--gold); }
@@ -68,6 +72,7 @@ export function GuideArticle({
 
       <article>
         <header className="guide-hero">
+          <Rings className="rings--br" />
           <div className="container guide-hero-inner" data-reveal>
             <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Guides', href: '/guides' }, { name: category }]} />
             <h1 className="guide-title">{title}</h1>
