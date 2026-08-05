@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/humidite-identifier-la-cause',
+    categorie: 'Humidité',
+    titre: 'Humidité : condensation, remontée ou infiltration ?',
+    extrait:
+      'Quatre causes, trois observations pour les distinguer, et un outil d’orientation. Plus l’ordre des opérations, parce que repeindre sans traiter la cause ne tient jamais une saison.',
+    court: 'Trouver la cause avant de repeindre — sinon on repeint deux fois.',
+    date: '5 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/degat-des-eaux-qui-paie',
     categorie: 'Dégât des eaux',
     titre: 'Dégât des eaux : qui déclare, qui paie, dans quel ordre',

@@ -233,6 +233,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE}/guides/humidite-identifier-la-cause`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/guides/degat-des-eaux-qui-paie`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
