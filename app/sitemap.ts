@@ -233,6 +233,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE}/guides/diagnostic-electrique-location`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/guides/logement-decent-est-il-louable`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

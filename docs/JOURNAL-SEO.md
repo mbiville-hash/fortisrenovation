@@ -28,6 +28,25 @@ Pour que le dépôt reste lisible, chaque nouveau contenu suit les mêmes règle
 
 ## Itérations
 
+### 5 août 2026 — Guide « Diagnostic électrique : ce qui oblige vraiment »
+
+- **Produit** : le guide `/guides/diagnostic-electrique-location` et un outil qui
+  trie les anomalies d'un rapport électrique entre les six points de sécurité,
+  qui bloquent la relocation, et les informations complémentaires, qui peuvent
+  attendre.
+- **Angle vérifié** : le diagnostic **n'impose aucun travaux**, il constate. Ce
+  point est confirmé noir sur blanc par service-public. Ce qui oblige, c'est
+  l'obligation de décence — articles 2 et 3 du décret de 2002, déjà lus sur
+  Légifrance pour le guide précédent. C'est l'angle qui différencie ce guide de
+  ce qu'on lit ailleurs.
+- **Également vérifié** : diagnostic exigé au-delà de quinze ans d'installation,
+  validité de six ans en location contre trois en vente, substitution possible
+  par une attestation de conformité de moins de six ans, et les deux sanctions
+  distinctes (perte de l'exonération de garantie des vices cachés d'un côté,
+  amende de 1 500 € pour recours à un diagnostiqueur non certifié de l'autre).
+- **Branche** : `feat/guide-diagnostic-electrique`
+- **Reste à faire** : point 5 — amiante avant travaux sur les sols.
+
 ### 5 août 2026 — Guide « Logement décent : votre bien est-il louable ? »
 
 - **Produit** : le guide `/guides/logement-decent-est-il-louable` et sa checklist

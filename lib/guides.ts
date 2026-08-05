@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/diagnostic-electrique-location',
+    categorie: 'Électricité',
+    titre: 'Diagnostic électrique : ce qui oblige vraiment',
+    extrait:
+      'Le diagnostic constate, il n’impose aucun travaux — c’est la décence qui oblige. Les six points de sécurité, ce qui bloque la relocation, et ce qui peut attendre la rotation suivante.',
+    court: 'Le rapport n’oblige à rien. La décence, si.',
+    date: '5 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/logement-decent-est-il-louable',
     categorie: 'Décence',
     titre: 'Logement décent : votre bien est-il louable ?',

@@ -114,6 +114,13 @@ export default function GuideLogementDecentPage() {
           électrique sous-dimensionné, et le WC non séparé dans les petites surfaces divisées après
           coup.
         </p>
+        <p>
+          Pour le premier, l’état de l’installation électrique annexé au bail dit exactement où ça
+          coince. Notre guide{' '}
+          <Link href="/guides/diagnostic-electrique-location">diagnostic électrique&nbsp;: ce qui
+          oblige vraiment</Link> explique comment le lire et distinguer ce qui bloque la relocation
+          de ce qui peut attendre.
+        </p>
 
         <h2>La surface : l’article 4, court et sans appel</h2>
         <p>
