@@ -115,13 +115,15 @@ export default function Footer() {
 
             <div>
               <p className="footer-col-title">Zone</p>
+              {/* aria-label explicite : ces libelles de commune existent ailleurs
+                  sur le site avec une destination differente. */}
               <ul className="footer-links">
-                <li><Link href="/plombier-rouen">Rouen</Link></li>
-                <li><Link href="/plombier-bois-guillaume">Bois-Guillaume</Link></li>
-                <li><Link href="/plombier-mont-saint-aignan">Mont-Saint-Aignan</Link></li>
-                <li><Link href="/plombier-bihorel">Bihorel</Link></li>
-                <li><Link href="/plombier-isneauville">Isneauville</Link></li>
-                <li><Link href="/plombier-sotteville-les-rouen">Sotteville</Link></li>
+                <li><Link href="/plombier-rouen" aria-label="Plombier à Rouen">Rouen</Link></li>
+                <li><Link href="/plombier-bois-guillaume" aria-label="Plombier à Bois-Guillaume">Bois-Guillaume</Link></li>
+                <li><Link href="/plombier-mont-saint-aignan" aria-label="Plombier à Mont-Saint-Aignan">Mont-Saint-Aignan</Link></li>
+                <li><Link href="/plombier-bihorel" aria-label="Plombier à Bihorel">Bihorel</Link></li>
+                <li><Link href="/plombier-isneauville" aria-label="Plombier à Isneauville">Isneauville</Link></li>
+                <li><Link href="/plombier-sotteville-les-rouen" aria-label="Plombier à Sotteville-lès-Rouen">Sotteville</Link></li>
               </ul>
             </div>
 

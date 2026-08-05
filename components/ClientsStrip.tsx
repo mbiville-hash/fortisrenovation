@@ -22,16 +22,17 @@ export default function ClientsStrip() {
           gap: 56px;
           flex-wrap: wrap;
         }
+        /* Pas d'opacite ici : --ink-faint a 50 % tombait a 1,9:1 sur le fond papier.
+           A pleine opacite il atteint 4,5:1, et l'effet discret vient de la couleur. */
         .client-logo {
           font-family: 'Bodoni Moda', serif;
           font-size: 15px;
           letter-spacing: 0.12em;
           text-transform: uppercase;
           color: var(--ink-faint);
-          opacity: 0.5;
-          transition: opacity 0.2s;
+          transition: color 0.2s;
         }
-        .client-logo:hover { opacity: 0.8; }
+        .client-logo:hover { color: var(--ink); }
         @media (max-width: 600px) {
           .clients-logos { gap: 32px; }
         }
