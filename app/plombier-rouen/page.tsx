@@ -185,6 +185,9 @@ export default function PlombierRouenPage() {
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
               Un <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link> à gérer ? Vous rénovez votre <Link href="/salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>salle de bain</Link> ? Vous êtes syndic ou gestionnaire : découvrez notre <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link> et la <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.
             </p>
+            <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '12px auto 0' }}>
+              Et avant d’engager quoi que ce soit après un sinistre, notre guide <Link href="/guides/degat-des-eaux-qui-paie" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>qui déclare, qui paie, dans quel ordre</Link> vous évite de perdre la prise en charge.
+            </p>
           </div>
         </section>
 

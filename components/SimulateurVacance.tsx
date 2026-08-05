@@ -27,18 +27,22 @@ export default function SimulateurVacance() {
     <>
       <style>{`
         .sv { background: var(--dark); color: #fff; border-radius: 2px; padding: 30px 28px; margin: 32px 0; }
-        .sv-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
-        .sv-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
+        /* Les règles qui visent un <p> sont préfixées par .sv. Dans un guide, cet outil
+           est rendu à l'intérieur de .guide-prose, dont la règle « .guide-prose p »
+           (spécificité 0,1,1) écrase sinon les classes simples (0,1,0) : le texte
+           repasserait en 16px #3a352e, illisible sur fond sombre. */
+        .sv .sv-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .sv .sv-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
         .sv-champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; margin-bottom: 26px; }
         .sv-lab { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-        .sv-val { font-family: 'Bodoni Moda', serif; font-size: 26px; color: #fff; margin-bottom: 8px; }
+        .sv .sv-val { font-family: 'Bodoni Moda', serif; font-size: 26px; color: #fff; margin-bottom: 8px; }
         .sv-range { width: 100%; accent-color: var(--gold); cursor: pointer; }
         .sv-range:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
         .sv-out { border-top: 1px solid rgba(184,151,90,0.35); padding-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-        .sv-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
-        .sv-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(30px, 5vw, 44px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
-        .sv-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 8px; line-height: 1.5; }
-        .sv-note { font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,0.5); margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+        .sv .sv-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+        .sv .sv-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(30px, 5vw, 44px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; margin: 0; }
+        .sv .sv-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin: 8px 0 0; line-height: 1.5; }
+        .sv .sv-note { font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,0.5); margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
       `}</style>
 
       <div className="sv" data-nosnippet>

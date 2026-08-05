@@ -131,6 +131,13 @@ export default function DegatDesEauxPage() {
               Fortis Rénovation · 193C Rue du Renard · 76000 Rouen
             </p>
             <Link href="/devis" className="btn btn-outline">Formulaire de contact</Link>
+            <p style={{ fontSize: 14, color: 'var(--ink-soft)', marginTop: 32, lineHeight: 1.7 }}>
+              Sinistre déjà sous contrôle&nbsp;? Notre guide{' '}
+              <Link href="/guides/degat-des-eaux-qui-paie" style={{ color: 'var(--gold-deep)', textDecoration: 'underline' }}>
+                qui déclare, qui paie, dans quel ordre
+              </Link>{' '}
+              détaille le circuit assurance et l’erreur qui coûte le plus cher.
+            </p>
           </div>
         </section>
       </main>

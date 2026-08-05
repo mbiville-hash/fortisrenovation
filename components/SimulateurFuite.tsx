@@ -39,20 +39,23 @@ export default function SimulateurFuite() {
     <>
       <style>{`
         .sf { background: var(--dark); color: #fff; border-radius: 2px; padding: 30px 28px; margin: 32px 0; }
-        .sf-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
-        .sf-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
+        /* Règles visant un <p> préfixées par .sf : dans un guide, « .guide-prose p »
+           (spécificité 0,1,1) écraserait sinon ces classes simples (0,1,0) et
+           rendrait le texte illisible sur fond sombre. */
+        .sf .sf-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .sf .sf-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
         .sf-champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; margin-bottom: 26px; }
         .sf-lab { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 9px; }
         .sf-in { width: 100%; padding: 12px 14px; font-family: 'Bodoni Moda', serif; font-size: 24px; color: #fff; background: rgba(255,255,255,0.06); border: 1px solid rgba(184,151,90,0.4); border-radius: 2px; }
         .sf-in:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-        .sf-unite { font-size: 11.5px; color: rgba(255,255,255,0.5); margin-top: 7px; }
+        .sf .sf-unite { font-size: 11.5px; color: rgba(255,255,255,0.5); margin: 7px 0 0; }
         .sf-out { border-top: 1px solid rgba(184,151,90,0.35); padding-top: 24px; }
         .sf-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 40px; border: 1px solid; margin-bottom: 22px; }
         .sf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
-        .sf-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
-        .sf-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(26px, 4vw, 38px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
-        .sf-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 8px; line-height: 1.5; }
-        .sf-note { font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.5); margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+        .sf .sf-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+        .sf .sf-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(26px, 4vw, 38px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; margin: 0; }
+        .sf .sf-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin: 8px 0 0; line-height: 1.5; }
+        .sf .sf-note { font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.5); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
         .sf-note a { color: var(--gold); text-decoration: underline; }
       `}</style>
 

@@ -41,19 +41,22 @@ export default function SimulateurRetenue() {
     <>
       <style>{`
         .sr { background: var(--dark); color: #fff; border-radius: 2px; padding: 30px 28px; margin: 32px 0; }
-        .sr-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
-        .sr-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
+        /* Règles visant un <p> préfixées par .sr : dans un guide, « .guide-prose p »
+           (spécificité 0,1,1) écraserait sinon ces classes simples (0,1,0) et
+           rendrait le texte illisible sur fond sombre. */
+        .sr .sr-t { font-family: 'Bodoni Moda', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .sr .sr-s { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6; margin-bottom: 24px; }
         .sr-champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; margin-bottom: 26px; }
         .sr-lab { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
         .sr-in { width: 100%; padding: 11px 13px; font-family: 'Bodoni Moda', serif; font-size: 21px; color: #fff; background: rgba(255,255,255,0.06); border: 1px solid rgba(184,151,90,0.4); border-radius: 2px; }
         .sr-in:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-        .sr-unite { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+        .sr .sr-unite { font-size: 11px; color: rgba(255,255,255,0.45); margin: 6px 0 0; }
         .sr-out { border-top: 1px solid rgba(184,151,90,0.35); padding-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
-        .sr-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
-        .sr-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(26px, 4vw, 38px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
-        .sr-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 8px; line-height: 1.5; }
-        .sr-err { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
-        .sr-note { font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.5); margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+        .sr .sr-bloc-l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+        .sr .sr-bloc-v { font-family: 'Bodoni Moda', serif; font-size: clamp(26px, 4vw, 38px); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; margin: 0; }
+        .sr .sr-bloc-d { font-size: 12.5px; color: rgba(255,255,255,0.6); margin: 8px 0 0; line-height: 1.5; }
+        .sr .sr-err { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin: 0; }
+        .sr .sr-note { font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.5); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
       `}</style>
 
       <div className="sr" data-nosnippet>
