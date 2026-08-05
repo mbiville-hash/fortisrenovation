@@ -47,7 +47,7 @@ export default function GuideMaPrimeAdaptPage() {
           { label: 'MaPrimeAdapt’ — economie.gouv.fr (mis à jour le 21/05/2026)', url: 'https://www.economie.gouv.fr/particuliers/gerer-mon-argent/beneficier-daides-et-de-reductions-dimpots/maprimeadapt-tout-savoir-sur-cette-aide-ladaptation-de-votre-logement' },
           { label: 'MaPrimeAdapt’ — France Rénov’ (france-renov.gouv.fr)', url: 'https://france-renov.gouv.fr/aides/maprimeadapt' },
           { label: 'Barème de ressources — France Rénov’', url: 'https://france-renov.gouv.fr/bareme' },
-          { label: 'MaPrimeAdapt’ — Service-Public.fr (fiche F37501)', url: 'https://www.service-public.fr/particuliers/vosdroits/F37501' },
+          { label: 'MaPrimeAdapt’ — service-public.gouv.fr (fiche F37501)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F37501' },
           { label: 'MaPrimeAdapt’, le mode d’emploi — Anah', url: 'https://www.anah.gouv.fr/anatheque/maprimeadapt-mode-emploi' },
         ]}
         lastVerified="Informations vérifiées en juin 2026 sur les sites officiels (economie.gouv.fr, France Rénov’, Anah). Les conditions et montants peuvent évoluer : vérifiez votre situation sur france-renov.gouv.fr."
