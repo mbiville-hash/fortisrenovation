@@ -23,6 +23,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: '/guides/degat-des-eaux-qui-paie',
+    categorie: 'Dégât des eaux',
+    titre: 'Dégât des eaux : qui déclare, qui paie, dans quel ordre',
+    extrait:
+      'Cinq jours ouvrés pour déclarer, un seul assureur qui pilote, et l’erreur qui coûte le plus cher : engager la réfection avant l’accord. Un outil pour trancher en deux questions.',
+    court: 'Qui pilote, qui paie — et l’erreur qui coûte le plus cher.',
+    date: '5 août 2026',
+    public: 'pro',
+  },
+  {
     slug: '/guides/augmentation-de-loyer-rouen',
     categorie: 'Loyers',
     titre: 'Augmenter le loyer à Rouen : les trois moments possibles',

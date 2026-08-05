@@ -159,6 +159,12 @@ export default function GuideLoiWarsmannPage() {
           les revêtements, voyez notre page{' '}
           <Link href="/degat-des-eaux-rouen">dégât des eaux</Link>.
         </p>
+        <p>
+          L’écrêtement de la facture et l’indemnisation du sinistre sont deux dossiers distincts, qui
+          se mènent en parallèle et avec des interlocuteurs différents. Notre guide{' '}
+          <Link href="/guides/degat-des-eaux-qui-paie">dégât des eaux : qui déclare, qui paie</Link>{' '}
+          détaille le second, et l’ordre à respecter pour ne pas perdre la prise en charge.
+        </p>
       </GuideArticle>
     </>
   )

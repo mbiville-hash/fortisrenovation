@@ -109,11 +109,6 @@ export default function Footer() {
                 <li><Link href="/electricien-rouen">Électricité</Link></li>
                 <li><Link href="/peintre-rouen">Peinture &amp; enduits</Link></li>
                 <li><Link href="/pose-de-sol-rouen">Pose de sols</Link></li>
-                <li><Link href="/salle-de-bain-rouen">Salle de bain</Link></li>
-                <li><Link href="/douche-italienne-rouen">Douche italienne</Link></li>
-                <li><Link href="/prix-renovation-salle-de-bain-rouen">Prix salle de bain</Link></li>
-                <li><Link href="/renovation-salle-de-bain-cle-en-main-rouen">Clé en main</Link></li>
-                <li><Link href="/salle-de-bain-senior">Salle de bain senior</Link></li>
                 <li><Link href="/devis">Étudier mon projet</Link></li>
               </ul>
             </div>
