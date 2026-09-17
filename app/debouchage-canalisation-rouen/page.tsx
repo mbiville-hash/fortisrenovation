@@ -44,7 +44,7 @@ export default function DebouchageRouenPage() {
         ['Évier, lavabo, douche', 'Accumulation de graisses, de cheveux et de calcaire dans le siphon ou l’évacuation. Le dégorgement s’accompagne d’un nettoyage du siphon.'],
         ['Odeurs d’égout', 'Souvent un siphon désamorcé ou une ventilation de chute défaillante — pas un bouchon. Le traiter comme un bouchon ne règle rien.'],
         ['Refoulement en pied de colonne', 'En immeuble, un refoulement au rez-de-chaussée signale un bouchon sur la chute commune. Cela relève de la copropriété.', '/maintenance-copropriete-rouen'],
-        ['Bouchon qui revient', 'Contre-pente, racines, canalisation fissurée ou emboîtement décalé : nous recherchons la cause et chiffrons la reprise.', '/recherche-de-fuite-rouen'],
+        ['Bouchon qui revient', 'Contre-pente, racines, canalisation fissurée ou emboîtement décalé : nous recherchons la cause et chiffrons la reprise.'],
         ['Reprise d’évacuation', 'Remplacement d’un tronçon PVC ou fonte, reprise de pente, raccordements — puis remise en état des supports.'],
       ]}
       process={[
@@ -64,8 +64,7 @@ export default function DebouchageRouenPage() {
       communes={COMMUNES}
       maillage={
         <>
-          Un bouchon qui revient cache souvent autre chose&nbsp;: voyez la{' '}
-          <Link href="/recherche-de-fuite-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>recherche de fuite</Link> et notre{' '}
+          Un bouchon qui revient cache souvent autre chose&nbsp;: voyez notre{' '}
           <Link href="/plombier-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>offre plomberie</Link> complète.
           En immeuble, l’intervention relève souvent de la{' '}
           <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.

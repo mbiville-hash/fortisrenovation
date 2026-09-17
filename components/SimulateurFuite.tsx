@@ -128,7 +128,7 @@ export default function SimulateurFuite() {
           couvre pas les fuites d’appareils ménagers, d’équipements sanitaires ou de chauffage. Le
           prix du m³ varie d’une commune à l’autre&nbsp;: le montant ci-dessus est un ordre de
           grandeur, pas un remboursement garanti. Nous établissons l’attestation après{' '}
-          <a href="/recherche-de-fuite-rouen">recherche et réparation de la fuite</a>.
+          <a href="/plombier-rouen">réparation de la fuite</a>.
         </p>
       </div>
     </>

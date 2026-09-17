@@ -228,8 +228,7 @@ export default function DiagnosticHumidite() {
           Outil d’orientation, pas un diagnostic. Aucune analyse à distance ne remplace un relevé
           d’humidité sur place&nbsp;: les causes se cumulent souvent, et c’est la mesure du taux
           d’humidité dans l’épaisseur du mur qui distingue une surface mouillée d’une maçonnerie
-          gorgée d’eau. En cas de doute sur une fuite, voyez notre page{' '}
-          <a href="/recherche-de-fuite-rouen">recherche de fuite</a>.
+          gorgée d’eau.
         </p>
       </div>
     </>

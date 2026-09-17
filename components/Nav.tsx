@@ -17,7 +17,8 @@ const GROUPES: Groupe[] = [
     id: 'particuliers',
     titre: 'Particuliers',
     liens: [
-      { href: '/salle-de-bain-rouen', label: 'Salle de bain' },
+      { href: '/depannage-salle-de-bain-rouen', label: 'Dépannage salle de bain' },
+      { href: '/salle-de-bain-rouen', label: 'Rénovation salle de bain' },
       { href: '/douche-italienne-rouen', label: 'Douche italienne' },
       { href: '/renovation-salle-de-bain-cle-en-main-rouen', label: 'Rénovation clé en main' },
       { href: '/prix-renovation-salle-de-bain-rouen', label: 'Prix salle de bain' },
@@ -31,11 +32,11 @@ const GROUPES: Groupe[] = [
       { href: '/remise-en-etat-locative-rouen', label: 'Remise en état locative' },
       { href: '/maintenance-copropriete-rouen', label: 'Maintenance copropriété' },
       { href: '/plombier-rouen', label: 'Plombier & dépannage' },
-      { href: '/recherche-de-fuite-rouen', label: 'Recherche de fuite' },
       { href: '/debouchage-canalisation-rouen', label: 'Débouchage canalisation' },
       { href: '/electricien-rouen', label: 'Électricien' },
       { href: '/peintre-rouen', label: 'Peintre & enduits' },
-      { href: '/pose-de-sol-rouen', label: 'Pose de sols' },
+      { href: '/carreleur-rouen', label: 'Carrelage & faïence' },
+      { href: '/pose-de-sol-rouen', label: 'Parquet & sols' },
     ],
   },
   {
@@ -242,7 +243,7 @@ export default function Nav() {
         </Link>
 
         <div className="nav-right">
-          <Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Étudier mon projet</Link>
+          <Link href="/devis" className="nav-cta btn" aria-current={pathname === '/devis' ? 'page' : undefined}>Demander un devis</Link>
           <button className={`nav-hamburger${open ? ' open' : ''}`} onClick={() => setOpen(!open)} aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open}>
             <span />
             <span />

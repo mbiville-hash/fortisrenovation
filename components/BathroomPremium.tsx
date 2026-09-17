@@ -237,6 +237,12 @@ export function BathroomPillar({ faqs }: { faqs: BathroomFaq[] }) {
                 <p>Adapter la pièce pour le maintien à domicile et les aides possibles.</p>
                 <span>Voir la page</span>
               </Link>
+              {/* Sortie pour le visiteur qui veut une réparation, pas une rénovation. */}
+              <Link className="bath-card" href="/depannage-salle-de-bain-rouen">
+                <h3>Dépannage salle de bain</h3>
+                <p>Une fuite, une chasse d’eau, un joint : réparé sans refaire la pièce.</p>
+                <span>Voir la page</span>
+              </Link>
             </div>
           </div>
         </section>

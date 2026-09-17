@@ -177,7 +177,6 @@ export default function DegatDesEaux() {
           la réponse de votre assureur qui font foi&nbsp;: les conventions entre assureurs organisent
           leurs relations entre eux, elles ne créent pas de droit direct pour l’assuré. Déclarez dans
           le délai prévu au contrat, jamais moins de cinq jours ouvrés. Nous intervenons sur la{' '}
-          <a href="/recherche-de-fuite-rouen">recherche de fuite</a> et sur la{' '}
           <a href="/degat-des-eaux-rouen">remise en état après sinistre</a>.
         </p>
       </div>

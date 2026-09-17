@@ -37,9 +37,9 @@ const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpac
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 const services: [string, string, string?][] = [
-  ['Recherche & réparation de fuite', 'Détection de l’origine, réparation durable et remise en état. Nous traitons la cause, pas seulement le symptôme.', '/recherche-de-fuite-rouen'],
+  ['Réparation de fuite', 'Fuite de robinet, de joint, de raccord ou d’évacuation : réparation durable et remise en état propre.'],
   ['Dégât des eaux', 'Mise hors d’eau, séchage, remise en état et rapport photos sous 48h pour votre assurance.', '/degat-des-eaux-rouen'],
-  ['Robinetterie & sanitaires', 'Remplacement de robinet, mitigeur, WC, lavabo, évier — pose propre et parfaitement étanche.'],
+  ['Robinetterie & sanitaires', 'Remplacement de robinet, mitigeur, WC, lavabo, évier — pose propre et parfaitement étanche.', '/depannage-salle-de-bain-rouen'],
   ['Chauffe-eau & ballon', 'Dépannage et remplacement de chauffe-eau et ballon d’eau chaude, électrique ou thermodynamique.'],
   ['Évacuations & canalisations', 'Débouchage, reprise d’évacuation, raccordements PVC et fonte, sans casse inutile.', '/debouchage-canalisation-rouen'],
   ['Rénovation de salle de bain', 'Au-delà du dépannage, nous refaisons votre salle de bain clé en main — plan 3D inclus.', '/salle-de-bain-rouen'],
@@ -185,7 +185,7 @@ export default function PlombierRouenPage() {
               ))}
             </div>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
-              Un <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link> à gérer ? Vous rénovez votre <Link href="/salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>salle de bain</Link> ? Vous êtes syndic ou gestionnaire : découvrez notre <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link> et la <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.
+              Une panne dans la salle de bain ? Voyez le <Link href="/depannage-salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dépannage de salle de bain</Link>. Un <Link href="/degat-des-eaux-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>dégât des eaux</Link> à gérer ? Vous rénovez votre <Link href="/salle-de-bain-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>salle de bain</Link> ? Vous êtes syndic ou gestionnaire : découvrez notre <Link href="/maintenance-immobiliere-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance immobilière</Link> et la <Link href="/maintenance-copropriete-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>maintenance de copropriété</Link>.
             </p>
             <p style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', maxWidth: 720, margin: '12px auto 0' }}>
               Et avant d’engager quoi que ce soit après un sinistre, notre guide <Link href="/guides/degat-des-eaux-qui-paie" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>qui déclare, qui paie, dans quel ordre</Link> vous évite de perdre la prise en charge.

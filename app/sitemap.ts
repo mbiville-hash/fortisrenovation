@@ -149,6 +149,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE}/depannage-salle-de-bain-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE}/carreleur-rouen`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/electricien-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -162,12 +174,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/pose-de-sol-rouen`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/recherche-de-fuite-rouen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

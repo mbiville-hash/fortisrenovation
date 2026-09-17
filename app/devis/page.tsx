@@ -3,16 +3,16 @@ import FormA from '@/components/FormA'
 import { BASE_SCHEMA } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Étude de projet — Rénovation Rouen',
-  description: 'Présentez votre projet de salle de bain ou maintenance immobilière à Rouen. Réponse claire sous 48h. Syndics, bailleurs, particuliers.',
+  title: 'Devis gratuit — Dépannage et travaux à Rouen',
+  description: 'Plomberie, électricité, peinture, carrelage, sols, remise en état locative à Rouen. Du dépannage au chantier complet. Réponse sous 48h, devis gratuit.',
   alternates: { canonical: 'https://www.fortisrenovation.fr/devis' },
 }
 
 const contactPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'Étude de projet — Fortis Rénovation',
-  description: 'Présentez votre projet de rénovation salle de bain ou maintenance immobilière à Rouen. Réponse sous 48h.',
+  name: 'Devis gratuit — Fortis Rénovation',
+  description: 'Dépannage et travaux à Rouen : plomberie, électricité, peinture, carrelage, sols. Réponse sous 48h.',
   url: 'https://www.fortisrenovation.fr/devis',
   mainEntity: {
     '@type': 'LocalBusiness',
@@ -31,13 +31,15 @@ export default function DevisPage() {
         <section style={{ background: 'var(--dark)', padding: '80px 0 60px', color: 'white', textAlign: 'center' }}>
           <div className="container">
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 16 }}>
-              Étude de projet
+              Devis gratuit
             </p>
             <h1 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.1, marginBottom: 16 }}>
-              Décrivez-nous votre projet.
+              Dites-nous ce qu’il vous faut.
             </h1>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.75)' }}>
-              On vous répond sous 48h, gratuitement et sans engagement.
+              D’une fuite à réparer à un chantier complet. Nous vous répondons sous 48h,
+              gratuitement et sans engagement. Pour un dépannage urgent, appelez-nous :
+              nous intervenons en quelques heures.
             </p>
           </div>
         </section>

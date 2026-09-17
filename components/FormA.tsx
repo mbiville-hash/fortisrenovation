@@ -309,12 +309,16 @@ export default function FormA() {
                     </div>
                     <div className="form-group">
                       <label className="form-label" htmlFor="type_projet">
-                        Type de projet <span className="optional">(facultatif)</span>
+                        Votre demande <span className="optional">(facultatif)</span>
                       </label>
                       <select id="type_projet" className="form-select" value={form.type_projet} onChange={set('type_projet')}>
                         <option value="">— Choisissez —</option>
+                        <option value="Dépannage plomberie / salle de bain">Dépannage plomberie / salle de bain</option>
+                        <option value="Électricité">Électricité</option>
+                        <option value="Peinture et enduits">Peinture et enduits</option>
+                        <option value="Carrelage et faïence">Carrelage et faïence</option>
+                        <option value="Pose de parquet et sols">Pose de parquet et sols</option>
                         <option value="Remise en état locative">Remise en état locative</option>
-                        <option value="Intervention ponctuelle">Intervention ponctuelle</option>
                         <option value="Maintenance immobilière">Maintenance immobilière</option>
                         <option value="Dégât des eaux">Dégât des eaux</option>
                         <option value="Rénovation salle de bain">Rénovation salle de bain</option>

@@ -112,7 +112,7 @@ export default function GuideLoiWarsmannPage() {
         </p>
         <p>
           C’est exactement ce que nous remettons après une{' '}
-          <Link href="/recherche-de-fuite-rouen">recherche et réparation de fuite</Link> — le
+          <Link href="/plombier-rouen">réparation de fuite</Link> — le
           document est fait pour être transmis tel quel à votre service d’eau.
         </p>
 

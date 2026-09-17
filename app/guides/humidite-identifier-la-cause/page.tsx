@@ -185,9 +185,7 @@ export default function GuideHumiditePage() {
 
         <h2>Pour aller plus loin</h2>
         <p>
-          Si l’humidité vient d’une fuite, notre page{' '}
-          <Link href="/recherche-de-fuite-rouen">recherche de fuite</Link> détaille la localisation
-          non destructive, et le guide{' '}
+          Si l’humidité vient d’une fuite, le guide{' '}
           <Link href="/guides/degat-des-eaux-qui-paie">dégât des eaux : qui déclare, qui paie</Link>{' '}
           explique le circuit assurance à respecter avant d’engager la réfection.
         </p>

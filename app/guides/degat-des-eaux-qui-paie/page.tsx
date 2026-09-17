@@ -193,7 +193,6 @@ export default function GuideDegatDesEauxPage() {
           <Link href="/guides/facture-eau-fuite-loi-warsmann">loi Warsmann</Link>, qui exige une
           attestation de plomberie que nous délivrons après réparation. Pour l’intervention
           elle-même, nos pages{' '}
-          <Link href="/recherche-de-fuite-rouen">recherche de fuite</Link>,{' '}
           <Link href="/degat-des-eaux-rouen">dégât des eaux</Link> et{' '}
           <Link href="/peintre-rouen">peinture et enduits</Link> détaillent ce que nous faisons.
         </p>
