@@ -37,7 +37,7 @@ const eyebrow: React.CSSProperties = { fontSize: 11, fontWeight: 700, letterSpac
 const Dash = () => <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
 
 const services: [string, string, string?][] = [
-  ['Réparation de fuite', 'Fuite de robinet, de joint, de raccord ou d’évacuation : réparation durable et remise en état propre.'],
+  ['Recherche & réparation de fuite', 'Localisation de l’origine avant d’ouvrir, réparation durable et remise en état. Nous traitons la cause, pas seulement le symptôme.', '/recherche-de-fuite-rouen'],
   ['Dégât des eaux', 'Mise hors d’eau, séchage, remise en état et rapport photos sous 48h pour votre assurance.', '/degat-des-eaux-rouen'],
   ['Robinetterie & sanitaires', 'Remplacement de robinet, mitigeur, WC, lavabo, évier — pose propre et parfaitement étanche.', '/depannage-salle-de-bain-rouen'],
   ['Chauffe-eau & ballon', 'Dépannage et remplacement de chauffe-eau et ballon d’eau chaude, électrique ou thermodynamique.'],
@@ -62,12 +62,6 @@ const process: [string, string, string][] = [
 const communes: [string, string][] = [
   ['/plombier-bois-guillaume', 'Bois-Guillaume'],
   ['/plombier-mont-saint-aignan', 'Mont-Saint-Aignan'],
-  ['/plombier-bihorel', 'Bihorel'],
-  ['/plombier-isneauville', 'Isneauville'],
-  ['/plombier-bonsecours', 'Bonsecours'],
-  ['/plombier-le-mesnil-esnard', 'Le Mesnil-Esnard'],
-  ['/plombier-franqueville-saint-pierre', 'Franqueville-Saint-Pierre'],
-  ['/plombier-sotteville-les-rouen', 'Sotteville-lès-Rouen'],
 ]
 
 export default function PlombierRouenPage() {

@@ -53,9 +53,10 @@ Site vitrine de **Fortis Rénovation** (artisan, Rouen) : rénovation de **salle
 
 - `/` (`app/page.tsx`) = accueil **PARTICULIER** (salle de bain). Commence par `<Aiguillage/>` — bloc « Vous êtes ? » : **« Particulier »** défile vers le hero (`id="decouvrir"`, reste sur la page), **« Syndic & pro »** → `/professionnels`.
 - Pages clés :
-  - `/salle-de-bain-rouen` (pilier ; composant `BathroomPremium` → `BathroomPillar`) + 13× `/salle-de-bain-[commune]` (`BathroomSupportPage`).
+  - `/salle-de-bain-rouen` (pilier ; composant `BathroomPremium` → `BathroomPillar`) + `/salle-de-bain-mont-saint-aignan` et `/salle-de-bain-bois-guillaume` (`BathroomSupportPage`).
   - `/professionnels` (maintenance / syndics), `/maintenance-copropriete-rouen`, `/degat-des-eaux-rouen`.
-  - `/plombier-rouen` (hub plomberie) + 8× `/plombier-[commune]`.
+  - `/plombier-rouen` (hub plomberie) + `/plombier-mont-saint-aignan` et `/plombier-bois-guillaume`, `/recherche-de-fuite-rouen`.
+  - **Pages par commune : uniquement Rouen, Mont-Saint-Aignan, Bois-Guillaume** (là où nous avons des chantiers — décision du 7 octobre 2026). Les autres pages commune renvoient en 301 vers la page Rouen du même métier (`next.config.js`). Ne pas en recréer : Google laissait de côté ces pages trop semblables, et entraînait les pages clés avec elles.
   - `/devis`, `/a-propos`, `/guides/*`.
 - **Schema JSON-LD** : `lib/schema.ts` (`BASE_SCHEMA`, `serviceSchema`, `breadcrumbSchema`, `faqSchema`, `imageObjectSchema`, `aggregateRating`).
 - **Redirections** (`next.config.js`) : 301 `/maintenance-immobiliere-rouen` → `/professionnels`. http / non-www → `https://www` géré par Vercel.

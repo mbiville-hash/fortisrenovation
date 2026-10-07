@@ -77,6 +77,101 @@ const nextConfig = {
         destination: '/salle-de-bain-rouen',
         permanent: true,
       },
+      // Pages commune retirees le 7 octobre 2026 : seules Rouen, Mont-Saint-Aignan
+      // et Bois-Guillaume gardent une page (communes ou nous avons des chantiers).
+      // Google ignorait ces pages trop semblables ; le renvoi transmet leur
+      // anciennete a la page Rouen du meme metier.
+      {
+        source: '/salle-de-bain-bihorel',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-bonsecours',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-franqueville-saint-pierre',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-isneauville',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/salle-de-bain-le-mesnil-esnard',
+        destination: '/salle-de-bain-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-bihorel',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-bonsecours',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-franqueville-saint-pierre',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-isneauville',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-le-mesnil-esnard',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/plombier-sotteville-les-rouen',
+        destination: '/plombier-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-deville-les-rouen',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-le-grand-quevilly',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-le-petit-quevilly',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-maromme',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-saint-etienne-du-rouvray',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      {
+        source: '/maintenance-immobiliere-sotteville-les-rouen',
+        destination: '/maintenance-immobiliere-rouen',
+        permanent: true,
+      },
+      // /contact n'a jamais existe sur ce site mais Google la connait (404).
+      {
+        source: '/contact',
+        destination: '/devis',
+        permanent: true,
+      },
       {
         source: '/demander-un-devis',
         destination: '/devis',

@@ -184,8 +184,8 @@ export default function MaintenanceCoproprietePage() {
               Maintenance de copropriété à Rouen et sur la métropole :{' '}
               <Link href="/plombier-mont-saint-aignan" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Mont-Saint-Aignan</Link>,{' '}
               <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
-              <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>,{' '}
-              <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>{' '}
+              Bihorel,{' '}
+              Sotteville-lès-Rouen{' '}
               et toute l’agglomération.
             </p>
           </div>

@@ -77,8 +77,6 @@ export default function SalleDeBainBoisGuillaumePage() {
         ]}
         nearbyCommunes={[
           { href: '/salle-de-bain-mont-saint-aignan', name: 'Mont-Saint-Aignan' },
-          { href: '/salle-de-bain-bihorel', name: 'Bihorel' },
-          { href: '/salle-de-bain-isneauville', name: 'Isneauville' },
         ]}
         faqs={faqs}
       />

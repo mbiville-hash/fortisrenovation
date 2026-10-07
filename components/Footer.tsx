@@ -104,6 +104,7 @@ export default function Footer() {
                 <li><Link href="/maintenance-copropriete-rouen">Maintenance copropriété</Link></li>
                 <li><Link href="/degat-des-eaux-rouen">Dégât des eaux</Link></li>
                 <li><Link href="/plombier-rouen">Plomberie &amp; dépannage</Link></li>
+                <li><Link href="/recherche-de-fuite-rouen">Recherche de fuite</Link></li>
                 <li><Link href="/depannage-salle-de-bain-rouen">Dépannage salle de bain</Link></li>
                 <li><Link href="/debouchage-canalisation-rouen">Débouchage</Link></li>
                 <li><Link href="/electricien-rouen">Électricité</Link></li>
@@ -122,9 +123,6 @@ export default function Footer() {
                 <li><Link href="/plombier-rouen" aria-label="Plombier à Rouen">Rouen</Link></li>
                 <li><Link href="/plombier-bois-guillaume" aria-label="Plombier à Bois-Guillaume">Bois-Guillaume</Link></li>
                 <li><Link href="/plombier-mont-saint-aignan" aria-label="Plombier à Mont-Saint-Aignan">Mont-Saint-Aignan</Link></li>
-                <li><Link href="/plombier-bihorel" aria-label="Plombier à Bihorel">Bihorel</Link></li>
-                <li><Link href="/plombier-isneauville" aria-label="Plombier à Isneauville">Isneauville</Link></li>
-                <li><Link href="/plombier-sotteville-les-rouen" aria-label="Plombier à Sotteville-lès-Rouen">Sotteville</Link></li>
               </ul>
             </div>
 

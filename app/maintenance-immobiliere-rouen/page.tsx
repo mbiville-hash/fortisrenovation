@@ -147,12 +147,6 @@ export default function MaintenanceImmobilierePage() {
             <div className="zone-chips">
               <Link href="/plombier-mont-saint-aignan" className="zone-chip">Mont-Saint-Aignan</Link>
               <Link href="/plombier-bois-guillaume" className="zone-chip">Bois-Guillaume</Link>
-              <Link href="/plombier-bihorel" className="zone-chip">Bihorel</Link>
-              <Link href="/plombier-isneauville" className="zone-chip">Isneauville</Link>
-              <Link href="/plombier-bonsecours" className="zone-chip">Bonsecours</Link>
-              <Link href="/plombier-le-mesnil-esnard" className="zone-chip">Le Mesnil-Esnard</Link>
-              <Link href="/plombier-franqueville-saint-pierre" className="zone-chip">Franqueville-Saint-Pierre</Link>
-              <Link href="/plombier-sotteville-les-rouen" className="zone-chip">Sotteville-lès-Rouen</Link>
             </div>
           </div>
         </section>

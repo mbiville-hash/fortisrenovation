@@ -32,6 +32,7 @@ const GROUPES: Groupe[] = [
       { href: '/remise-en-etat-locative-rouen', label: 'Remise en état locative' },
       { href: '/maintenance-copropriete-rouen', label: 'Maintenance copropriété' },
       { href: '/plombier-rouen', label: 'Plombier & dépannage' },
+      { href: '/recherche-de-fuite-rouen', label: 'Recherche de fuite' },
       { href: '/debouchage-canalisation-rouen', label: 'Débouchage canalisation' },
       { href: '/electricien-rouen', label: 'Électricien' },
       { href: '/peintre-rouen', label: 'Peintre & enduits' },

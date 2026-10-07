@@ -181,9 +181,9 @@ export default function PlombierMontSaintAignanPage() {
               Fortis Rénovation intervient également à{' '}
               <Link href="/plombier-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Rouen</Link>,{' '}
               <Link href="/plombier-bois-guillaume" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bois-Guillaume</Link>,{' '}
-              <Link href="/plombier-bihorel" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Bihorel</Link>,{' '}
-              <Link href="/plombier-isneauville" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Isneauville</Link>{' '}
-              et <Link href="/plombier-sotteville-les-rouen" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>Sotteville-lès-Rouen</Link>.
+              Bihorel,{' '}
+              Isneauville{' '}
+              et Sotteville-lès-Rouen.
             </p>
             <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 2, textAlign: 'center', marginTop: 12 }}>
               Vous rénovez votre salle de bain à Mont-Saint-Aignan ?{' '}

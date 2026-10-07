@@ -8,7 +8,8 @@ type Cle = 'nom' | 'logements' | 'locatairesPct' | 'hlmPct' | 'vacantsPct'
 
 type Ligne = {
   nom: string
-  href: string
+  /** Seule Rouen garde une page maintenance ; les autres communes restent en texte. */
+  href: string | null
   logements: number
   locatairesPct: number
   hlmPct: number
@@ -19,7 +20,7 @@ const LIGNES: Ligne[] = [
   { nom: ROUEN.nom, href: ROUEN.href, logements: ROUEN.logements, locatairesPct: ROUEN.locatairesPct, hlmPct: ROUEN.hlmPct, vacantsPct: ROUEN.vacantsPct },
   ...COMMUNES.map((c) => ({
     nom: c.nom,
-    href: `/maintenance-immobiliere-${c.slug}`,
+    href: null,
     logements: c.logements,
     locatairesPct: c.locatairesPct,
     hlmPct: c.hlmPct,
@@ -119,7 +120,7 @@ export default function ParcLocatifTable() {
               <tbody>
                 {lignes.map((l) => (
                   <tr key={l.nom}>
-                    <td><Link href={l.href}>{l.nom}</Link></td>
+                    <td>{l.href ? <Link href={l.href}>{l.nom}</Link> : l.nom}</td>
                     <td>{l.logements.toLocaleString('fr-FR')}</td>
                     <td>{pct(l.locatairesPct)}</td>
                     <td>{pct(l.hlmPct)}</td>
