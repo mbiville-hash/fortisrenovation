@@ -14,7 +14,8 @@ import { BASE_SCHEMA } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Plombier & petits travaux à Rouen',
+  // La page racine ne reçoit pas le gabarit « %s | Fortis Rénovation » du layout.
+  title: 'Plombier & petits travaux à Rouen | Fortis Rénovation',
   description: 'Dépannage plomberie, fuite, peinture, enduits et sols à Rouen. Particuliers, bailleurs et syndics. Devis sous 48h. 5/5 sur Google.',
   alternates: { canonical: 'https://www.fortisrenovation.fr' },
   openGraph: {
