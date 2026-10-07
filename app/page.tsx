@@ -14,12 +14,12 @@ import { BASE_SCHEMA } from '@/lib/schema'
 import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Maintenance immobilière & remise en état locative à Rouen',
-  description: 'Maintenance immobilière et remise en état de logements locatifs à Rouen pour bailleurs, gestionnaires et syndics. Devis sous 48h, rapport photo. 5/5 sur Google.',
+  title: 'Plombier & petits travaux à Rouen',
+  description: 'Dépannage plomberie, fuite, peinture, enduits et sols à Rouen. Particuliers, bailleurs et syndics. Devis sous 48h. 5/5 sur Google.',
   alternates: { canonical: 'https://www.fortisrenovation.fr' },
   openGraph: {
-    title: 'Fortis Rénovation — Maintenance immobilière & remise en état locative à Rouen',
-    description: 'Remise en état de logements locatifs, dépannages et maintenance immobilière à Rouen. Devis sous 48h, rapport photo, un seul interlocuteur.',
+    title: 'Fortis Rénovation — Plombier & petits travaux à Rouen',
+    description: 'Dépannage plomberie, fuite, peinture, enduits et sols à Rouen. Particuliers, bailleurs et syndics. Devis sous 48h. 5/5 sur Google.',
     url: 'https://www.fortisrenovation.fr',
     images: OG_IMAGE,
   },
