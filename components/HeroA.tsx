@@ -90,7 +90,7 @@ export default function HeroA() {
               <Link href="/devis" className="btn btn-gold">Demander un devis</Link>
               <Link href="/remise-en-etat-locative-rouen" className="btn btn-outline-white">Remise en état locative</Link>
             </div>
-            <p className="hero-trust"><span className="stars">★★★★★</span>5/5 · 30 avis Google vérifiés</p>
+            <p className="hero-trust"><span className="stars">★★★★★</span>5/5 · 31 avis Google vérifiés</p>
             <p className="hero-alt">
               Vous rénovez chez vous&nbsp;? <Link href="/salle-de-bain-rouen">Voir l&apos;offre salle de bain →</Link>
             </p>

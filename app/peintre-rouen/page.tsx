@@ -35,7 +35,7 @@ export default function PeintreRouenPage() {
         ['48h', 'Devis reçu', 'Réponse garantie'],
         ['1', 'Interlocuteur unique', 'Du constat aux clés'],
         ['Photo', 'Rapport systématique', 'Avant, pendant, après'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Nos travaux de peinture intérieure à Rouen"
       servicesIntro="Le support compte autant que la finition : nous reprenons les fonds avant de peindre, sinon les défauts ressortent en quelques mois. Chantier protégé, locaux rendus propres."

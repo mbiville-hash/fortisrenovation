@@ -35,7 +35,7 @@ Site vitrine de **Fortis Rénovation** (artisan, Rouen) : rénovation de **salle
 
 ## Avis Google — mise à jour MANUELLE
 
-- Actuel : **5/5 · 30 avis**. La note (5/5) ne change pas sauf indication.
+- Actuel : **5/5 · 31 avis**. La note (5/5) ne change pas sauf indication.
 - Le script d'auto-update et son workflow GitHub Actions ont été **supprimés** — **ne pas les recréer**.
 - Pour changer le nombre d'avis (ex. 30 → 31) :
   - Remplacer `30 avis` → `31 avis` partout : `grep -rl "30 avis" --include=*.tsx --include=*.ts .`

@@ -35,7 +35,7 @@ export default function DebouchageRouenPage() {
         ['24/7', 'Astreinte urgence', 'Intervention en quelques heures'],
         ['48h', 'Devis reçu', 'Sur les demandes courantes'],
         ['1', 'Interlocuteur unique', 'Du dégorgement à la reprise'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Nos interventions de débouchage à Rouen"
       servicesIntro="Du bouchon domestique au refoulement qui touche plusieurs lots, avec une règle constante : traiter la cause quand le bouchon revient, pas seulement le symptôme."

@@ -35,7 +35,7 @@ export default function CarreleurRouenPage() {
         ['48h', 'Devis reçu', 'Réponse garantie'],
         ['1', 'Interlocuteur unique', 'Du constat aux clés'],
         ['Photo', 'Rapport systématique', 'Avant, pendant, après'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Nos poses de carrelage à Rouen"
       servicesIntro="Le carrelage ne pardonne rien : un support qui bouge fissure les joints, un calepinage mal parti finit en coupe de deux centimètres contre le mur le plus visible. Nous calons la pose avant de coller."

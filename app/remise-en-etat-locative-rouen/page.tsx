@@ -132,7 +132,7 @@ export default function RemiseEnEtatLocativePage() {
               </div>
               <p className="rel-note">
                 <span className="stars" aria-hidden="true">★★★★★</span>
-                <span>5/5 · 30 avis Google</span>
+                <span>5/5 · 31 avis Google</span>
               </p>
             </div>
 

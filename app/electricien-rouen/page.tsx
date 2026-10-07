@@ -35,7 +35,7 @@ export default function ElectricienRouenPage() {
         ['48h', 'Devis reçu', 'Réponse garantie'],
         ['24/7', 'Astreinte urgence', 'Intervention en quelques heures'],
         ['1', 'Interlocuteur unique', 'Du constat à la facture'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Nos interventions en électricité à Rouen"
       servicesIntro="Dépannage comme travaux planifiés, sur un logement isolé comme sur tout un parc. Nous intervenons en électricité courante : circuits, protections, appareillage et éclairage."

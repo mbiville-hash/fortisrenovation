@@ -35,7 +35,7 @@ export default function DepannageSalleDeBainRouenPage() {
         ['24h/24', 'Astreinte 7j/7', 'Urgence prise en charge'],
         ['1', 'Artisan unique', 'Le même du début à la fin'],
         ['Accord', 'Avant intervention', 'Prix annoncé, puis réparation'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Ce que nous réparons dans une salle de bain"
       servicesIntro="La plupart des pannes de salle de bain se règlent par une pièce changée et un joint refait. Nous annonçons le prix avant de commencer, et nous ne proposons un remplacement que lorsque la réparation ne tient plus."

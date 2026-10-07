@@ -35,7 +35,7 @@ export default function RechercheDeFuiteRouenPage() {
         ['24/7', 'Astreinte urgence', 'Intervention en quelques heures'],
         ['Photo', 'Rapport pour l’assurance', 'Daté et détaillé'],
         ['1', 'Interlocuteur unique', 'De la recherche à la remise en état'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Les fuites que nous traitons à Rouen"
       servicesIntro="Nous procédons du moins invasif au plus invasif : observation, isolement des circuits, tests de mise en eau. Nous n’ouvrons qu’une fois la zone identifiée — et nous refermons proprement."

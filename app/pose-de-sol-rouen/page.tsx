@@ -35,7 +35,7 @@ export default function PoseDeSolRouenPage() {
         ['48h', 'Devis reçu', 'Réponse garantie'],
         ['1', 'Interlocuteur unique', 'Du constat aux clés'],
         ['Photo', 'Rapport systématique', 'Avant, pendant, après'],
-        ['5/5', 'Sur Google', '30 avis vérifiés'],
+        ['5/5', 'Sur Google', '31 avis vérifiés'],
       ]}
       servicesTitre="Nos poses de parquet et de sols à Rouen"
       servicesIntro="Le résultat tient d’abord au support : un sol posé sur un fond irrégulier bouge, grince et s’ouvre aux joints. Nous préparons avant de poser, et nous le chiffrons clairement."
